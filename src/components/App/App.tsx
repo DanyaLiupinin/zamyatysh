@@ -1,11 +1,26 @@
 import React from 'react';
+import {
+  Routes,
+  Route,
+  //Navigate,
+  //useNavigate,
+  //useLocation
+} from 'react-router-dom';
+
 import './App.scss';
 
-function App() {
+import WelcomePage from '../WelcomePage/WelcomePage';
+
+const App: React.FC = () => {
   return (
     <div className="App">
-      <p className='test'>Замятыш</p>
-      <p className='testDva'>Zamyatysh</p>
+      <Routes>
+
+        <Route path='/' element={
+          <WelcomePage />
+        }/>
+
+      </Routes>
     </div>
   );
 }
