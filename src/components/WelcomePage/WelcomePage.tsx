@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
+
 import './WelcomePage.scss'
 
-const logo = require('../../images/animation.gif')
+//const logo = require('../../images/animation.gif')
 
 const WelcomePage: React.FC = () => {
 
@@ -15,15 +17,11 @@ const WelcomePage: React.FC = () => {
                         <p className='welcome__language-text'>ENG</p>
                     </button>
                 </div>
-                <div className='welcome__buttons'>
-                    <button className='welcome__button'>
-                        <p className='welcome__button-text'>О нас</p>
-                    </button>
-                    <button className='welcome__button'>
-                        <p className='welcome__button-text'>В магазин</p>
-                    </button>
+                <div className='welcome__links'>
+                    <Link to='/about' className='welcome__link'>о нас</Link>
+                    <Link to='/shop' className='welcome__link'>В магазин</Link>
                 </div>
-                { /* <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img> */ }
+                { /* <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img> */}
             </div>
         </section>
     )

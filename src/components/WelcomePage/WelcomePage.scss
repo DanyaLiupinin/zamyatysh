@@ -10,7 +10,6 @@
 }
 
 .welcome__languages {
-    //outline: 1px solid blue;
     margin-top: 20px;
     width: 100%;
     display: flex;
@@ -21,7 +20,6 @@
     @include buttonNormalize;
     width: fit-content;
     height: fit-content; 
-    //outline: 1px solid black;
     margin-right: 30px;
     position: relative;
     z-index: 1;
@@ -43,18 +41,20 @@
     font-size: 35px;
 }
 
-.welcome__buttons {
-    //outline: 1px solid blue;
+.welcome__links {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 25vh;
 }
 
-.welcome__button {
+.welcome__link {
     @include buttonNormalize;
     width: 200px;
     height: 50px;
+    font-size: 40px;    
+    text-align: center;
+    text-decoration: none;
     color: white;
     background-color: black;
     border-radius: 12px;
@@ -62,33 +62,31 @@
     z-index: 1;
 }
 
-.welcome__button:hover {
+.welcome__link:hover {
+    cursor: inherit;
+}
+
+.welcome__link:hover {
     opacity: .7;
 }
 
-.welcome__button:not(:last-child) {
+.welcome__link:not(:last-child) {
     margin-right: 100px;
 }
 
-.welcome__button-text {
-    @include pNormalize;
-    font-size: 35px;
-}
-
-@media (max-width: 620px) {
-    .welcome__button:not(:last-child) {
-        margin-right: 50px;
-    }
-}
-
 @media (max-width: 620px) {
 
-    .welcome__buttons {
+    .welcome__links {
         flex-direction: column;
         align-items: center;
     }
 
-    .welcome__button:not(:last-child) {
+    .welcome__link {
+        width: 70%;
+        height: 60px;
+    }
+
+    .welcome__link:not(:last-child) {
         margin-right: 0;
         margin-bottom: 50px;
     }

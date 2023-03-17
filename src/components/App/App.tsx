@@ -10,6 +10,7 @@ import {
 import './App.scss';
 
 import WelcomePage from '../WelcomePage/WelcomePage';
+import About from '../About/About';
 
 const App: React.FC = () => {
   return (
@@ -18,7 +19,11 @@ const App: React.FC = () => {
 
         <Route path='/' element={
           <WelcomePage />
-        }/>
+        } />
+
+        <Route path='/about' element={
+          <About />
+        } />
 
       </Routes>
     </div>
