@@ -23,7 +23,7 @@ const WelcomePage: React.FC = () => {
                         <p className='welcome__button-text'>В магазин</p>
                     </button>
                 </div>
-                <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img>
+                { /* <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img> */ }
             </div>
         </section>
     )
