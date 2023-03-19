@@ -1,11 +1,11 @@
 import './Header.scss'
 
 import React from 'react';
-
 import { Link } from 'react-router-dom'
 
+import Burger from '../Burger/Burger';
+
 const logo = require('../../images/zamyatysh.png')
-const burger = require('../../images/burger.png')
 
 const Header: React.FC<any> = () => {
 
@@ -17,9 +17,10 @@ const Header: React.FC<any> = () => {
                 <Link to='/' className='header__logo-link' title='Главная'>
                     <img className='header__logo-image' alt='логотип' src={logo}></img>
                 </Link>
-                <button className='header__burger-button' type='button' onClick={() => setBurgerOpened(!burgerOpened)}>
-                    <img className='header__burger-image' alt='бургер меню' src={burger}></img>
-                </button>
+                <Burger 
+                    burgerOpened={burgerOpened}
+                    setBurgerOpened={setBurgerOpened}
+                />
                 <nav className='header__navigation-container'>
                     <ul className={`header__navigation ${burgerOpened ? 'header__navigation_active' : ''}`}>
                         <li className='header__navigation-item'>

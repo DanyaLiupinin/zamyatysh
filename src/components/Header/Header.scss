@@ -3,7 +3,6 @@
 .header {
     height: 80px;
     width: 100%;
-    outline: 1px solid black;
 }
 
 .header__container {
@@ -58,24 +57,6 @@
     color: black;
 }
 
-// burger//
-
-.header__burger-button {
-    @include buttonNormalize;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    display: none;
-    z-index: 2;
-}
-
-.header__burger-image {
-    width: 100%;
-    height: 100%;
-}
-
 @media (max-width: 768px) {
 
     .header__navigation-item:not(:last-child), 
@@ -86,10 +67,6 @@
 
     .header__navigation-item:first-child {
         margin-top: 30%;
-    }
-
-    .header__burger-button {
-        display: block;
     }
 
     .header__navigation {
