@@ -1,7 +1,7 @@
-import './Header.scss'
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
+
+import './Header.scss'
 
 import Burger from '../Burger/Burger';
 
@@ -9,7 +9,7 @@ const logo = require('../../images/zamyatysh.png')
 
 const Header: React.FC<any> = () => {
 
-    const [burgerOpened, setBurgerOpened] = React.useState(false)
+    const [burgerOpened, setBurgerOpened] = useState<Boolean>(false)
 
     return (
         <header className='header'>
@@ -33,7 +33,7 @@ const Header: React.FC<any> = () => {
                             <Link to='/'>Корзина</Link>
                         </li>
                         <li>
-                            <Link to='/'>Личный кабинет</Link>
+                            <Link to='/'>Личный квабинет</Link>
                         </li>
                     </ul>
                 </nav>
