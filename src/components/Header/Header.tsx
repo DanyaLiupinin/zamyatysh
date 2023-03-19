@@ -15,25 +15,25 @@ const Header: React.FC<any> = () => {
         <header className='header'>
             <div className='header__container'>
                 <Link to='/' className='header__logo-link' title='Главная'>
-                    <img className='header__logo-image' alt='логотип' src={logo}></img>
+                    <img alt='логотип' src={logo}></img>
                 </Link>
-                <Burger 
+                <Burger
                     burgerOpened={burgerOpened}
                     setBurgerOpened={setBurgerOpened}
                 />
-                <nav className='header__navigation-container'>
+                <nav>
                     <ul className={`header__navigation ${burgerOpened ? 'header__navigation_active' : ''}`}>
-                        <li className='header__navigation-item'>
-                            <Link to='/' className='header__navigation-link'>Главная</Link>
+                        <li>
+                            <Link to='/'>Главная</Link>
                         </li>
-                        <li className='header__navigation-item'>
-                            <Link to='/' className='header__navigation-link'>О нас</Link>
+                        <li>
+                            <Link to='/'>О нас</Link>
                         </li>
-                        <li className='header__navigation-item'>
-                            <Link to='/' className='header__navigation-link'>Корзина</Link>
+                        <li>
+                            <Link to='/'>Корзина</Link>
                         </li>
-                        <li className='header__navigation-item'>
-                            <Link to='/' className='header__navigation-link'>Личный кабинет</Link>
+                        <li>
+                            <Link to='/'>Личный кабинет</Link>
                         </li>
                     </ul>
                 </nav>

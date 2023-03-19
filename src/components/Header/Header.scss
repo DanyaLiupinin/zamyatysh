@@ -15,14 +15,14 @@
 }
 
 .header__logo-link {
-    width: fit-content;
-    height: fit-content;
-    margin: auto auto auto 2%;
-}
-
-.header__logo-image {
     width: 83px;
     height: 59px;
+    margin: auto auto auto 2%;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .header__navigation {
@@ -33,41 +33,31 @@
     flex-direction: row;
     align-items: center;
     height: 100%;
-}
 
-.header__navigation-item {
-    font-size: 36px;
-    transition: .3s;
-}
+    li {
+        font-size: 36px;
+        transition: .3s;
+    }
 
-.header__navigation-item:not(:last-child) {
-    margin-right: 40px;
-}
+    li:not(:last-child) {
+        margin-right: 40px;
+    }
 
-.header__navigation-item:last-child {
-    margin-right: 25px;
-}
+    li:last-child {
+        margin-right: 25px;
+    }
 
-.header__navigation-item:hover {
-    opacity: .6;
-}
+    li:hover {
+        opacity: .6;
+    }
 
-.header__navigation-link {
-    text-decoration: none;
-    color: black;
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
 
 @media (max-width: 768px) {
-
-    .header__navigation-item:not(:last-child), 
-    .header__navigation-item:last-child {
-        margin: 10px 0 0 0;
-        font-size: 40px;
-    }
-
-    .header__navigation-item:first-child {
-        margin-top: 30%;
-    }
 
     .header__navigation {
         flex-direction: column;
@@ -82,6 +72,16 @@
         width: 60%;
         justify-content: flex-start;
 
+        li:not(:last-child),
+        li:last-child {
+            margin: 10px 0 0 0;
+            font-size: 40px;
+        }
+
+        li:first-child {
+            margin-top: 30%;
+        }
+
         a {
             color: white;
         }
@@ -94,16 +94,17 @@
 }
 
 @media (max-width: 500px) {
+    
     .header__navigation {
         width: 100%;
-    }
 
-    .header__navigation-item:first-child {
-        margin-top: 45%;
-    }
+        li:first-child {
+            margin-top: 45%;
+        }
 
-    .header__navigation-item:not(:last-child), 
-    .header__navigation-item:last-child {
-        font-size: 50px;
+        li:not(:last-child),
+        li:last-child {
+            font-size: 50px;
+        }
     }
 }
