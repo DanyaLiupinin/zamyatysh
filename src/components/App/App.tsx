@@ -11,6 +11,7 @@ import './App.scss';
 
 import WelcomePage from '../WelcomePage/WelcomePage';
 import About from '../About/About';
+import Shop from '../Shop/Shop';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,10 @@ const App: React.FC = () => {
 
         <Route path='/about' element={
           <About />
+        } />
+
+        <Route path='/shop' element={
+          <Shop />
         } />
 
       </Routes>
