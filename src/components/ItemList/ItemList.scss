@@ -1,4 +1,14 @@
 .itemList {
     outline: 1px solid blue;
-    height: 200px;
+}
+
+.itemList__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.itemList__item {
+    height: 400px;
+    outline: 1px solid black;
 }

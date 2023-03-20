@@ -21,10 +21,15 @@
     @include buttonNormalize;
     outline: 1px solid yellow;
     text-align: start;
-    font-size: 40px;
+    font-size: 34px;
     width: fit-content;
+    transition: .3s;
     
     &:not(:first-child) {
         margin-top: 30px;
     } 
-}
+
+    &:hover {
+        opacity: .5;
+    }
+}  
