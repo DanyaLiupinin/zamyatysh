@@ -10,10 +10,10 @@ button {
     display: none;
     z-index: 2;
     transition: .3s;
-}
 
-button:hover {
-    opacity: .6;
+    &:hover {
+        opacity: .6;
+    }
 }
 
 img {

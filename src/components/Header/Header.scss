@@ -37,18 +37,18 @@
     li {
         font-size: 36px;
         transition: .3s;
-    }
 
-    li:not(:last-child) {
-        margin-right: 40px;
-    }
-
-    li:last-child {
-        margin-right: 25px;
-    }
-
-    li:hover {
-        opacity: .6;
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    
+        &:last-child {
+            margin-right: 25px;
+        }
+    
+        &:hover {
+            opacity: .6;
+        }
     }
 
     a {
