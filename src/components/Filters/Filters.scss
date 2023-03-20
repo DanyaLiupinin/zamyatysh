@@ -1,0 +1,30 @@
+@import '../../mixins/mixins.scss';
+
+.filters {
+    height: 100%;
+    width: 100%;
+    outline: 1px solid red;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.filters__buttons {
+    outline: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    
+}
+
+.filters__button {
+    @include buttonNormalize;
+    outline: 1px solid yellow;
+    text-align: start;
+    font-size: 40px;
+    width: fit-content;
+    
+    &:not(:first-child) {
+        margin-top: 30px;
+    } 
+}

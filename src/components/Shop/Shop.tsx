@@ -7,11 +7,11 @@ import Filters from '../Filters/Filters'
 const Shop: React.FC = () => {
     return (
         <>
-        <Header />
-        <main className='mainShop'>
-            <ItemList />
-            <Filters />
-        </main>
+            <Header />
+            <main className='mainShop'>
+                <Filters />
+                <ItemList />
+            </main>
         </>
     )
 }

@@ -2,7 +2,7 @@ import './ItemList.scss'
 
 const ItemList: React.FC = () => {
     return (
-        <div>
+        <div className='itemList'>
 
         </div>
     )
