@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    
+    word-break: break-all; 
 }
 
 .filters__button {
@@ -25,6 +25,7 @@
     width: fit-content;
     transition: .3s;
     
+    
     &:not(:first-child) {
         margin-top: 30px;
     } 
@@ -32,4 +33,50 @@
     &:hover {
         opacity: .5;
     }
-}  
+} 
+
+
+.filters__dropdown {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    button {
+        @include buttonNormalize;
+        display: none;
+        text-align: start;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        margin: auto 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .filters__button {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters__buttons {
+        width: 100%;
+        margin: 20px 20px 20px;
+        font-size: 40px;
+        outline: 1px solid red;
+    }
+
+    .filters__button {
+        display: none;
+    }
+
+    .filters__dropdown {
+        button {
+            display: block;
+        }
+    }
+}

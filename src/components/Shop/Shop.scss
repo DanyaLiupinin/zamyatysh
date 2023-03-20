@@ -7,3 +7,9 @@
     padding-top: 30px;
     background-color: #ededed62;
 }
+
+@media (max-width: 768px) {
+    .mainShop {
+        display: block;
+    }
+}
