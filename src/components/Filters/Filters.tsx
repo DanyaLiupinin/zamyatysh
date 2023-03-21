@@ -1,23 +1,15 @@
 import { Dispatch, SetStateAction } from 'react'
+import categories from '../../constants/constants';
 
 import './Filters.scss'
 
-const dropdown = require('../../images/dropdown.png')
+//const dropdown = require('../../images/dropdown.png')
 
 const Filters: React.FC<any> = ({ category, setCategory }: {
     category: String,
     setCategory: Dispatch<SetStateAction<boolean>>;
 }) => {
 
-    const categories = [
-        'все',
-        'футболки',
-        'худи',
-        'лонгсливы',
-        'аксессуары',
-        'стикеры',
-        'прочее'
-    ]
 
     return (
         <div className='filters'>
