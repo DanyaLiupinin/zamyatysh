@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    word-break: break-all; 
+    word-break: break-all;
 }
 
 .filters__button {
@@ -24,16 +24,16 @@
     font-size: 34px;
     width: fit-content;
     transition: .3s;
-    
-    
+
+
     &:not(:first-child) {
         margin-top: 30px;
-    } 
+    }
 
     &:hover {
         opacity: .5;
     }
-} 
+}
 
 
 .filters__dropdown {
@@ -74,11 +74,36 @@
         display: none;
     }
 
+    // dropdown menu
+
     .filters__dropdown {
         display: flex;
 
         button {
             display: block;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+            background-color: #ededed62;
+
+            &:focus {
+                outline: 1px solid black;
+            }
+        }
+
+        option {
+            background-color: white;
+            border-radius: 5px;
+            border: none;
+            font-size: 24px;
         }
     }
 }
