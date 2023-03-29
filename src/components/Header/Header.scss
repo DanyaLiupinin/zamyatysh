@@ -108,3 +108,14 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    
+    .header__navigation {
+
+        li:not(:last-child),
+        li:last-child {
+            font-size: 40px;
+        }
+    }
+}
