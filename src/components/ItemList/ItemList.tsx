@@ -13,6 +13,12 @@ const ItemList: React.FC = () => {
                 <Item />
                 <Item />
                 <Item />
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+                <Item />
 
             </div>
         </div>

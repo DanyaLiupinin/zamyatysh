@@ -1,6 +1,4 @@
-.itemList {
-    outline: 1px solid blue;
-}
+
 
 .itemList__container {
     display: grid;
@@ -20,5 +18,11 @@
 @media (max-width: 768px) {
     .itemList__container {
         padding-left: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .itemList__container {
+        grid-template-columns: 1fr
     }
 }
