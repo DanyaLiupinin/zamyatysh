@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import Header from '../Header/Header'
 import ItemList from '../ItemList/ItemList'
 import Filters from '../Filters/Filters'
+import Footer from '../Footer/Footer';
 
 const Shop: React.FC = () => {
 
@@ -20,6 +21,7 @@ const Shop: React.FC = () => {
                 />
                 <ItemList />
             </main>
+            <Footer />
         </>
     )
 }

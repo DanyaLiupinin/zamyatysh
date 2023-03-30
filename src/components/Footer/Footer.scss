@@ -1,0 +1,53 @@
+@import '../../mixins/mixins.scss';
+
+.footer {
+    width: 100%;
+    height: 200px;
+}
+
+.footer__container {
+    @include  container;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer__copyright {
+    @include pNormalize;
+    font-size: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.footer__info {
+    p {
+        @include pNormalize;
+        font-size: 36px;
+        text-align: center;
+    }
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: row;
+
+    p {
+        @include pNormalize;
+        font-size: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+
+.footer__image {
+    width: 83px;
+    height: 53px;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+} 
