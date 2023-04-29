@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.f553c5e5.css",
-    "main.js": "./static/js/main.836a0d78.js",
-    "static/media/aboutUs.png": "./static/media/aboutUs.f9d1c0128a88f5b64516.png",
-    "static/media/zamyatysh.png": "./static/media/zamyatysh.3fab1bc9a210c36b303c.png",
-    "static/media/Zamyatysh_ru-Regular.otf": "./static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
-    "static/media/Zamyatysh_ru-Regular.ttf": "./static/media/Zamyatysh_ru-Regular.5d76746c80fa5b70257b.ttf",
-    "static/media/Zamyatysh_eng-Regular.otf": "./static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
-    "static/media/Zamyatysh_eng-Regular.ttf": "./static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
-    "index.html": "./index.html",
-    "main.f553c5e5.css.map": "./static/css/main.f553c5e5.css.map",
-    "main.836a0d78.js.map": "./static/js/main.836a0d78.js.map"
+    "main.css": "/static/css/main.44f8b11d.css",
+    "main.js": "/static/js/main.6d5abde3.js",
+    "static/media/aboutUs.png": "/static/media/aboutUs.f9d1c0128a88f5b64516.png",
+    "static/media/zamyatysh.png": "/static/media/zamyatysh.3fab1bc9a210c36b303c.png",
+    "static/media/Zamyatysh_ru-Regular.otf": "/static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
+    "static/media/Zamyatysh_ru-Regular.ttf": "/static/media/Zamyatysh_ru-Regular.5d76746c80fa5b70257b.ttf",
+    "static/media/Zamyatysh_eng-Regular.otf": "/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
+    "static/media/Zamyatysh_eng-Regular.ttf": "/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
+    "index.html": "/index.html",
+    "main.44f8b11d.css.map": "/static/css/main.44f8b11d.css.map",
+    "main.6d5abde3.js.map": "/static/js/main.6d5abde3.js.map"
   },
   "entrypoints": [
-    "static/css/main.f553c5e5.css",
-    "static/js/main.836a0d78.js"
+    "static/css/main.44f8b11d.css",
+    "static/js/main.6d5abde3.js"
   ]
 }
