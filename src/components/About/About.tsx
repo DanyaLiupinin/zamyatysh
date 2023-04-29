@@ -1,4 +1,4 @@
-import './About.css'
+import './About.scss'
 
 import Header from '../Header/Header'
 
