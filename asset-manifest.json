@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/zamyatysh/static/css/main.038b6e7a.css",
-    "main.js": "/zamyatysh/static/js/main.e60fb1b8.js",
+    "main.css": "/zamyatysh/static/css/main.c248a4fd.css",
+    "main.js": "/zamyatysh/static/js/main.bd00bf49.js",
+    "static/media/gifka.GIF": "/zamyatysh/static/media/gifka.c5a04aa0c1d2654c7eb4.GIF",
     "static/media/aboutUs.png": "/zamyatysh/static/media/aboutUs.f9d1c0128a88f5b64516.png",
     "static/media/zamyatysh.png": "/zamyatysh/static/media/zamyatysh.3fab1bc9a210c36b303c.png",
     "static/media/Zamyatysh_ru-Regular.otf": "/zamyatysh/static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
@@ -9,11 +10,11 @@
     "static/media/Zamyatysh_eng-Regular.otf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
     "static/media/Zamyatysh_eng-Regular.ttf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
     "index.html": "/zamyatysh/index.html",
-    "main.038b6e7a.css.map": "/zamyatysh/static/css/main.038b6e7a.css.map",
-    "main.e60fb1b8.js.map": "/zamyatysh/static/js/main.e60fb1b8.js.map"
+    "main.c248a4fd.css.map": "/zamyatysh/static/css/main.c248a4fd.css.map",
+    "main.bd00bf49.js.map": "/zamyatysh/static/js/main.bd00bf49.js.map"
   },
   "entrypoints": [
-    "static/css/main.038b6e7a.css",
-    "static/js/main.e60fb1b8.js"
+    "static/css/main.c248a4fd.css",
+    "static/js/main.bd00bf49.js"
   ]
 }
