@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/css/main.791a7461.css",
-    "main.js": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/js/main.ebdb907d.js",
-    "static/media/aboutUs.png": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/media/aboutUs.f9d1c0128a88f5b64516.png",
-    "static/media/zamyatysh.png": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/media/zamyatysh.3fab1bc9a210c36b303c.png",
-    "static/media/Zamyatysh_ru-Regular.otf": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
-    "static/media/Zamyatysh_ru-Regular.ttf": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/media/Zamyatysh_ru-Regular.5d76746c80fa5b70257b.ttf",
-    "static/media/Zamyatysh_eng-Regular.otf": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
-    "static/media/Zamyatysh_eng-Regular.ttf": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
-    "index.html": "/DanyaLiupinin/zamyatysh/tree/gh-pages/index.html",
-    "main.791a7461.css.map": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/css/main.791a7461.css.map",
-    "main.ebdb907d.js.map": "/DanyaLiupinin/zamyatysh/tree/gh-pages/static/js/main.ebdb907d.js.map"
+    "main.css": "./static/css/main.f553c5e5.css",
+    "main.js": "./static/js/main.760e3434.js",
+    "static/media/aboutUs.png": "./static/media/aboutUs.f9d1c0128a88f5b64516.png",
+    "static/media/zamyatysh.png": "./static/media/zamyatysh.3fab1bc9a210c36b303c.png",
+    "static/media/Zamyatysh_ru-Regular.otf": "./static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
+    "static/media/Zamyatysh_ru-Regular.ttf": "./static/media/Zamyatysh_ru-Regular.5d76746c80fa5b70257b.ttf",
+    "static/media/Zamyatysh_eng-Regular.otf": "./static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
+    "static/media/Zamyatysh_eng-Regular.ttf": "./static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
+    "index.html": "./index.html",
+    "main.f553c5e5.css.map": "./static/css/main.f553c5e5.css.map",
+    "main.760e3434.js.map": "./static/js/main.760e3434.js.map"
   },
   "entrypoints": [
-    "static/css/main.791a7461.css",
-    "static/js/main.ebdb907d.js"
+    "static/css/main.f553c5e5.css",
+    "static/js/main.760e3434.js"
   ]
 }
