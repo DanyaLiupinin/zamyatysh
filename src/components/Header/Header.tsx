@@ -24,10 +24,10 @@ const Header: React.FC<any> = () => {
                 <nav>
                     <ul className={`header__navigation ${burgerOpened ? 'header__navigation_active' : ''}`}>
                         <li>
-                            <Link to='/'>Главная</Link>
+                            <Link to='/shop'>Магазин</Link>
                         </li>
                         <li>
-                            <Link to='/'>О нас</Link>
+                            <Link to='/about'>О нас</Link>
                         </li>
                         <li>
                             <Link to='/'>Корзина</Link>
