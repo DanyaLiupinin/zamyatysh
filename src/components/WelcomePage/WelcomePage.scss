@@ -92,15 +92,13 @@
     }
 }
 
-/*
+
 
 .welcome__gif {
     position: absolute;
-    bottom: 440px;
-    right: 300px;
-    left: 0;
-    width: 190px;
-    height: 20%;
+    left: 30%;
+    width: 40%;
+    bottom: 10%;
     margin: 0 auto;
     z-index: 0;
     //outline: 1px solid red;
@@ -109,6 +107,21 @@
 
 @media (max-width: 1120px) {
     .welcome__gif {
-        width: fit-content;
+        width: 60%;
+        left: 20%;
     }
-}*/
+}
+
+@media (max-width: 750px) {
+    .welcome__gif {
+        width: 80%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 620px) {
+    .welcome__gif {
+        width: 50%;
+        left: 25%;
+    }
+}

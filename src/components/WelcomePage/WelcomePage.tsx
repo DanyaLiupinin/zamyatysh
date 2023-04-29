@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import './WelcomePage.scss'
 
-//const logo = require('../../images/animation.gif')
+const logo = require('../../images/gifka.GIF')
 
 const WelcomePage: React.FC = () => {
 
@@ -21,10 +21,12 @@ const WelcomePage: React.FC = () => {
                     <Link to='/about' className='welcome__link'>о нас</Link>
                     <Link to='/shop' className='welcome__link'>В магазин</Link>
                 </div>
-                { /* <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img> */}
+                 <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img> 
             </div>
         </section>
     )
 }
 
 export default WelcomePage
+
+// сделать кнопки на телефоне поменьше (чекнуть на айфоне)
