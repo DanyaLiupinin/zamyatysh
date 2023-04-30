@@ -19,7 +19,7 @@ const WelcomePage: React.FC = () => {
                 </div>
                 <div className='welcome__links'>
                     <Link to='/about' className='welcome__link'>о нас</Link>
-                    <Link to='/shop' className='welcome__link'>В магазин</Link>
+                    <Link to='/shop' className='welcome__link'>в магазин</Link>
                 </div>
                  <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img> 
             </div>
