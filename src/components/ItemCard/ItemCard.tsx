@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import './ItemCard.scss'
 import Header from '../Header/Header'
-import Item from '../Item/Item'
+import Footer from '../Footer/Footer';
 
 const array = require('../../images/arrayback.png')
 
-const raz = require('../../images/aboutUs.png')
-
-const dva = require('../../images/burger.png')
 
 const tri = require('../../images/tshirt.png')
 
 const arrayLeft = require('../../images/lapkaleft.png')
 const arrayRight = require('../../images/lapkaright.png')
+
+
 
 const ItemCard: React.FC<any> = () => {
 
@@ -20,26 +19,27 @@ const ItemCard: React.FC<any> = () => {
     const [offset, setOffset] = useState<number>(0)
     const sliderLine = React.useRef<HTMLInputElement>(null)
 
-    const items = [
+    const item:
         {
-            id: 1,
-            image: tri,
-        },
-        {
-            id: 2,
-            image: tri,
-        },
-        {
-            id: 3,
-            image: tri,
+            id: number,
+            image: any[],
+            description: string,
+            material: string,
+            style: string, //фасон
+            articul: string
         }
-    ]
+        =
+    {
+        id: 1,
+        image: [tri, tri, tri],
+        description: 'футболка изготовлена из самых качественных материалов лучшими партными Италии. мы советуем обращаться с футболкой предельно аккуратно и стирать её только вручную',
+        material: 'матриеальный',
+        style: 'фасоновый', //фасон
+        articul: 'артикульный'
+    } // добавить название товара, цену, возможные размеры
 
 
-    //let offset = 0 // смещение от левого края
-    //let imageActive = 1
 
-    //const sliderLine = document.querySelector<HTMLElement>('.itemCard__slider-line')
 
     const onClickNext = () => {
 
@@ -95,9 +95,9 @@ const ItemCard: React.FC<any> = () => {
                             <div className='itemCard__slider'>
                                 <div className='itemCard__slider-line' ref={sliderLine}>
                                     {
-                                        items.map((i) => {
+                                        item.image.map((i: any, index) => {
                                             return (
-                                                <img className='itemCard__slider-image' key={i.id} src={i.image} alt="raz" />
+                                                <img className='itemCard__slider-image' key={index} src={i} alt="raz" />
                                             )
                                         })
                                     }
@@ -108,9 +108,9 @@ const ItemCard: React.FC<any> = () => {
                         <div className='itemCard__mini-icons'>
 
                             {
-                                items.map((i) => {
+                                item.image.map((i: any, index) => {
                                     return (
-                                        <img className={`itemCard__mini-icon ${imageActive === i.id ? 'itemCard__mini-icon_active' : ''}`} key={i.id} src={i.image} alt="raz" />
+                                        <img className={`itemCard__mini-icon ${imageActive === index + 1 ? 'itemCard__mini-icon_active' : ''}`} key={index} src={i} alt="raz" />
                                     )
                                 })
                             }
@@ -119,13 +119,46 @@ const ItemCard: React.FC<any> = () => {
                         </div>
                     </div>
 
-                    <p>vyjuifhhh</p>
+                    {/* описание сбоку от карточки */}
+
+                    <div className='itemCard__description'>
+                        <h2 className='itemCard__item-title'>футболка 'замятыш'</h2>
+                        <p className='itemCard__item-price'>1500 кваксов</p>
+                        <p>сделать якорную ссылку 'о товаре'</p>
+                        <div className='itemCard__sizes'>
+
+                            <div className='itemCard__size'>
+                                <p className='itemCard__size-name'>S</p>
+                            </div>
+
+                            <div className='itemCard__size'>
+                                <p className='itemCard__size-name'>M</p>
+                            </div>
+
+                            <div className='itemCard__size'>
+                                <p className='itemCard__size-name'>L</p>
+                            </div>
+
+                        </div>
+
+                        <p className='itemCard__size-guide'>Как выбрать размер?</p>
+
+                        <button className='itemCard__add-button' type='button'>В корзину</button>
+                    </div>
 
 
                 </div>
-
+                <div className='itemCard__item-characteristics'>
+                    <p>Описание товара:</p>
+                    <p>{item.description}</p>
+                    
+                    <p>материал: {item.material}</p>
+                    <p>фасон: {item.style}</p>
+                    <p>артикул: {item.articul}</p>
+                </div>
 
             </section>
+            <Footer />
         </>
     )
 }
