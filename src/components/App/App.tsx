@@ -12,6 +12,7 @@ import './App.scss';
 import WelcomePage from '../WelcomePage/WelcomePage';
 import About from '../About/About';
 import Shop from '../Shop/Shop';
+import ItemCard from '../ItemCard/ItemCard';
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,10 @@ const App: React.FC = () => {
 
         <Route path='/shop' element={
           <Shop />
+        } />
+
+        <Route path='/shop/:slug' element={
+          <ItemCard />
         } />
 
       </Routes>
