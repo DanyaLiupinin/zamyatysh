@@ -11,6 +11,7 @@
     font-size: 40px;
     display: flex;
     align-items: center;
+    margin-left: 20px;
     //outline: 1px solid red;
 }
 
@@ -25,164 +26,10 @@
     flex-direction: row;
     justify-content: start;
     margin-top: 54px;
-}
-
-///
-/// 
-/// 
-/// 
-
-.itemCard__card-slider-container {
-    //outline: 1px solid red;
-}
-
-.itemCard__slider-wrapper {
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-}
-
-.itemCard__card-container {
     margin-left: 5%;
 }
 
-.itemCard__slider {
-    width: 340px; // параметры должны быть такого же размера как и у фото
-    height: 350px;
-    overflow: hidden;
-}
-
-.itemCard__slider-line {
-    height: 256px;
-    width: 1024px;
-    //background-color: red;
-    display: flex;
-    position: relative;
-    left: 0;
-    transition: all ease .5s;
-}
-
-.itemCard__slider-image {
-    width: 340px;
-    height: 350px;
-
-    object-fit: cover;
-}
-
-.itemCard__slider-button {
-    @include buttonNormalize;
-    position: absolute;
-    z-index: 99;
-    width: 60px;
-    height: 40px;
-}
-
-.itemCard__slider-button_type_left {
-    top: 45%;
-    left: -20px;
-}
-
-.itemCard__slider-button_type_right {
-    top: 45%;
-    right: -20px;
-}
-
-.itemCard__slider-button-image {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-}
-
-.itemCard__mini-icons {
-
-    display: flex;
-
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.itemCard__mini-icon {
-    width: 50px;
-}
-
-.itemCard__mini-icon_active {
-    //outline: 1px solid black;
-}
-
-
-/// описание
-/// 
-
-.itemCard__description {
-    //outline: 1px solid red;
-    margin-left: 10%;
-}
-
-.itemCard__item-title {
-    @include pNormalize;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 64px;
-}
-
-.itemCard__item-price {
-    @include pNormalize;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 50px;
-}
-
-.itemCard__sizes {
-    display: flex;
-    flex-direction: row;
-    gap: 35px;
-    margin-top: 56px;
-}
-
-.itemCard__size {
-    border: 4px solid rgba(195, 195, 195, 1);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-}
-
-.itemCard__size_active {
-    border: 4px solid black;
-}
-
-.itemCard__size-name {
-    padding: 0;
-    display: block;
-    font-size: 50px;
-}
-
-.itemCard__size-guide {
-    @include pNormalize;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 150%;
-    margin-top: 7px;
-}
-
-.itemCard__add-button {
-    @include buttonNormalize;
-    margin-top: 44px;
-    border: 2px solid rgba(195, 195, 195, 1);
-    width: 256px;
-    height: 66px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 42px;
-    line-height: 150%;
-    border-radius: 6px;
-}
-
-.itemCard__item-characteristics {
+.itemCard__item-description {
     @include pNormalize;
     width: 40%;
     margin: 100px auto;

@@ -8,4 +8,5 @@ const categories = [
     'прочее'
 ]
 
+
 export default categories

@@ -1,0 +1,70 @@
+@import '../../mixins/mixins.scss';
+
+.itemInformation {
+    //outline: 1px solid red;
+    margin-left: 10%;
+}
+
+.itemInformation__title {
+    @include pNormalize;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+}
+
+.itemInformation__price {
+    @include pNormalize;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+}
+
+.itemInformation__sizes {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+    margin-top: 56px;
+}
+
+.itemInformation__size {
+    border: 4px solid rgba(195, 195, 195, 1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+
+    p {
+        padding: 0;
+        display: block;
+        font-size: 50px;
+    }
+}
+
+.itemInformation__size_active {
+    border: 4px solid black;
+}
+
+
+.itemInformation__size-guide {
+    @include pNormalize;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 150%;
+    margin-top: 7px;
+}
+
+.itemInformation__add-button {
+    @include buttonNormalize;
+    margin-top: 44px;
+    border: 2px solid rgba(195, 195, 195, 1);
+    width: 256px;
+    height: 66px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 150%;
+    border-radius: 6px;
+}
