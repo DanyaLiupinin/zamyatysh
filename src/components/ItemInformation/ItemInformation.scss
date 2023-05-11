@@ -68,3 +68,14 @@
     line-height: 150%;
     border-radius: 6px;
 }
+
+@media (max-width: 800px) {
+    .itemInformation {
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    .itemInformation__sizes {
+        justify-content: center;
+    }
+}

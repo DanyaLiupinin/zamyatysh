@@ -45,3 +45,11 @@
         margin-top: 10px;
     }
 }
+
+@media (max-width: 800px) {
+    .itemCard__card-container {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+}
