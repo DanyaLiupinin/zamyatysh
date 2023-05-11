@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './ImageCarousel.scss'
 
 
@@ -23,6 +23,11 @@ const ImageCarousel = ({ item }: {
     const [imageActive, setImageActive] = useState<number>(1)
     const [offset, setOffset] = useState<number>(0)
     const sliderLine = React.useRef<HTMLInputElement>(null)
+    const ratios : any = {
+        1: 0,
+        2: 340,
+        3: 680
+    }
 
     const onClickNext = () => {
 
@@ -50,6 +55,16 @@ const ImageCarousel = ({ item }: {
             if (sliderLine.current) sliderLine.current.style.left = (-(offset - 340)) + 'px'
         }
     }
+
+    const onClickIcon = (index: number) => {
+        setImageActive(index)
+        setOffset(ratios[index])
+    }
+
+    useEffect(() => {
+        if (sliderLine.current)
+        sliderLine.current.style.left = - (offset) + 'px'
+    }, [offset])
 
     return (
         <div>
@@ -79,7 +94,9 @@ const ImageCarousel = ({ item }: {
                     {
                         item.image.map((i: any, index) => {
                             return (
-                                <img className={`imageCarousel__mini-icon ${imageActive === index + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={index} src={i} alt="raz" />
+
+                                <img className={`imageCarousel__mini-icon ${imageActive === index + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={index} src={i} alt="raz" onClick={() => onClickIcon(index + 1)} />
+
                             )
                         })
                     }
