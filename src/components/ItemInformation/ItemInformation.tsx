@@ -1,5 +1,7 @@
 import './ItemInformation.scss'
 
+import frog from '../../images/vkorzini.svg'
+
 const ItemInformation = ({ item, chosenSize, setChosenSize }: {
     item: {
         category: string,
@@ -16,6 +18,15 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
     chosenSize: string,
     setChosenSize: any,
 }) => {
+
+    const onSizeClick = (size: string) => {
+        if (chosenSize.includes(size)) {
+            setChosenSize('')
+        } else {
+            setChosenSize(size)
+        }
+    }
+
     return (
         <div className='itemInformation'>
             <h2 className='itemInformation__title'>{item.category} {item.title}</h2>
@@ -24,7 +35,7 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
                 {
                     item.sizes.map((size, index) => {
                         return (
-                            <div key={index} className='itemInformation__size'>
+                            <div onClick={() => onSizeClick(size.toUpperCase())} key={index} className={`itemInformation__size ${chosenSize === size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
                                 <p>{size.toUpperCase()}</p>
                             </div>
                         )
@@ -34,7 +45,10 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
 
             <p className='itemInformation__size-guide'>Как выбрать размер?</p>
 
-            <button className='itemInformation__add-button' type='button'>В корзину</button>
+            <div className='itemInformation__basket-container'> 
+                <img src={frog} className={`itemInformation__basket-image ${chosenSize !== '' ? 'itemInformation__basket-image_active' : ''}`} alt='frog wants you to buy something'></img>
+                <button className='itemInformation__add-button' type='button'>В корзину</button>
+            </div>
         </div>
     )
 }

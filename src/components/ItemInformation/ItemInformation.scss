@@ -62,6 +62,27 @@
     margin-top: 7px;
 }
 
+.itemInformation__basket-container {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+
+}
+
+.itemInformation__basket-image {
+    position: absolute;
+    z-index: -1;
+    top: 18px;
+    left: 30px;
+    bottom: 0;
+    right: 0;
+    transition: .3s;
+}
+
+.itemInformation__basket-image_active {
+    top: -20px;
+}
+
 .itemInformation__add-button {
     @include buttonNormalize;
     margin-top: 44px;
@@ -73,6 +94,7 @@
     font-size: 42px;
     line-height: 150%;
     border-radius: 6px;
+    background-color: white;
 }
 
 @media (max-width: 920px) {
