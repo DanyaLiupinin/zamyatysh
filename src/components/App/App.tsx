@@ -14,7 +14,8 @@ import About from '../About/About';
 import Shop from '../Shop/Shop';
 import ItemCard from '../ItemCard/ItemCard';
 
-const App: React.FC = () => {
+
+const App: React.FC<any> = () => {
   return (
     <div className="App">
       <Routes>

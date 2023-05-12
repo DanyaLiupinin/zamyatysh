@@ -7,6 +7,7 @@ const logo = require('../../images/gifka.GIF')
 const WelcomePage: React.FC = () => {
 
     return (
+        <>
         <section className='welcome'>
             <div className='welcome__container'>
                 <div className='welcome__languages'>
@@ -24,6 +25,7 @@ const WelcomePage: React.FC = () => {
                 <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img>
             </div>
         </section>
+        </>
     )
 }
 
