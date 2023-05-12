@@ -17,6 +17,7 @@ const ItemList: React.FC = () => {
                     items.map((i, index) => {
                         return (
                             <Item
+                            key={index}
                                 slug={`item${index+1}`}
                             />
                         )
