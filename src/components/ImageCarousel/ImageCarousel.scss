@@ -53,7 +53,7 @@
         width: 340px;
         height: 350px;
 
-        object-fit: cover;
+        object-fit: contain;
     }
 }
 
@@ -74,11 +74,3 @@
     outline: 2px solid black;
 }
 
-@media (max-width: 400px) {
-    .imageCarousel__slider-button_type_right {
-        right: 0;
-    }
-    .imageCarousel__slider-button_type_left {
-        left: 0;
-    }
-}

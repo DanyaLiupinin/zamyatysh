@@ -21,39 +21,40 @@ const ImageCarousel = ({ item }: {
     }
 }) => {
 
+    const [imageWidth, setImageWidth] = useState<number>(0)
     const [imageActive, setImageActive] = useState<number>(1)
     const [offset, setOffset] = useState<number>(0)
     const sliderLine = React.useRef<HTMLInputElement>(null)
     const ratios : any = {
         1: 0,
-        2: 340,
-        3: 680
+        2: imageWidth,
+        3: imageWidth * 2
     }
 
     const onClickNext = () => {
 
-        if (offset + 340 > 680 && sliderLine.current) { // 340 - ширина картинки // 680 - при условии что 3 картинки
+        if (offset + imageWidth > imageWidth * 2 && sliderLine.current) { // 340 - ширина картинки // 680 - при условии что 3 картинки
             setImageActive(1)
             setOffset(0)
             sliderLine.current.style.left = 0 + 'px'
         } else {
             setImageActive(imageActive + 1)
-            setOffset(offset + 340)
-            if (sliderLine.current) sliderLine.current.style.left = (-(offset + 340)) + 'px'
+            setOffset(offset + imageWidth)
+            if (sliderLine.current) sliderLine.current.style.left = (-(offset + imageWidth)) + 'px'
         }
     }
 
 
     const onClickPrev = () => {
 
-        if (offset - 340 < 0 && sliderLine.current) {
+        if (offset - imageWidth < 0 && sliderLine.current) {
             setImageActive(3)
-            setOffset(680)
-            sliderLine.current.style.left = -680 + 'px'
+            setOffset(imageWidth * 2)
+            sliderLine.current.style.left = -imageWidth * 2 + 'px'
         } else {
             setImageActive(imageActive - 1)
-            setOffset(offset - 340)
-            if (sliderLine.current) sliderLine.current.style.left = (-(offset - 340)) + 'px'
+            setOffset(offset - imageWidth)
+            if (sliderLine.current) sliderLine.current.style.left = (-(offset - imageWidth)) + 'px'
         }
     }
 
@@ -67,6 +68,25 @@ const ImageCarousel = ({ item }: {
         sliderLine.current.style.left = - (offset) + 'px'
     }, [offset])
 
+    useEffect(() => {
+
+        if (window.screen.width > 400) {
+            setImageWidth(340)
+        } else {
+            setImageWidth(window.screen.width * 0.85)
+        }
+        
+
+        window.addEventListener('resize', () => {
+            if (window.screen.width > 400) {
+                setImageWidth(340)
+            } else {
+                setImageWidth(window.screen.width * 0.85)
+            }
+        })
+
+    }, [])
+
     return (
         <div>
             <div className='imageCarousel'>
@@ -79,12 +99,12 @@ const ImageCarousel = ({ item }: {
                         <img src={arrayRight} alt='ll'></img>
                     </button>
 
-                    <div className='imageCarousel__slider'>
+                    <div style={{ width: `${imageWidth}px`}} className='imageCarousel__slider'>
                         <div className='imageCarousel__slider-line' ref={sliderLine}>
                             {
                                 item.image.map((i: any, index) => {
                                     return (
-                                        <img key={index} src={i} alt="alt" />
+                                        <img style={{ width: `${imageWidth}px`}} key={index} src={i} alt="alt" />
                                     )
                                 })
                             }
