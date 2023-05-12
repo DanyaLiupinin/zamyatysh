@@ -30,8 +30,12 @@
     }
 }
 
-/*
+.item-link {
+    text-decoration: none;
+    color: inherit;
+}
 
+/*
 .item:hover {
     margin: auto;
     width: 90%;
