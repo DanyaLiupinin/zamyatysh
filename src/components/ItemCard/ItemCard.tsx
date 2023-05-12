@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
 import './ItemCard.scss'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
@@ -12,11 +15,9 @@ import array from '../../images/historyArray.svg'
 import tshirts from '../../images/t.svg'
 
 
-
-
-
 const ItemCard: React.FC<any> = () => {
 
+    const navigate = useNavigate()
 
     const item:
         {
@@ -43,11 +44,15 @@ const ItemCard: React.FC<any> = () => {
         articul: 'артикульный'
     } // добавить название товара, цену, возможные размеры
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <>
             <Header />
             <section className='itemCard'>
-                <button className='itemCard__navigation' type='button'>
+                <button className='itemCard__navigation' onClick={() => navigate(-1)}>
                     <img className='itemCard__navigation-image' src={array} alt='back'></img>
                     Назад
                 </button>
@@ -59,7 +64,7 @@ const ItemCard: React.FC<any> = () => {
                         item={item}
                     />      
                 </div>
-                <div className='itemCard__item-description'>
+                <div id='description' className='itemCard__item-description'>
                     <p>Описание товара:</p>
                     <p>{item.description}</p>
                     <p>материал: {item.material}</p>

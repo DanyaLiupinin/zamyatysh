@@ -41,3 +41,8 @@ const App: React.FC = () => {
 }
 
 export default App;
+
+// TODO
+
+// мультиязычность
+// метрики!!

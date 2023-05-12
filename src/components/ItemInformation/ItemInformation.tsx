@@ -17,7 +17,6 @@ const ItemInformation = ({ item }: {
         <div className='itemInformation'>
             <h2 className='itemInformation__title'>{item.category} {item.title}</h2>
             <p className='itemInformation__price'>{item.price}</p>
-            <p>сделать якорную ссылку 'о товаре'</p>
             <div className='itemInformation__sizes'>
 
                 <div className='itemInformation__size'>
