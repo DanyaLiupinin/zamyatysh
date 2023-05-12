@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-
 import './ItemCard.scss'
+
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer';
-
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
 import ItemInformation from '../ItemInformation/ItemInformation';
 
-import array from '../../images/historyArray.svg'
-
-
 import items from '../../constants/items';
+
+import array from '../../images/historyArray.svg'
 
 
 const ItemCard: React.FC<any> = () => {
@@ -24,17 +22,13 @@ const ItemCard: React.FC<any> = () => {
     const slug = useParams()
 
     useEffect(() => {
-
         let currentSlug: number
-
         if (slug.slug) {
             currentSlug = Number(slug.slug.slice(-1))
         }
-
         items.forEach((i) => {
             if (i.id === currentSlug) {
                 setItem(i)
-
             }
         })
     })
@@ -42,7 +36,6 @@ const ItemCard: React.FC<any> = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
 
     return (
         <>
@@ -55,7 +48,6 @@ const ItemCard: React.FC<any> = () => {
                 {item !== undefined ?
                     <>
                         <div className='itemCard__card-container'>
-
                             <ImageCarousel
                                 item={item}
                             />

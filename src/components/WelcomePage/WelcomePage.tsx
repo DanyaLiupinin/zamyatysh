@@ -11,7 +11,7 @@ const WelcomePage: React.FC = () => {
             <div className='welcome__container'>
                 <div className='welcome__languages'>
                     <button className='welcome__language'>
-                        <p className='welcome__language-text'>RU</p> {/* кнопка пробрасывает язык в redux */}
+                        <p className='welcome__language-text'>RU</p>
                     </button>
                     <button className='welcome__language welcome__language_active'>
                         <p className='welcome__language-text'>ENG</p>
@@ -21,12 +21,10 @@ const WelcomePage: React.FC = () => {
                     <Link to='/about' className='welcome__link'>о нас</Link>
                     <Link to='/shop' className='welcome__link'>в магазин</Link>
                 </div>
-                 <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img> 
+                <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img>
             </div>
         </section>
     )
 }
 
 export default WelcomePage
-
-// сделать кнопки на телефоне поменьше (чекнуть на айфоне)

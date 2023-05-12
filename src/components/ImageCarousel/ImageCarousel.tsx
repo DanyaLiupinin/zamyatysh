@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
+
 import './ImageCarousel.scss'
 
 import arrayLeft from '../../images/lapkaleft.svg'
 import arrayRight from '../../images/lapkaright.svg'
-
-
-
 
 const ImageCarousel = ({ item }: {
     item: {
@@ -32,8 +30,7 @@ const ImageCarousel = ({ item }: {
     }
 
     const onClickNext = () => {
-
-        if (offset + imageWidth > imageWidth * 2 && sliderLine.current) { // 340 - ширина картинки // 680 - при условии что 3 картинки
+        if (offset + imageWidth > imageWidth * 2 && sliderLine.current) {
             setImageActive(1)
             setOffset(0)
             sliderLine.current.style.left = 0 + 'px'
@@ -46,7 +43,6 @@ const ImageCarousel = ({ item }: {
 
 
     const onClickPrev = () => {
-
         if (offset - imageWidth < 0 && sliderLine.current) {
             setImageActive(3)
             setOffset(imageWidth * 2)
@@ -69,14 +65,11 @@ const ImageCarousel = ({ item }: {
     }, [offset])
 
     useEffect(() => {
-
         if (window.screen.width > 400) {
             setImageWidth(340)
         } else {
             setImageWidth(window.screen.width * 0.85)
         }
-        
-
         window.addEventListener('resize', () => {
             if (window.screen.width > 400) {
                 setImageWidth(340)
@@ -84,21 +77,18 @@ const ImageCarousel = ({ item }: {
                 setImageWidth(window.screen.width * 0.85)
             }
         })
-
     }, [])
 
     return (
         <div>
             <div className='imageCarousel'>
                 <div className='imageCarousel__slider-wrapper'>
-
                     <button className='imageCarousel__slider-button imageCarousel__slider-button_type_left' type='button' onClick={onClickPrev}>
                         <img src={arrayLeft} alt='ll'></img>
                     </button>
                     <button className='imageCarousel__slider-button imageCarousel__slider-button_type_right' type='button' onClick={onClickNext}>
                         <img src={arrayRight} alt='ll'></img>
                     </button>
-
                     <div style={{ width: `${imageWidth}px`}} className='imageCarousel__slider'>
                         <div className='imageCarousel__slider-line' ref={sliderLine}>
                             {
@@ -115,9 +105,7 @@ const ImageCarousel = ({ item }: {
                     {
                         item.image.map((i: any, index) => {
                             return (
-
                                 <img className={`imageCarousel__mini-icon ${imageActive === index + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={index} src={i} alt="raz" onClick={() => onClickIcon(index + 1)} />
-
                             )
                         })
                     }
