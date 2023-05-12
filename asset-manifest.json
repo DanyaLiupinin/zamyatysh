@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/zamyatysh/static/css/main.4c50fe6a.css",
-    "main.js": "/zamyatysh/static/js/main.f72735fc.js",
+    "main.css": "/zamyatysh/static/css/main.00cdff3b.css",
+    "main.js": "/zamyatysh/static/js/main.91f218d5.js",
     "static/media/gifka.GIF": "/zamyatysh/static/media/gifka.c5a04aa0c1d2654c7eb4.GIF",
+    "static/media/logo.svg": "/zamyatysh/static/media/logo.6c2ce06ef7fa3acba377b1b3eb9bb671.svg",
+    "static/media/t.svg": "/zamyatysh/static/media/t.182b41e93a6cc45869ce562949e0d3e6.svg",
     "static/media/aboutUs.png": "/zamyatysh/static/media/aboutUs.f9d1c0128a88f5b64516.png",
-    "static/media/zamyatysh.png": "/zamyatysh/static/media/zamyatysh.3fab1bc9a210c36b303c.png",
     "static/media/Zamyatysh_ru-Regular.otf": "/zamyatysh/static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
     "static/media/Zamyatysh_ru-Regular.ttf": "/zamyatysh/static/media/Zamyatysh_ru-Regular.5d76746c80fa5b70257b.ttf",
     "static/media/Zamyatysh_eng-Regular.otf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
     "static/media/Zamyatysh_eng-Regular.ttf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
+    "static/media/lapkaright.svg": "/zamyatysh/static/media/lapkaright.3838c5e51b3278e1d1b3d16c7a241e28.svg",
     "index.html": "/zamyatysh/index.html",
-    "main.4c50fe6a.css.map": "/zamyatysh/static/css/main.4c50fe6a.css.map",
-    "main.f72735fc.js.map": "/zamyatysh/static/js/main.f72735fc.js.map"
+    "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.11d0d0ea89eb85916bcfa793047fc575.svg",
+    "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.f9e1ddcdc2621c2b9849e82967c671c9.svg",
+    "main.00cdff3b.css.map": "/zamyatysh/static/css/main.00cdff3b.css.map",
+    "main.91f218d5.js.map": "/zamyatysh/static/js/main.91f218d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c50fe6a.css",
-    "static/js/main.f72735fc.js"
+    "static/css/main.00cdff3b.css",
+    "static/js/main.91f218d5.js"
   ]
 }
