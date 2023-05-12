@@ -27,6 +27,7 @@
 .itemInformation__sizes {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 35px;
     margin-top: 56px;
 }

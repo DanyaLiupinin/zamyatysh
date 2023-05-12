@@ -2,19 +2,23 @@ import { Link } from 'react-router-dom'
 
 import './Item.scss'
 
-import tshirt from '../../images/t.svg'
-
-const Item = ({ slug }: {
-    slug: string
+const Item = ({ slug, image, title, price, category }: {
+    title: string,
+    category: string,
+    price: string,
+    image: any
+    slug: string,
 }) => {
     return (
         <Link className='item-link' to={`${slug}`}>
             <div className='item'>
                 <div className='item__image-container'>
-                    <img className='item__image' src={tshirt} alt='футболка'></img>
+                    <img className='item__image' src={image} alt='футболка'></img>
                 </div>
-                <h2 className='item__title'>футболка 'замятыш'</h2>
-                <p className='item__price'>1500 кваксов</p>
+                <div className='item__information'>
+                    <h2 className='item__title'>{`${category} '${title}'`}</h2>
+                    <p className='item__price'>{price}</p>
+                </div>
             </div>
         </Link>
     )

@@ -2,30 +2,26 @@ import './ItemList.scss'
 
 import Item from '../Item/Item'
 
-import tshirt from '../../images/t.svg'
-
-const items = [
-    tshirt, tshirt, tshirt, tshirt, tshirt, tshirt, tshirt
-]
-
-const ItemList: React.FC = () => {
+const ItemList: React.FC<any> = ({ allItems }: {
+    allItems: any[]
+}) => {
     return (
         <div className='itemList'>
             <div className='itemList__container'>
-
                 {
-                    items.map((i, index) => {
+                    allItems.map((i) => {
                         return (
                             <Item
-                            key={index}
-                                slug={`item${index+1}`}
+                                title={i.title}
+                                category={i.category}
+                                price={i.price}
+                                image={i.image[0]}
+                                key={i.id}
+                                slug={`item${i.id + 1}`}
                             />
                         )
                     })
                 }
-                
-                
-
             </div>
         </div>
     )
