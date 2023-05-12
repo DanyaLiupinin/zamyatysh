@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './ImageCarousel.scss'
 
+import arrayLeft from '../../images/lapkaleft.svg'
+import arrayRight from '../../images/lapkaright.svg'
 
-const arrayLeft = require('../../images/lapkaleft.png')
-const arrayRight = require('../../images/lapkaright.png')
+
 
 
 const ImageCarousel = ({ item }: {

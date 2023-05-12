@@ -69,6 +69,12 @@
     border-radius: 6px;
 }
 
+@media (max-width: 920px) {
+    .itemInformation__price {
+        font-size: 40px;
+    }
+}
+
 @media (max-width: 800px) {
     .itemInformation {
         margin: 30px auto;
@@ -77,5 +83,16 @@
 
     .itemInformation__sizes {
         justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .itemInformation__size {
+        width: 35px;
+        height: 35px;
+
+        p {
+            font-size: 40px;
+        }
     }
 }

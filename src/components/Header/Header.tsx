@@ -5,7 +5,7 @@ import './Header.scss'
 
 import Burger from '../Burger/Burger';
 
-const logo = require('../../images/zamyatysh.png')
+import logo from '../../images/logo.svg'
 
 const Header: React.FC<any> = () => {
 

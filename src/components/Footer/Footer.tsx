@@ -1,6 +1,6 @@
 import './Footer.scss'
 
-const zamyatysh = require('../../images/zamyatysh.png')
+import zamyatysh from '../../images/logo.svg'
 
 const Footer = () => {
     return (

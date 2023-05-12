@@ -96,6 +96,14 @@
     }
 }
 
+@media (max-width: 500px) {
+    .footer__container {
+        p {
+            font-size: 45px;
+        }
+    }
+}
+
 @media (max-width: 450px) {
     .footer__copyright {
         font-size: 30px;

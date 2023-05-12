@@ -53,3 +53,23 @@
         margin-left: 0;
     }
 }
+
+@media (max-width: 700px) {
+    .itemCard__item-description {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .itemCard__item-description {
+        width: 85%;
+
+        p {
+            font-size: 45px;
+        }
+    }
+
+    .itemCard__navigation {
+        font-size: 30px;
+    }
+}

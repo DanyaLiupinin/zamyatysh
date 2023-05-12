@@ -6,10 +6,10 @@ import Footer from '../Footer/Footer';
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
 import ItemInformation from '../ItemInformation/ItemInformation';
 
-const array = require('../../images/arrayback.png')
+import array from '../../images/historyArray.svg'
 
 
-const tri = require('../../images/tshirt.png')
+import tshirts from '../../images/t.svg'
 
 
 
@@ -36,7 +36,7 @@ const ItemCard: React.FC<any> = () => {
         title: 'замятыш',
         price: '1500 кваков', 
         id: 1,
-        image: [tri, tri, tri],
+        image: [tshirts, tshirts, tshirts],
         description: 'футболка изготовлена из самых качественных материалов лучшими партными Италии. мы советуем обращаться с футболкой предельно аккуратно и стирать её только вручную',
         material: 'матриеальный',
         style: 'фасоновый', //фасон

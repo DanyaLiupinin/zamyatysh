@@ -1,6 +1,6 @@
 import './Item.scss'
 
-const tshirt = require('../../images/tshirt.png')
+import tshirt from '../../images/t.svg'
 
 const Item = () => {
     return (
