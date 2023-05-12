@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/zamyatysh/static/css/main.582d10d8.css",
-    "main.js": "/zamyatysh/static/js/main.f9007491.js",
+    "main.css": "/zamyatysh/static/css/main.1270fe0e.css",
+    "main.js": "/zamyatysh/static/js/main.dd0f48da.js",
     "static/media/gifka.GIF": "/zamyatysh/static/media/gifka.c5a04aa0c1d2654c7eb4.GIF",
     "static/media/logo.svg": "/zamyatysh/static/media/logo.6c2ce06ef7fa3acba377b1b3eb9bb671.svg",
     "static/media/t.svg": "/zamyatysh/static/media/t.182b41e93a6cc45869ce562949e0d3e6.svg",
@@ -15,11 +15,11 @@
     "index.html": "/zamyatysh/index.html",
     "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.11d0d0ea89eb85916bcfa793047fc575.svg",
     "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.f9e1ddcdc2621c2b9849e82967c671c9.svg",
-    "main.582d10d8.css.map": "/zamyatysh/static/css/main.582d10d8.css.map",
-    "main.f9007491.js.map": "/zamyatysh/static/js/main.f9007491.js.map"
+    "main.1270fe0e.css.map": "/zamyatysh/static/css/main.1270fe0e.css.map",
+    "main.dd0f48da.js.map": "/zamyatysh/static/js/main.dd0f48da.js.map"
   },
   "entrypoints": [
-    "static/css/main.582d10d8.css",
-    "static/js/main.f9007491.js"
+    "static/css/main.1270fe0e.css",
+    "static/js/main.dd0f48da.js"
   ]
 }
