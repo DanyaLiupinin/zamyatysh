@@ -24,6 +24,7 @@ Frontend:
 - Typesctipr
 - Redux Toolkit
 - Axios
+- SCSS
 - Webpack
 - Async requests 
 - Context provider
