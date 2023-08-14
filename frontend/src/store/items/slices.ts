@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getAllCategoriesThunk } from "./thunks";
+import { getAllCategoriesThunk, getAllItemsThunk } from "./thunks";
 
 export const itemsState: any = {
     categories: null,
@@ -20,6 +20,10 @@ export const itemsSlice = createSlice({
         builder
             .addCase(getAllCategoriesThunk.fulfilled, (state, action) => {
                 console.log(action)
+            })
+        builder
+            .addCase(getAllItemsThunk.fulfilled, (state, action) => {
+                state.items = action.payload;
             })
     }
 });

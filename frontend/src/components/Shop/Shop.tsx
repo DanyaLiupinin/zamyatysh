@@ -1,6 +1,7 @@
 import './Shop.scss'
 
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux'
 
 import Header from '../Header/Header'
 import ItemList from '../ItemList/ItemList'
@@ -14,26 +15,32 @@ import { getItems } from '../../utils/api';
 
 const Shop: React.FC = () => {
 
-    const { getAllCategoriesThunk } = useActionCreators(itemsActions);
+    const { getAllCategoriesThunk, getAllItemsThunk } = useActionCreators(itemsActions);
 
     const [allItems, setAllItems] = useState<any[]>([])
     const [category, setCategory] = useState<String>('все')
 
 
+
     useEffect(() => {
-        getItems()
+        getAllItemsThunk()
+        /*
         .then(res => {
             let items: any[] = [];
             res.forEach((item: any) => {
+                console.log(item.attributes.categories.data)
+                    //.data.attributes.slug)
+
+                
                 const card = {
                     ...item.attributes,
                     id: item.id,
-                    category: item.attributes.category.data.attributes.slug,
+                    //category: item.attributes.category.data.attributes.slug,
                 }
                 items.push(card)
             })
             setAllItems(items);
-        })
+        })*/
     }, [])
 
 
@@ -46,9 +53,7 @@ const Shop: React.FC = () => {
                     category={category}
                     setCategory={setCategory}
                 />
-                <ItemList 
-                    allItems={allItems}
-                />
+                <ItemList />
             </main>
             <Footer />
         </>

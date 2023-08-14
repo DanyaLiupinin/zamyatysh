@@ -11,12 +11,10 @@ export const getAllCategories = (query?: any) => {
         .catch((err) => console.log(err));
 };
 
-export const getItems = () => {
+export const getItems = (query?: any) => {
     return axios
-        .get(`${BASE_URL}/items?populate=*`, {
-            params: {
-                "category.slug": 'tshirt'
-            }
+        .get(`${BASE_URL}/items`, {
+            params: query
         })
         .then((res) => {
             return res.data.data

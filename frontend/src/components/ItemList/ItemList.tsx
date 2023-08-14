@@ -1,25 +1,30 @@
-import './ItemList.scss'
+import { useSelector } from 'react-redux'       
 
 import Item from '../Item/Item'
 
 import tshirts from '../../images/t.svg'
 
-const ItemList: React.FC<any> = ({ allItems }: {
-    allItems: any[]
-}) => {
+import './ItemList.scss'
+
+const ItemList: React.FC<any> = () => {
+
+    const items = useSelector((state: any) => state.items.items)
+
+    console.log(items)
+
     return (
         <div className='itemList'>
             <div className='itemList__container'>
                 {
-                    allItems.map((i) => {
+                    items && items.map((i: any) => {
                         return (
                             <Item
-                                title={i.title}
-                                category={i.category}
-                                price={i.price}
-                                image={tshirts}
+                                title={i.attributes.title}
+                                category={i.attributes.categories.data[0].attributes.slug}
+                                price={i.attributes.price}
+                                image={tshirts} // запилить картинку в strapi
                                 key={i.id}
-                                slug={`item${i.id + 1}`}
+                                slug={`item${i.id + 1}`} // сделать slug
                             />
                         )
                     })
