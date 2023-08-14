@@ -8,17 +8,17 @@ import {
 } from "@reduxjs/toolkit";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 
-
 import { BoundActions } from "../types/common";
-import { itemsState } from "./items/slices";
+import { itemsReducer } from "./items";
+
 
 export interface IStore {
-  
 }
 
-export const store: ToolkitStore<any> = configureStore({
+export const store: ToolkitStore<any> = 
+configureStore({
   reducer: {
-    itemsState
+    items: itemsReducer,
   },
 });
 

@@ -20,7 +20,7 @@ const ItemCard: React.FC<any> = () => {
 
     const navigate = useNavigate()
     const slug = useParams()
-
+/*
     useEffect(() => {
         let currentSlug: number
         if (slug.slug) {
@@ -31,7 +31,7 @@ const ItemCard: React.FC<any> = () => {
                 setItem(i)
             }
         })
-    })
+    })*/
 
     // создать стор для категорий и товаров и прокидывать сюда
     // посомтреть как в патишейкере сделан переход на коктейли 

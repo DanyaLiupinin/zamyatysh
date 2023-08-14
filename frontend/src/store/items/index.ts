@@ -1,7 +1,9 @@
 import { itemsSlice } from "./slices";
+import { getAllCategoriesThunk } from "./thunks";
 
-export const ingredientsState = itemsSlice.reducer;
+export const itemsReducer = itemsSlice.reducer;
 
-export const ingredientsActions = {
+export const itemsActions = {
+    getAllCategoriesThunk,
     ...itemsSlice.actions
 };

@@ -7,14 +7,18 @@ import ItemList from '../ItemList/ItemList'
 import Filters from '../Filters/Filters'
 import Footer from '../Footer/Footer';
 
-//import items from '../../constants/items';
+import { useActionCreators } from '../../store';
+import { itemsActions } from '../../store/items/index';
 
 import { getItems } from '../../utils/api';
 
 const Shop: React.FC = () => {
 
+    const { getAllCategoriesThunk } = useActionCreators(itemsActions);
+
     const [allItems, setAllItems] = useState<any[]>([])
     const [category, setCategory] = useState<String>('все')
+
 
     useEffect(() => {
         getItems()
@@ -35,7 +39,7 @@ const Shop: React.FC = () => {
 
     return (
         <>
-        <button style={{width: '200px', height: '200px'}} onClick={getItems}></button>
+        <button style={{width: '200px', height: '200px'}} onClick={getAllCategoriesThunk}></button>
             <Header />
             <main className='mainShop'>
                 <Filters
