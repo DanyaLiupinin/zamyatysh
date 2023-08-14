@@ -12,8 +12,8 @@ export const itemsSlice = createSlice({
     name: 'items',
     initialState: itemsState,
     reducers: {
-        testLocae: (state) => {
-            state.locale = 'en'
+        changeLanguage: (state, action) => {
+            state.locale = action.payload;
         },
     },
     extraReducers: (builder) => {

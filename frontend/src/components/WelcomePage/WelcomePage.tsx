@@ -1,23 +1,27 @@
 import { Link } from 'react-router-dom'
 
+import React, { useEffect } from 'react';
+
+import Languages from '../Languages/Languages'
+
 import './WelcomePage.scss'
+import { useSelector } from 'react-redux'
 
 const logo = require('../../images/gifka.GIF')
 
 const WelcomePage: React.FC = () => {
 
+    const locale = useSelector((state: any) => state.items.locale)
+
+    useEffect(() => {
+console.log(locale)
+    }, [locale])
+
     return (
         <>
         <section className='welcome'>
             <div className='welcome__container'>
-                <div className='welcome__languages'>
-                    <button className='welcome__language'>
-                        <p className='welcome__language-text'>RU</p>
-                    </button>
-                    <button className='welcome__language welcome__language_active'>
-                        <p className='welcome__language-text'>ENG</p>
-                    </button>
-                </div>
+                <Languages />
                 <div className='welcome__links'>
                     <Link to='/about' className='welcome__link'>о нас</Link>
                     <Link to='/shop' className='welcome__link'>в магазин</Link>

@@ -14,7 +14,7 @@ import { getItems } from '../../utils/api';
 
 const Shop: React.FC = () => {
 
-    const { getAllCategoriesThunk, testLocae } = useActionCreators(itemsActions);
+    const { getAllCategoriesThunk } = useActionCreators(itemsActions);
 
     const [allItems, setAllItems] = useState<any[]>([])
     const [category, setCategory] = useState<String>('все')
@@ -40,7 +40,6 @@ const Shop: React.FC = () => {
     return (
         <>
         <button style={{width: '200px', height: '200px'}} onClick={getAllCategoriesThunk}></button>
-        <button style={{width: '200px', height: '200px'}} onClick={() => testLocae()}>англ</button>
             <Header />
             <main className='mainShop'>
                 <Filters
