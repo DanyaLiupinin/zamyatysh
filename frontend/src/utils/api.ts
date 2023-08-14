@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:1337/api'
+import { BASE_URL } from "../constants/constants";
 
 export const getAllCategories = (query?: any) => {
     return axios
-        .get(`${BASE_URL}/categories/`, {
+        .get(`${BASE_URL}/api/categories/`, {
             params: query
         })
         .then((res) => { return res.data.data; })
@@ -13,7 +13,7 @@ export const getAllCategories = (query?: any) => {
 
 export const getItems = (query?: any) => {
     return axios
-        .get(`${BASE_URL}/items`, {
+        .get(`${BASE_URL}/api/items`, {
             params: query
         })
         .then((res) => {
