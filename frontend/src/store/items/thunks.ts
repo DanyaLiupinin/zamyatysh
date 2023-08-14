@@ -4,14 +4,16 @@ import { getAllCategories } from "../../utils/api";
 
 import { getLocale } from "./slices";
 
+
 export const getAllCategoriesThunk: any = createAsyncThunk(
     'getAllCategories',
 
-    async () => {
+    async (_, thunkAPI) => {
         try {
+            const locale = getLocale(thunkAPI.getState())
             const response = await getAllCategories({
-                fields: ['name'],
-                //locale: getLocale
+                fields: ['name', 'slug'],
+                locale: locale
             });
             return response;
         } catch (error) {

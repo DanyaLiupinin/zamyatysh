@@ -12,8 +12,8 @@ export const itemsSlice = createSlice({
     name: 'items',
     initialState: itemsState,
     reducers: {
-        test: (state, action) => {
-            state.categories = action.payload
+        testLocae: (state) => {
+            state.locale = 'en'
         },
     },
     extraReducers: (builder) => {
@@ -24,4 +24,4 @@ export const itemsSlice = createSlice({
     }
 });
 
-export const getLocale = (state: any) => state.itemsState.locale
+export const getLocale = (state: any) => state.items.locale
