@@ -12,7 +12,7 @@ const Burger: React.FC<any> = ({ burgerOpened, setBurgerOpened }:
 ) => {
     return (
         <div className='burger'>
-            <button className='burger__button' type='button' onClick={() => setBurgerOpened(!burgerOpened)}>
+            <button style={{position: `${burgerOpened ? 'fixed' : 'absolute'}`}} className='burger__button' type='button' onClick={() => setBurgerOpened(!burgerOpened)}>
                 <img className='burger__image' alt='бургер меню' src={burger}></img>
             </button>
         </div>
