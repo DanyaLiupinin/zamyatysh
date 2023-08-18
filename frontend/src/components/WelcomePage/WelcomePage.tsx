@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux'   
 
 import Languages from '../Languages/Languages'
@@ -12,12 +12,12 @@ import './WelcomePage.scss'
 
 const logo = require('../../images/gifka.GIF')
 
+
+
 // TODO 
 // прибраться в коде
 // посмотреть страницу на разных устройствах, увеличить размер гифки
 // написать altы на английском
-
-
 
 const WelcomePage: React.FC = () => {
 
