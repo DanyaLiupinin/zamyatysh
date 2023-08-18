@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "react-app",
+        "react-app/jest"
+    ],
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "import/order": [
+            "warn",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    "parent",
+                    "sibling",
+                    "index"
+                ],
+                "newlines-between": "always"
+            }
+        ],
+        "semi": ["warn", "always"],
+        "jsx-quotes": ["warn", "prefer-single"],
+        
+    }
+}

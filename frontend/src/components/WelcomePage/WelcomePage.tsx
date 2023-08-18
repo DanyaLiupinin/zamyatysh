@@ -1,16 +1,16 @@
-import { Link } from 'react-router-dom'
 import React from 'react';
-import { useSelector } from 'react-redux'   
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';   
 
-import Languages from '../Languages/Languages'
-
-import content from './locale.json'
-
+import Languages from '../Languages/Languages';
 import { TLocale } from '../../types/components';
 
-import './WelcomePage.scss'
+import content from './locale.json';
 
-const logo = require('../../images/gifka.GIF')
+
+import './WelcomePage.scss';
+
+const logo = require('../../images/gifka.GIF');
 
 
 
@@ -21,7 +21,7 @@ const logo = require('../../images/gifka.GIF')
 
 const WelcomePage: React.FC = () => {
 
-    const locale: TLocale = useSelector((state: any) => state.items.locale)
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     return (
         <>
@@ -36,7 +36,7 @@ const WelcomePage: React.FC = () => {
             </div>
         </section>
         </>
-    )
-}
+    );
+};
 
-export default WelcomePage
+export default WelcomePage;

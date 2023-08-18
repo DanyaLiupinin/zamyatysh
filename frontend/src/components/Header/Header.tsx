@@ -14,7 +14,7 @@ import content from './locale.json'
 
 const Header: React.FC<any> = () => {
 
-    const [burgerOpened, setBurgerOpened] = useState<Boolean>(false)
+    const [burgerOpened, setBurgerOpened] = useState(false)
     
     const locale: TLocale = useSelector((state: any) => state.items.locale)
 
