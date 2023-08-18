@@ -15,6 +15,8 @@ const Item = ({
     slug: string;
     title: string;
 }) => {
+
+    console.log(slug)
     return (
         <Link className='item-link' to={`${slug}`}>
             <div className='item'>

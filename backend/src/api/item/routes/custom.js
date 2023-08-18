@@ -2,8 +2,8 @@ module.exports = {
   routes: [
     {
       "method": "GET",
-      "path": "/categories/:slug",
-      "handler": "category.findOne",
+      "path": "/items/:slug",
+      "handler": "item.findOne",
       "config": {
         "auth": false
       }
