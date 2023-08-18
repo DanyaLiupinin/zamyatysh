@@ -11,32 +11,7 @@ import { itemsActions } from '../../store/items/index';
 
 const Shop: React.FC = () => {
 
-    const { getAllCategoriesThunk, getAllItemsThunk } = useActionCreators(itemsActions);
-
     const [category, setCategory] = useState<String>('все');
-
-    useEffect(() => {
-        getAllItemsThunk();
-        getAllCategoriesThunk();
-        /*
-        .then(res => {
-            let items: any[] = [];
-            res.forEach((item: any) => {
-                console.log(item.attributes.categories.data)
-                    //.data.attributes.slug)
-
-                
-                const card = {
-                    ...item.attributes,
-                    id: item.id,
-                    //category: item.attributes.category.data.attributes.slug,
-                }
-                items.push(card)
-            })
-            setAllItems(items);
-        })*/
-    }, []);
-
 
     return (
         <>

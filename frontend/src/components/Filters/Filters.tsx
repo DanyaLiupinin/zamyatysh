@@ -15,13 +15,10 @@ const Filters: React.FC<any> = ({ category, setCategory }: {
 
     const categories = useSelector((state: any) => state.items.categories);
 
-    console.log(categories);
-
     const onClickFilter = (slug: String) => {
         setCategory(slug);
         setDropdown(false);
     };
-
 
     return (
         <div className='filters'>

@@ -5,7 +5,7 @@ import { getAllCategoriesThunk, getAllItemsThunk } from "./thunks";
 export const itemsState: any = {
     categories: null,
     items: null,
-    locale: 'ru'
+    locale: null
 };
 
 export const itemsSlice = createSlice({
@@ -19,11 +19,11 @@ export const itemsSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(getAllCategoriesThunk.fulfilled, (state, action) => {
-                console.log(action)
                 state.categories = action.payload;
             })
         builder
             .addCase(getAllItemsThunk.fulfilled, (state, action) => {
+                console.log(action.payload)
                 state.items = action.payload;
             })
     }

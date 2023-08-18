@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   Routes,
-  Route,
-  //Navigate,
-  //useNavigate,
-  //useLocation
+  Route
 } from 'react-router-dom';
+import { useSelector } from 'react-redux';  
 
 import './App.scss';
 
@@ -13,9 +11,39 @@ import WelcomePage from '../WelcomePage/WelcomePage';
 import About from '../About/About';
 import Shop from '../Shop/Shop';
 import ItemCard from '../ItemCard/ItemCard';
+import { useActionCreators } from '../../store';
+import { itemsActions } from '../../store/items/index';
 
 
 const App: React.FC<any> = () => {
+
+  const isFirstRender = useRef(true);
+  
+  const locale = useSelector((state: any) => state.items.locale);
+
+  const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage } = useActionCreators(itemsActions);
+
+  useEffect(() => {
+    if (localStorage.getItem('locale')) {
+      const locale = localStorage.getItem('locale');
+      changeLanguage(locale);
+      console.log('dostal');
+    } else {
+      changeLanguage('en');
+      console.log('ne dostal');
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    
+    getAllItemsThunk();
+    getAllCategoriesThunk();
+  }, [locale]);
+
   return (
     <div className='App'>
       <Routes>
