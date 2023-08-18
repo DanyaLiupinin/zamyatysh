@@ -15,6 +15,7 @@ const logo = require('../../images/gifka.GIF')
 // TODO 
 // прибраться в коде
 // посмотреть страницу на разных устройствах, увеличить размер гифки
+// написать altы на английском
 
 
 
@@ -31,7 +32,7 @@ const WelcomePage: React.FC = () => {
                     <Link to='/about' className='welcome__link'>{content.about[locale]}</Link>
                     <Link to='/shop' className='welcome__link'>{content.shop[locale]}</Link>
                 </div>
-                <img className='welcome__gif' alt='лягушка-логотип' src={logo}></img>
+                <img className='welcome__gif' alt={content.gifAlt[locale]} src={logo}></img>
             </div>
         </section>
         </>
