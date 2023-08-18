@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import { BASE_URL } from '../../constants/constants'
+import { BASE_URL } from '../../constants/constants';
 
-import './Item.scss'
+import './Item.scss';
 
 const Item = ({ slug, 
     image, 
@@ -25,7 +25,7 @@ const Item = ({ slug,
                 </div>
             </div>
         </Link>
-    )
-}
+    );
+};
 
-export default Item
+export default Item;

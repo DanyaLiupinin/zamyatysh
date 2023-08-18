@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import './ItemCard.scss'
+import './ItemCard.scss';
 
-import Header from '../Header/Header'
+import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
+// eslint-disable-next-line import/order
 import ItemInformation from '../ItemInformation/ItemInformation';
 
 //import items from '../../constants/items';
 
-import array from '../../images/historyArray.svg'
+import array from '../../images/historyArray.svg';
 
 
 const ItemCard: React.FC<any> = () => {
 
-    const [item, setItem] = useState<any>()
-    const [chosenSize, setChosenSize] = useState<string>('')
+    const [item, setItem] = useState<any>();
+    const [chosenSize, setChosenSize] = useState<string>('');
 
-    const navigate = useNavigate()
-    const slug = useParams()
+    const navigate = useNavigate();
+    const slug = useParams();
 /*
     useEffect(() => {
         let currentSlug: number
@@ -37,8 +38,8 @@ const ItemCard: React.FC<any> = () => {
     // посомтреть как в патишейкере сделан переход на коктейли 
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <>
@@ -74,7 +75,7 @@ const ItemCard: React.FC<any> = () => {
             </section>
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default ItemCard
+export default ItemCard;

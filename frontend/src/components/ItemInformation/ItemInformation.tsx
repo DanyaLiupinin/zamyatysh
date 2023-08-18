@@ -1,6 +1,6 @@
-import './ItemInformation.scss'
+import './ItemInformation.scss';
 
-import frog from '../../images/vkorzini.svg'
+import frog from '../../images/vkorzini.svg';
 
 const ItemInformation = ({ item, chosenSize, setChosenSize }: {
     item: {
@@ -21,11 +21,11 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
 
     const onSizeClick = (size: string) => {
         if (chosenSize.includes(size)) {
-            setChosenSize('')
+            setChosenSize('');
         } else {
-            setChosenSize(size)
+            setChosenSize(size);
         }
-    }
+    };
 
     return (
         <div className='itemInformation'>
@@ -38,7 +38,7 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
                             <div onClick={() => onSizeClick(size.toUpperCase())} key={index} className={`itemInformation__size ${chosenSize === size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
                                 <p>{size.toUpperCase()}</p>
                             </div>
-                        )
+                        );
                     })
                 }
             </div>
@@ -50,7 +50,7 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
                 <button className='itemInformation__add-button' type='button'>В корзину</button>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ItemInformation
+export default ItemInformation;

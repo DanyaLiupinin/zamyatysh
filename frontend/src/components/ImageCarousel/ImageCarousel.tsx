@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import './ImageCarousel.scss'
+import './ImageCarousel.scss';
 
-import arrayLeft from '../../images/lapkaleft.svg'
-import arrayRight from '../../images/lapkaright.svg'
+import arrayLeft from '../../images/lapkaleft.svg';
+import arrayRight from '../../images/lapkaright.svg';
 
 const ImageCarousel = ({ item }: {
     item: {
@@ -19,65 +19,65 @@ const ImageCarousel = ({ item }: {
     }
 }) => {
 
-    const [imageWidth, setImageWidth] = useState<number>(0)
-    const [imageActive, setImageActive] = useState<number>(1)
-    const [offset, setOffset] = useState<number>(0)
-    const sliderLine = React.useRef<HTMLInputElement>(null)
+    const [imageWidth, setImageWidth] = useState<number>(0);
+    const [imageActive, setImageActive] = useState<number>(1);
+    const [offset, setOffset] = useState<number>(0);
+    const sliderLine = React.useRef<HTMLInputElement>(null);
     const ratios : any = {
         1: 0,
         2: imageWidth,
         3: imageWidth * 2
-    }
+    };
 
     const onClickNext = () => {
         if (offset + imageWidth > imageWidth * 2 && sliderLine.current) {
-            setImageActive(1)
-            setOffset(0)
-            sliderLine.current.style.left = 0 + 'px'
+            setImageActive(1);
+            setOffset(0);
+            sliderLine.current.style.left = 0 + 'px';
         } else {
-            setImageActive(imageActive + 1)
-            setOffset(offset + imageWidth)
-            if (sliderLine.current) sliderLine.current.style.left = (-(offset + imageWidth)) + 'px'
+            setImageActive(imageActive + 1);
+            setOffset(offset + imageWidth);
+            if (sliderLine.current) sliderLine.current.style.left = (-(offset + imageWidth)) + 'px';
         }
-    }
+    };
 
 
     const onClickPrev = () => {
         if (offset - imageWidth < 0 && sliderLine.current) {
-            setImageActive(3)
-            setOffset(imageWidth * 2)
-            sliderLine.current.style.left = -imageWidth * 2 + 'px'
+            setImageActive(3);
+            setOffset(imageWidth * 2);
+            sliderLine.current.style.left = -imageWidth * 2 + 'px';
         } else {
-            setImageActive(imageActive - 1)
-            setOffset(offset - imageWidth)
-            if (sliderLine.current) sliderLine.current.style.left = (-(offset - imageWidth)) + 'px'
+            setImageActive(imageActive - 1);
+            setOffset(offset - imageWidth);
+            if (sliderLine.current) sliderLine.current.style.left = (-(offset - imageWidth)) + 'px';
         }
-    }
+    };
 
     const onClickIcon = (index: number) => {
-        setImageActive(index)
-        setOffset(ratios[index])
-    }
+        setImageActive(index);
+        setOffset(ratios[index]);
+    };
 
     useEffect(() => {
         if (sliderLine.current)
-        sliderLine.current.style.left = - (offset) + 'px'
-    }, [offset])
+        sliderLine.current.style.left = - (offset) + 'px';
+    }, [offset]);
 
     useEffect(() => {
         if (window.screen.width > 400) {
-            setImageWidth(340)
+            setImageWidth(340);
         } else {
-            setImageWidth(window.screen.width * 0.85)
+            setImageWidth(window.screen.width * 0.85);
         }
         window.addEventListener('resize', () => {
             if (window.screen.width > 400) {
-                setImageWidth(340)
+                setImageWidth(340);
             } else {
-                setImageWidth(window.screen.width * 0.85)
+                setImageWidth(window.screen.width * 0.85);
             }
-        })
-    }, [])
+        });
+    }, []);
 
     return (
         <div>
@@ -94,8 +94,8 @@ const ImageCarousel = ({ item }: {
                             {
                                 item.image.map((i: any, index) => {
                                     return (
-                                        <img style={{ width: `${imageWidth}px`}} key={index} src={i} alt="alt" />
-                                    )
+                                        <img style={{ width: `${imageWidth}px`}} key={index} src={i} alt='alt' />
+                                    );
                                 })
                             }
                         </div>
@@ -105,14 +105,14 @@ const ImageCarousel = ({ item }: {
                     {
                         item.image.map((i: any, index) => {
                             return (
-                                <img className={`imageCarousel__mini-icon ${imageActive === index + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={index} src={i} alt="raz" onClick={() => onClickIcon(index + 1)} />
-                            )
+                                <img className={`imageCarousel__mini-icon ${imageActive === index + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={index} src={i} alt='raz' onClick={() => onClickIcon(index + 1)} />
+                            );
                         })
                     }
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ImageCarousel
+export default ImageCarousel;

@@ -17,7 +17,7 @@ import ItemCard from '../ItemCard/ItemCard';
 
 const App: React.FC<any> = () => {
   return (
-    <div className="App">
+    <div className='App'>
       <Routes>
 
         <Route path='/' element={
@@ -39,7 +39,7 @@ const App: React.FC<any> = () => {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
 

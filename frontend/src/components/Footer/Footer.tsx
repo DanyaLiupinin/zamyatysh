@@ -1,6 +1,6 @@
-import './Footer.scss'
+import './Footer.scss';
 
-import zamyatysh from '../../images/logo.svg'
+import zamyatysh from '../../images/logo.svg';
 
 const Footer = () => {
     return (
@@ -22,10 +22,10 @@ const Footer = () => {
                     </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
 
 
 

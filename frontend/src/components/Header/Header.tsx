@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'   
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';   
 
-import './Header.scss'
+import './Header.scss';
 
 import Burger from '../Burger/Burger';
-
-import logo from '../../images/logo.svg'
-
+import logo from '../../images/logo.svg';
 import { TLocale } from '../../types/components';
 
-import content from './locale.json'
+import content from './locale.json';
 
 const Header: React.FC<any> = () => {
 
-    const [burgerOpened, setBurgerOpened] = useState(false)
+    const [burgerOpened, setBurgerOpened] = useState(false);
     
-    const locale: TLocale = useSelector((state: any) => state.items.locale)
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     return (
         <header className='header'>
@@ -46,7 +44,7 @@ const Header: React.FC<any> = () => {
                 </nav>
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

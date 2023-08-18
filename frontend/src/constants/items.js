@@ -1,5 +1,5 @@
 
-import tshirts from '../images/t.svg'
+import tshirts from '../images/t.svg';
 
 const items = [
     {
@@ -86,7 +86,7 @@ const items = [
         articul: 'артикульный',
         sizes: ['s', 'm', 'l']
     },
-]
+];
 
-export default items
+export default items;
 

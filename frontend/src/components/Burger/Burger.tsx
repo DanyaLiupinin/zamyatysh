@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from 'react';
 
-import './Burger.scss'
+import './Burger.scss';
 
-const burger = require('../../images/burger.png')
+const burger = require('../../images/burger.png');
 
 const Burger: React.FC<any> = ({ burgerOpened, setBurgerOpened }:
     {
@@ -16,7 +16,7 @@ const Burger: React.FC<any> = ({ burgerOpened, setBurgerOpened }:
                 <img className='burger__image' alt='бургер меню' src={burger}></img>
             </button>
         </div>
-    )
-}
+    );
+};
 
-export default Burger
+export default Burger;
