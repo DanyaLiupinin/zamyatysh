@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import categories from '../../constants/constants';
-import { getAllCategories } from '../../utils/api';
+import { useSelector } from 'react-redux'  
+
 
 import './Filters.scss'
 
@@ -12,21 +12,16 @@ const Filters: React.FC<any> = ({ category, setCategory }: {
 }) => {
 
     const [dropdown, setDropdown] = useState<Boolean>(false)
-    const [categoriesQuery, setCategoriesQuery] = useState([]);
+
+    const categories = useSelector((state: any) => state.items.categories)
+
+    console.log(categories)
 
     const onClickFilter = (slug: String) => {
-        console.log(slug)
         setCategory(slug)
         setDropdown(false)
     }
 
-    useEffect(() => {
-        getAllCategories()
-        .then((res) => {
-            console.log(res)
-            setCategoriesQuery(res)
-        })
-    }, [])
 
     return (
         <div className='filters'>
@@ -34,7 +29,7 @@ const Filters: React.FC<any> = ({ category, setCategory }: {
 
                 {/* desktop menu */}
                 {
-                    categoriesQuery.map((c: any) => {
+                    categories && categories.map((c: any) => {
                         return (
                             <button className='filters__button' onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button>
                         )
@@ -47,10 +42,10 @@ const Filters: React.FC<any> = ({ category, setCategory }: {
                     </button>
                     <div id='dropdown' className={`filters__dropdown-menu ${dropdown ? 'filters__dropdown-menu_show' : ''}`} >
                         {
-                            categories.map((c) => {
+                            categories && categories.map((c: any) => {
                                 return (
-                                    c !== category ?
-                                        <button className='filters__dropdown-filter' onClick={() => onClickFilter(c)} type='button' key={c}>{c}</button> :
+                                    c.attributes.slug !== category ?
+                                        <button className='filters__dropdown-filter' onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button> :
                                         ''
                                 )
                             })

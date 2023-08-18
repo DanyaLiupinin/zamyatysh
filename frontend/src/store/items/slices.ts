@@ -20,6 +20,7 @@ export const itemsSlice = createSlice({
         builder
             .addCase(getAllCategoriesThunk.fulfilled, (state, action) => {
                 console.log(action)
+                state.categories = action.payload;
             })
         builder
             .addCase(getAllItemsThunk.fulfilled, (state, action) => {

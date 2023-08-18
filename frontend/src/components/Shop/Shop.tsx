@@ -11,19 +11,15 @@ import Footer from '../Footer/Footer';
 import { useActionCreators } from '../../store';
 import { itemsActions } from '../../store/items/index';
 
-import { getItems } from '../../utils/api';
-
 const Shop: React.FC = () => {
 
     const { getAllCategoriesThunk, getAllItemsThunk } = useActionCreators(itemsActions);
 
-    const [allItems, setAllItems] = useState<any[]>([])
     const [category, setCategory] = useState<String>('все')
-
-
 
     useEffect(() => {
         getAllItemsThunk()
+        getAllCategoriesThunk()
         /*
         .then(res => {
             let items: any[] = [];
@@ -46,7 +42,6 @@ const Shop: React.FC = () => {
 
     return (
         <>
-        <button style={{width: '200px', height: '200px'}} onClick={getAllCategoriesThunk}></button>
             <Header />
             <main className='mainShop'>
                 <Filters
