@@ -13,7 +13,6 @@ const ItemList: React.FC<any> = () => {
             <div className='itemList__container'>
                 {
                     items && items.map((i: any) => {
-                        console.log(i.attributes.image.data[0].attributes.url);
                         return (
                             <Item
                                 title={i.attributes.title}

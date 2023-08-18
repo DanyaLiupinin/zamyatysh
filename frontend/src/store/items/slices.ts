@@ -20,13 +20,12 @@ export const itemsSlice = createSlice({
         builder
             .addCase(getAllCategoriesThunk.fulfilled, (state, action) => {
                 state.categories = action.payload;
-            })
+            });
         builder
             .addCase(getAllItemsThunk.fulfilled, (state, action) => {
-                console.log(action.payload)
                 state.items = action.payload;
-            })
+            });
     }
 });
 
-export const getLocale = (state: any) => state.items.locale
+export const getLocale = (state: any) => state.items.locale;
