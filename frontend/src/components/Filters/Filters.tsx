@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useSelector } from 'react-redux';  
 
+import ClearFilters from './ClearFilters/CleartFilters';
 
 import './Filters.scss';
 
@@ -31,7 +32,9 @@ const Filters: React.FC<any> = ({ category, setCategory }: {
                             <button className='filters__button' onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button>
                         );
                     })
+                    
                 }
+                <ClearFilters isActive={true} />
                 {/* dropdown menu */}
                 <div className='filters__dropdown'>
                     <button className='filters__dropdown-toggle' onClick={() => setDropdown(!dropdown)}>{category}
