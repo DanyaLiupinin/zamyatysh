@@ -27,10 +27,8 @@ const App: React.FC<any> = () => {
     if (localStorage.getItem('locale')) {
       const locale = localStorage.getItem('locale');
       changeLanguage(locale);
-      console.log('dostal');
     } else {
       changeLanguage('en');
-      console.log('ne dostal');
     }
   }, []);
 

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getAllCategories, getItems } from "../../utils/api";
+import { getCategories, getItems } from "../../utils/api";
 
 import { getLocale } from "./slices";
 
@@ -12,7 +12,7 @@ export const getAllCategoriesThunk: any = createAsyncThunk(
         try {
             const locale = getLocale(thunkAPI.getState());
             console.log(locale)
-            const response = await getAllCategories({
+            const response = await getCategories({
                 locale: locale,
                 fields: ['name', 'slug'],
             });
@@ -33,6 +33,29 @@ export const getAllItemsThunk: any = createAsyncThunk(
             const response = await getItems({
                 locale: locale,
                 populate: '*'
+            });
+            return response;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+);
+
+export const getFilteredItemsThunk: any = createAsyncThunk(
+    'getFilteredItems',
+
+    async ({slug}: any, thunkAPI) => {
+        try {
+            const locale = getLocale(thunkAPI.getState());
+            const response = await getCategories({
+                populate: {
+                    items: {
+                        populate: '*' // можно подрезать инфу для запроса
+                    },
+                    locale: '*'
+                },
+                'filters[slug]': slug,
+                //locale: locale,
             });
             return response;
         } catch (error) {

@@ -2,12 +2,13 @@ import axios from "axios";
 
 import { BASE_URL } from "../constants/constants";
 
-export const getAllCategories = (query?: any) => {
+export const getCategories = (query?: any) => {
     return axios
         .get(`${BASE_URL}/api/categories/`, {
             params: query
         })
-        .then((res) => { return res.data.data; })
+        .then((res) => { console.log(res) 
+            return res.data.data; })
         .catch((err) => console.log(err));
 };
 
@@ -17,7 +18,7 @@ export const getItems = (query?: any) => {
             params: query
         })
         .then((res) => {
-            return res.data.data
+            return res.data.data;
         })
         .catch((err) => console.log(err));
 };

@@ -1,7 +1,11 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';  
-
+import { useSelector } from 'react-redux';
+  
+import { useActionCreators } from '../../store';
 import { TLocale } from '../../types/components';
+import { itemsActions } from '../../store/items/index';
+
+import { getCategories } from '../../utils/api';
 
 import ClearFilters from './ClearFilters/CleartFilters';
 import content from './locale.json';
@@ -20,9 +24,13 @@ const Filters: React.FC<any> = () => {
     const categories = useSelector((state: any) => state.items.categories);
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
     
+    
+  const { getFilteredItemsThunk } = useActionCreators(itemsActions);
+    
 
     const onClickFilter = (slug: String) => {
-        //setCategory(slug);
+        //setCategoryFilter(slug);
+        getFilteredItemsThunk({slug});
         setDropdown(false);
     };
 

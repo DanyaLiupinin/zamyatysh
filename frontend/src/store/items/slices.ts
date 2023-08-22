@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getAllCategoriesThunk, getAllItemsThunk } from "./thunks";
+import { getAllCategoriesThunk, getAllItemsThunk, getFilteredItemsThunk } from "./thunks";
 
 export const itemsState: any = {
     categories: null,
@@ -16,6 +16,9 @@ export const itemsSlice = createSlice({
         changeLanguage: (state, action) => {
             state.locale = action.payload;
         },
+        setCategoryFilter: (state, action) => {
+            state.activeCategoryFilter = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -26,7 +29,12 @@ export const itemsSlice = createSlice({
             .addCase(getAllItemsThunk.fulfilled, (state, action) => {
                 state.items = action.payload;
             });
-    }
+        builder
+                .addCase(getFilteredItemsThunk.fulfilled, (state, action) => {
+                    console.log(action)
+                    state.items = action.payload[0].attributes.items.data;
+                });
+    },
 });
 
 export const getLocale = (state: any) => state.items.locale;
