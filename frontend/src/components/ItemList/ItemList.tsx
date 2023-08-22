@@ -17,7 +17,7 @@ const ItemList: React.FC<any> = () => {
                             <Item
                                 title={i.attributes.title}
                                 price={i.attributes.price}
-                                image={i.attributes.image.data[0].attributes.url} // запилить картинку в strapi
+                                image={i.attributes.image.data[0].attributes.url}
                                 key={i.id}
                                 slug={i.attributes.slug}
                             />

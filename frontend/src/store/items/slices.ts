@@ -5,7 +5,8 @@ import { getAllCategoriesThunk, getAllItemsThunk } from "./thunks";
 export const itemsState: any = {
     categories: null,
     items: null,
-    locale: null
+    activeCategoryFilter: null,
+    locale: null,
 };
 
 export const itemsSlice = createSlice({

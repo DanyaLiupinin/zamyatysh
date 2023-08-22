@@ -1,23 +1,28 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';  
 
+import { TLocale } from '../../types/components';
+
 import ClearFilters from './ClearFilters/CleartFilters';
+import content from './locale.json';
+
 
 import './Filters.scss';
 
 const dropdowns = require('../../images/dropdown.png');
 
-const Filters: React.FC<any> = ({ category, setCategory }: {
-    category: String,
-    setCategory: Dispatch<SetStateAction<String>>;
-}) => {
+const Filters: React.FC<any> = () => {
 
     const [dropdown, setDropdown] = useState<Boolean>(false);
+    
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const categories = useSelector((state: any) => state.items.categories);
+    const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
+    
 
     const onClickFilter = (slug: String) => {
-        setCategory(slug);
+        //setCategory(slug);
         setDropdown(false);
     };
 
@@ -37,14 +42,15 @@ const Filters: React.FC<any> = ({ category, setCategory }: {
                 <ClearFilters isActive={true} />
                 {/* dropdown menu */}
                 <div className='filters__dropdown'>
-                    <button className='filters__dropdown-toggle' onClick={() => setDropdown(!dropdown)}>{category}
+                    <button className='filters__dropdown-toggle' onClick={() => setDropdown(!dropdown)}>
+                        {activeCategoryFilter ? activeCategoryFilter : content.filters[locale]}
                         <img className={`filters__dropdown-image ${dropdown ? 'filters__dropdown-image_up' : ''}`} src={dropdowns} alt='dd'></img>
                     </button>
                     <div id='dropdown' className={`filters__dropdown-menu ${dropdown ? 'filters__dropdown-menu_show' : ''}`} >
                         {
                             categories && categories.map((c: any) => {
                                 return (
-                                    c.attributes.slug !== category ?
+                                    c.attributes.slug !== activeCategoryFilter ?
                                         <button className='filters__dropdown-filter' onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button> :
                                         ''
                                 );
