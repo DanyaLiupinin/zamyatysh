@@ -52,10 +52,11 @@ export const getFilteredItemsThunk: any = createAsyncThunk(
                     items: {
                         populate: '*' // можно подрезать инфу для запроса
                     },
-                    locale: '*'
                 },
-                'filters[slug]': slug,
-                //locale: locale,
+                filters: {
+                    slug: slug
+                },
+                locale: locale,
             });
             return response;
         } catch (error) {

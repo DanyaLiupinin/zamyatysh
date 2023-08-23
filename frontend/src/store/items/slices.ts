@@ -30,10 +30,9 @@ export const itemsSlice = createSlice({
                 state.items = action.payload;
             });
         builder
-                .addCase(getFilteredItemsThunk.fulfilled, (state, action) => {
-                    console.log(action)
-                    state.items = action.payload[0].attributes.items.data;
-                });
+            .addCase(getFilteredItemsThunk.fulfilled, (state, action) => {
+                state.items = action.payload[0].attributes.items.data;
+            });
     },
 });
 
