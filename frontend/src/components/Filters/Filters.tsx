@@ -24,17 +24,21 @@ const Filters: React.FC<any> = () => {
     const categories = useSelector((state: any) => state.items.categories);
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
 
-    const { getFilteredItemsThunk } = useActionCreators(itemsActions);
+    const { getFilteredItemsThunk, setCategoryFilter, getAllItemsThunk } = useActionCreators(itemsActions);
 
     const onClickFilter = (slug: String) => {
         getFilteredItemsThunk({ slug });
         setDropdown(false);
     };
 
+    const onClearFilter = () => {
+        setCategoryFilter(null);
+        getAllItemsThunk();
+    };
+
     return (
         <div className='filters'>
             <div className='filters__buttons'>
-
                 {/* desktop menu */}
                 {
                     categories && categories.map((c: any) => {
@@ -42,9 +46,10 @@ const Filters: React.FC<any> = () => {
                             <button className={`filters__button ${activeCategoryFilter === c.attributes.slug && 'filters__button_active'}`} onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button>
                         );
                     })
-
                 }
-                <ClearFilters isActive={true} />
+                {
+                    activeCategoryFilter && <ClearFilters onClickHandler={onClearFilter} isActive={true} />
+                }
                 {/* dropdown menu */}
                 <div className='filters__dropdown'>
                     <button className='filters__dropdown-toggle' onClick={() => setDropdown(!dropdown)}>

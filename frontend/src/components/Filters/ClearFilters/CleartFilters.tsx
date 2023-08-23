@@ -9,17 +9,18 @@ import content from './locale.json';
 import './ClearFilters.scss';
 
 type TClearFilterOwnProps = {
-    isActive: boolean
+    isActive: boolean,
+    onClickHandler: any
 }
 
 type TClearFilterProps = TClearFilterOwnProps & Omit<ComponentProps<'button'>, keyof TClearFilterOwnProps>;
 
-const ClearFilters: FC<any> = ({isActive}: TClearFilterProps) => {
+const ClearFilters: FC<any> = ({isActive, onClickHandler}: TClearFilterProps) => {
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     return (
-        <button className={`clear-button ${isActive && 'clear-button_active'}`}>{content.text[locale]}</button>
+        <button onClick={onClickHandler} className={`clear-button ${isActive && 'clear-button_active'}`}>{content.text[locale]}</button>
     );
 };
 

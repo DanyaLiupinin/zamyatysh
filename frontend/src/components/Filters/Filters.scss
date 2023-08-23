@@ -5,13 +5,18 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
 
+.filters__invisible {
+    display: none;
+    visibility: hidden;
 }
 
 .filters__buttons {
     display: flex;
     flex-direction: column;
     width: 90%;
+    height: fit-content;
     word-break: break-all;
 }
 

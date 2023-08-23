@@ -17,6 +17,7 @@ export const itemsSlice = createSlice({
             state.locale = action.payload;
         },
         setCategoryFilter: (state, action) => {
+            console.log('click')
             state.activeCategoryFilter = action.payload;
         }
     },
