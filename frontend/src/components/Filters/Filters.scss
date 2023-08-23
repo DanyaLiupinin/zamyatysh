@@ -15,6 +15,10 @@
     word-break: break-all;
 }
 
+.filters__button_active {
+    font-weight: 600;
+}
+
 .filters__button {
     @include buttonNormalize;
     text-align: start;

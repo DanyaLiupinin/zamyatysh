@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-  
+
 import { useActionCreators } from '../../store';
 import { TLocale } from '../../types/components';
 import { itemsActions } from '../../store/items/index';
@@ -18,19 +18,16 @@ const dropdowns = require('../../images/dropdown.png');
 const Filters: React.FC<any> = () => {
 
     const [dropdown, setDropdown] = useState<Boolean>(false);
-    
+
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const categories = useSelector((state: any) => state.items.categories);
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
-    
-    
-  const { getFilteredItemsThunk } = useActionCreators(itemsActions);
-    
+
+    const { getFilteredItemsThunk } = useActionCreators(itemsActions);
 
     const onClickFilter = (slug: String) => {
-        //setCategoryFilter(slug);
-        getFilteredItemsThunk({slug});
+        getFilteredItemsThunk({ slug });
         setDropdown(false);
     };
 
@@ -42,10 +39,10 @@ const Filters: React.FC<any> = () => {
                 {
                     categories && categories.map((c: any) => {
                         return (
-                            <button className='filters__button' onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button>
+                            <button className={`filters__button ${activeCategoryFilter === c.attributes.slug && 'filters__button_active'}`} onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button>
                         );
                     })
-                    
+
                 }
                 <ClearFilters isActive={true} />
                 {/* dropdown menu */}
