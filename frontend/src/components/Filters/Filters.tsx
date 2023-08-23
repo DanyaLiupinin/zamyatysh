@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 import { useActionCreators } from '../../store';
 import { TLocale } from '../../types/components';
@@ -20,6 +21,7 @@ const Filters: React.FC<any> = () => {
     const [dropdown, setDropdown] = useState<Boolean>(false);
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const location = useLocation();
 
     const categories = useSelector((state: any) => state.items.categories);
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
@@ -35,6 +37,13 @@ const Filters: React.FC<any> = () => {
         setCategoryFilter(null);
         getAllItemsThunk();
     };
+
+    useEffect(() => {
+        if (location.pathname === '/shop') {
+            setCategoryFilter(null);
+        }
+
+    }, [location.pathname])
 
     return (
         <div className='filters'>

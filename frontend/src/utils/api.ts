@@ -7,8 +7,7 @@ export const getCategories = (query?: any) => {
         .get(`${BASE_URL}/api/categories/`, {
             params: query
         })
-        .then((res) => { console.log(res) 
-            return res.data.data; })
+        .then((res) => { return res.data.data; })
         .catch((err) => console.log(err));
 };
 

@@ -54,7 +54,7 @@ export const getFilteredItemsThunk: any = createAsyncThunk(
                     },
                 },
                 filters: {
-                    slug: slug
+                    slug: slug,
                 },
                 locale: locale,
             });
