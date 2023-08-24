@@ -12,6 +12,9 @@ import ItemInformation from '../ItemInformation/ItemInformation';
 //import items from '../../constants/items';
 
 import array from '../../images/historyArray.svg';
+import { useSelector } from 'react-redux';
+
+import { getItem } from '../../utils/api';
 
 
 const ItemCard: React.FC<any> = () => {
@@ -19,8 +22,23 @@ const ItemCard: React.FC<any> = () => {
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
 
+    const locale = useSelector((state: any) => state.items.locale);
+
     const navigate = useNavigate();
+   
     const slug = useParams();
+    
+
+    useEffect(() => {
+        if (locale && slug)
+        getItem({
+            slug: slug.slug,
+            locale: locale
+        })
+        .then((res) => {
+            console.log(res)
+            setItem(res)});
+    }, [locale]);
 /*
     useEffect(() => {
         let currentSlug: number

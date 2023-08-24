@@ -21,3 +21,21 @@ export const getItems = (query?: any) => {
         })
         .catch((err) => console.log(err));
 };
+
+export const getItem = ({ slug, locale }: any) => {
+
+    return axios
+        .get(`${BASE_URL}/api/items/:slug?slug=${slug}`, {
+            params: {
+                locale: locale,
+                populate: {
+                    image: true,
+                    categories: true
+                },
+            }
+        })
+        .then((res) => {
+            return res.data;
+        })
+        .catch((err) => console.log(err));
+};

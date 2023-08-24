@@ -2,22 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import './ImageCarousel.scss';
 
+import { BASE_URL } from "../../constants/constants";
+
 import arrayLeft from '../../images/lapkaleft.svg';
 import arrayRight from '../../images/lapkaright.svg';
 
-const ImageCarousel = ({ item }: {
-    item: {
-        category: string,
-        title: string,
-        price: string,
-        id: number,
-        image: any[],
-        description: string,
-        material: string,
-        style: string, //фасон
-        articul: string
-    }
-}) => {
+const ImageCarousel = ({ item }: any) => {
 
     const [imageWidth, setImageWidth] = useState<number>(0);
     const [imageActive, setImageActive] = useState<number>(1);
@@ -91,24 +81,37 @@ const ImageCarousel = ({ item }: {
                     </button>
                     <div style={{ width: `${imageWidth}px`}} className='imageCarousel__slider'>
                         <div className='imageCarousel__slider-line' ref={sliderLine}>
-                            {
-                                item.image.map((i: any, index) => {
+                            {/* карусель для 3 фото 
+                                item.image.map((i: any, index: any) => {
                                     return (
-                                        <img style={{ width: `${imageWidth}px`}} key={index} src={i} alt='alt' />
+                                        <img style={{ width: `${imageWidth}px`}} key={index} src={`${BASE_URL}${i.url}`} alt='alt' />
                                     );
                                 })
-                            }
+                            */}
+                            <img style={{ width: `${imageWidth}px`}} key={0} src={`${BASE_URL}${item.image[0].url}`} alt='alt' />
+
+                            <img style={{ width: `${imageWidth}px`}} key={1} src={`${BASE_URL}${item.image[0].url}`} alt='alt' />
+
+                            <img style={{ width: `${imageWidth}px`}} key={2} src={`${BASE_URL}${item.image[0].url}`} alt='alt' />
+                            
                         </div>
                     </div>
                 </div>
                 <div className='imageCarousel__mini-icons'>
-                    {
-                        item.image.map((i: any, index) => {
+                    { /* карусель для 3 фото 
+                        item.image.map((i: any, index: any) => {
                             return (
-                                <img className={`imageCarousel__mini-icon ${imageActive === index + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={index} src={i} alt='raz' onClick={() => onClickIcon(index + 1)} />
+                                <img className={`imageCarousel__mini-icon ${imageActive === index + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={index} src={`${BASE_URL}${i.url}`} alt='raz' onClick={() => onClickIcon(index + 1)} />
                             );
                         })
-                    }
+                    */}
+                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={0} src={`${BASE_URL}${item.image[0].url}`} alt='raz' onClick={() => onClickIcon(item.image[0].id + 1)} />
+
+                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 2 ? 'imageCarousel__mini-icon_active' : ''}`} key={1} src={`${BASE_URL}${item.image[0].url}`} alt='raz' onClick={() => onClickIcon(item.image[0].id + 1)} />
+
+                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 3 ? 'imageCarousel__mini-icon_active' : ''}`} key={2} src={`${BASE_URL}${item.image[0].url}`} alt='raz' onClick={() => onClickIcon(item.image[0].id + 1)} />
+
+
                 </div>
             </div>
         </div>

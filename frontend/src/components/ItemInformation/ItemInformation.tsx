@@ -2,22 +2,7 @@ import './ItemInformation.scss';
 
 import frog from '../../images/vkorzini.svg';
 
-const ItemInformation = ({ item, chosenSize, setChosenSize }: {
-    item: {
-        category: string,
-        title: string,
-        price: string,
-        id: number,
-        image: any[],
-        description: string,
-        material: string,
-        style: string, //фасон
-        articul: string,
-        sizes: string[]
-    },
-    chosenSize: string,
-    setChosenSize: any,
-}) => {
+const ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
 
     const onSizeClick = (size: string) => {
         if (chosenSize.includes(size)) {
@@ -29,10 +14,10 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
 
     return (
         <div className='itemInformation'>
-            <h2 className='itemInformation__title'>{item.category} {item.title}</h2>
+            <h2 className='itemInformation__title'>{item.title}</h2>
             <p className='itemInformation__price'>{item.price}</p>
             <div className='itemInformation__sizes'>
-                {
+                {/* добавить sizes
                     item.sizes.map((size, index) => {
                         return (
                             <div onClick={() => onSizeClick(size.toUpperCase())} key={index} className={`itemInformation__size ${chosenSize === size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
@@ -40,7 +25,7 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: {
                             </div>
                         );
                     })
-                }
+                */}
             </div>
 
             <p className='itemInformation__size-guide'>Как выбрать размер?</p>
