@@ -13,6 +13,8 @@ import content from './locale.json';
 const Header: React.FC<any> = () => {
 
     const [burgerOpened, setBurgerOpened] = useState(false);
+
+    const loggedIn = useSelector((state: any) => state.user.loggedIn);
     
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
@@ -38,7 +40,7 @@ const Header: React.FC<any> = () => {
                             <Link to='/'>{(content as any).basket[locale]}</Link>
                         </li>
                         <li>
-                            <Link to='/register'>{(content as any).account[locale]}</Link>
+                            <Link to={loggedIn ? '/account' : '/register'}>{(content as any).account[locale]}</Link>
                         </li>
                     </ul>
                 </nav>
