@@ -9,7 +9,9 @@ import {
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 
 import { BoundActions } from "../types/common";
+
 import { itemsReducer } from "./items";
+import { userReducer } from "./user";
 
 
 export interface IStore {
@@ -19,6 +21,7 @@ export const store: ToolkitStore<any> =
 configureStore({
   reducer: {
     items: itemsReducer,
+    user: userReducer
   },
 });
 

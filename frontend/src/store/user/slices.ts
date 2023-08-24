@@ -15,13 +15,17 @@ export const usersSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(userRegisterThunk.fulfilled, (state, action) => {
+                console.log(action);
                 const jwt = action.payload.jwt;
                 if (jwt) state.loggedIn = true;
                 localStorage.setItem('jwt', jwt);
 
                 state.username = action.payload.username;
                 state.email = action.payload.email;
-            });
+            })
+            .addCase(userRegisterThunk.rejected, (state, action) => {
+                console.log(action);
+            })
     },
 });
 

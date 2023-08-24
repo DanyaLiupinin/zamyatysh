@@ -1,10 +1,11 @@
 import { usersSlice } from "./slices";
-/*import {
+import {
+    userRegisterThunk
+} from "./thunks";
 
-} from "./thunks";*/
-
-export const usersReducer = usersSlice.reducer;
+export const userReducer = usersSlice.reducer;
 
 export const usersActions = {
+    userRegisterThunk,
     ...usersSlice.actions
 };
