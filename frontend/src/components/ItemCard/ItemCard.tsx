@@ -3,17 +3,20 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import './ItemCard.scss';
 
+import { useSelector } from 'react-redux';
+
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
 // eslint-disable-next-line import/order
 import ItemInformation from '../ItemInformation/ItemInformation';
 
+import content from './locale.json';
+import { TLocale } from '../../types/components';
+
 //import items from '../../constants/items';
 
 import array from '../../images/historyArray.svg';
-import { useSelector } from 'react-redux';
-
 import { getItem } from '../../utils/api';
 
 
@@ -22,7 +25,7 @@ const ItemCard: React.FC<any> = () => {
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
 
-    const locale = useSelector((state: any) => state.items.locale);
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const navigate = useNavigate();
    
@@ -39,25 +42,6 @@ const ItemCard: React.FC<any> = () => {
             console.log(res)
             setItem(res)});
     }, [locale]);
-/*
-    useEffect(() => {
-        let currentSlug: number
-        if (slug.slug) {
-            currentSlug = Number(slug.slug.slice(-1))
-        }
-        items.forEach((i) => {
-            if (i.id === currentSlug) {
-                setItem(i)
-            }
-        })
-    })*/
-
-    // создать стор для категорий и товаров и прокидывать сюда
-    // посомтреть как в патишейкере сделан переход на коктейли 
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
 
     return (
         <>
@@ -65,7 +49,7 @@ const ItemCard: React.FC<any> = () => {
             <section className='itemCard'>
                 <button className='itemCard__navigation' onClick={() => navigate(-1)}>
                     <img className='itemCard__navigation-image' src={array} alt='back'></img>
-                    Назад
+                    {content.goBack[locale]}
                 </button>
                 {item !== undefined ?
                     <>
@@ -80,11 +64,11 @@ const ItemCard: React.FC<any> = () => {
                             />
                         </div>
                         <div id='description' className='itemCard__item-description'>
-                            <h3>Описание товара:</h3>
+                            <h3>{content.description[locale]}:</h3>
                             <p>{item.description}</p>
-                            <h3 className='itemCard__item-description-inline'>материал: </h3>
+                            <h3 className='itemCard__item-description-inline'>{content.material[locale]}: </h3>
                             <p>{item.material}</p>
-                            <h3 className='itemCard__item-description-inline'>фасон:</h3>
+                            <h3 className='itemCard__item-description-inline'>{content.style[locale]}:</h3>
                             <p>{item.style}</p>
                         </div>
                     </>

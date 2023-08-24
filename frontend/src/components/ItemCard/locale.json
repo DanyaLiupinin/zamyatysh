@@ -1,0 +1,18 @@
+{
+    "goBack": {
+        "ru": "назад",
+        "en": "go back"
+    },
+    "description": {
+        "ru": "описание",
+        "en": "description"
+    },
+    "material": {
+        "ru": "материал",
+        "en": "material"
+    },
+    "style": {
+        "ru": "фасон",
+        "en": "style"
+    }
+}
