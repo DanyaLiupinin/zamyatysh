@@ -2,6 +2,8 @@ import axios from "axios";
 
 import { BASE_URL } from "../constants/constants";
 
+// ITEMS
+
 export const getCategories = (query?: any) => {
     return axios
         .get(`${BASE_URL}/api/categories/`, {
@@ -40,3 +42,15 @@ export const getItem = ({ slug, locale }: any) => {
         })
         .catch((err) => console.log(err));
 };
+
+// USER
+
+export const userRegister = (data: any) => {
+    return axios
+        .post(`${BASE_URL}/api/auth/local/register`, data)
+        .then((res) => {
+            return res.data;
+        })
+        .catch((err) => console.log(err));
+};
+
