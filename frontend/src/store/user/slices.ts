@@ -11,7 +11,11 @@ export const usersState: any = {
 export const usersSlice = createSlice({
     name: 'users',
     initialState: usersState,
-    reducers: {},
+    reducers: {
+        setLoggedIn: (state, action) => {
+            state.loggedIn = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(userRegisterThunk.fulfilled, (state, action) => {

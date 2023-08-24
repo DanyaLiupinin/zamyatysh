@@ -13,8 +13,10 @@ import Shop from '../Shop/Shop';
 import ItemCard from '../ItemCard/ItemCard';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
+import Account from '../Account/Account';
 import { useActionCreators } from '../../store';
 import { itemsActions } from '../../store/items/index';
+import { usersActions } from '../../store/user';
 
 
 const App: React.FC<any> = () => {
@@ -22,8 +24,19 @@ const App: React.FC<any> = () => {
   const isFirstRender = useRef(true);
 
   const locale = useSelector((state: any) => state.items.locale);
+  const loggedIn = useSelector((state: any) => state.user.loggedIn)
 
   const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage } = useActionCreators(itemsActions);
+  const { setLoggedIn } = useActionCreators(usersActions);
+
+  console.log(loggedIn)
+
+  useEffect(() => {
+    if (localStorage.getItem('jwt')) {
+      setLoggedIn(true);
+    }
+  });
+  
 
   useEffect(() => {
     if (localStorage.getItem('locale')) {
@@ -70,6 +83,10 @@ const App: React.FC<any> = () => {
 
         <Route path='/shop/:slug' element={
           <ItemCard />
+        } />
+
+        <Route path='/account' element={
+          <Account />
         } />
 
       </Routes>
