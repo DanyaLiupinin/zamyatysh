@@ -89,6 +89,12 @@
       },
       "type": "string",
       "required": true
+    },
+    "sizes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::size.size",
+      "mappedBy": "items"
     }
   }
 }

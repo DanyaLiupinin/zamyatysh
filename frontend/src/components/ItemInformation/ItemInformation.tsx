@@ -17,15 +17,15 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
             <h2 className='itemInformation__title'>{item.title}</h2>
             <p className='itemInformation__price'>{item.price}</p>
             <div className='itemInformation__sizes'>
-                {/* добавить sizes
-                    item.sizes.map((size, index) => {
+                {
+                    item.sizes && item.sizes.map((size: any) => {
                         return (
-                            <div onClick={() => onSizeClick(size.toUpperCase())} key={index} className={`itemInformation__size ${chosenSize === size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
-                                <p>{size.toUpperCase()}</p>
+                            <div onClick={() => onSizeClick(size.size.toUpperCase())} key={size.id} className={`itemInformation__size ${chosenSize === size.size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
+                                <p>{size.size.toUpperCase()}</p>
                             </div>
                         );
                     })
-                */}
+                }
             </div>
 
             <p className='itemInformation__size-guide'>Как выбрать размер?</p>

@@ -18,7 +18,7 @@ const ItemList: React.FC<any> = () => {
         <div className='itemList'>
             <div className='itemList__container'>
                 {
-                    items.length > 0 ? items.map((i: any) => {
+                    items && items.length > 0 ? items.map((i: any) => {
                         return (
                             <Item
                                 title={i.attributes.title}

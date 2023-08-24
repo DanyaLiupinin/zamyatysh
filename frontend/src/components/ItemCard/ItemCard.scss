@@ -4,6 +4,7 @@
     @include container;
     //outline: 1px solid red;
     background-color: rgba(237, 237, 237, 0.3843137255);
+    padding-bottom: 5px
 }
 
 .itemCard__navigation {
@@ -40,11 +41,18 @@
 
     p {
         @include pNormalize;
+        height: auto;
+        word-wrap: break-word;
     }
 
-    p:not(:first-child) {
-        margin-top: 10px;
+    h3 {
+        @include pNormalize;
+        height: auto;
+        word-wrap: break-word;
+        font-weight: 600;
+        margin-top: 20px;
     }
+
 }
 
 @media (max-width: 800px) {

@@ -30,7 +30,8 @@ export const getItem = ({ slug, locale }: any) => {
                 locale: locale,
                 populate: {
                     image: true,
-                    categories: true
+                    categories: true,
+                    sizes: true
                 },
             }
         })

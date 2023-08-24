@@ -80,11 +80,12 @@ const ItemCard: React.FC<any> = () => {
                             />
                         </div>
                         <div id='description' className='itemCard__item-description'>
-                            <p>Описание товара:</p>
+                            <h3>Описание товара:</h3>
                             <p>{item.description}</p>
-                            <p>материал: {item.material}</p>
-                            <p>фасон: {item.style}</p>
-                            <p>артикул: {item.articul}</p>
+                            <h3 className='itemCard__item-description-inline'>материал: </h3>
+                            <p>{item.material}</p>
+                            <h3 className='itemCard__item-description-inline'>фасон:</h3>
+                            <p>{item.style}</p>
                         </div>
                     </>
                     :
