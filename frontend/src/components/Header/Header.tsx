@@ -38,7 +38,7 @@ const Header: React.FC<any> = () => {
                             <Link to='/'>{(content as any).basket[locale]}</Link>
                         </li>
                         <li>
-                            <Link to='/'>{(content as any).account[locale]}</Link>
+                            <Link to='/register'>{(content as any).account[locale]}</Link>
                         </li>
                     </ul>
                 </nav>
