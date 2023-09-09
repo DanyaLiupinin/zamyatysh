@@ -8,7 +8,7 @@ import { useActionCreators } from '../../store';
 import { usersActions } from "../../store/user";
 
 
-import './Register.scss';
+import './Auth.scss';
 
 const Register = () => {
 
@@ -47,9 +47,9 @@ const Register = () => {
     return (
         <>
             <Header />
-            <div className='register'>
-                <form className='register-form' onSubmit={handleSubmit}>
-                    <h2>Регистрация</h2>
+            <div className='auth register'>
+                <form className='auth-form' onSubmit={handleSubmit}>
+                    <h2 className='auth__title' >Регистрация</h2>
                     <p>никнейм</p>
                     <input
                         minLength={3}
@@ -74,7 +74,7 @@ const Register = () => {
                     ></input>
                     <button type='submit'>зарегистрироваться</button>
                 </form>
-                <p>уже зарегистрированы? <Link to={'/login'}>войти</Link></p>
+                <p className='auth__caption' >уже зарегистрированы? <Link to={'/login'}>войти</Link></p>
             </div>
         </>
     )

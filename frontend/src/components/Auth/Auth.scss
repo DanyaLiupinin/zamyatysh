@@ -1,0 +1,90 @@
+@import '../../mixins/mixins.scss';
+
+.auth {
+    @include container;
+
+    width: 35%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: fit-content;
+    padding: 20px 40px 5px;
+    outline: 2px solid black;
+    border-radius: 5px;
+}
+
+
+.auth__title {
+    font-size: 70px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.auth-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        font-size: 40px;
+        margin: 0;
+    }
+
+    input {
+        width: 100%;
+        margin: 10px 0;
+        height: 25px;
+        font-size: 40px;
+        border-radius: 5px;
+        padding: 0 5px;
+    }
+
+    button {
+        width: 40%;
+        height: 50px;
+        margin-top: 20px;
+        font-size: 35px;
+        border-radius: 5px;
+        color: white;
+        background-color: black;
+        transition: .5s;
+    }
+
+    button:hover {
+        color: black;
+        background-color: white;
+    }
+}
+
+.auth__caption {
+    font-size: 25px;
+    margin: 50px 0 0 0;
+
+    a {
+        font-size: 40px;
+        background-color: white;
+        color: black;
+        box-sizing: border-box;
+        transition: .5s;
+        padding: 10px 0;
+        
+    }
+
+
+    a:hover {
+        color: rgba(0, 0, 0, 0.332);
+    }
+
+}
