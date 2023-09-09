@@ -39,7 +39,6 @@ const ItemCard: React.FC<any> = () => {
             locale: locale
         })
         .then((res) => {
-            console.log(res)
             setItem(res)});
     }, [locale]);
 

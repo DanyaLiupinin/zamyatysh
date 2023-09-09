@@ -7,6 +7,9 @@ import Header from "../Header/Header";
 import { useActionCreators } from '../../store';
 import { usersActions } from "../../store/user";
 
+import { TLocale } from '../../types/components';
+import content from './locale.json';
+
 
 import './Auth.scss';
 
@@ -16,6 +19,7 @@ const Register = () => {
     
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const navigate = useNavigate();
 
@@ -49,8 +53,8 @@ const Register = () => {
             <Header />
             <div className='auth register'>
                 <form className='auth-form' onSubmit={handleSubmit}>
-                    <h2 className='auth__title' >Регистрация</h2>
-                    <p>никнейм</p>
+                    <h2 className='auth__title' >{content.registertitle[locale]}</h2>
+                    <p>{content.username[locale]}</p>
                     <input
                         minLength={3}
                         maxLength={20}
@@ -58,26 +62,26 @@ const Register = () => {
                         value={userData.username}
                         onChange={handleInputChange}
                     ></input>
-                    <p>почта</p>
+                    <p>{content.email[locale]}</p>
                     <input
                         minLength={6}
                         name='email'
                         value={userData.email}
                         onChange={handleInputChange}
                     ></input>
-                    <p>пароль</p>
+                    <p>{content.password[locale]}</p>
                     <input
                         minLength={6}
                         name='password'
                         value={userData.password}
                         onChange={handleInputChange}
                     ></input>
-                    <button type='submit'>зарегистрироваться</button>
+                    <button type='submit'>{content.registersubmit[locale]}</button>
                 </form>
-                <p className='auth__caption' >уже зарегистрированы? <Link to={'/login'}>войти</Link></p>
+                <p className='auth__caption'>{content.registercaption[locale]} <Link to={'/login'}>{content.registercaptionbutton[locale]}</Link></p>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Register;
