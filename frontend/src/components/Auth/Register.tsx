@@ -11,13 +11,15 @@ import { TLocale } from '../../types/components';
 import content from './locale.json';
 
 
+
 import './Auth.scss';
 
 const Register = () => {
 
-    const { userRegisterThunk } = useActionCreators(usersActions);
+    const { userRegisterThunk, clearError } = useActionCreators(usersActions);
     
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
+    const error = useSelector((state: any) => state.user.error);
     
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
@@ -48,6 +50,11 @@ const Register = () => {
         }
     }, [loggedIn]);
 
+    useEffect(() => {
+        clearError();
+    }, []);
+
+    
     return (
         <>
             <Header />
@@ -78,6 +85,7 @@ const Register = () => {
                     ></input>
                     <button type='submit'>{content.registersubmit[locale]}</button>
                 </form>
+                <p className='auth__error'>{error}</p>
                 <p className='auth__caption'>{content.registercaption[locale]} <Link to={'/login'}>{content.registercaptionbutton[locale]}</Link></p>
             </div>
         </>

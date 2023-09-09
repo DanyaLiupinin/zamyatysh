@@ -8,9 +8,17 @@ export const userRegisterThunk: any = createAsyncThunk(
     async (userData: any) => {
         try {
             const response = await userRegister(userData);
-            return response;
+
+            if (response.response && 
+                response.response.status && 
+                response.response.status === 400) {
+                return Promise.reject(response.response.data.error.message);
+            } else {
+                return response;
+            }
+
         } catch (error) {
-            console.log(error);
+            return error;
         }
     }
 );

@@ -70,7 +70,7 @@
 
 .auth__caption {
     font-size: 25px;
-    margin: 50px 0 0 0;
+    margin: 25px 0 0 0;
 
     a {
         font-size: 40px;
@@ -87,4 +87,13 @@
         color: rgba(0, 0, 0, 0.332);
     }
 
+}
+
+.auth__error {
+    color: red;
+    font-size: 30px;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
