@@ -4,6 +4,7 @@ import {
   Route
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 
 import './App.scss';
 
@@ -36,7 +37,7 @@ const App: React.FC<any> = () => {
       setLoggedIn(true);
     }
   });
-  
+
 
   useEffect(() => {
     if (localStorage.getItem('locale')) {
@@ -61,13 +62,18 @@ const App: React.FC<any> = () => {
     <div className='App'>
       <Routes>
 
-        <Route path='/register' element={
+        <Route path='/register' 
+        element={loggedIn ?
+          <Navigate to='/account' /> :
           <Register />
         } />  {/* сделать переадресацию для авторизированного юзера */}
 
-        <Route path='/login' element={
-          <Login />
-        } /> {/* сделать переадресацию для авторизированного юзера */}
+        <Route
+          path='/login'
+          element={loggedIn ?
+            <Navigate to='/account' /> :
+            <Login />}
+        /> {/* сделать переадресацию для авторизированного юзера */}
 
         <Route path='/' element={
           <WelcomePage />
@@ -85,9 +91,11 @@ const App: React.FC<any> = () => {
           <ItemCard />
         } />
 
-        <Route path='/account' element={
-          <Account />
-        } />
+        <Route path='/account' 
+        element={loggedIn ?
+          <Account /> :
+          <Navigate to='/login' />}
+        />
 
       </Routes>
     </div>
