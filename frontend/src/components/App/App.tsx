@@ -19,16 +19,23 @@ import { useActionCreators } from '../../store';
 import { itemsActions } from '../../store/items/index';
 import { usersActions } from '../../store/user';
 
+import { useNavigate } from 'react-router-dom';
+
 
 const App: React.FC<any> = () => {
 
   const isFirstRender = useRef(true);
+
+  const navigate = useNavigate();
 
   const locale = useSelector((state: any) => state.items.locale);
   const loggedIn = useSelector((state: any) => state.user.loggedIn)
 
   const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage } = useActionCreators(itemsActions);
   const { setLoggedIn } = useActionCreators(usersActions);
+
+
+  const redirectPath = useSelector((state: any) => state.user.rediretcPath);
 
   console.log(loggedIn)
 
@@ -58,15 +65,19 @@ const App: React.FC<any> = () => {
     getAllCategoriesThunk();
   }, [locale]);
 
+  useEffect(() => {
+    if (redirectPath) navigate(redirectPath);
+  }, [redirectPath]);
+
   return (
     <div className='App'>
       <Routes>
 
-        <Route path='/register' 
-        element={loggedIn ?
-          <Navigate to='/account' /> :
-          <Register />
-        } />  {/* сделать переадресацию для авторизированного юзера */}
+        <Route path='/register'
+          element={loggedIn ?
+            <Navigate to='/account' /> :
+            <Register />
+          } />  {/* сделать переадресацию для авторизированного юзера */}
 
         <Route
           path='/login'
@@ -91,10 +102,10 @@ const App: React.FC<any> = () => {
           <ItemCard />
         } />
 
-        <Route path='/account' 
-        element={loggedIn ?
-          <Account /> :
-          <Navigate to='/login' />}
+        <Route path='/account'
+          element={loggedIn ?
+            <Account /> :
+            <Navigate to='/login' />}
         />
 
       </Routes>

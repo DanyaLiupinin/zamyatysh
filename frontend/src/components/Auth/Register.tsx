@@ -23,6 +23,9 @@ const Register = () => {
     
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
+
+    const redirectPath = useSelector((state: any) => state.user.rediretcPath);
+
     const navigate = useNavigate();
 
     const [userData, setUserData] = useState({

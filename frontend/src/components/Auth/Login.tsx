@@ -24,6 +24,7 @@ const Login = () => {
     const { userLoginThunk } = useActionCreators(usersActions);
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const error = useSelector((state: any) => state.user.error);
 
 
     const [userData, setUserData] = useState({
@@ -45,9 +46,10 @@ const Login = () => {
         await userLoginThunk(userData);
     };
 
-    useEffect(() => {
+ /*   useEffect(() => {
         if (redirectPath) navigate(redirectPath);
     }, [redirectPath]);
+    */
 
     return (
         <>
@@ -71,6 +73,7 @@ const Login = () => {
                     ></input>
                     <button type='submit'>{content.logginsubmit[locale]}</button>
                 </form>
+                <p className='auth__error'>{error}</p>
                 <p className='auth__caption'>{content.loggincaption[locale]} <Link to={'/register'}>{content.loggincaptionbutton[locale]}</Link></p>
             </div>
         </>
