@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 import Header from "../Header/Header";
 import { useActionCreators } from '../../store';
 import { usersActions } from "../../store/user";
-
 import { TLocale } from '../../types/components';
+
 import content from './locale.json';
 
 

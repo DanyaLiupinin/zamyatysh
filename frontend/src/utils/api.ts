@@ -56,3 +56,14 @@ export const userRegister = (data: any) => {
         });
 };
 
+export const userLogin = (data: any) => {
+    return axios
+        .post(`${BASE_URL}/api/auth/local`, data)
+        .then((res) => {
+            return res.data;
+        })
+        .catch((err) => {
+            return err;
+        });
+};
+
