@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "description": "zamyatysh-backend",
   "scripts": {
+    
     "build": "strapi build",
     "start": "strapi start"
   },
