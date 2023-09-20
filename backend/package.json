@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "zamyatysh-backend",
   "scripts": {
-    "build": "npm i && react-scripts build",
+    "build": "npm i && strapi build",
     "start": "strapi start"
   },
   "dependencies": {
