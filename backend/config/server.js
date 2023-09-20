@@ -3,7 +3,7 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
-  url: env('HOST_URL'),
+  url: env('https://zamyatysh-backend.onrender.com'),
   app: {
     keys: env.array('APP_KEYS')
   },
