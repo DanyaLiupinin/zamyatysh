@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "zamyatysh-backend",
   "scripts": {
-    "build": "npm install strapi build",
+    "build": "npm install && strapi build",
     "start": "strapi start"
   },
   "dependencies": {
