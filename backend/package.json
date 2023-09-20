@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "description": "zamyatysh-backend",
   "scripts": {
-    
     "build": "strapi build",
     "start": "strapi start"
   },
@@ -12,6 +11,7 @@
     "@strapi/plugin-graphql": "^4.12.4",
     "@strapi/plugin-i18n": "4.12.4",
     "@strapi/plugin-users-permissions": "4.12.4",
+    "@strapi/provider-upload-cloudinary": "^4.13.7",
     "@strapi/strapi": "4.12.4",
     "better-sqlite3": "8.5.0"
   },
