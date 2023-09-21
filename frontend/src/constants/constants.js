@@ -8,6 +8,6 @@ const categories = [
     'прочее'
 ]
 
-export const BASE_URL = 'http://localhost:1337'
+export const BASE_URL = 'https://zamyatysh-backend.onrender.com'
 
 export default categories
