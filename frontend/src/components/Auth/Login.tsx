@@ -74,7 +74,10 @@ const Login = () => {
                     <button type='submit'>{content.logginsubmit[locale]}</button>
                 </form>
                 <p className='auth__error'>{error}</p>
-                <p className='auth__caption'>{content.loggincaption[locale]} <Link to={'/register'}>{content.loggincaptionbutton[locale]}</Link></p>
+                <p className='auth__caption'>
+                    {content.loggincaption[locale]} 
+                    <Link className="auth__caption-link" to={'/register'}>{content.loggincaptionbutton[locale]}</Link>
+                </p>
             </div>
         </>
     );

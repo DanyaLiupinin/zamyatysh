@@ -1,4 +1,4 @@
-@import '../../mixins/mixins.scss';
+@import "../../mixins/mixins.scss";
 
 .auth {
     @include container;
@@ -21,7 +21,6 @@
     outline: 2px solid black;
     border-radius: 5px;
 }
-
 
 .auth__title {
     font-size: 70px;
@@ -59,7 +58,7 @@
         border-radius: 5px;
         color: white;
         background-color: black;
-        transition: .5s;
+        transition: 0.5s;
     }
 
     button:hover {
@@ -77,16 +76,13 @@
         background-color: white;
         color: black;
         box-sizing: border-box;
-        transition: .5s;
+        transition: 0.5s;
         padding: 10px 0;
-        
     }
-
 
     a:hover {
         color: rgba(0, 0, 0, 0.332);
     }
-
 }
 
 .auth__error {
@@ -96,4 +92,71 @@
     margin: 20px 0 0 0;
     padding: 0;
     width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .auth__caption {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+@media (max-width: 1105px) {
+    .auth {
+        width: 50%;
+    }
+}
+
+@media (max-width: 750px) {
+    .auth__title {
+        font-size: 55px;
+    }
+
+    .auth-form {
+        p {
+            font-size: 35px;
+        }
+    }
+
+    .auth__caption {
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+    }
+
+    .auth__caption-link {
+        display: block;
+        padding: 0;
+
+        a {
+            padding: 0;
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .auth__error {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .auth-form {
+        button {
+            height: 40px;
+            font-size: 30px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .auth__title {
+        font-size: 45px;
+    }
 }
