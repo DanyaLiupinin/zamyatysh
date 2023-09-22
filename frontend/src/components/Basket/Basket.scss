@@ -1,0 +1,13 @@
+@import "../../mixins/mixins.scss";
+
+.basket {
+    @include container;
+}
+
+.basket__empty {
+    @include pNormalize;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    padding-top: 20%;
+}

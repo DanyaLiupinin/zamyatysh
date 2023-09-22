@@ -6,7 +6,8 @@ export const itemsState: any = {
     categories: null,
     items: null,
     activeCategoryFilter: null,
-    locale: null,
+    locale: null, // perenesti v usera
+    basket: null,
 };
 
 export const itemsSlice = createSlice({

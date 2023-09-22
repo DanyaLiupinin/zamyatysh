@@ -1,57 +1,50 @@
-import React, { useEffect, useRef } from 'react';
-import {
-  Routes,
-  Route
-} from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
-import './App.scss';
+import "./App.scss";
 
-import WelcomePage from '../WelcomePage/WelcomePage';
-import About from '../About/About';
-import Shop from '../Shop/Shop';
-import ItemCard from '../ItemCard/ItemCard';
-import Register from '../Auth/Register';
-import Login from '../Auth/Login';
-import Account from '../Account/Account';
-import { useActionCreators } from '../../store';
-import { itemsActions } from '../../store/items/index';
-import { usersActions } from '../../store/user';
+import WelcomePage from "../WelcomePage/WelcomePage";
+import About from "../About/About";
+import Shop from "../Shop/Shop";
+import ItemCard from "../ItemCard/ItemCard";
+import Register from "../Auth/Register";
+import Login from "../Auth/Login";
+import Account from "../Account/Account";
+import Basket from "../Basket/Basket";
+import { useActionCreators } from "../../store";
+import { itemsActions } from "../../store/items/index";
+import { usersActions } from "../../store/user";
 
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 const App: React.FC<any> = () => {
-
   const isFirstRender = useRef(true);
 
   const navigate = useNavigate();
 
   const locale = useSelector((state: any) => state.items.locale);
-  const loggedIn = useSelector((state: any) => state.user.loggedIn)
+  const loggedIn = useSelector((state: any) => state.user.loggedIn);
 
-  const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage } = useActionCreators(itemsActions);
+  const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage } =
+    useActionCreators(itemsActions);
   const { setLoggedIn } = useActionCreators(usersActions);
-
 
   const redirectPath = useSelector((state: any) => state.user.rediretcPath);
 
-  console.log(loggedIn)
-
   useEffect(() => {
-    if (localStorage.getItem('jwt')) {
+    if (localStorage.getItem("jwt")) {
       setLoggedIn(true);
     }
   });
 
-
   useEffect(() => {
-    if (localStorage.getItem('locale')) {
-      const locale = localStorage.getItem('locale');
+    if (localStorage.getItem("locale")) {
+      const locale = localStorage.getItem("locale");
       changeLanguage(locale);
     } else {
-      changeLanguage('en');
+      changeLanguage("en");
     }
   }, []);
 
@@ -70,43 +63,27 @@ const App: React.FC<any> = () => {
   }, [redirectPath]);
 
   return (
-    <div className='App'>
+    <div className="App">
       <Routes>
-
-        <Route path='/register'
-          element={loggedIn ?
-            <Navigate to='/account' /> :
-            <Register />
-          } />  {/* сделать переадресацию для авторизированного юзера */}
-
         <Route
-          path='/login'
-          element={loggedIn ?
-            <Navigate to='/account' /> :
-            <Login />}
-        /> {/* сделать переадресацию для авторизированного юзера */}
-
-        <Route path='/' element={
-          <WelcomePage />
-        } />
-
-        <Route path='/about' element={
-          <About />
-        } />
-
-        <Route path='/shop' element={
-          <Shop />
-        } />
-
-        <Route path='/shop/:slug' element={
-          <ItemCard />
-        } />
-
-        <Route path='/account'
-          element={loggedIn ?
-            <Account /> :
-            <Navigate to='/login' />}
+          path="/register"
+          element={loggedIn ? <Navigate to="/account" /> : <Register />}
+        />{" "}
+        {/* сделать переадресацию для авторизированного юзера */}
+        <Route
+          path="/login"
+          element={loggedIn ? <Navigate to="/account" /> : <Login />}
+        />{" "}
+        {/* сделать переадресацию для авторизированного юзера */}
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:slug" element={<ItemCard />} />
+        <Route
+          path="/account"
+          element={loggedIn ? <Account /> : <Navigate to="/login" />}
         />
+        <Route path="/basket" element={<Basket />} />
 
       </Routes>
     </div>

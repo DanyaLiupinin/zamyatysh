@@ -21,7 +21,7 @@ const Header: React.FC<any> = () => {
     return (
         <header className='header'>
             <div className='header__container'>
-                <Link to='/' className='header__logo-link' title='Главная'>
+                <Link to='/' className='header__logo-link'>
                     <img alt={(content as any).logoAlt[locale]} src={logo}></img>
                 </Link>
                 <Burger
@@ -37,7 +37,7 @@ const Header: React.FC<any> = () => {
                             <Link to='/about'>{(content as any).about[locale]}</Link>
                         </li>
                         <li>
-                            <Link to='/'>{(content as any).basket[locale]}</Link>
+                            <Link to='/basket'>{(content as any).basket[locale]}</Link>
                         </li>
                         <li>
                             <Link to={loggedIn ? '/account' : '/register'}>{(content as any).account[locale]}</Link>
