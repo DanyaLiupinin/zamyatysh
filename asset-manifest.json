@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zamyatysh/static/css/main.fe315e8a.css",
-    "main.js": "/zamyatysh/static/js/main.eb9457d9.js",
+    "main.js": "/zamyatysh/static/js/main.001bd6b6.js",
     "static/media/gifka.GIF": "/zamyatysh/static/media/gifka.c5a04aa0c1d2654c7eb4.GIF",
     "static/media/logo.svg": "/zamyatysh/static/media/logo.a22882c75b4511bf539f02e90f479d07.svg",
     "static/media/vkorzini.svg": "/zamyatysh/static/media/vkorzini.a23958d464cb636b33c4cfcd3f2ef508.svg",
@@ -15,10 +15,10 @@
     "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.870df8d3260de77023c313cad87c4584.svg",
     "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.45feaf1e793f94507336048b7848f8d7.svg",
     "main.fe315e8a.css.map": "/zamyatysh/static/css/main.fe315e8a.css.map",
-    "main.eb9457d9.js.map": "/zamyatysh/static/js/main.eb9457d9.js.map"
+    "main.001bd6b6.js.map": "/zamyatysh/static/js/main.001bd6b6.js.map"
   },
   "entrypoints": [
     "static/css/main.fe315e8a.css",
-    "static/js/main.eb9457d9.js"
+    "static/js/main.001bd6b6.js"
   ]
 }
