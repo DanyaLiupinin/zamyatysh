@@ -1,5 +1,7 @@
 module.exports = ({ env }) => {
+  
   const isDevelop = env.bool('DEVELOP', false);
+
   let config = {
     host: env('HOST', '0.0.0.0'),
     port: 1337,
