@@ -5,6 +5,7 @@ import { BASE_URL } from "../constants/constants";
 // ITEMS
 
 export const getCategories = (query?: any) => {
+    console.log(query)
     return axios
         .get(`${BASE_URL}/api/categories/`, {
             params: query

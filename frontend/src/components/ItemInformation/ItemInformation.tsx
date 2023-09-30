@@ -35,12 +35,12 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
                             </div>
                         );
                     })
-                 }
+                }
             </div>
 
             <p className='itemInformation__size-guide'>{content.howToSize[locale]}</p>
 
-            <div className='itemInformation__basket-container'> 
+            <div className='itemInformation__basket-container'>
                 <img src={frog} className={`itemInformation__basket-image ${chosenSize !== '' ? 'itemInformation__basket-image_active' : ''}`} alt='frog wants you to buy something'></img>
                 <button className='itemInformation__add-button' type='button'>{content.addToBasket[locale]}</button>
             </div>

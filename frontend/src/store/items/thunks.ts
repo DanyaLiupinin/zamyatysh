@@ -11,7 +11,6 @@ export const getAllCategoriesThunk: any = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const locale = getLocale(thunkAPI.getState());
-            console.log(locale)
             const response = await getCategories({
                 locale: locale,
             });
@@ -43,7 +42,7 @@ export const getAllItemsThunk: any = createAsyncThunk(
 export const getFilteredItemsThunk: any = createAsyncThunk(
     'getFilteredItems',
 
-    async ({id}: any, thunkAPI) => {
+    async (id: any, thunkAPI) => {
         try {
             const locale = getLocale(thunkAPI.getState());
             const response = await getCategories({
