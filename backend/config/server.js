@@ -19,7 +19,7 @@ module.exports = ({ env }) => {
 
   // Устанавливаем URL в зависимости от значения DEVELOP
   if (isDevelop === true) {
-    config.url = 'https://zamyatysh-backend.railway.internal.app';
+    config.url = 'http://localhost:1337/';
   } else {
     config.url = 'https://zamyatysh-backend.railway.internal.app';
   }

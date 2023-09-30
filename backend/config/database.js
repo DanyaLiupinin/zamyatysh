@@ -1,5 +1,3 @@
-
-
 module.exports = ({ env }) => ({
   defaultConnection: "default",
   connection: {

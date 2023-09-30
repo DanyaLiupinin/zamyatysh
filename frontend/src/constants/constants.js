@@ -1,5 +1,3 @@
-const isDevelop = process.env.NODE_ENV === 'development';
-
 const categories = [
     'все',
     'футболки',
@@ -10,6 +8,6 @@ const categories = [
     'прочее'
 ];  
 
-export const BASE_URL = isDevelop ? 'http://localhost:1337': 'https://zamyatysh-backend.onrender.com';
+export const BASE_URL = 'https://strapi-production-742a.up.railway.app';
 
 export default categories;
