@@ -25,7 +25,8 @@ const ItemList: React.FC<any> = () => {
                                 price={i.attributes.price}
                                 image={i.attributes.image.data[0].attributes.url}
                                 key={i.id}
-                                slug={i.attributes.slug}
+                                id={i.id}
+                                //slug={i.attributes.slug}
                             />
                         );
                     }) :

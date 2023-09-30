@@ -24,10 +24,10 @@ export const getItems = (query?: any) => {
         .catch((err) => console.log(err));
 };
 
-export const getItem = ({ slug, locale }: any) => {
+export const getItem = ({ id, locale }: any) => {
 
     return axios
-        .get(`${BASE_URL}/api/items/:slug?slug=${slug}`, {
+        .get(`${BASE_URL}/api/items/:slug?slug=${id}`, {
             params: {
                 locale: locale,
                 populate: {

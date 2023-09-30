@@ -29,13 +29,13 @@ const ItemCard: React.FC<any> = () => {
 
     const navigate = useNavigate();
    
-    const slug = useParams();
+    const id = useParams();
     
 
     useEffect(() => {
-        if (locale && slug)
+        if (locale && id)
         getItem({
-            slug: slug.slug,
+            id: id.id,
             locale: locale
         })
         .then((res) => {

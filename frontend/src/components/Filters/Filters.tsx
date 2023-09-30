@@ -28,8 +28,8 @@ const Filters: React.FC<any> = () => {
 
     const { getFilteredItemsThunk, setCategoryFilter, getAllItemsThunk } = useActionCreators(itemsActions);
 
-    const onClickFilter = (slug: String) => {
-        getFilteredItemsThunk({ slug });
+    const onClickFilter = (id: String) => {
+        getFilteredItemsThunk({ id });
         setDropdown(false);
     };
 
@@ -52,7 +52,7 @@ const Filters: React.FC<any> = () => {
                 {
                     categories && categories.map((c: any) => {
                         return (
-                            <button className={`filters__button ${activeCategoryFilter === c.attributes.slug && 'filters__button_active'}`} onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button>
+                            <button className={`filters__button ${activeCategoryFilter === c.attributes.id && 'filters__button_active'}`} onClick={() => onClickFilter(c.attributes.id)} type='button' key={c.id}>{c.attributes.name}</button>
                         );
                     })
                 }
@@ -69,8 +69,8 @@ const Filters: React.FC<any> = () => {
                         {
                             categories && categories.map((c: any) => {
                                 return (
-                                    c.attributes.slug !== activeCategoryFilter ?
-                                        <button className='filters__dropdown-filter' onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button> :
+                                    c.attributes.id !== activeCategoryFilter ?
+                                        <button className='filters__dropdown-filter' onClick={() => onClickFilter(c.attributes.id)} type='button' key={c.id}>{c.attributes.name}</button> :
                                         ''
                                 );
                             })
