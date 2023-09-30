@@ -5,7 +5,8 @@
   "description": "zamyatysh-backend",
   "scripts": {
     "build": "npm i && strapi build",
-    "start": "strapi start"
+    "start": "strapi start",
+    "develop": "strapi develop"
   },
   "dependencies": {
     "@strapi/plugin-graphql": "^4.12.4",
