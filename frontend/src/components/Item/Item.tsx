@@ -24,7 +24,7 @@ const Item = ({
                 <div className='item__image-container'>
                     <img
                         className='item__image'
-                        src={`${BASE_URL}${image}`}
+                        src={image}
                         alt='футболка'
                     ></img>
                 </div>

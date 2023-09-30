@@ -27,7 +27,7 @@ export const getItems = (query?: any) => {
 export const getItem = ({ id, locale }: any) => {
 
     return axios
-        .get(`${BASE_URL}/api/items/:slug?slug=${id}`, {
+        .get(`${BASE_URL}/api/items/${id}`, {
             params: {
                 locale: locale,
                 populate: {

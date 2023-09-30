@@ -14,7 +14,6 @@ export const getAllCategoriesThunk: any = createAsyncThunk(
             console.log(locale)
             const response = await getCategories({
                 locale: locale,
-                fields: ['name', 'id'],
             });
             console.log(response);
             return response;

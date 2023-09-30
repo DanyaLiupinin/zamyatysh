@@ -19,20 +19,23 @@ const ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
         }
     };
 
+    console.log(item)
+
     return (
         <div className='itemInformation'>
             <h2 className='itemInformation__title'>{item.title}</h2>
             <p className='itemInformation__price'>{item.price}</p>
             <div className='itemInformation__sizes'>
                 {
-                    item.sizes && item.sizes.map((size: any) => {
+                    item.sizes.data && item.sizes.data.map((size: any) => {
+                        console.log(size.attributes.size)
                         return (
-                            <div onClick={() => onSizeClick(size.size.toUpperCase())} key={size.id} className={`itemInformation__size ${chosenSize === size.size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
-                                <p>{size.size.toUpperCase()}</p>
+                            <div onClick={() => onSizeClick(size.attributes.size.toUpperCase())} key={size.id} className={`itemInformation__size ${chosenSize === size.attributes.size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
+                                <p>{size.attributes.size.toUpperCase()}</p>
                             </div>
                         );
                     })
-                }
+                 }
             </div>
 
             <p className='itemInformation__size-guide'>{content.howToSize[locale]}</p>
