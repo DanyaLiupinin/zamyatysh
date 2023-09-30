@@ -10,4 +10,4 @@ const categories = [
 
 export const BASE_URL = 'https://strapi-production-742a.up.railway.app';
 
-export default categories;
+export default categories; 
