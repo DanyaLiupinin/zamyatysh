@@ -14,7 +14,8 @@
     "@strapi/plugin-users-permissions": "4.12.4",
     "@strapi/provider-upload-cloudinary": "^4.13.7",
     "@strapi/strapi": "4.12.4",
-    "better-sqlite3": "8.5.0"
+    "better-sqlite3": "8.5.0",
+    "pg": "^8.11.3"
   },
   "author": {
     "name": "Danya Kovan"

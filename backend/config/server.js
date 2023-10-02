@@ -21,9 +21,9 @@ module.exports = ({ env }) => {
 
   // Устанавливаем URL в зависимости от значения DEVELOP
   if (isDevelop === true) {
-    config.url = 'http://localhost:1337';
+    config.url = 'http://localhost:1337/';
   } else {
-    config.url = 'https://zamyatysh-backend.onrender.com';
+    config.url = 'https://zamyatysh-backend.railway.internal.app';
   }
 
   return config;

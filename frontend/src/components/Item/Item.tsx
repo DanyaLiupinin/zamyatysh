@@ -5,24 +5,26 @@ import { BASE_URL } from "../../constants/constants";
 import "./Item.scss";
 
 const Item = ({
-    slug,
+    //slug,
     image,
     price,
-    title
+    title,
+    id
 }: {
     price: string;
     image: any;
-    slug: string;
+    //slug: string;
     title: string;
+    id: number
 }) => {
 
     return (
-        <Link className='item-link' to={`${slug}`}>
+        <Link className='item-link' to={`${id}`}>
             <div className='item'>
                 <div className='item__image-container'>
                     <img
                         className='item__image'
-                        src={`${BASE_URL}${image}`}
+                        src={image}
                         alt='футболка'
                     ></img>
                 </div>

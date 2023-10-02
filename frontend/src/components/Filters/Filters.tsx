@@ -28,8 +28,8 @@ const Filters: React.FC<any> = () => {
 
     const { getFilteredItemsThunk, setCategoryFilter, getAllItemsThunk } = useActionCreators(itemsActions);
 
-    const onClickFilter = (slug: String) => {
-        getFilteredItemsThunk({ slug });
+    const onClickFilter = (id: number) => {
+        getFilteredItemsThunk(id);
         setDropdown(false);
     };
 
@@ -45,6 +45,10 @@ const Filters: React.FC<any> = () => {
 
     }, [location.pathname])
 
+    useEffect(() => {
+        console.log(activeCategoryFilter)
+    }, [activeCategoryFilter])
+
     return (
         <div className='filters'>
             <div className='filters__buttons'>
@@ -52,7 +56,7 @@ const Filters: React.FC<any> = () => {
                 {
                     categories && categories.map((c: any) => {
                         return (
-                            <button className={`filters__button ${activeCategoryFilter === c.attributes.slug && 'filters__button_active'}`} onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button>
+                            <button className={`filters__button ${activeCategoryFilter === c.id && 'filters__button_active'}`} onClick={() => onClickFilter(c.id)} type='button' key={c.id}>{` filter ${c.attributes.name}`}</button>
                         );
                     })
                 }
@@ -69,8 +73,8 @@ const Filters: React.FC<any> = () => {
                         {
                             categories && categories.map((c: any) => {
                                 return (
-                                    c.attributes.slug !== activeCategoryFilter ?
-                                        <button className='filters__dropdown-filter' onClick={() => onClickFilter(c.attributes.slug)} type='button' key={c.id}>{c.attributes.name}</button> :
+                                    c.id !== activeCategoryFilter ?
+                                        <button className='filters__dropdown-filter' onClick={() => onClickFilter(c.id)} type='button' key={c.id}>{c.attributes.name}</button> :
                                         ''
                                 );
                             })

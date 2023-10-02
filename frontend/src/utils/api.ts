@@ -5,6 +5,7 @@ import { BASE_URL } from "../constants/constants";
 // ITEMS
 
 export const getCategories = (query?: any) => {
+    console.log(query)
     return axios
         .get(`${BASE_URL}/api/categories/`, {
             params: query
@@ -24,10 +25,10 @@ export const getItems = (query?: any) => {
         .catch((err) => console.log(err));
 };
 
-export const getItem = ({ slug, locale }: any) => {
+export const getItem = ({ id, locale }: any) => {
 
     return axios
-        .get(`${BASE_URL}/api/items/:slug?slug=${slug}`, {
+        .get(`${BASE_URL}/api/items/${id}`, {
             params: {
                 locale: locale,
                 populate: {
