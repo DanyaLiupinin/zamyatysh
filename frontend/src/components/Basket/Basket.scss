@@ -2,12 +2,167 @@
 
 .basket {
     @include container;
+
+    background-color: #f9f9f9;
 }
 
+/*
 .basket__empty {
     @include pNormalize;
     width: 100%;
     text-align: center;
     font-size: 70px;
     padding-top: 20%;
+}
+*/
+
+.basket__container {
+    display: grid;
+    grid-template-columns: 65% 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 50px;
+    margin-top: 30px;
+    padding: 0 30px;
+}
+
+.basket__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.basket__column-left {
+    position: relative;
+}
+
+.basket__title {
+    font-size: 70px;
+    font-weight: 400;
+    margin: 47px auto 0;
+    text-align: center;
+}
+
+.basket__items {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.basket__item {
+    width: 100%;
+    height: 112px;
+    display: grid;
+    grid-template-columns: 15% 30% 30% 25%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: white;
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 40px;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        text-align: center;
+    }
+}
+
+.basket__item-image {
+    border-radius: 10px;
+    background-color: #c3c3c3;
+    width: 80px;
+    height: 64px;
+}
+
+
+.basket__image {
+    position: absolute;
+    right: -50px;
+    bottom: 0;
+}
+
+/// right column
+///
+///
+
+.basket__column-right {
+    background-color: white;
+    padding-bottom: 10px;
+     border-radius: 10px;
+    height: fit-content;
+}
+
+.basket__notification {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid black;
+    padding: 0 20px 30px;
+}
+
+.basket__notification-text {
+    margin: 0;
+    padding: 0 0 20px 0;
+    font-size: 40px;
+}
+
+.basket__register-button {
+    width: 100%;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    font-size: 40px;
+    transition: .3s;
+}
+
+.basket__register-button:hover {
+    background-color: rgb(55, 52, 52);
+}
+
+.basket__caption {
+    margin: 10px 0 0 0;
+    font-size: 25px;
+    color: #7cca92;
+
+    a {
+        color: inherit;
+        font-size: 35px;
+    }
+}
+
+.basket__price-container {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-size: 40px;
+    }
+}
+
+.basket__submit-button {
+    width: 100%;
+    background-color: unset;
+    border: 2px solid #00000094;
+    padding: 0;
+    margin-top: 15px;
+    height: 55px;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+.basket__submit-button:hover {
+    background-color: rgba(0, 0, 0, 0.052);
 }
