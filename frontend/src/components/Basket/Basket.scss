@@ -6,15 +6,13 @@
     background-color: #f9f9f9;
 }
 
-/*
-.basket__empty {
-    @include pNormalize;
-    width: 100%;
-    text-align: center;
+.basket__title {
     font-size: 70px;
-    padding-top: 20%;
+    font-weight: 400;
+    margin: 20px auto 0;
+    text-align: center;
 }
-*/
+
 
 .basket__container {
     display: grid;
@@ -33,13 +31,6 @@
 
 .basket__column-left {
     position: relative;
-}
-
-.basket__title {
-    font-size: 70px;
-    font-weight: 400;
-    margin: 47px auto 0;
-    text-align: center;
 }
 
 .basket__items {

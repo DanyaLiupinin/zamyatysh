@@ -2,6 +2,10 @@ import './Basket.scss';
 
 import { Link } from "react-router-dom";
 
+import array from '../../images/historyArray.svg';
+
+import { useNavigate } from 'react-router-dom';
+
 import basketImage from '../../images/basket-image.svg';
 
 import Header from '../Header/Header';
@@ -12,10 +16,17 @@ const Basket = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const basket = useSelector((state: any) => state.items.basket);
 
+
+    const navigate = useNavigate();
+
     return (
         <>
             <Header />
             <section className='basket'>
+            <button className='itemCard__navigation' onClick={() => navigate(-1)}>
+                    <img className='itemCard__navigation-image' src={array} alt='back'></img>
+                    go back
+                </button>
                 <h2 className='basket__title'>Basket</h2>
                 <div className='basket__container'>
                     <div className='basket__column basket__column-left'>
