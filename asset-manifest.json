@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/zamyatysh/static/css/main.fe315e8a.css",
-    "main.js": "/zamyatysh/static/js/main.1f0dc967.js",
+    "main.css": "/zamyatysh/static/css/main.f3a00932.css",
+    "main.js": "/zamyatysh/static/js/main.1a0026b7.js",
     "static/media/gifka.GIF": "/zamyatysh/static/media/gifka.c5a04aa0c1d2654c7eb4.GIF",
     "static/media/logo.svg": "/zamyatysh/static/media/logo.6c2ce06ef7fa3acba377b1b3eb9bb671.svg",
+    "static/media/basket-image.svg": "/zamyatysh/static/media/basket-image.8e1aaa4361f3757d20db91420c81d7c8.svg",
     "static/media/vkorzini.svg": "/zamyatysh/static/media/vkorzini.e0ff3322eaa51a92051592445819aac9.svg",
     "static/media/aboutUs.png": "/zamyatysh/static/media/aboutUs.f9d1c0128a88f5b64516.png",
     "static/media/Zamyatysh_ru-Regular.otf": "/zamyatysh/static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
@@ -14,11 +15,11 @@
     "index.html": "/zamyatysh/index.html",
     "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.11d0d0ea89eb85916bcfa793047fc575.svg",
     "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.f9e1ddcdc2621c2b9849e82967c671c9.svg",
-    "main.fe315e8a.css.map": "/zamyatysh/static/css/main.fe315e8a.css.map",
-    "main.1f0dc967.js.map": "/zamyatysh/static/js/main.1f0dc967.js.map"
+    "main.f3a00932.css.map": "/zamyatysh/static/css/main.f3a00932.css.map",
+    "main.1a0026b7.js.map": "/zamyatysh/static/js/main.1a0026b7.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe315e8a.css",
-    "static/js/main.1f0dc967.js"
+    "static/css/main.f3a00932.css",
+    "static/js/main.1a0026b7.js"
   ]
 }
