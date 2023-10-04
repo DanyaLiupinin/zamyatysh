@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import basketImage from '../../images/basket-image.svg';
 
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+
 import { useSelector } from 'react-redux';
 
 const Basket = () => {
@@ -92,6 +94,7 @@ const Basket = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </>
     )
 }
