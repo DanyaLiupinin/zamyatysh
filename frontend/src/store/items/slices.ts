@@ -32,7 +32,6 @@ export const itemsSlice = createSlice({
             });
         builder
             .addCase(getFilteredItemsThunk.fulfilled, (state, action) => {
-                console.log(action.payload[0])
                 state.activeCategoryFilter = action.payload[0].id;
                 state.items = action.payload[0].attributes.items.data;
             });
