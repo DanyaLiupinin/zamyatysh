@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { userRegister, userLogin } from "../../utils/api";
+import { userRegister, userLogin, getUserData } from "../../utils/api";
 
 export const userRegisterThunk: any = createAsyncThunk(
     'userRegister',
@@ -43,3 +43,28 @@ export const userLoginThunk: any = createAsyncThunk(
         }
     }
 );
+
+export const getUserDataThunk: any = createAsyncThunk(
+    'getUserData',
+
+    async (id: any) => {
+        try {
+            const response = await getUserData({
+                id,
+                jwt: localStorage.getItem("jwt")
+            });
+
+            if (response.response && 
+                response.response.status && 
+                response.response.status === 400) {
+                return Promise.reject(response.response.data.error.message);
+            } else {
+                return response;
+            }
+
+        } catch (error) {
+            return error;
+        }
+    }
+);
+

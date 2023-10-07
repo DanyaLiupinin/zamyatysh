@@ -5,7 +5,6 @@ import { BASE_URL } from "../constants/constants";
 // ITEMS
 
 export const getCategories = (query?: any) => {
-    console.log(query)
     return axios
         .get(`${BASE_URL}/api/categories/`, {
             params: query
@@ -44,6 +43,24 @@ export const getItem = ({ id, locale }: any) => {
         .catch((err) => console.log(err));
 };
 
+export const getBasketItem = ({ id }: any) => {
+
+    return axios
+        .get(`${BASE_URL}/api/users/${id}`, {
+            params: {
+                populate: {
+                    image: true,
+                    categories: true,
+                    sizes: true
+                },
+            }
+        })
+        .then((res) => {
+            return res.data;
+        })
+        .catch((err) => console.log(err));
+};
+
 // USER
 
 export const userRegister = (data: any) => {
@@ -60,6 +77,23 @@ export const userRegister = (data: any) => {
 export const userLogin = (data: any) => {
     return axios
         .post(`${BASE_URL}/api/auth/local`, data)
+        .then((res) => {
+            return res.data;
+        })
+        .catch((err) => {
+            return err;
+        });
+};
+
+export const getUserData = ({ id, jwt }: any) => {
+    return axios
+        .get(`${BASE_URL}/api/users/${id}`, {
+
+            headers: {
+                'Authorization': `Bearer ${jwt}`
+            }
+        }
+        )
         .then((res) => {
             return res.data;
         })

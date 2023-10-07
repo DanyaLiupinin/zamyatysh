@@ -46,7 +46,7 @@ const Filters: React.FC<any> = () => {
     }, [location.pathname])
 
     useEffect(() => {
-        console.log(activeCategoryFilter)
+        //console.log(activeCategoryFilter)
     }, [activeCategoryFilter])
 
     return (

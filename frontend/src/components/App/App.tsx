@@ -17,6 +17,7 @@ import { useActionCreators } from "../../store";
 import { itemsActions } from "../../store/items/index";
 import { usersActions } from "../../store/user";
 
+
 import { useNavigate } from "react-router-dom";
 
 const App: React.FC<any> = () => {
@@ -26,18 +27,21 @@ const App: React.FC<any> = () => {
 
   const locale = useSelector((state: any) => state.items.locale);
   const loggedIn = useSelector((state: any) => state.user.loggedIn);
+  const userState = useSelector((state: any) => state.user);
 
-  const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage } =
+  const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage, getBasketItemsThunk } =
     useActionCreators(itemsActions);
-  const { setLoggedIn } = useActionCreators(usersActions);
+    
+  const { getUserDataThunk } = useActionCreators(usersActions);
 
   const redirectPath = useSelector((state: any) => state.user.rediretcPath);
 
   useEffect(() => {
-    if (localStorage.getItem("jwt")) {
-      setLoggedIn(true);
+    if (localStorage.getItem("jwt") && localStorage.getItem("userId")) {
+      const id = localStorage.getItem("userId")
+      getUserDataThunk(id);
     }
-  });
+  }, []);
 
   useEffect(() => {
     if (localStorage.getItem("locale")) {
@@ -59,8 +63,13 @@ const App: React.FC<any> = () => {
   }, [locale]);
 
   useEffect(() => {
+    if (loggedIn) getBasketItemsThunk();
+  }, [loggedIn]);
+
+  useEffect(() => {
     if (redirectPath) navigate(redirectPath);
   }, [redirectPath]);
+
 
   return (
     <div className="App">
