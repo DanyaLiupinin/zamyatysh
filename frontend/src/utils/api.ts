@@ -53,7 +53,9 @@ export const getBasketItem = ({ id, jwt }: any) => {
             },
             params: {
                 populate: {
-                    items: true
+                    items: {
+                        populate: '*'
+                    }
                 }
             }  
         })

@@ -68,12 +68,7 @@ const App: React.FC<any> = () => {
     getAllCategoriesThunk();
   }, [locale]);
 
-  useEffect(() => {
-    if (loggedIn) {
-      console.log('ya tut')
-      getBasketItemsThunk();
-    }
-  }, [loggedIn]);
+
 
   useEffect(() => {
     if (redirectPath) navigate(redirectPath);
