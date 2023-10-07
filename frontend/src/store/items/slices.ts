@@ -37,7 +37,7 @@ export const itemsSlice = createSlice({
             });
         builder
             .addCase(getBasketItemsThunk.fulfilled, (state, action) => {
-                //console.log(action.payload);
+                state.basket = action.payload.items;
             });
     },
 });

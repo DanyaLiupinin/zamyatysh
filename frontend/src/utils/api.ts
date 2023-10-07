@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { BASE_URL } from "../constants/constants";
 
+
 // ITEMS
 
 export const getCategories = (query?: any) => {
@@ -43,17 +44,18 @@ export const getItem = ({ id, locale }: any) => {
         .catch((err) => console.log(err));
 };
 
-export const getBasketItem = ({ id }: any) => {
+export const getBasketItem = ({ id, jwt }: any) => {
 
     return axios
-        .get(`${BASE_URL}/api/users/${id}`, {
+        .get(`${BASE_URL}/api/users/${id}/`, {
+            headers: {
+                'Authorization': `Bearer ${jwt}`
+            },
             params: {
                 populate: {
-                    image: true,
-                    categories: true,
-                    sizes: true
-                },
-            }
+                    items: true
+                }
+            }  
         })
         .then((res) => {
             return res.data;

@@ -27,10 +27,16 @@ const App: React.FC<any> = () => {
 
   const locale = useSelector((state: any) => state.items.locale);
   const loggedIn = useSelector((state: any) => state.user.loggedIn);
+
+  
   const userState = useSelector((state: any) => state.user);
 
-  const { getAllCategoriesThunk, getAllItemsThunk, changeLanguage, getBasketItemsThunk } =
-    useActionCreators(itemsActions);
+  const { 
+    getAllCategoriesThunk, 
+    getAllItemsThunk, 
+    changeLanguage, 
+    getBasketItemsThunk 
+  } = useActionCreators(itemsActions);
     
   const { getUserDataThunk } = useActionCreators(usersActions);
 
@@ -63,7 +69,10 @@ const App: React.FC<any> = () => {
   }, [locale]);
 
   useEffect(() => {
-    if (loggedIn) getBasketItemsThunk();
+    if (loggedIn) {
+      console.log('ya tut')
+      getBasketItemsThunk();
+    }
   }, [loggedIn]);
 
   useEffect(() => {

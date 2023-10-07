@@ -67,23 +67,16 @@ export const getFilteredItemsThunk: any = createAsyncThunk(
 export const getBasketItemsThunk: any = createAsyncThunk(
     'getBasketItems',
 
-    async (_, thunkAPI) => {
-        
+    async () => {
         try {
-           // const userId = getUserId(thunkAPI.getState());
-            const response = await getCategories({
-                //id: userId,
-                populate: {
-                    items: {
-                        populate: '*' // можно подрезать инфу для запроса
-                    },
-                },
-                //locale: locale,
+            const response = await getBasketItem({
+                id: localStorage.getItem('userId'),
+                jwt: localStorage.getItem('jwt'),
             });
             return response;
         } catch (error) {
             console.log(error);
-        }
+        } 
     }
 );
 
