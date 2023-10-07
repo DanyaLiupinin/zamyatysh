@@ -34,8 +34,7 @@ const App: React.FC<any> = () => {
   const { 
     getAllCategoriesThunk, 
     getAllItemsThunk, 
-    changeLanguage, 
-    getBasketItemsThunk 
+    changeLanguage
   } = useActionCreators(itemsActions);
     
   const { getUserDataThunk } = useActionCreators(usersActions);

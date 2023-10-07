@@ -16,32 +16,59 @@ import { TLocale } from '../../types/components';
 
 //import items from '../../constants/items';
 
+
 import array from '../../images/historyArray.svg';
-import { getItem } from '../../utils/api';
+import { getItem, getUserItem } from '../../utils/api';
 
 
 const ItemCard: React.FC<any> = () => {
 
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
+    const [isBasketItem, setBasketItem] = useState(false);
+
+    const loggedIn = useSelector((state: any) => state.user.loggedIn);
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const actualUserId = useSelector((state: any) => state.user.id);
 
     const navigate = useNavigate();
-   
+
     const slug = useParams();
 
+    const isThisUserItem = (itemUsers: any) => {
+        return itemUsers && itemUsers.some((user: any) => user.id === actualUserId);
+    };
+
     useEffect(() => {
-        if (locale && slug)
-        getItem({
-            id: slug.slug,
-            locale: locale
-        })
-        .then((res) => {
-            setItem(res.data.attributes)});
-    }, [locale]);
-    
-    console.log(item)
+
+        if (locale && slug.slug) {
+
+            if (!loggedIn) {
+                getItem({
+                    id: slug.slug,
+                    locale: locale
+                })
+                    .then((res) => {
+                        setItem(res.data.attributes)
+                    });
+            } else {
+                getUserItem({
+                    id: slug.slug,
+                    locale: locale,
+                    jwt: localStorage.getItem('jwt')
+                })
+                    .then((res) => {
+                        setItem(res.data.attributes);
+                        isThisUserItem(res.data.attributes.users.data) ? 
+                        setBasketItem(true) : 
+                        setBasketItem(false);
+                    });
+            }
+
+        }
+    }, [locale, slug]);
+
 
     return (
         <>
@@ -57,7 +84,9 @@ const ItemCard: React.FC<any> = () => {
                             <ImageCarousel
                                 item={item}
                             />
+                            
                             <ItemInformation
+                            isBasketItem={isBasketItem}
                                 chosenSize={chosenSize}
                                 setChosenSize={setChosenSize}
                                 item={item}

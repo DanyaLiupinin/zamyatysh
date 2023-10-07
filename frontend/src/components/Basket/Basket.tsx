@@ -46,7 +46,6 @@ const Basket = () => {
 
     useEffect(() => {
         if (loggedIn) {
-            console.log('tatut')
             getBasketItemsThunk();
         }
     }, [loggedIn]);

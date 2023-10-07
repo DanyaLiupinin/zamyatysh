@@ -44,6 +44,28 @@ export const getItem = ({ id, locale }: any) => {
         .catch((err) => console.log(err));
 };
 
+export const getUserItem = ({id, locale, jwt}: any) => {
+
+    return axios
+        .get(`${BASE_URL}/api/items/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${jwt}`
+            },
+            params: {
+                locale: locale,
+                populate: {
+                    image: true,
+                    users: true,
+                    sizes: true
+                },
+            }
+        })
+        .then((res) => {
+            return res.data;
+        })
+        .catch((err) => console.log(err));
+}
+
 export const getBasketItem = ({ id, jwt }: any) => {
 
     return axios
