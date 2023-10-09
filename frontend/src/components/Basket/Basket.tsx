@@ -76,7 +76,7 @@ const Basket = () => {
                     <div className='basket__column basket__column-right'>
                         <div className='basket__notification'>
                             {
-                                loggedIn ?
+                                !loggedIn ?
                                     <p className='basket__notification-text'>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</p> :
                                     <>
                                         <p className='basket__notification-text'>register for having access to our discounts</p>

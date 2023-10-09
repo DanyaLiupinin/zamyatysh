@@ -75,8 +75,9 @@
 
 @media (max-width: 1120px) {
     .welcome__gif {
-        width: 60%;
+        width: 65%;
         left: 20%;
+        bottom: 25%;
     }
 }
 
@@ -87,9 +88,25 @@
     }
 }
 
+@media (max-width: 800px) {
+    .welcome__gif {
+        width: 80%;
+        left: 5%;
+    }
+}
+
 @media (max-width: 620px) {
     .welcome__gif {
-        width: 50%;
-        left: 25%;
+        width: 75%;
+        left: 15%;
+        bottom: 12%;
+    }
+}
+
+@media (max-width: 400px) {
+    .welcome__gif {
+        width: 95%;
+        left: 5%;
+        bottom: 8%;
     }
 }
