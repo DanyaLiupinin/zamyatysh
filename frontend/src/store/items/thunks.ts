@@ -1,8 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getCategories, getItems } from "../../utils/api";
+import { getCategories, getItems, getBasketItem, getUserItem } from "../../utils/api";
 
 import { getLocale } from "./slices";
+
+import { getUserId } from "../user/slices";
 
 
 export const getAllCategoriesThunk: any = createAsyncThunk(
@@ -14,7 +16,6 @@ export const getAllCategoriesThunk: any = createAsyncThunk(
             const response = await getCategories({
                 locale: locale,
             });
-            console.log(response);
             return response;
         } catch (error) {
             console.log(error);
@@ -60,6 +61,22 @@ export const getFilteredItemsThunk: any = createAsyncThunk(
         } catch (error) {
             console.log(error);
         }
+    }
+);
+
+export const getBasketItemsThunk: any = createAsyncThunk(
+    'getBasketItems',
+
+    async () => {
+        try {
+            const response = await getBasketItem({
+                id: localStorage.getItem('userId'),
+                jwt: localStorage.getItem('jwt'),
+            });
+            return response;
+        } catch (error) {
+            console.log(error);
+        } 
     }
 );
 

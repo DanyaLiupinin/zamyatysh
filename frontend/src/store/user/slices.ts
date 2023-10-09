@@ -1,13 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { userRegisterThunk, userLoginThunk } from "./thunks";
-
-
-
+import { userRegisterThunk, userLoginThunk, getUserDataThunk } from "./thunks";
 
 export const usersState: any = {
     loggedIn: false,
     username: null,
+    id: null,
     email: null,
     error: '',
     rediretcPath: null
@@ -27,13 +25,14 @@ export const usersSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(userRegisterThunk.fulfilled, (state, action) => {
-                console.log(action)
                 const jwt = action.payload.jwt;
                 if (jwt) state.loggedIn = true;
                 localStorage.setItem('jwt', jwt);
+                localStorage.setItem('userId', action.payload.user.id);
 
-                state.username = action.payload.username;
+                state.username = action.payload.user.username;
                 state.email = action.payload.email;
+                state.id = action.payload.user.id;
 
                 state.rediretcPath = '/shop';
             })
@@ -42,19 +41,31 @@ export const usersSlice = createSlice({
             });
 
         builder
-        .addCase(userLoginThunk.fulfilled, (state, action) => {
-            const jwt = action.payload.jwt;
-            if (jwt) state.loggedIn = true;
-            localStorage.setItem('jwt', jwt);
+            .addCase(userLoginThunk.fulfilled, (state, action) => {
+                const jwt = action.payload.jwt;
+                if (jwt) state.loggedIn = true;
+                localStorage.setItem('jwt', jwt);
+                localStorage.setItem('userId', action.payload.user.id);
 
-            state.username = action.payload.username;
-            state.identifier = action.payload.identifier;
 
-            state.rediretcPath = '/shop';
-        })
-        .addCase(userLoginThunk.rejected, (state, action) => {
-            state.error = action.error.message;
-        });
+                state.username = action.payload.user.username;
+                state.email = action.payload.email;
+                state.id = action.payload.user.id;
+
+                state.rediretcPath = '/shop';
+            })
+            .addCase(userLoginThunk.rejected, (state, action) => {
+                state.error = action.error.message;
+            });
+        builder
+            .addCase(getUserDataThunk.fulfilled, (state, action) => {
+                state.username = action.payload.username;
+                state.email = action.payload.email;
+                state.id = action.payload.id;
+                state.loggedIn = true;
+            });
     },
 });
+
+export const getUserId = (state: any) => state.users;
 

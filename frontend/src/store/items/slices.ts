@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getAllCategoriesThunk, getAllItemsThunk, getFilteredItemsThunk } from "./thunks";
+import { getAllCategoriesThunk, getAllItemsThunk, getFilteredItemsThunk, getBasketItemsThunk } from "./thunks";
 
 export const itemsState: any = {
     categories: null,
@@ -32,9 +32,12 @@ export const itemsSlice = createSlice({
             });
         builder
             .addCase(getFilteredItemsThunk.fulfilled, (state, action) => {
-                console.log(action.payload[0])
                 state.activeCategoryFilter = action.payload[0].id;
                 state.items = action.payload[0].attributes.items.data;
+            });
+        builder
+            .addCase(getBasketItemsThunk.fulfilled, (state, action) => {
+                state.basket = action.payload.items;
             });
     },
 });

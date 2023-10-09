@@ -1,6 +1,13 @@
+import Header from "../Header/Header";
+
+import './Account.scss';
+
 const Account = () => {
     return (
-        <p>личный кабинет</p>
+        <>
+        <Header />
+        <section className='account'>we are building account page c:</section>
+        </>
     );
 };
 

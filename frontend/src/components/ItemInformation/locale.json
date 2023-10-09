@@ -6,5 +6,9 @@
     "addToBasket": {
         "ru": "добавить в корзину",
         "en": "add to basket"
+    },
+    "addedToBasket": {
+        "ru": "добавлено",
+        "en": "already added"
     }
 }
