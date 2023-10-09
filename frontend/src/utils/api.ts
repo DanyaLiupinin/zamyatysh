@@ -104,6 +104,7 @@ export const userLogin = (data: any) => {
     return axios
         .post(`${BASE_URL}/api/auth/local`, data)
         .then((res) => {
+            console.log(res.data)
             return res.data;
         })
         .catch((err) => {
@@ -121,6 +122,7 @@ export const getUserData = ({ id, jwt }: any) => {
         }
         )
         .then((res) => {
+            console.log(res.data)
             return res.data;
         })
         .catch((err) => {
