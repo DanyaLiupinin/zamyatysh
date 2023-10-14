@@ -25,7 +25,7 @@ const ItemCard: React.FC<any> = () => {
 
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
-    const [isBasketItem, setBasketItem] = useState(false);
+    //const [isBasketItem, setBasketItem] = useState(false);
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
 
@@ -60,12 +60,11 @@ const ItemCard: React.FC<any> = () => {
                 })
                     .then((res) => {
                         setItem(res.data.attributes);
-                        isThisUserItem(res.data.attributes.users.data) ? 
-                        setBasketItem(true) : 
-                        setBasketItem(false);
+                        //isThisUserItem(res.data.attributes.users.data) ? 
+                        //setBasketItem(true) : 
+                        //setBasketItem(false);
                     });
             }
-
         }
     }, [locale, slug]);
 
@@ -86,7 +85,7 @@ const ItemCard: React.FC<any> = () => {
                             />
                             
                             <ItemInformation
-                            isBasketItem={isBasketItem}
+                           // isBasketItem={isBasketItem}
                                 chosenSize={chosenSize}
                                 setChosenSize={setChosenSize}
                                 item={item}

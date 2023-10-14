@@ -22,10 +22,6 @@ const Basket = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const basket = useSelector((state: any) => state.items.basket);
 
-    const {
-        getBasketItemsThunk
-    } = useActionCreators(itemsActions);
-
     let finalPrice = 0;
 
     const getFinalPrice = () => {
@@ -44,11 +40,6 @@ const Basket = () => {
 
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (loggedIn) {
-            getBasketItemsThunk();
-        }
-    }, [loggedIn]);
 
     return (
         <>

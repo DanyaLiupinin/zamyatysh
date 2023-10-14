@@ -79,6 +79,12 @@
     transition: .3s;
 }
 
+.itemInformation__caption {
+    font-size: 30px;
+    margin: 0;
+    color: rgb(234, 69, 69);
+}
+
 .itemInformation__basket-image_active {
     top: -20px;
 }

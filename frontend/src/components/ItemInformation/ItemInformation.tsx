@@ -1,4 +1,5 @@
 import './ItemInformation.scss';
+import React, { useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -7,8 +8,9 @@ import { TLocale } from '../../types/components';
 
 import content from './locale.json';
 
-const ItemInformation = ({ item, chosenSize, setChosenSize, isBasketItem }: any) => {
+const   ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
 
+    const [isCaptionActive, setCaptionActive] = useState(false);
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const onSizeClick = (size: string) => {
@@ -16,6 +18,15 @@ const ItemInformation = ({ item, chosenSize, setChosenSize, isBasketItem }: any)
             setChosenSize('');
         } else {
             setChosenSize(size);
+            setCaptionActive(false);
+        }
+    };
+
+    const onAddItem = () => {
+        if (chosenSize === '') {
+            setCaptionActive(true);
+        } else {
+            ///////////// add item to basket
         }
     };
 
@@ -39,14 +50,14 @@ const ItemInformation = ({ item, chosenSize, setChosenSize, isBasketItem }: any)
 
             <div className='itemInformation__basket-container'>
                 <img src={frog} className={`itemInformation__basket-image ${chosenSize !== '' ? 'itemInformation__basket-image_active' : ''}`} alt='frog wants you to buy something'></img>
-                <button disabled={isBasketItem ? true : false} className={`itemInformation__add-button`} type='button'>
-                    {
-                        isBasketItem ?
-                            content.addedToBasket[locale] :
+                <button onClick={onAddItem} disabled={isCaptionActive ? true : false} className={`itemInformation__add-button`} type='button'>
+                        {
                             content.addToBasket[locale]
-                    }
+                        }
                 </button>
-                <p>you can only but 1 item at the moment :c</p>
+                {isCaptionActive ?
+                <p className='itemInformation__caption'>choose size please c:</p> : ''   
+            }
             </div>
         </div>
     );

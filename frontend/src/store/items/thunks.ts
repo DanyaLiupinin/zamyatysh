@@ -64,19 +64,5 @@ export const getFilteredItemsThunk: any = createAsyncThunk(
     }
 );
 
-export const getBasketItemsThunk: any = createAsyncThunk(
-    'getBasketItems',
 
-    async () => {
-        try {
-            const response = await getBasketItem({
-                id: localStorage.getItem('userId'),
-                jwt: localStorage.getItem('jwt'),
-            });
-            return response;
-        } catch (error) {
-            console.log(error);
-        } 
-    }
-);
 
