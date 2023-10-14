@@ -8,7 +8,7 @@ import { TLocale } from '../../types/components';
 
 import content from './locale.json';
 
-const   ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
+const ItemInformation = ({ item, chosenSize, setChosenSize, addItemHandler, isBasketItem, basketItemCount }: any) => {
 
     const [isCaptionActive, setCaptionActive] = useState(false);
     const locale: TLocale = useSelector((state: any) => state.items.locale);
@@ -26,7 +26,7 @@ const   ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
         if (chosenSize === '') {
             setCaptionActive(true);
         } else {
-            ///////////// add item to basket
+            addItemHandler();
         }
     };
 
@@ -51,12 +51,15 @@ const   ItemInformation = ({ item, chosenSize, setChosenSize }: any) => {
             <div className='itemInformation__basket-container'>
                 <img src={frog} className={`itemInformation__basket-image ${chosenSize !== '' ? 'itemInformation__basket-image_active' : ''}`} alt='frog wants you to buy something'></img>
                 <button onClick={onAddItem} disabled={isCaptionActive ? true : false} className={`itemInformation__add-button`} type='button'>
-                        {
-                            content.addToBasket[locale]
-                        }
+                    {
+                        content.addToBasket[locale]
+                    }
                 </button>
                 {isCaptionActive ?
-                <p className='itemInformation__caption'>choose size please c:</p> : ''   
+                    <p className='itemInformation__caption'>choose size please c:</p> : ''
+                }
+                {isBasketItem ? 
+                    <p className='itemInformation__caption'>you've already added {basketItemCount} c:</p> : '' 
             }
             </div>
         </div>

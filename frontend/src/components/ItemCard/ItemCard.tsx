@@ -25,7 +25,9 @@ const ItemCard: React.FC<any> = () => {
 
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
-    //const [isBasketItem, setBasketItem] = useState(false);
+    const [allBasketItems, setAllBasketItems] = useState<any>(null);
+    const [isBasketItem, setBasketItem] = useState(false);
+    const [basketItemCount, setBasketItemCount] = useState(0);
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
 
@@ -39,6 +41,24 @@ const ItemCard: React.FC<any> = () => {
     const isThisUserItem = (itemUsers: any) => {
         return itemUsers && itemUsers.some((user: any) => user.id === actualUserId);
     };
+
+    const addItemHandler = () => {
+
+        const newItem = {
+            id: slug.slug,
+            size: chosenSize,
+            slug: item.slug
+        };
+
+        if (!allBasketItems) {
+            setAllBasketItems([newItem]);
+            localStorage.setItem('basketItems', JSON.stringify([newItem]));
+        } else {
+            setAllBasketItems([...allBasketItems, newItem]);
+            localStorage.setItem('basketItems', JSON.stringify([...allBasketItems, newItem]));
+        }
+    };
+
 
     useEffect(() => {
 
@@ -68,6 +88,28 @@ const ItemCard: React.FC<any> = () => {
         }
     }, [locale, slug]);
 
+    useEffect(() => {
+
+        if (localStorage.getItem('basketItems')) {
+            const addedItems = localStorage.getItem('basketItems');
+            let addedItemsObj;
+            if (addedItems) { addedItemsObj = JSON.parse(addedItems); }
+            setAllBasketItems(addedItemsObj);
+        }
+
+    }, []);
+
+    useEffect(() => {
+        if (allBasketItems && item) {
+            for (let i = 0; i < allBasketItems.length; i++) {
+                if (allBasketItems[i].slug === item.slug) {
+                    setBasketItem(true);
+                    setBasketItemCount(basketItemCount + 1);
+                }
+            }
+        }
+    }, [allBasketItems, item]);
+
 
     return (
         <>
@@ -83,12 +125,15 @@ const ItemCard: React.FC<any> = () => {
                             <ImageCarousel
                                 item={item}
                             />
-                            
+
                             <ItemInformation
-                           // isBasketItem={isBasketItem}
+                                // isBasketItem={isBasketItem}
                                 chosenSize={chosenSize}
                                 setChosenSize={setChosenSize}
                                 item={item}
+                                addItemHandler={addItemHandler}
+                                isBasketItem={isBasketItem}
+                                basketItemCount={basketItemCount}
                             />
                         </div>
                         <div id='description' className='itemCard__item-description'>
