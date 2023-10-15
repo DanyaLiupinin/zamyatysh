@@ -121,3 +121,35 @@
         }
     }
 }
+
+/////
+/// 
+/// 
+/// 
+
+
+.header__navigation {
+    li:first-child {
+        a {
+        color: #f96881;
+        }
+    }
+
+    li:nth-child(2) {
+        a {
+            color: #85f968;
+        }
+    }
+
+    li:nth-child(3) {
+        a {
+            color: #68f9ef;
+        }
+    }
+
+    li:nth-child(4) {
+        a {
+            color: #f9b368;
+        }
+    }
+}

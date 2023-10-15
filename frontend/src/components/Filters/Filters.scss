@@ -17,7 +17,9 @@
     flex-direction: column;
     width: 90%;
     height: fit-content;
-    word-break: break-all;
+    word-break: break-word;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
 .filters__button_active {

@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    color: violet
 }
 
 .footer__info {
@@ -123,4 +124,39 @@
             font-size: 30px;
         } 
     }
+}
+
+
+////////
+/// 
+
+.footer__info {
+    p:first-child   {
+        color: #686af9;
+    }
+
+    p:nth-child(2)   {
+        color: #83f968;
+    }
+
+    p:nth-child(3)   {
+        color: #f9b068;
+    }
+
+}
+
+
+.footer__links {
+    p:first-child   {
+        color: #f968e1;
+    }
+
+    p:nth-child(2)   {
+        color: #68edf9;
+    }
+
+    p:nth-child(3)   {
+        color: #f96868;
+    }
+
 }
