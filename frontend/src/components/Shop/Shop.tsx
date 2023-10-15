@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import ItemList from '../ItemList/ItemList';
 import Filters from '../Filters/Filters';
 import Footer from '../Footer/Footer';
+import BasketNotification from '../BasketNotification/BasketNotification';
 import { useActionCreators } from '../../store';
 import { itemsActions } from '../../store/items/index';
 
@@ -23,6 +24,7 @@ const Shop: React.FC = () => {
             <main className='mainShop'>
                 <Filters />
                 <ItemList />
+                <BasketNotification />
             </main>
             <Footer />
         </>

@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
+import BasketNotification from '../BasketNotification/BasketNotification';
 // eslint-disable-next-line import/order
 import ItemInformation from '../ItemInformation/ItemInformation';
 
@@ -59,7 +60,7 @@ const ItemCard: React.FC<any> = () => {
         }
     };
 
-
+//// убрать это // функционал изменен
     useEffect(() => {
 
         if (locale && slug.slug) {
@@ -144,6 +145,7 @@ const ItemCard: React.FC<any> = () => {
                             <h3 className='itemCard__item-description-inline'>{content.style[locale]}:</h3>
                             <p>{item.style}</p>
                         </div>
+                        <BasketNotification />
                     </>
                     :
                     <p>oooops</p>
