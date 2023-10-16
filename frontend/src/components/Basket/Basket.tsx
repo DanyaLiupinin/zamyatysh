@@ -20,12 +20,12 @@ import { useActionCreators } from "../../store";
 const Basket = () => {
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
-    const basket = useSelector((state: any) => state.items.basket);
+   // const basket = useSelector((state: any) => state.items.basket);
 
     let finalPrice = 0;
-
+/*
     const getFinalPrice = () => {
-        if (basket) {
+        if (basket && basket.length > 0) {
             const regex = /\d+/g;
 
             for (let i = 0; i < basket.length; i++) {
@@ -36,7 +36,7 @@ const Basket = () => {
     };
 
     getFinalPrice();
-
+*/
 
     const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const Basket = () => {
                 </button>
                 <h2 className='basket__title'>Basket</h2>
 
-                {
+                {/*
                     !basket || basket.length === 0 ?
                         <p className='basket__no-items'>there is no items in your basket :c</p> :
                         <div className='basket__container'>
@@ -97,7 +97,7 @@ const Basket = () => {
                                 </div>
                             </div>
                         </div>
-                }
+                                */}
             </section>
             <Footer />
         </>

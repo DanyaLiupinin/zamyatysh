@@ -11,6 +11,7 @@ import content from './locale.json';
 const ItemInformation = ({ item, chosenSize, setChosenSize, addItemHandler, isBasketItem, basketItemCount }: any) => {
 
     const [isCaptionActive, setCaptionActive] = useState(false);
+    
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const onSizeClick = (size: string) => {

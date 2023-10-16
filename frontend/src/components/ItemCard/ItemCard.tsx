@@ -22,41 +22,42 @@ import array from '../../images/historyArray.svg';
 import { getItem, getUserItem } from '../../utils/api';
 
 
+import { itemsActions } from "../../store/items/index";
+import { useActionCreators } from "../../store";
+
 const ItemCard: React.FC<any> = () => {
 
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
-    const [allBasketItems, setAllBasketItems] = useState<any>(null);
+    //const [allBasketItems, setAllBasketItems] = useState<any>(null);
     const [isBasketItem, setBasketItem] = useState(false);
     const [basketItemCount, setBasketItemCount] = useState(0);
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
-
     const locale: TLocale = useSelector((state: any) => state.items.locale);
-    const actualUserId = useSelector((state: any) => state.user.id);
+    const basketItems = useSelector((state: any) => state.items.basketItemsShort);
+    
+    const { setBasket } = useActionCreators(itemsActions);
 
     const navigate = useNavigate();
 
     const slug = useParams();
-
-    const isThisUserItem = (itemUsers: any) => {
-        return itemUsers && itemUsers.some((user: any) => user.id === actualUserId);
-    };
 
     const addItemHandler = () => {
 
         const newItem = {
             id: slug.slug,
             size: chosenSize,
-            slug: item.slug
+            slug: item.slug,
+            price: item.price
         };
 
-        if (!allBasketItems) {
-            setAllBasketItems([newItem]);
-            localStorage.setItem('basketItems', JSON.stringify([newItem]));
+        if (!basketItems) {
+            console.log('korziny net')
+            setBasket([newItem]);
         } else {
-            setAllBasketItems([...allBasketItems, newItem]);
-            localStorage.setItem('basketItems', JSON.stringify([...allBasketItems, newItem]));
+            console.log('korziny est')
+            setBasket([...basketItems, newItem]);
         }
     };
 
@@ -90,27 +91,15 @@ const ItemCard: React.FC<any> = () => {
     }, [locale, slug]);
 
     useEffect(() => {
-
-        if (localStorage.getItem('basketItems')) {
-            const addedItems = localStorage.getItem('basketItems');
-            let addedItemsObj;
-            if (addedItems) { addedItemsObj = JSON.parse(addedItems); }
-            setAllBasketItems(addedItemsObj);
-        }
-
-    }, []);
-
-    useEffect(() => {
-        if (allBasketItems && item) {
-            for (let i = 0; i < allBasketItems.length; i++) {
-                if (allBasketItems[i].slug === item.slug) {
+        if (basketItems && item) {
+            for (let i = 0; i < basketItems.length; i++) {
+                if (basketItems[i].slug === item.slug) {
                     setBasketItem(true);
-                    setBasketItemCount(basketItemCount + 1);
+                    setBasketItemCount(basketItemCount + 1)
                 }
             }
         }
-    }, [allBasketItems, item]);
-
+    }, [basketItems]);
 
     return (
         <>

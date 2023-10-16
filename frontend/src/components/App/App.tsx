@@ -27,14 +27,14 @@ const App: React.FC<any> = () => {
 
   const locale = useSelector((state: any) => state.items.locale);
   const loggedIn = useSelector((state: any) => state.user.loggedIn);
-
+  const basketItems = useSelector((state: any) => state.items.basketItemsShort)
   
-  const userState = useSelector((state: any) => state.user);
 
   const { 
     getAllCategoriesThunk, 
     getAllItemsThunk, 
-    changeLanguage
+    changeLanguage,
+    setBasket
   } = useActionCreators(itemsActions);
     
   const { getUserDataThunk } = useActionCreators(usersActions);
@@ -74,6 +74,26 @@ const App: React.FC<any> = () => {
   }, [redirectPath]);
 
 
+useEffect(() => {
+  if (localStorage.getItem('basketItems')) {
+    const storageItems = localStorage.getItem('basketItems')
+    let storageItemsObj;
+    if (storageItems) storageItemsObj = JSON.parse(storageItems);
+    setBasket(storageItemsObj);
+  }
+}, [])
+
+
+  useEffect(() => {
+
+    if (basketItems) {
+      localStorage.setItem('basketItems', JSON.stringify(basketItems));
+    } else {
+      localStorage.setItem('basketItems', '');
+    }
+
+  }, [basketItems])
+
   return (
     <div className="App">
       <Routes>
@@ -81,7 +101,6 @@ const App: React.FC<any> = () => {
           path="/register"
           element={loggedIn ? <Navigate to="/account" /> : <Register />}
         />{" "}
-        {/* сделать переадресацию для авторизированного юзера */}
         <Route
           path="/login"
           element={loggedIn ? <Navigate to="/account" /> : <Login />}
