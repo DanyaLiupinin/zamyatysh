@@ -36,7 +36,7 @@ const ItemCard: React.FC<any> = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const locale: TLocale = useSelector((state: any) => state.items.locale);
     const basketItems = useSelector((state: any) => state.items.basketItemsShort);
-    
+
     const { setBasket } = useActionCreators(itemsActions);
 
     const navigate = useNavigate();
@@ -61,7 +61,7 @@ const ItemCard: React.FC<any> = () => {
         }
     };
 
-//// убрать это // функционал изменен
+    //// убрать это // функционал изменен
     useEffect(() => {
 
         if (locale && slug.slug) {
@@ -112,6 +112,9 @@ const ItemCard: React.FC<any> = () => {
                 {item !== undefined ?
                     <>
                         <div className='itemCard__card-container'>
+                            <div className='itemCard__sticky-notification-container'>
+                                <BasketNotification />
+                            </div>
                             <ImageCarousel
                                 item={item}
                             />
@@ -125,6 +128,7 @@ const ItemCard: React.FC<any> = () => {
                                 isBasketItem={isBasketItem}
                                 basketItemCount={basketItemCount}
                             />
+
                         </div>
                         <div id='description' className='itemCard__item-description'>
                             <h3>{content.description[locale]}:</h3>
@@ -134,7 +138,6 @@ const ItemCard: React.FC<any> = () => {
                             <h3 className='itemCard__item-description-inline'>{content.style[locale]}:</h3>
                             <p>{item.style}</p>
                         </div>
-                        <BasketNotification />
                     </>
                     :
                     <p>oooops</p>

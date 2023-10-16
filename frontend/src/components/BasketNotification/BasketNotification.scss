@@ -1,14 +1,12 @@
 .basketNotification {
-    position: fixed;
-    right: 5%;
-    top: 14%;
+    position: sticky;
+    height: fit-content;
+    top: 3%;
     text-decoration: none;
     z-index: 1;
     transition: .3s;
     display: none;
     color: black;
-
-    
 }
 
 .basketNotification__image {
@@ -30,7 +28,7 @@
         outline: 2px solid black;
         width: fit-content;
         border-radius: 30px;
-        font-size: 30px;
+        font-size: 45px;
         width: 30px;
         height: 30px;
         margin: auto;
@@ -41,49 +39,15 @@
     }
 }
 
-@media (max-width: 1500px) {
-    .basketNotification {
-        right: 3%;
-    }
-}
-
-@media (max-width: 1400px) {
-    .basketNotification {
-        right: 1%;
-    }
-}
-
-@media (max-width: 1350px) {
-    .basketNotification {
-        right: 0%;
-    }
-}
-
-@media (max-width: 1000px) {
-
-    .basketNotification {
-        right: 3%;
-        width: 60px;
-        height: auto;
-    }
-
+@media (max-width: 800px) {
     .basketNotification__image {
-        width: 80px;
+        width: 70px;
         height: auto;
     }
 
-}
-
-@media (max-width: 768px) {
-    .basketNotification {
-        top: 18%;
-        right: 4%;
-    }
-}
-
-@media (max-width: 670px) {
-    .basketNotification {
-        right: 4%;
+    .basketNotification p {
+        width: 20px;
+        height: 20px;
     }
 }
 
