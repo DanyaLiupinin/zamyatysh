@@ -7,17 +7,9 @@ import { TLocale } from '../../types/components';
 
 import content from './locale.json';
 
-
 import './WelcomePage.scss';
 
 const logo = require('../../images/gifka.GIF');
-
-
-
-// TODO 
-// прибраться в коде
-// посмотреть страницу на разных устройствах, увеличить размер гифки
-// написать altы на английском
 
 const WelcomePage: React.FC = () => {
 

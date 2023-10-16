@@ -6,8 +6,6 @@ import { useActionCreators } from '../../store';
 import { TLocale } from '../../types/components';
 import { itemsActions } from '../../store/items/index';
 
-import { getCategories } from '../../utils/api';
-
 import ClearFilters from './ClearFilters/CleartFilters';
 import content from './locale.json';
 
@@ -43,11 +41,8 @@ const Filters: React.FC<any> = () => {
             setCategoryFilter(null);
         }
 
-    }, [location.pathname])
-
-    useEffect(() => {
-        //console.log(activeCategoryFilter)
-    }, [activeCategoryFilter])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location.pathname]);
 
     return (
         <div className='filters'>

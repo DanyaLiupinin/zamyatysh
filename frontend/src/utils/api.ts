@@ -64,7 +64,7 @@ export const getUserItem = ({id, locale, jwt}: any) => {
             return res.data;
         })
         .catch((err) => console.log(err));
-}
+};
 
 export const getBasketItem = ({ id, jwt }: any) => {
 
@@ -104,7 +104,7 @@ export const userLogin = (data: any) => {
     return axios
         .post(`${BASE_URL}/api/auth/local`, data)
         .then((res) => {
-            console.log(res.data)
+            console.log(res.data);
             return res.data;
         })
         .catch((err) => {
@@ -122,7 +122,7 @@ export const getUserData = ({ id, jwt }: any) => {
         }
         )
         .then((res) => {
-            console.log(res.data)
+            console.log(res.data);
             return res.data;
         })
         .catch((err) => {

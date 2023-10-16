@@ -1,11 +1,9 @@
 import { useSelector } from 'react-redux';       
 
 import Item from '../Item/Item';
-
 import { TLocale } from '../../types/components';
+
 import content from './locale.json';
-
-
 
 import './ItemList.scss';
 
@@ -26,7 +24,6 @@ const ItemList: React.FC<any> = () => {
                                 image={i.attributes.image.data[0].attributes.url}
                                 key={i.id}
                                 id={i.id}
-                                //slug={i.attributes.slug}
                             />
                         );
                     }) :

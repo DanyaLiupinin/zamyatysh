@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
 
 import "./App.scss";
 
@@ -14,21 +13,19 @@ import Login from "../Auth/Login";
 import Account from "../Account/Account";
 import Basket from "../Basket/Basket";
 import { useActionCreators } from "../../store";
-import { itemsActions } from "../../store/items/index";
+import { itemsActions } from "../../store/items";
 import { usersActions } from "../../store/user";
 
-
-import { useNavigate } from "react-router-dom";
-
 const App: React.FC<any> = () => {
+
   const isFirstRender = useRef(true);
 
   const navigate = useNavigate();
 
   const locale = useSelector((state: any) => state.items.locale);
   const loggedIn = useSelector((state: any) => state.user.loggedIn);
-  const basketItems = useSelector((state: any) => state.items.basketItemsShort)
-  
+  const basketItems = useSelector((state: any) => state.items.basketItemsShort);
+  const redirectPath = useSelector((state: any) => state.user.rediretcPath);
 
   const { 
     getAllCategoriesThunk, 
@@ -39,13 +36,12 @@ const App: React.FC<any> = () => {
     
   const { getUserDataThunk } = useActionCreators(usersActions);
 
-  const redirectPath = useSelector((state: any) => state.user.rediretcPath);
-
   useEffect(() => {
     if (localStorage.getItem("jwt") && localStorage.getItem("userId")) {
-      const id = localStorage.getItem("userId")
+      const id = localStorage.getItem("userId");
       getUserDataThunk(id);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -55,6 +51,7 @@ const App: React.FC<any> = () => {
     } else {
       changeLanguage("en");
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -65,24 +62,23 @@ const App: React.FC<any> = () => {
 
     getAllItemsThunk();
     getAllCategoriesThunk();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locale]);
-
-
 
   useEffect(() => {
     if (redirectPath) navigate(redirectPath);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [redirectPath]);
-
 
 useEffect(() => {
   if (localStorage.getItem('basketItems')) {
-    const storageItems = localStorage.getItem('basketItems')
+    const storageItems = localStorage.getItem('basketItems');
     let storageItemsObj;
     if (storageItems) storageItemsObj = JSON.parse(storageItems);
     setBasket(storageItemsObj);
   }
-}, [])
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   useEffect(() => {
 
@@ -92,38 +88,31 @@ useEffect(() => {
       localStorage.setItem('basketItems', '');
     }
 
-  }, [basketItems])
+  }, [basketItems]);
 
   return (
-    <div className="App">
+    <div className='App'>
       <Routes>
         <Route
-          path="/register"
-          element={loggedIn ? <Navigate to="/account" /> : <Register />}
+          path='/register'
+          element={loggedIn ? <Navigate to='/account' /> : <Register />}
         />{" "}
         <Route
-          path="/login"
-          element={loggedIn ? <Navigate to="/account" /> : <Login />}
+          path='/login'
+          element={loggedIn ? <Navigate to='/account' /> : <Login />}
         />{" "}
-        {/* сделать переадресацию для авторизированного юзера */}
-        <Route path="/" element={<WelcomePage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shop/:slug" element={<ItemCard />} />
+        <Route path='/' element={<WelcomePage />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/shop' element={<Shop />} />
+        <Route path='/shop/:slug' element={<ItemCard />} />
         <Route
-          path="/account"
-          element={loggedIn ? <Account /> : <Navigate to="/login" />}
+          path='/account'
+          element={loggedIn ? <Account /> : <Navigate to='/login' />}
         />
-        <Route path="/basket" element={<Basket />} />
-
+        <Route path='/basket' element={<Basket />} />
       </Routes>
     </div>
   );
 };
 
 export default App;
-
-// TODO
-
-// мультиязычность
-// метрики!!

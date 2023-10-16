@@ -22,7 +22,6 @@
             }
         ],
         "semi": ["warn", "always"],
-        "jsx-quotes": ["warn", "prefer-single"],
-        
+        "jsx-quotes": ["warn", "prefer-single"]   
     }
 }

@@ -16,6 +16,7 @@ const Shop: React.FC = () => {
 
     useEffect(() => {
         getAllItemsThunk();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

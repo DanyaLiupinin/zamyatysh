@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
+import './Auth.scss';
 
 import Header from "../Header/Header";
 import { useActionCreators } from '../../store';
@@ -9,10 +10,6 @@ import { usersActions } from "../../store/user";
 import { TLocale } from '../../types/components';
 
 import content from './locale.json';
-
-
-
-import './Auth.scss';
 
 const Register = () => {
 
@@ -22,9 +19,6 @@ const Register = () => {
     const error = useSelector((state: any) => state.user.error);
     
     const locale: TLocale = useSelector((state: any) => state.items.locale);
-
-
-    const redirectPath = useSelector((state: any) => state.user.rediretcPath);
 
     const navigate = useNavigate();
 
@@ -51,13 +45,14 @@ const Register = () => {
         if (loggedIn) {
             navigate("/shop");
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [loggedIn]);
 
     useEffect(() => {
         clearError();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    
     return (
         <>
             <Header />

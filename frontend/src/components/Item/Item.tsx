@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 
-import { BASE_URL } from "../../constants/constants";
-
 import "./Item.scss";
 
 const Item = ({
-    //slug,
     image,
     price,
     title,
@@ -13,7 +10,6 @@ const Item = ({
 }: {
     price: string;
     image: any;
-    //slug: string;
     title: string;
     id: number
 }) => {
