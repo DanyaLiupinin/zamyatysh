@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import "./Account.scss";
 import avatar from "../../images/logo.svg";
 
@@ -32,6 +33,7 @@ const Account = () => {
                     </div>
                 </section>
             )}
+            <Footer />
         </>
     );
 };
