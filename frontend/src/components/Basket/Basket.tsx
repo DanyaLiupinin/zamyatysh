@@ -38,6 +38,10 @@ const Basket = () => {
 
     const navigate = useNavigate();
 
+    // v zakaze budet jranitsia tolko 
+// - id
+// - size
+
     useEffect(() => {
         if (basketShort && basketShort.length > 0) {
             const fetchItems = async () => {
