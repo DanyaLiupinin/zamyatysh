@@ -39,20 +39,20 @@ const Basket = () => {
     const navigate = useNavigate();
 
     // v zakaze budet jranitsia tolko 
-// - id
-// - size
+    // - id
+    // - size
 
     useEffect(() => {
         if (basketShort && basketShort.length > 0) {
             const fetchItems = async () => {
                 const itemsNewArray = [];
-    
+
                 for (let i = 0; i < basketShort.length; i++) {
                     const basketItem = basketShort[i];
                     try {
                         const response = await getBasketItem({ id: basketItem.id, locale: locale });
                         const itemData = response.data.attributes;
-    
+
                         let newItem = {
                             title: "",
                             material: "",
@@ -61,35 +61,35 @@ const Basket = () => {
                             image: itemData.image.data[0].attributes.url,
                             id: basketItem.id,
                         };
-    
+
                         switch (locale) {
                             case "en":
                                 newItem.title = itemData.title;
                                 newItem.material = itemData.material;
                                 newItem.price = itemData.price;
                                 break;
-    
+
                             case "ru":
                                 newItem.title = itemData.localizations[0].attributes.title;
                                 newItem.material = itemData.localizations[0].attributes.material;
                                 newItem.price = itemData.localizations[0].attributes.price;
                                 break;
                         }
-    
+
                         itemsNewArray.push(newItem);
                     } catch (error) {
                         console.error("Error fetching item:", error);
                     }
                 }
-    
+
                 setBasketItems(itemsNewArray);
             };
-    
+
             fetchItems();
         }
     }, [basketShort, locale]);
-    
-    
+
+
 
     return (
         <>
