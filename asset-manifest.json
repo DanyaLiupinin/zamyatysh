@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/zamyatysh/static/css/main.a4833aa5.css",
-    "main.js": "/zamyatysh/static/js/main.47d3080a.js",
+    "main.css": "/zamyatysh/static/css/main.38177248.css",
+    "main.js": "/zamyatysh/static/js/main.6a4a67b8.js",
     "static/media/gifka.GIF": "/zamyatysh/static/media/gifka.c5a04aa0c1d2654c7eb4.GIF",
-    "static/media/logo.svg": "/zamyatysh/static/media/logo.6c2ce06ef7fa3acba377b1b3eb9bb671.svg",
-    "static/media/basket-image.svg": "/zamyatysh/static/media/basket-image.8e1aaa4361f3757d20db91420c81d7c8.svg",
-    "static/media/vkorzini.svg": "/zamyatysh/static/media/vkorzini.e0ff3322eaa51a92051592445819aac9.svg",
+    "static/media/logo.svg": "/zamyatysh/static/media/logo.a22882c75b4511bf539f02e90f479d07.svg",
+    "static/media/basket-image.svg": "/zamyatysh/static/media/basket-image.2c3cab307d894d3ec3ba5b1aa3093c36.svg",
+    "static/media/vkorzini.svg": "/zamyatysh/static/media/vkorzini.a23958d464cb636b33c4cfcd3f2ef508.svg",
     "static/media/aboutUs.png": "/zamyatysh/static/media/aboutUs.f9d1c0128a88f5b64516.png",
     "static/media/Zamyatysh_ru-Regular.otf": "/zamyatysh/static/media/Zamyatysh_ru-Regular.1d0972c4c37a269a8fb2.otf",
     "static/media/Zamyatysh_ru-Regular.ttf": "/zamyatysh/static/media/Zamyatysh_ru-Regular.5d76746c80fa5b70257b.ttf",
     "static/media/Zamyatysh_eng-Regular.otf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
     "static/media/Zamyatysh_eng-Regular.ttf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
-    "static/media/lapkaright.svg": "/zamyatysh/static/media/lapkaright.3838c5e51b3278e1d1b3d16c7a241e28.svg",
+    "static/media/lapkaright.svg": "/zamyatysh/static/media/lapkaright.f6ba27dcc1c435d3b1c67208d9714131.svg",
     "index.html": "/zamyatysh/index.html",
-    "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.11d0d0ea89eb85916bcfa793047fc575.svg",
-    "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.f9e1ddcdc2621c2b9849e82967c671c9.svg",
-    "main.a4833aa5.css.map": "/zamyatysh/static/css/main.a4833aa5.css.map",
-    "main.47d3080a.js.map": "/zamyatysh/static/js/main.47d3080a.js.map"
+    "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.870df8d3260de77023c313cad87c4584.svg",
+    "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.45feaf1e793f94507336048b7848f8d7.svg",
+    "main.38177248.css.map": "/zamyatysh/static/css/main.38177248.css.map",
+    "main.6a4a67b8.js.map": "/zamyatysh/static/js/main.6a4a67b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4833aa5.css",
-    "static/js/main.47d3080a.js"
+    "static/css/main.38177248.css",
+    "static/js/main.6a4a67b8.js"
   ]
 }
