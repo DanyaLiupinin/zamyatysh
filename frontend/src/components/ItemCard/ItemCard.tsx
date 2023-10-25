@@ -60,19 +60,22 @@ const ItemCard: React.FC<any> = () => {
 
     useEffect(() => {
         if (basketItems && item) {
+            let itemCounter = 0;
             for (let i = 0; i < basketItems.length; i++) {
                 if (basketItems[i].slug === item.slug) {
                     setBasketItem(true);
-                    setBasketItemCount(basketItemCount + 1);
+                    itemCounter = ++ itemCounter;
                 }
             }
+
+            setBasketItemCount(itemCounter);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [basketItems]);
-
+    }, [basketItems, item]);
+    
     return (
         <>
-            <Header />
+            <Header /> 
             <section className='itemCard'>
                 <button className='itemCard__navigation' onClick={() => navigate(-1)}>
                     <img

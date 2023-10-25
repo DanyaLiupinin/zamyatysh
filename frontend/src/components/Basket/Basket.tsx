@@ -19,22 +19,20 @@ const Basket = () => {
     const locale = useSelector((state: any) => state.items.locale);
 
     const [basketItems, setBasketItems] = useState<any>([]);
+    const [finalPrice, setFinalPrice] = useState(0);
 
-    let finalPrice = 0;
-    /*
-          const getFinalPrice = () => {
-              if (basket && basket.length > 0) {
-                  const regex = /\d+/g;
-      
-                  for (let i = 0; i < basket.length; i++) {
-                      const itemPrice = Number(basket[i].price.match(regex)[0]);
-                      finalPrice = finalPrice + itemPrice;
-                  }
-              }
-          };
-      
-          getFinalPrice();
-      */
+    const getFinalPrice = () => {
+        if (basketItems && basketItems.length > 0) {
+            const regex = /\d+/g;
+            let total = 0;
+            for (let i = 0; i < basketItems.length; i++) {
+                const itemPrice = Number(basketItems[i].price.match(regex)[0]);
+                total = total + itemPrice;
+            }
+            setFinalPrice(total);
+        }
+    };
+
 
     const navigate = useNavigate();
 
@@ -42,13 +40,16 @@ const Basket = () => {
     // - id
     // - size
 
+
     useEffect(() => {
+        
         if (basketShort && basketShort.length > 0) {
             const fetchItems = async () => {
                 const itemsNewArray = [];
 
                 for (let i = 0; i < basketShort.length; i++) {
                     const basketItem = basketShort[i];
+                    
                     try {
                         const response = await getBasketItem({ id: basketItem.id, locale: locale });
                         const itemData = response.data.attributes;
@@ -70,9 +71,9 @@ const Basket = () => {
                                 break;
 
                             case "ru":
-                                newItem.title = itemData.localizations[0].attributes.title;
-                                newItem.material = itemData.localizations[0].attributes.material;
-                                newItem.price = itemData.localizations[0].attributes.price;
+                                newItem.title = itemData.localizations.data[0].attributes.title;
+                                newItem.material = itemData.localizations.data[0].attributes.material;
+                                newItem.price = itemData.localizations.data[0].attributes.price;
                                 break;
                         }
 
@@ -81,7 +82,6 @@ const Basket = () => {
                         return error;
                     }
                 }
-
                 setBasketItems(itemsNewArray);
             };
 
@@ -89,8 +89,14 @@ const Basket = () => {
         }
     }, [basketShort, locale]);
 
-
-
+    
+    useEffect(() => {
+        if (basketShort && basketItems && basketShort.length === basketItems.length) {
+            getFinalPrice();
+        }
+    }, [basketItems]);
+    
+    
     return (
         <>
             <Header />

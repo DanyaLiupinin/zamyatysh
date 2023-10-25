@@ -74,14 +74,15 @@ useEffect(() => {
   if (localStorage.getItem('basketItems')) {
     const storageItems = localStorage.getItem('basketItems');
     let storageItemsObj;
-    if (storageItems) storageItemsObj = JSON.parse(storageItems);
+    if (storageItems) {
+      storageItemsObj = JSON.parse(storageItems);
     setBasket(storageItemsObj);
+    }
   }
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
   useEffect(() => {
-
     if (basketItems) {
       localStorage.setItem('basketItems', JSON.stringify(basketItems));
     } else {

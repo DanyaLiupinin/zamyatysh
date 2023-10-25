@@ -6,6 +6,7 @@ import "./BasketNotification.scss";
 import image from "../../images/basket-image.svg";
 
 const BasketNotification = () => {
+    
     const basketItems = useSelector((state: any) => state.items.basketItemsShort);
 
     return (
