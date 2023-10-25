@@ -25,7 +25,6 @@ const Shop: React.FC = () => {
             <main className='mainShop'>
                 <Filters />
                 <ItemList />
-                <BasketNotification />
             </main>
             <Footer />
         </>

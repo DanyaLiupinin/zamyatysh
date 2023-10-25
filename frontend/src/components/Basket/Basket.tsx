@@ -78,7 +78,7 @@ const Basket = () => {
 
                         itemsNewArray.push(newItem);
                     } catch (error) {
-                        console.error("Error fetching item:", error);
+                        return error;
                     }
                 }
 
