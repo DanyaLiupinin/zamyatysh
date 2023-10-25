@@ -11,6 +11,7 @@ import { getBasketItem } from "../../utils/api";
 import basketImage from "../../images/basket-image.svg";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import Spinner from "../Spinner/Spinner";
 
 const Basket = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
@@ -20,6 +21,7 @@ const Basket = () => {
 
     const [basketItems, setBasketItems] = useState<any>([]);
     const [finalPrice, setFinalPrice] = useState(0);
+    const [isSpinnerActive, setSpinnerActive] = useState<boolean>(true);
 
     const getFinalPrice = () => {
         if (basketItems && basketItems.length > 0) {
@@ -42,14 +44,15 @@ const Basket = () => {
 
 
     useEffect(() => {
-        
+
         if (basketShort && basketShort.length > 0) {
             const fetchItems = async () => {
+
                 const itemsNewArray = [];
 
                 for (let i = 0; i < basketShort.length; i++) {
                     const basketItem = basketShort[i];
-                    
+
                     try {
                         const response = await getBasketItem({ id: basketItem.id, locale: locale });
                         const itemData = response.data.attributes;
@@ -84,19 +87,27 @@ const Basket = () => {
                 }
                 setBasketItems(itemsNewArray);
             };
-
             fetchItems();
         }
     }, [basketShort, locale]);
 
-    
+
     useEffect(() => {
-        if (basketShort && basketItems && basketShort.length === basketItems.length) {
-            getFinalPrice();
+        if (basketShort &&
+            basketItems &&
+            basketShort.length === basketItems.length) {
+            setTimeout(() => {
+                getFinalPrice();
+            }, 2200);
+
+            setSpinnerActive(false);
         }
     }, [basketItems]);
-    
-    
+
+    useEffect(() => {
+        console.log(isSpinnerActive)
+    }, [isSpinnerActive])
+
     return (
         <>
             <Header />
@@ -112,9 +123,13 @@ const Basket = () => {
                 <h2 className='basket__title'>Basket</h2>
 
                 {!basketItems || basketItems.length === 0 ? (
-                    <p className='basket__no-items'>
-                        there is no items in your basket :c
-                    </p>
+                    <>
+
+                        <p className='basket__no-items'>
+                            there is no items in your basket :c
+                        </p>
+                        <Spinner isActive={isSpinnerActive} />
+                    </>
                 ) : (
                     <div className='basket__container'>
                         <div className='basket__column basket__column-left'>
