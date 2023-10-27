@@ -8,7 +8,7 @@ export const itemsState: any = {
     activeCategoryFilter: null,
     locale: null, // perenesti v usera
     basketItemsShort: null,
-    basketItemsAll: null
+    //basketItemsAll: null
 };
 
 export const itemsSlice = createSlice({

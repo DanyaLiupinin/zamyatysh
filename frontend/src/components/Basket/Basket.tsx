@@ -15,6 +15,9 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Spinner from "../Spinner/Spinner";
 
+import { useActionCreators } from '../../store';
+import { itemsActions } from '../../store/items/index';
+
 const Basket = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
@@ -24,6 +27,8 @@ const Basket = () => {
     const [basketItems, setBasketItems] = useState<any>([]);
     const [finalPrice, setFinalPrice] = useState(0);
     const [isSpinnerActive, setSpinnerActive] = useState<boolean>(true);
+    
+    const { setBasket } = useActionCreators(itemsActions);
 
     const getFinalPrice = () => {
         if (basketItems && basketItems.length > 0) {
@@ -37,7 +42,30 @@ const Basket = () => {
         }
     };
 
+    const deleteItemHandler = ({id, size}: any) => {
+        
+        const newArray = [];
+        
+        let itemDeleted = false;
 
+        for (let i = 0; i < basketShort.length; i++) {
+            if (basketShort[i].id === id && basketShort[i].size === size) {
+                if (!itemDeleted) {
+                    itemDeleted = true;
+                    continue
+                } else {
+                    newArray.push(basketShort[i])
+                }
+            } else {
+                newArray.push(basketShort[i])
+            }
+        }
+
+        setBasket(newArray);
+        
+    };
+
+ 
     const navigate = useNavigate();
 
     // v zakaze budet jranitsia tolko 
@@ -106,10 +134,6 @@ const Basket = () => {
         }
     }, [basketItems]);
 
-    useEffect(() => {
-        console.log(isSpinnerActive)
-    }, [isSpinnerActive])
-
     return (
         <>
             <Header />
@@ -141,9 +165,9 @@ const Basket = () => {
                                     basketItems.map((item: any, index: number) => {
                                         return (
                                             <div className='basket__item' key={index}>
-                                                <button type="button" className='basket__delete-button-container'>
-                                                <img className='basket__delete-button' src={deleteImage} alt='delete item'>
-                                                </img>
+                                                <button onClick={() => deleteItemHandler(item)} type="button" className='basket__delete-button-container'>
+                                                    <img className='basket__delete-button' src={deleteImage} alt='delete item'>
+                                                    </img>
                                                 </button>
                                                 <img
                                                     src={item.image}
