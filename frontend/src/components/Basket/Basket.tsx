@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import array from "../../images/historyArray.svg";
 
+import deleteImage from '../../images/deleteicon.svg';
+
 import { getBasketItem } from "../../utils/api";
 
 import basketImage from "../../images/basket-image.svg";
@@ -139,6 +141,10 @@ const Basket = () => {
                                     basketItems.map((item: any, index: number) => {
                                         return (
                                             <div className='basket__item' key={index}>
+                                                <button type="button" className='basket__delete-button-container'>
+                                                <img className='basket__delete-button' src={deleteImage} alt='delete item'>
+                                                </img>
+                                                </button>
                                                 <img
                                                     src={item.image}
                                                     className='basket__item-image basket__item-info'
