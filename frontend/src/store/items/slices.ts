@@ -7,7 +7,8 @@ export const itemsState: any = {
     items: null,
     activeCategoryFilter: null,
     locale: null, // perenesti v usera
-    basket: null,
+    basketItemsShort: null,
+    //basketItemsAll: null
 };
 
 export const itemsSlice = createSlice({
@@ -19,6 +20,9 @@ export const itemsSlice = createSlice({
         },
         setCategoryFilter: (state, action) => {
             state.activeCategoryFilter = action.payload;
+        },
+        setBasket: (state, action) => {
+            state.basketItemsShort = action.payload;
         }
     },
     extraReducers: (builder) => {

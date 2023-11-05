@@ -1,16 +1,24 @@
-import './ItemInformation.scss';
 import React, { useState } from 'react';
-
 import { useSelector } from 'react-redux';
 
-import frog from '../../images/vkorzini.svg';
+import './ItemInformation.scss';
+
 import { TLocale } from '../../types/components';
+import frog from '../../images/vkorzini.svg';
 
 import content from './locale.json';
 
-const ItemInformation = ({ item, chosenSize, setChosenSize, addItemHandler, isBasketItem, basketItemCount }: any) => {
+const ItemInformation = ({ 
+    item, 
+    chosenSize, 
+    setChosenSize, 
+    addItemHandler, 
+    isBasketItem, 
+    basketItemCount 
+}: any) => {
 
     const [isCaptionActive, setCaptionActive] = useState(false);
+    
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const onSizeClick = (size: string) => {
@@ -45,9 +53,7 @@ const ItemInformation = ({ item, chosenSize, setChosenSize, addItemHandler, isBa
                     })
                 }
             </div>
-
             <p className='itemInformation__size-guide'>{content.howToSize[locale]}</p>
-
             <div className='itemInformation__basket-container'>
                 <img src={frog} className={`itemInformation__basket-image ${chosenSize !== '' ? 'itemInformation__basket-image_active' : ''}`} alt='frog wants you to buy something'></img>
                 <button onClick={onAddItem} disabled={isCaptionActive ? true : false} className={`itemInformation__add-button`} type='button'>

@@ -5,7 +5,8 @@
     font-size: 60px;
     padding-top: 40px;
     text-align: center;
-    outline: 1px solid black;
+    background-color: rgba(237, 237, 237, 0.3843137255);
+    min-height: 80vh;
 }
 
 .account__title {
@@ -15,7 +16,6 @@
 }
 
 .account__container {
-    outline: 1px solid red;
     width: 100%;
     padding: 70px 20px 0;
     box-sizing: border-box;
@@ -26,6 +26,7 @@
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    padding-bottom: 50px;
 }
 
 .account__user-avatar {
@@ -48,7 +49,7 @@
 }
 
 .account__user-information {
-    margin-left: 50px;
+    margin-left: 150px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -85,9 +86,17 @@
     background-color: rgba(0, 0, 0, 0.616);
 }
 
+@media (max-width: 1200px) {
+    .account__user-information {
+        margin-left: 75px;
+    }
+}
+
 @media (max-width: 900px) {
     .account__user-avatar {
-        min-height: 300px;
+        min-height: auto;
+        width: 300px;
+        height: 300px;
     }
 }
 
@@ -96,6 +105,14 @@
     .account__title {
         margin-top: 0;
     }
+
+    .account__user-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+.account__user-avatar {
+    margin: 0 auto;
+}
 
     .account__container {
         padding-top: 40px;
@@ -115,9 +132,53 @@
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
+    .account__user-information {
+        margin-left: 0;
+    }
+
     .account__user-avatar {
-       height: 150px;
-       width: 150px;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px) {
+    .account__user-avatar {
+        min-height: 0;
+        height: 200px;
+    }
+}
+
+@media (max-width: 450px) {
+    .account__user-container {
+        grid-template-columns: 1fr;
+    }
+
+    .account__user-avatar {
+        width: 200px;
+        height: 200px;
+    }
+
+    .account__user-information {
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto 0;
+
+    }
+
+    .account__user-information {
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+@media (max-width: 400px) {
+    .account__user-information {
+        width: 90%;
     }
 }

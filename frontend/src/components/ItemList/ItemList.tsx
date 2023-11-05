@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';       
 
 import Item from '../Item/Item';
-
 import { TLocale } from '../../types/components';
+
+import BasketNotification from '../BasketNotification/BasketNotification';
+
 import content from './locale.json';
-
-
 
 import './ItemList.scss';
 
@@ -17,6 +17,9 @@ const ItemList: React.FC<any> = () => {
     return (
         <div className='itemList'>
             <div className='itemList__container'>
+            <div className='itemCard__sticky-notification-container'>
+                                <BasketNotification />
+                            </div>
                 {
                     items && items.length > 0 ? items.map((i: any) => {
                         return (
@@ -26,7 +29,6 @@ const ItemList: React.FC<any> = () => {
                                 image={i.attributes.image.data[0].attributes.url}
                                 key={i.id}
                                 id={i.id}
-                                //slug={i.attributes.slug}
                             />
                         );
                     }) :

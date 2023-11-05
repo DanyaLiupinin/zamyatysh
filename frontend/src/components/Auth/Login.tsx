@@ -1,31 +1,22 @@
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
-
-
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
 
 import { useActionCreators } from '../../store';
 import { usersActions } from "../../store/user";
-
 import Header from "../Header/Header";
 import { TLocale } from '../../types/components';
 
 import content from './locale.json';
-import { useNavigate } from "react-router-dom";
 
 import './Auth.scss';
 
 const Login = () => {
 
-    const navigate = useNavigate();
-    const redirectPath = useSelector((state: any) => state.user.rediretcPath);
-
     const { userLoginThunk } = useActionCreators(usersActions);
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
     const error = useSelector((state: any) => state.user.error);
-
 
     const [userData, setUserData] = useState({
         identifier: '',
@@ -45,11 +36,6 @@ const Login = () => {
         e.preventDefault();
         await userLoginThunk(userData);
     };
-
- /*   useEffect(() => {
-        if (redirectPath) navigate(redirectPath);
-    }, [redirectPath]);
-    */
 
     return (
         <>
@@ -76,7 +62,7 @@ const Login = () => {
                 <p className='auth__error'>{error}</p>
                 <p className='auth__caption'>
                     {content.loggincaption[locale]} 
-                    <Link className="auth__caption-link" to={'/register'}>{content.loggincaptionbutton[locale]}</Link>
+                    <Link className='auth__caption-link' to={'/register'}>{content.loggincaptionbutton[locale]}</Link>
                 </p>
             </div>
         </>

@@ -4,7 +4,8 @@
     @include container;
     //outline: 1px solid red;
     background-color: rgba(237, 237, 237, 0.3843137255);
-    padding-bottom: 5px
+    padding-bottom: 5px;
+    position: relative;
 }
 
 .itemCard__navigation {
@@ -78,5 +79,54 @@
 
     .itemCard__navigation {
         font-size: 30px;
+    }
+}
+
+
+///
+/// 
+.itemCard__sticky-notification-container {
+    position: absolute;
+    top: 30px;
+    right: -50px;
+    width: fit-content;
+    height: 100vh;
+}
+
+@media (max-width: 1400px) {
+    .itemCard__sticky-notification-container {
+        right: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .itemCard__sticky-notification-container {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .itemCard__sticky-notification-container {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .itemCard__sticky-notification-container {
+        height: 75vh;
+    }
+}
+
+@media (max-width: 550px) {
+    .itemCard__sticky-notification-container {
+        right: 20px;
+        top: 15px;
+        height: 28vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .itemCard__sticky-notification-container {
+        height: 63vh;
     }
 }

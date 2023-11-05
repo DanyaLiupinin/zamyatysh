@@ -51,6 +51,7 @@
     margin-bottom: 20px;
     border-radius: 10px;
     background-color: white;
+    position: relative;
 
     p {
         margin: 0;
@@ -62,6 +63,31 @@
         width: 100%;
         word-break: break-word;
     }
+}
+
+.basket__delete-button-container {
+    width: fit-content;
+    height: fit-content;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: .3s;
+    background-color: unset;
+    outline: none;
+    border: none;
+    padding: 0;
+}
+
+.basket__delete-button {
+    width: 30px;
+    height: 30px;
+    transition: .3s;
+}
+
+
+.basket__delete-button:hover {
+    opacity: .7;
 }
 
 .basket__item-image {
@@ -182,12 +208,23 @@
 }
 
 @media (max-width: 1000px) {
+    
     .basket__item {
         padding: 10px 10px;
 
         p {
             font-size: 30px;
         }
+    }
+
+    .basket__delete-button-container {
+        top: 5px;
+        right: 5px;
+    }
+
+    .basket__delete-button {
+        width: 22px;
+        height: 22px;
     }
 
     .basket__item-image {
@@ -262,6 +299,11 @@
         }
     }
 
+    .basket__delete-button {
+        width: 28px;
+        height: 28px;
+    }
+
     .basket__item-image {
         width: 70px;
     }
@@ -303,6 +345,11 @@
         p {
             font-size: 30px;
         }
+    }
+
+    .basket__delete-button {
+        width: 22px;
+        height: 22px;
     }
 
     .basket__item-image {
@@ -374,6 +421,23 @@
 
     .basket__price-container p {
         font-size: 25px;
+    }
+
+    @media (max-width: 450px) {
+
+        .basket__delete-button-container {
+            top: 0;
+            right: 0;
+        }
+        
+        .basket__delete-button {
+            width: 19px;
+            height: 19px;
+        }
+
+        .basket__item {
+            gap: 3px;
+        }
     }
 
     @media (max-width: 350px) {

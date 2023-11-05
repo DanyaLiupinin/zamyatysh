@@ -44,6 +44,24 @@ export const getItem = ({ id, locale }: any) => {
         .catch((err) => console.log(err));
 };
 
+export const getBasketItem = ({ id, locale }: any) => {
+
+    return axios
+        .get(`${BASE_URL}/api/items/${id}`, {
+            params: {
+                locale: locale,
+                populate: {
+                    image: true,
+                    localizations: true,
+                },
+            }
+        })
+        .then((res) => {
+            return res.data;
+        })
+        .catch((err) => console.log(err));
+};
+
 export const getUserItem = ({id, locale, jwt}: any) => {
 
     return axios
@@ -59,27 +77,6 @@ export const getUserItem = ({id, locale, jwt}: any) => {
                     sizes: true
                 },
             }
-        })
-        .then((res) => {
-            return res.data;
-        })
-        .catch((err) => console.log(err));
-}
-
-export const getBasketItem = ({ id, jwt }: any) => {
-
-    return axios
-        .get(`${BASE_URL}/api/users/${id}/`, {
-            headers: {
-                'Authorization': `Bearer ${jwt}`
-            },
-            params: {
-                populate: {
-                    items: {
-                        populate: '*'
-                    }
-                }
-            }  
         })
         .then((res) => {
             return res.data;
@@ -104,7 +101,7 @@ export const userLogin = (data: any) => {
     return axios
         .post(`${BASE_URL}/api/auth/local`, data)
         .then((res) => {
-            console.log(res.data)
+            console.log(res.data);
             return res.data;
         })
         .catch((err) => {
@@ -122,7 +119,7 @@ export const getUserData = ({ id, jwt }: any) => {
         }
         )
         .then((res) => {
-            console.log(res.data)
+            console.log(res.data);
             return res.data;
         })
         .catch((err) => {

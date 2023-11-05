@@ -1,0 +1,23 @@
+.spinner {
+    width: 100px;
+    height: 100px;
+    animation: rotate 1s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-image: url('../../images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg); 
+    }
+}

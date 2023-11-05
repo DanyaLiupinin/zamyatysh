@@ -10,6 +10,8 @@
     font-style: normal;
     font-weight: 400;
     font-size: 64px;
+    word-break: break-all;
+    padding: 0 116px 0 0;
 }
 
 .itemInformation__price {
@@ -110,6 +112,11 @@
 }
 
 @media (max-width: 800px) {
+    
+    .itemInformation__title {
+        padding: 0;
+    }
+
     .itemInformation {
         margin: 30px auto;
         text-align: center;

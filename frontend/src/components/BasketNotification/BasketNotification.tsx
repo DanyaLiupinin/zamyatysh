@@ -1,27 +1,26 @@
-import image from '../../images/basket-image.svg';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-import './BasketNotification.scss';
+import "./BasketNotification.scss";
 
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import image from "../../images/basket-image.svg";
 
 const BasketNotification = () => {
-
-    const [itemsCount, setItemsCount] = useState(0);
-
-    useEffect(() => {
-        if (localStorage.getItem('basketItems')) {
-            const basketItems = localStorage.getItem('basketItems');
-            let basketItemsArr;
-            if (basketItems) basketItemsArr = JSON.parse(basketItems);
-            setItemsCount(basketItemsArr.length);
-        }
-    }, []);
+    
+    const basketItems = useSelector((state: any) => state.items.basketItemsShort);
 
     return (
-        <Link className={`basketNotification ${itemsCount > 0 ? 'basketNotification_active' : ''}`} to='/basket'>
-            <p>{itemsCount}</p>
-            <img className='basketNotification__image' alt='go to basket' src={image}></img>
+        <Link
+            className={`basketNotification ${basketItems && basketItems.length > 0 ? "basketNotification_active" : ""
+                }`}
+            to='/basket'
+        >
+            <p>{basketItems ? basketItems.length : ""}</p>
+            <img
+                className='basketNotification__image'
+                alt='go to basket'
+                src={image}
+            ></img>
         </Link>
     );
 };
