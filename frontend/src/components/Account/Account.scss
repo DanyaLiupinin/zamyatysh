@@ -1,184 +1,53 @@
 @import "../../mixins/mixins.scss";
 
 .account {
-    @include container;
-    font-size: 60px;
-    padding-top: 40px;
-    text-align: center;
     background-color: rgba(237, 237, 237, 0.3843137255);
-    min-height: 80vh;
-}
-
-.account__title {
-    margin: 20px 0 0;
-    font-size: 70px;
-    font-weight: 400;
 }
 
 .account__container {
-    width: 100%;
-    padding: 70px 20px 0;
+    outline: 1px solid black;
+    display: grid;
+    grid-template-columns: 39% 59%;
+    @include container;
+    padding: 20px 20px;
+    gap: 2%;
     box-sizing: border-box;
 }
 
-.account__user-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    padding-bottom: 50px;
+// USERCARD
+
+.account__user-card {
+    outline: 1px solid red;
+    min-height: 200px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
 }
 
-.account__user-avatar {
-    width: 100%;
-    height: auto;
-    min-height: 350px;
-    background-color: #c0c0dc82;
-    display: flex;
-    justify-content: center;
+.account__avatar-container {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    outline: 2px solid black;
+    border-radius: 100%;
+    margin: 30px auto 0;
 
     img {
-        width: 90%;
-        height: auto;
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
     }
 }
 
-.account__user-information-container {
-    display: flex;
-    align-items: start;
-}
 
-.account__user-information {
-    margin-left: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    height: 100%;
+// USERORDERS
 
-    p {
-        margin: 0;
-        font-size: 40px;
-        text-align: left;
-    }
-
-    p:not(:first-child) {
-        padding: 5px;
-    }
-}
-
-.account__edit-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 0 10px;
-    margin: 20px auto 0;
+.account__user-orders {
+    outline: 1px solid black;
     width: 100%;
-    height: 40px;
-    font-size: 40px;
-    text-align: center;
-    transition: 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-height: 200px;
+    
+    border-radius: 5px;
+    background-color: white;
 }
 
-.account__edit-button:hover {
-    background-color: rgba(0, 0, 0, 0.616);
-}
-
-@media (max-width: 1200px) {
-    .account__user-information {
-        margin-left: 75px;
-    }
-}
-
-@media (max-width: 900px) {
-    .account__user-avatar {
-        min-height: auto;
-        width: 300px;
-        height: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .account__title {
-        margin-top: 0;
-    }
-
-    .account__user-container {
-    grid-template-columns: 1fr 1fr;
-}
-
-.account__user-avatar {
-    margin: 0 auto;
-}
-
-    .account__container {
-        padding-top: 40px;
-    }
-
-    .account__user-information {
-        margin-left: 25px;
-        
-        p {
-            font-size: 30px;
-        }
-    }
-
-    .account__edit-button {
-        font-size: 30px;
-        height: 30px;
-    }
-}
-
-@media (max-width: 600px) {
-    .account__user-information {
-        margin-left: 0;
-    }
-
-    .account__user-avatar {
-        width: 200px;
-        height: 200px;
-    }
-}
-
-@media (max-width: 500px) {
-    .account__user-avatar {
-        min-height: 0;
-        height: 200px;
-    }
-}
-
-@media (max-width: 450px) {
-    .account__user-container {
-        grid-template-columns: 1fr;
-    }
-
-    .account__user-avatar {
-        width: 200px;
-        height: 200px;
-    }
-
-    .account__user-information {
-        width: 70%;
-        justify-content: center;
-        align-items: center;
-        margin: 20px auto 0;
-
-    }
-
-    .account__user-information {
-
-        p {
-            text-align: center;
-        }
-    }
-}
-
-
-@media (max-width: 400px) {
-    .account__user-information {
-        width: 90%;
-    }
-}
