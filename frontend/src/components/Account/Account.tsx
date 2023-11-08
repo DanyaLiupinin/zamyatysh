@@ -1,5 +1,5 @@
-import { useSelector } from "react-redux";
-import React, {useState} from 'react';
+    import { useSelector } from "react-redux";
+    import React, {useState} from 'react';
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -13,7 +13,12 @@ const Account = () => {
     const [userData, setUserData] = useState<any>({
         name: 'bla bla bla',
         email: 'bla bla bla @ mail.ru',
-        phone: '123 456 789'
+        phone: '123 456 789',
+        country: 'spain',
+        city: 'madrid',
+        street: 'gracia 56',
+        planta: '3',
+        piso: '1'
     });
 
     const onChangeData = (fieldName: any, fieldValue: String) => {
@@ -21,7 +26,7 @@ const Account = () => {
             ...prevData,
             [fieldName]: fieldValue,
         }));
-    }
+    };
 
 
     return (
@@ -36,7 +41,6 @@ const Account = () => {
                                 <img src={avatar} alt='...' />
                             </div>
                             
-                    
                             <Userdata changeDataHandler={onChangeData} data={userData} />
 
                         </div>

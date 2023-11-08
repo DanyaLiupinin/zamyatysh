@@ -38,3 +38,26 @@
     border: none;
     outline: none;
 }
+
+.data__content:disabled {
+    background-color: unset;
+
+}
+
+
+.userdata__buttons {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    button {
+        width: 100%;
+        background-color: unset;
+        padding: 0;
+        margin: 0;
+        border: 1px solid black;
+    }
+
+}
