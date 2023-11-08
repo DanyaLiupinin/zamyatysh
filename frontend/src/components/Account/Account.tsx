@@ -1,9 +1,10 @@
-    import { useSelector } from "react-redux";
-    import React, {useState} from 'react';
+import { useSelector } from "react-redux";
+import React, { useState } from 'react';
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Userdata from "./UserData/Userdata";
+import Orders from "./Orders/Orders";
 import "./Account.scss";
 import avatar from "../../images/logo.svg";
 
@@ -40,11 +41,14 @@ const Account = () => {
                             <div className='account__avatar-container'>
                                 <img src={avatar} alt='...' />
                             </div>
-                            
+
                             <Userdata changeDataHandler={onChangeData} data={userData} />
 
+
                         </div>
-                        <div className='account__user-orders'></div>
+                        <div className='account__user-orders'>
+                            <Orders />
+                        </div>
                     </div>
                 </section>
             )}

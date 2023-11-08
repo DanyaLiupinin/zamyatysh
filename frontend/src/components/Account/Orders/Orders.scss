@@ -1,0 +1,21 @@
+h2 {
+    font-size: 70px;
+    font-weight: 300;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.orders__order-cards {
+    width: 100%;
+    height: 100%;
+}
+
+
+.orders__order-card {
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+    outline: 1px solid red;
+    border-radius: 10px;
+}
+
