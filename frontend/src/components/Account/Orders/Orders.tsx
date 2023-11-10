@@ -1,14 +1,20 @@
 import './Orders.scss';
 
+import Order from '../Order/Order';
+
 const Orders = () => {
     return (
         <div className='orders' >
             <h2>My orders</h2>
-
             <div className='orders__order-cards' >
-                <div className='orders__order-card' ></div>
-            </div>
+{/* 
+<p className='orders__empty'>you dont have orders yet</p>
+*/}
 
+<Order />
+<Order />
+
+            </div>
         </div>
     );
 };

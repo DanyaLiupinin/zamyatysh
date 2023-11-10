@@ -5,14 +5,14 @@ import { useLocation } from 'react-router-dom';
 import { useActionCreators } from '../../store';
 import { TLocale } from '../../types/components';
 import { itemsActions } from '../../store/items/index';
+import dropdowns from '../../images/dropdown.svg'
 
 import ClearFilters from './ClearFilters/CleartFilters';
 import content from './locale.json';
 
 
-import './Filters.scss';
 
-const dropdowns = require('../../images/dropdown.png');
+import './Filters.scss';
 
 const Filters: React.FC<any> = () => {
 
