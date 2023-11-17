@@ -1,9 +1,30 @@
 @import "../../../mixins/mixins.scss";
 
+/// AVATAR
+
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    outline: 2px solid black;
+    border-radius: 100%;
+    margin: 30px auto 0;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}
 
 // DATA 
 
 .userdata {
+    background-color: white;
+    height: fit-content;
+}
+
+.userdata__form {
     width: 100%;
     display: flex;
     flex-direction: column;

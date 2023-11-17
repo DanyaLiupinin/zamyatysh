@@ -1,9 +1,7 @@
 import React, {useState} from "react";
 import "./Order.scss";
 
-
 import dropdown from '../../../images/dropdown.svg';
-
 
 const Order = () => {
 

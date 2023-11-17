@@ -25,31 +25,12 @@
     height: fit-content;
 }
 
-.account__avatar-container {
-    width: 120px;
-    height: 120px;
-    overflow: hidden;
-    outline: 2px solid black;
-    border-radius: 100%;
-    margin: 30px auto 0;
 
-    img {
-        object-fit: contain;
-        width: 100%;
-        height: 100%;
-    }
-}
 
 
 // USERORDERS
 
-.account__user-orders {
-    outline: 1px solid black;
-    width: 100%;
-    min-height: 200px;
-    border-radius: 5px;
-    background-color: white;
-}
+
 
 @media (max-width: 900px) {
 
