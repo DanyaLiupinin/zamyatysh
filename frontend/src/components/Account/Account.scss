@@ -22,6 +22,7 @@
     width: 100%;
     background-color: white;
     border-radius: 5px;
+    height: fit-content;
 }
 
 .account__avatar-container {
@@ -46,8 +47,37 @@
     outline: 1px solid black;
     width: 100%;
     min-height: 200px;
-    
     border-radius: 5px;
     background-color: white;
+}
+
+@media (max-width: 900px) {
+
+    .account {
+        padding: 50px 0;
+    }
+    
+.account__container {
+    outline: 1px solid black;
+    grid-template-columns: 1fr;
+    @include container;
+    gap: 2%;
+    box-sizing: border-box;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+}
+
+@media (max-width: 900px) {
+    .account__container {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .account__container {
+        width: 95%;
+    }
 }
 

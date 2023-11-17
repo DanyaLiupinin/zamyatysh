@@ -61,3 +61,21 @@
     }
 
 }
+
+@media (max-width: 900px) {
+
+    .userdata {
+        padding-bottom: 50px;
+    }
+
+    .userdata__buttons {
+        margin: 30px auto 0;
+}
+}
+
+@media (max-width: 500px) {
+
+    .userdata {
+        padding-bottom: 35px;
+    }
+}
