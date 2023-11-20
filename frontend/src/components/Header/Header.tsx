@@ -8,7 +8,7 @@ import Burger from '../Burger/Burger';
 import logo from '../../images/logo.svg';
 import { TLocale } from '../../types/components';
 
-import content from './locale.json';
+import content from '../../locale/Header.json';
 
 const Header: React.FC<any> = () => {
 

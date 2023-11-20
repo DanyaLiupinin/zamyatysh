@@ -18,11 +18,15 @@ import Spinner from "../components/Spinner/Spinner";
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
 
+import { TLocale } from '../types/components';
+
+import content from '../locale/Basket.json';
+
 const Basket = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
 
-    const locale = useSelector((state: any) => state.items.locale);
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     const [basketItems, setBasketItems] = useState<any>([]);
     const [finalPrice, setFinalPrice] = useState(0);
@@ -146,13 +150,13 @@ const Basket = () => {
                     ></img>
                     go back
                 </button>
-                <h2 className='basket__title'>Basket</h2>
+                <h2 className='basket__title'>{content.basket[locale]}</h2>
 
                 {!basketItems || basketItems.length === 0 ? (
                     <>
 
                         <p className='basket__no-items'>
-                            there is no items in your basket :c
+                        {content.noItems[locale]}
                         </p>
                         <Spinner isActive={isSpinnerActive} />
                     </>
@@ -178,10 +182,10 @@ const Basket = () => {
                                                     {item.title}
                                                 </p>
                                                 <p className='basket__item-size basket__item-info'>
-                                                    Size: <br /> {item.size}
+                                                {content.size[locale]}: <br /> {item.size}
                                                 </p>
                                                 <p className='basket__item-price basket__item-info'>
-                                                    Price: <br /> {item.price}
+                                                {content.price[locale]}: <br /> {item.price}
                                                 </p>
                                             </div>
                                         );
@@ -200,22 +204,22 @@ const Basket = () => {
                                 ) : (
                                     <>
                                         <p className='basket__notification-text'>
-                                            register for having access to our discounts
+                                        {content.registerFor[locale]}
                                         </p>
                                         <button className='basket__register-button'>
-                                            register
+                                        {content.register[locale]}
                                         </button>
                                         <p className='basket__caption'>
-                                            already have an account?
-                                            <Link to={"/login"}> Login</Link>
+                                        {content.haveAccount[locale]}
+                                            <Link to={"/login"}> {content.login[locale]}</Link>
                                         </p>
                                     </>
                                 )}
                             </div>
                             <div className='basket__price-container'>
-                                <p>final price is {finalPrice} kwaks</p>
+                                <p>{content.finalPrice[locale]} {finalPrice} {content.kwaks[locale]}</p>
                                 <button className='basket__submit-button' type='button'>
-                                    Buy
+                                {content.buy[locale]}
                                 </button>
                             </div>
                         </div>

@@ -5,7 +5,7 @@ import './Footer.scss';
 import zamyatysh from '../../images/logo.svg';
 import { TLocale } from '../../types/components';
 
-import content from './locale.json';
+import content from '../../locale/Footer.json';
 
 const Footer = () => {
     

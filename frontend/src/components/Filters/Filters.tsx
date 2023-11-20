@@ -8,7 +8,7 @@ import { itemsActions } from '../../store/items/index';
 import dropdowns from '../../images/dropdown.svg'
 
 import ClearFilters from './ClearFilters/CleartFilters';
-import content from './locale.json';
+import content from '../../locale/Filters.json';
 
 
 

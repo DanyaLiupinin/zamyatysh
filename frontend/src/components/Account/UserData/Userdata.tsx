@@ -4,10 +4,18 @@ import { useState } from "react";
 
 import avatar from "../../../images/logo.svg";
 
+import { TLocale } from "../../../types/components";
+
+import content from '../../../locale/Userdata.json';
+
+import { useSelector } from "react-redux";
 
 const Userdata = ({ data, changeDataHandler }: any) => {
+
     const [isEditData, setEditData] = useState(false);
 
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    
     const onUpdateData = () => {
         setEditData(false);
     };
@@ -19,7 +27,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
             </div>
             <form className='userdata__form'>
                 <div className='data'>
-                    <p className='data__name'>name: </p>
+                    <p className='data__name'>{content.name[locale]}:</p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -31,7 +39,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 </div>
 
                 <div className='data'>
-                    <p className='data__name'>email: </p>
+                    <p className='data__name'>{content.email[locale]}: </p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -43,7 +51,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 </div>
 
                 <div className='data'>
-                    <p className='data__name'>phone: </p>
+                    <p className='data__name'>{content.phone[locale]}: </p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -55,7 +63,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 </div>
 
                 <div className='data'>
-                    <p className='data__name'>country: </p>
+                    <p className='data__name'>{content.country[locale]}: </p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -67,7 +75,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 </div>
 
                 <div className='data'>
-                    <p className='data__name'>city: </p>
+                    <p className='data__name'>{content.city[locale]}: </p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -79,7 +87,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 </div>
 
                 <div className='data'>
-                    <p className='data__name'>street: </p>
+                    <p className='data__name'>{content.street[locale]}: </p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -91,7 +99,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 </div>
 
                 <div className='data'>
-                    <p className='data__name'>planta: </p>
+                    <p className='data__name'>{content.floor[locale]}: </p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -103,7 +111,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 </div>
 
                 <div className='data'>
-                    <p className='data__name'>piso: </p>
+                    <p className='data__name'>{content.apartment[locale]}: </p>
                     <input
                         disabled={!isEditData}
                         min={1}
@@ -119,14 +127,14 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                         onClick={() => setEditData(true)}
                         disabled={isEditData ? true : false}
                     >
-                        Edit
+                        {content.edit[locale]}
                     </button>
                     <button
                         type='submit'
                         disabled={isEditData ? false : true}
                         onClick={onUpdateData}
                     >
-                        Save
+                        {content.save[locale]}
                     </button>
                 </div>
             </form>

@@ -1,0 +1,46 @@
+{
+    "basket": {
+        "ru": "фильтры",
+        "en": "Корзина"
+    },
+    "noItems": {
+        "ru": "фильтры",
+        "en": "в вашей корзине еще нет товаров :c"
+    },
+    "size": {
+        "ru": "Размер",
+        "en": "Size"
+    },
+    "price": {
+        "ru": "Цена",
+        "en": "Price"
+    },
+    "registerFor": {
+        "ru": "Зарегистрируйтесь, чтобы получить скидку ",
+        "en": "register for having access to our discounts"
+    },
+    "register": {
+        "ru": "зарегистрироваться",
+        "en": "register"
+    },
+    "haveAccount": {
+        "ru": "у вас уже есть аккаунт?",
+        "en": "already have an account?"
+    },
+    "login": {
+        "ru": "Авторизоваться",
+        "en": "Login"
+    },
+    "finalPrice": {
+        "ru": "Итог",
+        "en": "final price is"
+    },
+    "kwaks": {
+        "ru": "кваков",
+        "en": "kwaks"
+    },
+    "buy": {
+        "ru": "Купить",
+        "en": "Buy"
+    }
+}

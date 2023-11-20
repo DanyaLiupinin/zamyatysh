@@ -3,16 +3,21 @@ import "./Order.scss";
 
 import dropdown from "../../../images/dropdown.svg";
 
+import { TLocale } from "../../../types/components";
+import content from '../../../locale/Order.json';
+import { useSelector } from "react-redux";
+
+
 const Order = () => {
     const [isOrderOpened, setOrderOpened] = useState(false);
 
-    // DOBAVIT PLASHKU CHTO VSIO OPLACHENO USPESHNO
+    const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     return (
         <>
             <div className='order'>
                 <div className='order__card'>
-                    <p className='order__title'>order #12345</p>
+                    <p className='order__title'>{content.order[locale]} #12345</p>
                     <button
                         className='order__details-btn'
                         onClick={() => setOrderOpened(!isOrderOpened)}

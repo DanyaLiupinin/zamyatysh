@@ -6,7 +6,7 @@ import './ItemInformation.scss';
 import { TLocale } from '../../types/components';
 import frog from '../../images/vkorzini.svg';
 
-import content from './locale.json';
+import content from '../../locale/ItemInformation.json';
 
 const ItemInformation = ({ 
     item, 

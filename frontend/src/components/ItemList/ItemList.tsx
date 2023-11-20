@@ -5,7 +5,7 @@ import { TLocale } from '../../types/components';
 
 import BasketNotification from '../BasketNotification/BasketNotification';
 
-import content from './locale.json';
+import content from '../../locale/ItemList.json';
 
 import './ItemList.scss';
 
