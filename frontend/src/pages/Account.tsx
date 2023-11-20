@@ -1,12 +1,11 @@
 import { useSelector } from "react-redux";
 import React, { useState } from 'react';
 
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-
-import Userdata from "./UserData/Userdata";
-import Orders from "./Orders/Orders";
-import "./Account.scss";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Userdata from "../components/Account/UserData/Userdata";
+import Orders from "../components/Account/Orders/Orders";
+import './styles/Account/Account.scss';
 
 const Account = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);

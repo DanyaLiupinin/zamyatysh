@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';   
 
-import Languages from '../Languages/Languages';
-import { TLocale } from '../../types/components';
+import Languages from '../components/Languages/Languages';
+import { TLocale } from '../types/components';
 
-import content from './locale.json';
+import content from '../locale/WelcomPageLocale.json';
 
-import './WelcomePage.scss';
+import './styles/WelcomePage/WelcomePage.scss';
 
-const logo = require('../../images/gifka.GIF');
+const logo = require('../images/gifka.GIF');
 
 const WelcomePage: React.FC = () => {
 

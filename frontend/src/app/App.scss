@@ -1,7 +1,7 @@
-@import '../../mixins/mixins.scss';
+@import '../mixins/mixins.scss';    
 
 html {
-    cursor: url('../../images/lapka.png'), default;
+    cursor: url('../images/lapka.png'), default;
 }
 
 .App {
@@ -9,6 +9,6 @@ html {
     font-weight: 400;
     font-style: normal;
     a:hover, button:hover {
-        cursor: url('../../images/lapka.png'), default;
+        cursor: url('../images/lapka.png'), default;
     }
 }

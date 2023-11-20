@@ -1,22 +1,22 @@
-import "./Basket.scss";
+import './styles/Basket/Basket.scss';
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
-import array from "../../images/historyArray.svg";
+import array from "../images/historyArray.svg";
 
-import deleteImage from '../../images/deleteicon.svg';
+import deleteImage from '../images/deleteicon.svg';
 
-import { getBasketItem } from "../../utils/api";
+import { getBasketItem } from "../utils/api";
 
-import basketImage from "../../images/basket-image.svg";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Spinner from "../Spinner/Spinner";
+import basketImage from "../images/basket-image.svg";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import Spinner from "../components/Spinner/Spinner";
 
-import { useActionCreators } from '../../store';
-import { itemsActions } from '../../store/items/index';
+import { useActionCreators } from "../store";
+import { itemsActions } from "../store/items";
 
 const Basket = () => {
     const loggedIn = useSelector((state: any) => state.user.loggedIn);

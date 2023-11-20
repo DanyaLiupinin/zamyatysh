@@ -1,8 +1,8 @@
-import './About.scss';
+import './styles/About/About.scss';
 
-import Header from '../Header/Header';
+import Header from '../components/Header/Header';
 
-const image = require('../../images/aboutUs.png');
+const image = require('../images/aboutUs.png');
 
 const About: React.FC = () => {
     return (

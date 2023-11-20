@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import { useState } from "react";
 
-import { useActionCreators } from '../../store';
-import { usersActions } from "../../store/user";
-import Header from "../Header/Header";
-import { TLocale } from '../../types/components';
+import { useActionCreators } from "../store";
+import { usersActions } from "../store/user";
+import Header from "../components/Header/Header";
+import { TLocale } from "../types/components";
 
-import content from './locale.json';
+import content from '../locale/AuthLocale.json';
 
-import './Auth.scss';
+import './styles/Auth/Auth.scss';
 
 const Login = () => {
 

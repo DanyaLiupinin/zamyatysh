@@ -45,7 +45,7 @@ const Order = () => {
                                 <p>5000 kwaks</p>
                             </div>
                         </div>
-                        <p className='order-details__price'>total: 200000 kwaks</p>
+                        <p className='order-details__total'>total: 200000 kwaks</p>
                     </div>
                 )}
             </div>

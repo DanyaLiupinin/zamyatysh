@@ -1,14 +1,13 @@
-import './Shop.scss';
-
 import React, { useEffect } from 'react';
+import Header from "../components/Header/Header";
+import ItemList from "../components/ItemList/ItemList";
+import Filters from "../components/Filters/Filters";
+import Footer from "../components/Footer/Footer";
+import BasketNotification from "../components/BasketNotification/BasketNotification";
+import { useActionCreators } from "../store";
+import { itemsActions } from "../store/items";
 
-import Header from '../Header/Header';
-import ItemList from '../ItemList/ItemList';
-import Filters from '../Filters/Filters';
-import Footer from '../Footer/Footer';
-import BasketNotification from '../BasketNotification/BasketNotification';
-import { useActionCreators } from '../../store';
-import { itemsActions } from '../../store/items/index';
+import './styles/Shop/Shop.scss';
 
 const Shop: React.FC = () => {
 
