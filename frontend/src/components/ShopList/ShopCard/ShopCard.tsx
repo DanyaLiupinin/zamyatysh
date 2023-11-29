@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import "./Item.scss";
+import "./ShopCard.scss";
 
-const Item = ({
+const ShopCard = ({
     image,
     price,
     title,
@@ -33,4 +33,4 @@ const Item = ({
     );
 };
 
-export default Item;
+export default ShopCard;

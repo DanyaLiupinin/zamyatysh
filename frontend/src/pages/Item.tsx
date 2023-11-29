@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import "./styles/ItemCard/ItemCard.scss";
+import "./styles/Item/Item.scss";
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import ImageCarousel from "../components/ImageCarousel/ImageCarousel";
+import ImageCarousel from "../components/Item/ImageCarousel/ImageCarousel";
 import BasketNotification from "../components/BasketNotification/BasketNotification";
-import ItemInformation from "../components/ItemInformation/ItemInformation";
+import ItemInformation from "../components/Item/ItemInformation/ItemInformation";
 import { TLocale } from "../types/components";
 import { getItem } from "../utils/api";
 import { itemsActions } from "../store/items/index";

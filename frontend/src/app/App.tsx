@@ -7,7 +7,7 @@ import "./App.scss";
 import WelcomePage from "../pages/WelcomePage";
 import About from "../pages/About";
 import Shop from "../pages/Shop";
-import ItemCard from "../pages/ItemCard";
+import Item from "../pages/Item";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Account from "../pages/Account";
@@ -105,7 +105,7 @@ useEffect(() => {
         <Route path='/' element={<WelcomePage />} />
         <Route path='/about' element={<About />} />
         <Route path='/shop' element={<Shop />} />
-        <Route path='/shop/:slug' element={<ItemCard />} />
+        <Route path='/shop/:slug' element={<Item />} />
         <Route
           path='/account'
           element={loggedIn ? <Account /> : <Navigate to='/login' />}
