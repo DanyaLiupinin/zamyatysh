@@ -2,7 +2,6 @@ import axios from "axios";
 
 import { BASE_URL } from "../constants/constants";
 
-
 // ITEMS
 
 export const getCategories = (query?: any) => {

@@ -4,7 +4,7 @@ import { useInfiniteQuery } from 'react-query';
 
 
 
-function useFetchProducts({limit, ...params}: any) {
+export function useFetchProducts({limit, ...params}: any) {
     return useInfiniteQuery(
         ['fetch-products'],
         ({ pageParam = 0 }) =>

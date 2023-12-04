@@ -1,5 +1,5 @@
 
-const useOrdersHistoryPagination = ({ useFetchHook, ...params }: any) => {
+export const useProductsHistoryPagination = ({ useFetchHook, ...params }: any) => {
 
     const { data, isLoading, hasNextPage, isFetchingNextPage } = useFetchHook({ params });
 
@@ -14,4 +14,3 @@ const useOrdersHistoryPagination = ({ useFetchHook, ...params }: any) => {
         hasNextPage,
     };
 };
-
