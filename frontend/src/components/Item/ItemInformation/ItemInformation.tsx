@@ -41,7 +41,7 @@ const ItemInformation = ({
     return (
         <div className='itemInformation'>
             <h2 className='itemInformation__title'>{item.title}</h2>
-            <p className='itemInformation__price'>{item.price}</p>
+            <p className='itemInformation__price'>{item.price} kwaks</p>
             <div className='itemInformation__sizes'>
                 {
                     item.sizes && item.sizes.data && item.sizes.data.map((size: any) => {

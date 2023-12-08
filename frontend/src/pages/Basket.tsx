@@ -14,6 +14,7 @@ import basketImage from "../images/basket-image.svg";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Spinner from "../components/Spinner/Spinner";
+import Notification from '../components/Popup/Notification/Notification';
 
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
@@ -140,8 +141,10 @@ const Basket = () => {
 
     return (
         <>
+        <Notification />
             <Header />
             <section className='basket'>
+                
                 <button className='itemCard__navigation' onClick={() => navigate(-1)}>
                     <img
                         className='itemCard__navigation-image'
