@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 
+import tshirtdefault from '../../../images/tshirtdefault.png';
+
 import "./ShopCard.scss";
 
 const ShopCard = ({
-    image,
+    image = tshirtdefault,
     price,
     title,
     id
 }: {
     price: string;
-    image: any;
+    image?: any;
     title: string;
     id: number
 }) => {

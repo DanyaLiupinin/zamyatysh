@@ -72,3 +72,21 @@ button {
         }
     }
 }
+
+@media (max-width: 1100px) {
+    .notification__buttons {
+        flex-direction: column;
+        gap: 15px;
+
+        button {
+            width: 100%;
+            height: fit-content;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .notification__popup {
+        max-width: 85%;
+    }
+}

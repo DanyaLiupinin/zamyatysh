@@ -16,6 +16,8 @@ import { useActionCreators } from "../store";
 
 import array from "../images/historyArray.svg";
 
+import tshirtdefault from '../images/tshirtdefault.png';
+
 import content from "../locale/ItemCard.json";
 
 const ItemCard: React.FC<any> = () => {
