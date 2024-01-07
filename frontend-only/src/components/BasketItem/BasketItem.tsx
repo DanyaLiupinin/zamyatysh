@@ -30,7 +30,7 @@ export const BasketItem = ({ shortItem, deleteItemHandler, id }: { shortItem: IS
                 <div className='basketItem'>
                     <button 
                         onClick={() => deleteItemHandler(id)} type="button" className='basketItem__delete-btn-container'>
-                        <img className='basketItem__delete-btb' src={deleteImage} alt='delete item'>
+                        <img className='basketItem__delete-btn' src={deleteImage} alt='delete item'>
                         </img>
                     </button>
                     <img
