@@ -14,7 +14,6 @@ import basketImage from "../images/basket-image.svg";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Spinner from "../components/Spinner/Spinner";
-import Notification from '../components/Popup/Notification/Notification';
 
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
@@ -115,6 +114,8 @@ const Basket = () => {
                                 break;
                         }
 
+                        console.log(newItem)
+
                         itemsNewArray.push(newItem);
                     } catch (error) {
                         return error;
@@ -139,9 +140,9 @@ const Basket = () => {
         }
     }, [basketItems]);
 
+
     return (
         <>
-        <Notification />
             <Header />
             <section className='basket'>
                 
@@ -161,7 +162,7 @@ const Basket = () => {
                         <p className='basket__no-items'>
                         {content.noItems[locale]}
                         </p>
-                        <Spinner isActive={isSpinnerActive} />
+                        {/*<Spinner isActive={isSpinnerActive} />*/}
                     </>
                 ) : (
                     <div className='basket__container'>

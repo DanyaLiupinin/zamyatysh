@@ -5,6 +5,8 @@ import './ImageCarousel.scss';
 import arrayLeft from '../../../images/lapkaleft.svg';
 import arrayRight from '../../../images/lapkaright.svg';
 
+import tshirtdefault from '../../../images/tshirtdefault.png';
+
 const ImageCarousel = ({ item }: any) => {
 
     const [imageWidth, setImageWidth] = useState<number>(0);
@@ -87,9 +89,9 @@ const ImageCarousel = ({ item }: any) => {
                                 })
                             */}
                             
-                            <img style={{ width: `${imageWidth}px`}} key={0} src={`${item.image.data[0].attributes.url}`} alt='alt' />
-                            <img style={{ width: `${imageWidth}px`}} key={1} src={`${item.image.data[0].attributes.url}`} alt='alt' />
-                            <img style={{ width: `${imageWidth}px`}} key={2} src={`${item.image.data[0].attributes.url}`} alt='alt' />
+                            <img style={{ width: `${imageWidth}px`}} key={0} src={`${tshirtdefault}`} alt='alt' />
+                            <img style={{ width: `${imageWidth}px`}} key={1} src={`${tshirtdefault}`} alt='alt' />
+                            <img style={{ width: `${imageWidth}px`}} key={2} src={`${tshirtdefault}`} alt='alt' />
                         
                             
                         </div>
@@ -104,11 +106,11 @@ const ImageCarousel = ({ item }: any) => {
                         })
                     */}
                     
-                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={0} src={`${item.image.data[0].attributes.url}`} alt='raz' onClick={() => onClickIcon(item.image.data[0].id + 1)} />
+                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 1 ? 'imageCarousel__mini-icon_active' : ''}`} key={0} src={`${tshirtdefault}`} alt='raz' onClick={() => onClickIcon(item.image.data[0].id + 1)} />
 
-                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 2 ? 'imageCarousel__mini-icon_active' : ''}`} key={1} src={`${item.image.data[0].attributes.url}`} alt='raz' onClick={() => onClickIcon(item.image.data[0].id + 1)} />
+                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 2 ? 'imageCarousel__mini-icon_active' : ''}`} key={1} src={`${tshirtdefault}`} alt='raz' onClick={() => onClickIcon(item.image.data[0].id + 1)} />
 
-                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 3 ? 'imageCarousel__mini-icon_active' : ''}`} key={2} src={`${item.image.data[0].attributes.url}`} alt='raz' onClick={() => onClickIcon(item.image.data[0].id + 1)} />
+                    <img className={`imageCarousel__mini-icon ${imageActive === 0 + 3 ? 'imageCarousel__mini-icon_active' : ''}`} key={2} src={`${tshirtdefault}`} alt='raz' onClick={() => onClickIcon(item.image.data[0].id + 1)} />
 
                 </div>
             </div>
