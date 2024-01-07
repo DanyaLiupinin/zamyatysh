@@ -23,8 +23,8 @@ const Filters: React.FC<any> = () => {
 
     const location = useLocation();
 
-    const onClickFilter = (id: number) => {
-        // здесь положить фильтр в стейт 
+    const onClickFilter = (category: string) => {
+        setCategoryFilter(category);
         setDropdown(false);
     };
 

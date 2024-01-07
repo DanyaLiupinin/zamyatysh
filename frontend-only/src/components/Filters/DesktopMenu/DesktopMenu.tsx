@@ -7,7 +7,7 @@ import { ICategory } from '../../../types/types';
 export const DesktopMenu = ({ categories, onClickFilter }:
     {
         categories: ICategory[],
-        onClickFilter: (id: number) => void,
+        onClickFilter: (category: string) => void,
     }
 ) => {
 
@@ -19,7 +19,7 @@ export const DesktopMenu = ({ categories, onClickFilter }:
             {
                 categories && categories.map((category: any) => {
                     return (
-                        <button className={`filters__button ${activeCategoryFilter === category.id && 'filters__button_active'}`} onClick={() => onClickFilter(category.id)} type='button' key={category.id}>{`${category.title[locale]}`}</button>
+                        <button className={`filters__button ${activeCategoryFilter === category && 'filters__button_active'}`} onClick={() => onClickFilter(category.title[locale])} type='button' key={category.id}>{`${category.title[locale]}`}</button>
                     );
                 })
             }

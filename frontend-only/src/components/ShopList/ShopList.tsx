@@ -10,10 +10,27 @@ import './ShopList.scss';
 
 // eslint-disable-next-line import/order
 import { items } from '../../constants/constants';
+import { useEffect, useState } from 'react';
+import { IItem } from '../../types/types';
 
 const ShopList: React.FC<any> = () => {
 
+    const [visibleItems, setVisibleItems] = useState<IItem[] | []>(items);
+
     const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
+
+useEffect(() => {
+    if (activeCategoryFilter) {
+        const filteredItems = items.filter((i: IItem) => {
+            return i.category[locale] === activeCategoryFilter;
+        });
+
+        setVisibleItems(filteredItems);
+    } else {
+        setVisibleItems(items);
+    }
+}, [activeCategoryFilter]);
 
     return (
         <div className='itemList'>
@@ -22,7 +39,7 @@ const ShopList: React.FC<any> = () => {
                     <BasketNotification />
                 </div>
                 {
-                    items?.length > 0 ? items.map((i: any) => {
+                    visibleItems?.length > 0 ? items.map((i: IItem) => {
                         return (
                             <ShopCard
                                 title={i.title[locale]}

@@ -13,7 +13,7 @@ export const DropdownMenu = ({ dropdown, categories, onClickFilter, setDropdown 
     {
         dropdown: boolean,
         categories: ICategory[],
-        onClickFilter: (id: number) => void,
+        onClickFilter: (category: string) => void,
         setDropdown: Dispatch<SetStateAction<boolean>>
     }
 ) => {
@@ -31,10 +31,10 @@ export const DropdownMenu = ({ dropdown, categories, onClickFilter, setDropdown 
 
             <div id='dropdown' className={`filters__dropdown-menu ${dropdown ? 'filters__dropdown-menu_show' : ''}`} >
                 {
-                    categories && categories.map((category: any) => {
+                    categories && categories.map((category: ICategory) => {
                         return (
-                            category.id !== activeCategoryFilter ?
-                                <button className='filters__dropdown-filter' onClick={() => onClickFilter(category.id)} type='button' key={category.id}>{category.title[locale]}</button> :
+                            category !== activeCategoryFilter ?
+                                <button className='filters__dropdown-filter' onClick={() => onClickFilter(category.title[locale])} type='button' key={category.id}>{category.title[locale]}</button> :
                                 ''
                         );
                     })
