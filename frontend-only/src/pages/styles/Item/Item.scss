@@ -38,29 +38,6 @@
     margin-left: 5%;
 }
 
-.itemCard__item-description {
-    @include pNormalize;
-    width: 40%;
-    margin: 100px auto;
-    font-size: 30px;
-    text-align: center;
-
-
-    p {
-        @include pNormalize;
-        height: auto;
-        word-wrap: break-word;
-    }
-
-    h3 {
-        @include pNormalize;
-        height: auto;
-        word-wrap: break-word;
-        font-weight: 600;
-        margin-top: 20px;
-    }
-
-}
 
 @media (max-width: 800px) {
     .itemCard__card-container {
@@ -70,19 +47,7 @@
     }
 }
 
-@media (max-width: 700px) {
-    .itemCard__item-description {
-        width: 70%;
-    }
-}
-
 @media (max-width: 500px) {
-    .itemCard__item-description {
-        width: 85%;
-
-        
-    }
-
     .itemCard__navigation {
         font-size: 30px;
     }

@@ -1,11 +1,11 @@
 @import '../../../mixins/mixins.scss';
 
-.itemInformation {
+.itemMenu {
     margin-left: 15%;
     margin-top: -28px;
 }
 
-.itemInformation__title {
+.itemMenu__title {
     @include pNormalize;
     font-style: normal;
     font-weight: 400;
@@ -14,19 +14,19 @@
     padding: 0 116px 0 0;
 }
 
-.itemInformation__price {
+.itemMenu__price {
     @include pNormalize;
     font-style: normal;
     font-weight: 400;
     font-size: 50px;
 }
 
-.itemInformation__about-link {
+.itemMenu__about-link {
     font-size: 30px;
     text-decoration: underline;
 }
 
-.itemInformation__sizes {
+.itemMenu__sizes {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -34,7 +34,7 @@
     margin-top: 56px;
 }
 
-.itemInformation__size {
+.itemMenu__size {
     border: 4px solid rgba(195, 195, 195, 1);
     width: 50px;
     height: 50px;
@@ -50,12 +50,12 @@
     }
 }
 
-.itemInformation__size_active {
+.itemMenu__size_active {
     border: 4px solid black;
 }
 
 
-.itemInformation__size-guide {
+.itemMenu__size-guide {
     @include pNormalize;
     font-style: normal;
     font-weight: 400;
@@ -64,14 +64,14 @@
     margin-top: 7px;
 }
 
-.itemInformation__basket-container {
+.itemMenu__basket-container {
     width: fit-content;
     height: fit-content;
     position: relative;
 
 }
 
-.itemInformation__basket-image {
+.itemMenu__basket-image {
     position: absolute;
     z-index: -1;
     top: 17px;
@@ -81,17 +81,17 @@
     transition: .3s;
 }
 
-.itemInformation__caption {
+.itemMenu__caption {
     font-size: 30px;
     margin: 0;
     color: rgb(234, 69, 69);
 }
 
-.itemInformation__basket-image_active {
+.itemMenu__basket-image_active {
     top: -20px;
 }
 
-.itemInformation__add-button {
+.itemMenu__add-button {
     @include buttonNormalize;
     margin-top: 44px;
     border: 2px solid rgba(195, 195, 195, 1);
@@ -106,33 +106,33 @@
 }
 
 @media (max-width: 920px) {
-    .itemInformation__price {
+    .itemMenu__price {
         font-size: 40px;
     }
 }
 
 @media (max-width: 800px) {
     
-    .itemInformation__title {
+    .itemMenu__title {
         padding: 0;
     }
 
-    .itemInformation {
+    .itemMenu {
         margin: 30px auto;
         text-align: center;
     }
 
-    .itemInformation__sizes {
+    .itemMenu__sizes {
         justify-content: center;
     }
 
-    .itemInformation__basket-container {
+    .itemMenu__basket-container {
         margin: 0 auto;
     }
 }
 
 @media (max-width: 500px) {
-    .itemInformation__size {
+    .itemMenu__size {
         width: 35px;
         height: 35px;
 

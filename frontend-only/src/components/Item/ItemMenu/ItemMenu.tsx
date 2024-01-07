@@ -46,44 +46,44 @@ const ItemMenu = ({
     };
 
     return (
-        <div className='itemInformation'>
-            <h2 className='itemInformation__title'>{item.title[locale]}</h2>
-            <p className='itemInformation__price'>{item.price} kwaks</p>
-            <div className='itemInformation__sizes'>
+        <div className='itemMenu'>
+            <h2 className='itemMenu__title'>{item.title[locale]}</h2>
+            <p className='itemMenu__price'>{item.price} kwaks</p>
+            <div className='itemMenu__sizes'>
                 {
                     item.sizes && item.sizes.map((size: string, index: number) => {
                         return (
                             <div
                                 onClick={() => onSizeClick(size.toUpperCase())}
                                 key={index}
-                                className={`itemInformation__size ${chosenSize === size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
+                                className={`itemMenu__size ${chosenSize === size.toUpperCase() ? 'itemMenu__size_active' : ''}`}>
                                 <p>{size.toUpperCase()}</p>
                             </div>
                         );
                     })
                 }
             </div>
-            <p className='itemInformation__size-guide'>{content.howToSize[locale]}</p>
-            <div className='itemInformation__basket-container'>
+            <p className='itemMenu__size-guide'>{content.howToSize[locale]}</p>
+            <div className='itemMenu__basket-container'>
                 <img
                     src={frog}
-                    className={`itemInformation__basket-image ${chosenSize !== '' ? 'itemInformation__basket-image_active' : ''}`}
+                    className={`itemMenu__basket-image ${chosenSize !== '' ? 'itemMenu__basket-image_active' : ''}`}
                     alt='frog wants you to buy something'></img>
                 <button
                     onClick={onAddItem}
                     disabled={isCaptionActive ? true : false}
-                    className={`itemInformation__add-button`}
+                    className={`itemMenu__add-button`}
                     type='button'>
                     {
                         content.addToBasket[locale]
                     }
                 </button>
                 {isCaptionActive ?  
-                    <p className='itemInformation__caption'>choose size please c:</p> : ''
+                    <p className='itemMenu__caption'>choose size please c:</p> : ''
                 }
                 {
                 isBasketItem ?
-                    <p className='itemInformation__caption'>you've already added {basketItemCount} c:</p> : ''
+                    <p className='itemMenu__caption'>you've already added {basketItemCount} c:</p> : ''
                 }
             </div>
         </div>

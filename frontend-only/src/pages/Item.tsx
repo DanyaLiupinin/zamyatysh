@@ -50,7 +50,6 @@ const ItemCard: React.FC<any> = () => {
             let itemCounter = 0;
             for (let i = 0; i < basketItems.length; i++) {
                 if (Number(basketItems[i].id) === item.id) {
-                    console.log('da')
                     setBasketItem(true);
                     itemCounter = ++itemCounter;
                 }

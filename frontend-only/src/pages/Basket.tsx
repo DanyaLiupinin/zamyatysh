@@ -6,20 +6,21 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import array from "../images/historyArray.svg";
 
-import deleteImage from '../images/deleteicon.svg';
-
 import { getBasketItem } from "../utils/api";
 
 import basketImage from "../images/basket-image.svg";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import Spinner from "../components/Spinner/Spinner";
 import Notification from '../components/Popup/Notification/Notification';
+
+import { IShortItem } from '../types/types';
 
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
 
 import { TLocale } from '../types/components';
+
+import { BasketItem } from '../components/BasketItem/BasketItem';
 
 import content from '../locale/Basket.json';
 
@@ -31,56 +32,38 @@ const Basket = () => {
 
     const [basketItems, setBasketItems] = useState<any>([]);
     const [finalPrice, setFinalPrice] = useState(0);
-    const [isSpinnerActive, setSpinnerActive] = useState<boolean>(true);
-    
+
     const { setBasket } = useActionCreators(itemsActions);
 
     const getFinalPrice = () => {
-        if (basketItems && basketItems.length > 0) {
+        if (basketShort && basketShort.length > 0) {
             const regex = /\d+/g;
             let total = 0;
-            for (let i = 0; i < basketItems.length; i++) {
-                const itemPrice = Number(basketItems[i].price.match(regex)[0]);
+            for (let i = 0; i < basketShort.length; i++) {
+                const itemPrice = Number(basketShort[i].price.match(regex)[0]);
                 total = total + itemPrice;
             }
             setFinalPrice(total);
         }
     };
 
-    const deleteItemHandler = ({id, size}: any) => {
-        
-        const newArray = [];
-        
-        let itemDeleted = false;
-
-        for (let i = 0; i < basketShort.length; i++) {
-            if (basketShort[i].id === id && basketShort[i].size === size) {
-                if (!itemDeleted) {
-                    itemDeleted = true;
-                    continue
-                } else {
-                    newArray.push(basketShort[i])
-                }
-            } else {
-                newArray.push(basketShort[i])
-            }
-        }
-
+    const deleteItemHandler = (id: number) => {
+        const newArray = [...basketShort]
+        newArray.splice(id, 1);
         setBasket(newArray);
-        
     };
 
- 
+
     const navigate = useNavigate();
 
     // v zakaze budet jranitsia tolko 
     // - id
     // - size
-
-
+/*
     useEffect(() => {
 
         if (basketShort && basketShort.length > 0) {
+
             const fetchItems = async () => {
 
                 const itemsNewArray = [];
@@ -134,17 +117,19 @@ const Basket = () => {
             setTimeout(() => {
                 getFinalPrice();
             }, 2200);
-
-            setSpinnerActive(false);
         }
-    }, [basketItems]);
+    }, [basketItems]); */
+
+    useEffect(() => {
+        getFinalPrice();
+    }, []);
 
     return (
         <>
-        <Notification />
+            {/*<Notification />*/}
             <Header />
             <section className='basket'>
-                
+
                 <button className='itemCard__navigation' onClick={() => navigate(-1)}>
                     <img
                         className='itemCard__navigation-image'
@@ -155,42 +140,27 @@ const Basket = () => {
                 </button>
                 <h2 className='basket__title'>{content.basket[locale]}</h2>
 
-                {!basketItems || basketItems.length === 0 ? (
+                {!basketShort || basketShort.length === 0 ? (
                     <>
 
                         <p className='basket__no-items'>
-                        {content.noItems[locale]}
+                            {content.noItems[locale]}
                         </p>
-                        <Spinner isActive={isSpinnerActive} />
                     </>
                 ) : (
                     <div className='basket__container'>
                         <div className='basket__column basket__column-left'>
                             <div className='basket__items'>
-                                {basketItems &&
-                                    basketItems.length > 0 &&
-                                    basketItems.map((item: any, index: number) => {
+                                {
+                                    basketShort?.length > 0 &&
+                                    basketShort.map((item: any, index: number) => {
                                         return (
-                                            <div className='basket__item' key={index}>
-                                                <button onClick={() => deleteItemHandler(item)} type="button" className='basket__delete-button-container'>
-                                                    <img className='basket__delete-button' src={deleteImage} alt='delete item'>
-                                                    </img>
-                                                </button>
-                                                <img
-                                                    src={item.image}
-                                                    className='basket__item-image basket__item-info'
-                                                    alt='..'
-                                                ></img>
-                                                <p className='basket__item-title basket__item-info'>
-                                                    {item.title}
-                                                </p>
-                                                <p className='basket__item-size basket__item-info'>
-                                                {content.size[locale]}: <br /> {item.size}
-                                                </p>
-                                                <p className='basket__item-price basket__item-info'>
-                                                {content.price[locale]}: <br /> {item.price}
-                                                </p>
-                                            </div>
+                                            <BasketItem
+                                            id={index}
+                                            key={index}
+                                            shortItem={item}
+                                            deleteItemHandler={deleteItemHandler}
+                                            />
                                         );
                                     })}
                             </div>
@@ -207,13 +177,13 @@ const Basket = () => {
                                 ) : (
                                     <>
                                         <p className='basket__notification-text'>
-                                        {content.registerFor[locale]}
+                                            {content.registerFor[locale]}
                                         </p>
                                         <button className='basket__register-button'>
-                                        {content.register[locale]}
+                                            {content.register[locale]}
                                         </button>
                                         <p className='basket__caption'>
-                                        {content.haveAccount[locale]}
+                                            {content.haveAccount[locale]}
                                             <Link to={"/login"}> {content.login[locale]}</Link>
                                         </p>
                                     </>
@@ -222,7 +192,7 @@ const Basket = () => {
                             <div className='basket__price-container'>
                                 <p>{content.finalPrice[locale]} {finalPrice} {content.kwaks[locale]}</p>
                                 <button className='basket__submit-button' type='button'>
-                                {content.buy[locale]}
+                                    {content.buy[locale]}
                                 </button>
                             </div>
                         </div>

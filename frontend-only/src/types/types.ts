@@ -32,3 +32,9 @@ export interface IItem {
     images: string[],
     sizes: string[]
 }
+
+export interface IShortItem {
+    id: number,
+    price: string,
+    size: string
+}
