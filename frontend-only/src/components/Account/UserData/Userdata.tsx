@@ -1,14 +1,12 @@
 import "./Userdata.scss";
 
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import avatar from "../../../images/logo.svg";
-
 import { TLocale } from "../../../types/components";
-
 import content from '../../../locale/Userdata.json';
 
-import { useSelector } from "react-redux";
 
 const Userdata = ({ data, changeDataHandler }: any) => {
 
@@ -17,6 +15,7 @@ const Userdata = ({ data, changeDataHandler }: any) => {
     const locale: TLocale = useSelector((state: any) => state.items.locale);
     
     const onUpdateData = () => {
+        localStorage.setItem('userData', JSON.stringify(data));
         setEditData(false);
     };
 

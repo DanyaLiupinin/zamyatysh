@@ -35,10 +35,13 @@ const Account = () => {
     });
 
     const onChangeData = (fieldName: any, fieldValue: String) => {
-        setUserData((prevData: any) => ({
-            ...prevData,
-            [fieldName]: fieldValue,
-        }));
+
+        const updatedUserdata = {
+            ...userData,
+            [fieldName]: fieldValue
+        };
+
+        setUserData(updatedUserdata);
     };
 
     useEffect(() => {
@@ -48,8 +51,6 @@ const Account = () => {
             setUserData((prevData: IUserData) => ({ ...prevData, ...userData }));
         }
     }, []);
-
-    console.log(userData)
 
     return (
         <>

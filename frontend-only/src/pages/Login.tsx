@@ -13,13 +13,14 @@ import './styles/Auth/Auth.scss';
 
 const Login = () => {
 
-    const { userLoginThunk } = useActionCreators(usersActions);
+    const { setLoggedIn } = useActionCreators(usersActions);
+
+    const [error, setError] = useState('');
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
-    const error = useSelector((state: any) => state.user.error);
 
     const [userData, setUserData] = useState({
-        identifier: '',
+        email: '',
         password: ''
     }); 
 
@@ -32,9 +33,18 @@ const Login = () => {
 
     };
 
-    const handleSubmit = async (e: any) => {
+    const userdataHandler = () => {
+        localStorage.setItem('userData', JSON.stringify(userData));
+    };
+
+    const handleSubmit = (e: any) => {
         e.preventDefault();
-        await userLoginThunk(userData);
+        if (userData.email && userData.password) {
+            userdataHandler();
+            setLoggedIn(true);
+        } else {
+            setError('data incorrect, check it');
+        }
     };
 
     return (
@@ -46,8 +56,8 @@ const Login = () => {
                     <p>{content.email[locale]}</p>
                     <input
                         minLength={6}
-                        name='identifier'
-                        value={userData.identifier}
+                        name='email'
+                        value={userData.email}
                         onChange={handleInputChange}
                     ></input>
                     <p>{content.password[locale]}</p>
