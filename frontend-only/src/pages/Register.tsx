@@ -12,10 +12,11 @@ import content from '../locale/AuthLocale.json';
 
 const Register = () => {
 
-    const { userRegisterThunk, clearError } = useActionCreators(usersActions);
+    const [error, setError] = useState('');
+
+    const { setLoggedIn } = useActionCreators(usersActions);
     
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
-    const error = useSelector((state: any) => state.user.error);
     
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
@@ -35,9 +36,18 @@ const Register = () => {
         }));
     };
 
+    const userdataHandler = () => {
+        localStorage.setItem('userData', JSON.stringify(userData));
+    };
+
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        userRegisterThunk(userData);
+        if (userData.email && userData.username && userData.password) {
+            userdataHandler();
+            setLoggedIn(true);
+        } else {
+            setError('data incorrect, check it');
+        }
     };
 
     useEffect(() => {
@@ -48,7 +58,7 @@ const Register = () => {
     }, [loggedIn]);
 
     useEffect(() => {
-        clearError();
+        setError('');
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

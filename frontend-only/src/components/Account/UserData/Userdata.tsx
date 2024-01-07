@@ -26,6 +26,19 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                 <img src={avatar} alt='...' />
             </div>
             <form className='userdata__form'>
+
+            <div className='data'>
+                    <p className='data__name'>{'username'}:</p>
+                    <input
+                        disabled={!isEditData}
+                        min={1}
+                        max={25}
+                        className='data__content'
+                        value={data.username}
+                        onChange={(e) => changeDataHandler("username", e.target.value)}
+                    />
+                </div>
+
                 <div className='data'>
                     <p className='data__name'>{content.name[locale]}:</p>
                     <input

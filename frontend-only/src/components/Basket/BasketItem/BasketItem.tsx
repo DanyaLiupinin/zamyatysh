@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 
 import './BasketItem.scss';
 
-import { IItem } from "../../types/types";
-import deleteImage from '../../images/deleteicon.svg';
-import { items } from "../../constants/constants";
-import { TLocale } from "../../types/components";
-import { IShortItem } from "../../types/types";
-import content from '../../locale/BasketItem.json';
+import { IItem } from "../../../types/types";
+import deleteImage from '../../../images/deleteicon.svg';
+import { items } from "../../../constants/constants";
+import { TLocale } from "../../../types/components";
+import { IShortItem } from "../../../types/types";
+import content from '../../../locale/BasketItem.json';
 
 export const BasketItem = ({ shortItem, deleteItemHandler, id }: { shortItem: IShortItem, deleteItemHandler: (id: number) => void, id: number }) => {
 

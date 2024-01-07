@@ -27,21 +27,21 @@ const App: React.FC<any> = () => {
   const basketItems = useSelector((state: any) => state.items.basketItemsShort);
   const redirectPath = useSelector((state: any) => state.user.rediretcPath);
 
-  const { 
-    getAllCategoriesThunk, 
-    getAllItemsThunk, 
+  const {
+    getAllCategoriesThunk,
+    getAllItemsThunk,
     changeLanguage,
     setBasket
   } = useActionCreators(itemsActions);
-    
-  const { getUserDataThunk } = useActionCreators(usersActions);
+
+  const { getUserDataThunk, setLoggedIn } = useActionCreators(usersActions);
 
   useEffect(() => {
     if (localStorage.getItem("jwt") && localStorage.getItem("userId")) {
       const id = localStorage.getItem("userId");
       getUserDataThunk(id);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -51,38 +51,38 @@ const App: React.FC<any> = () => {
     } else {
       changeLanguage("en");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
-/* 
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
 
-    getAllItemsThunk();
-    getAllCategoriesThunk();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [locale]);
-  */
+  /* 
+    useEffect(() => {
+      if (isFirstRender.current) {
+        isFirstRender.current = false;
+        return;
+      }
+  
+      getAllItemsThunk();
+      getAllCategoriesThunk();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [locale]);
+    */
 
   useEffect(() => {
     if (redirectPath) navigate(redirectPath);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [redirectPath]);
 
-useEffect(() => {
-  if (localStorage.getItem('basketItems')) {
-    const storageItems = localStorage.getItem('basketItems');
-    let storageItemsObj;
-    if (storageItems) {
-      storageItemsObj = JSON.parse(storageItems);
-    setBasket(storageItemsObj);
+  useEffect(() => {
+    if (localStorage.getItem('basketItems')) {
+      const storageItems = localStorage.getItem('basketItems');
+      let storageItemsObj;
+      if (storageItems) {
+        storageItemsObj = JSON.parse(storageItems);
+        setBasket(storageItemsObj);
+      }
     }
-  }
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (basketItems) {
@@ -92,6 +92,13 @@ useEffect(() => {
     }
 
   }, [basketItems]);
+
+  useEffect(() => {
+    const storedData = localStorage.getItem('userData');
+    if (storedData) {
+      setLoggedIn(true);
+    };
+  }, []);
 
   return (
     <div className='App'>

@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import './BasketColumnLeft.scss';
 
-import { BasketItem } from "../../BasketItem/BasketItem";
+import { BasketItem } from "../BasketItem/BasketItem";
 import basketImage from "../../../images/basket-image.svg";
 
 export const BasketColumnLeft = ({deleteItemHandler}: any) => {

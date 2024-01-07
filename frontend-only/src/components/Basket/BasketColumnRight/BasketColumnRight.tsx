@@ -26,8 +26,10 @@ export const BasketColumnRight = ({ finalPrice }: { finalPrice: number }) => {
                             <p className='basket__notification-text'>
                                 {content.registerFor[locale]}
                             </p>
-                            <button className='basket__register-button'>
-                                {content.register[locale]}
+                            <button className='basket__register-btn'>
+                                <Link className='basket__register-btn-text' to={"/register"}>
+                                    {content.register[locale]}
+                                </Link>
                             </button>
                             <p className='basket__caption'>
                                 {content.haveAccount[locale]}
@@ -38,7 +40,7 @@ export const BasketColumnRight = ({ finalPrice }: { finalPrice: number }) => {
             </div>
             <div className='basket__price-container'>
                 <p>{content.finalPrice[locale]} {finalPrice} {content.kwaks[locale]}</p>
-                <button className='basket__submit-button' type='button'>
+                <button className='basket__submit-btn' type='button'>
                     {content.buy[locale]}
                 </button>
             </div>
