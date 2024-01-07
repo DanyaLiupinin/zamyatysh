@@ -3,7 +3,7 @@
     box-shadow: 0px 4px 8px rgba(33, 37, 41, 0.1), 0px 1px 0px -10px rgba(33, 37, 41, 0.1);
     transition: width 2s, height 4s;
     height: 480px;
-    width: 306px;
+    width: auto;
 
     h2 {    
         margin: 0;
@@ -72,34 +72,8 @@
     margin: 0 auto;
 }
 
-@media (max-width: 700px) {
-    .item {
-        width: 280px;
-    }
-}
-
-@media (max-width: 650px) {
-    .item {
-        width: 280px;
-    }
-}
-
-@media (max-width: 630px) {
-    .item {
-        width: 260px;
-    }
-}
-
 @media (max-width: 600px) {
     .item {
-        width: 300px;
         margin: 0 auto;
     }
 }
-
-@media (max-width: 400px) {
-    .item {
-        width: 250px;
-        margin: 0 auto;
-    }
-} 
