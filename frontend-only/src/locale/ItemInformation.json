@@ -1,14 +1,14 @@
 {
-    "howToSize": {
-        "ru": "как выбрать размер?",
-        "en": "how to choose size?"
+    "description": {
+        "ru": "описание",
+        "en": "description"
     },
-    "addToBasket": {
-        "ru": "в корзину",
-        "en": "add to basket"
+    "material": {
+        "ru": "материал",
+        "en": "material"
     },
-    "addedToBasket": {
-        "ru": "добавлено",
-        "en": "already added"
+    "style": {
+        "ru": "фасон",
+        "en": "style"
     }
 }

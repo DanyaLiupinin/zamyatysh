@@ -8,6 +8,12 @@
     position: relative;
 }
 
+.itemCard__empty {
+    font-size: 60px;
+    margin: 150px 0;
+    text-align: center
+}
+
 .itemCard__navigation {
     @include buttonNormalize;
     font-size: 40px;
