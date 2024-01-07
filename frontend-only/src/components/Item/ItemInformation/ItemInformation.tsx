@@ -40,14 +40,14 @@ const ItemInformation = ({
 
     return (
         <div className='itemInformation'>
-            <h2 className='itemInformation__title'>{item.title}</h2>
+            <h2 className='itemInformation__title'>{item.title[locale]}</h2>
             <p className='itemInformation__price'>{item.price} kwaks</p>
             <div className='itemInformation__sizes'>
                 {
-                    item.sizes && item.sizes.data && item.sizes.data.map((size: any) => {
+                    item.sizes && item.sizes && item.sizes.map((size: string, index: number) => {
                         return (
-                            <div onClick={() => onSizeClick(size.attributes.size.toUpperCase())} key={size.id} className={`itemInformation__size ${chosenSize === size.attributes.size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
-                                <p>{size.attributes.size.toUpperCase()}</p>
+                            <div onClick={() => onSizeClick(size.toUpperCase())} key={index} className={`itemInformation__size ${chosenSize === size.toUpperCase() ? 'itemInformation__size_active' : ''}`}>
+                                <p>{size.toUpperCase()}</p>
                             </div>
                         );
                     })

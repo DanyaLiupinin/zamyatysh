@@ -14,7 +14,13 @@ import { getItem } from "../utils/api";
 import { itemsActions } from "../store/items/index";
 import { useActionCreators } from "../store";
 
+import { NavButton } from "../components/NavButton/NavButton";
+
+import { items } from "../constants/constants";
+
 import array from "../images/historyArray.svg";
+
+import { IItem } from "../types/types";
 
 import content from "../locale/ItemCard.json";
 
@@ -31,11 +37,11 @@ const ItemCard: React.FC<any> = () => {
 
     const navigate = useNavigate();
 
-    const slug = useParams();
+    const param = useParams();
 
     const addItemHandler = () => {
         const newItem = {
-            id: slug.slug,
+            id: param.id,
             size: chosenSize,
             slug: item.slug,
             price: item.price,
@@ -47,17 +53,6 @@ const ItemCard: React.FC<any> = () => {
             setBasket([...basketItems, newItem]);
         }
     };
-
-    useEffect(() => {
-        if (locale && slug.slug) {
-            getItem({
-                id: slug.slug,
-                locale: locale,
-            }).then((res) => {
-                setItem(res.data.attributes);
-            });
-        }
-    }, [locale, slug]);
 
     useEffect(() => {
         if (basketItems && item) {
@@ -73,20 +68,21 @@ const ItemCard: React.FC<any> = () => {
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [basketItems, item]);
+
+    useEffect(() => {
+        const actualItem = items.find((i: IItem) => {
+            return i.id === Number(param.id);
+        })
+
+        setItem(actualItem);
+    }, []);
     
     return (
         <>
             <Header /> 
             <section className='itemCard'>
-                <button className='itemCard__navigation' onClick={() => navigate(-1)}>
-                    <img
-                        className='itemCard__navigation-image'
-                        src={array}
-                        alt='back'
-                    ></img>
-                    {content.goBack[locale]}
-                </button>
-                {item !== undefined ? (
+                <NavButton />
+                {item ? (
                     <>
                         <div className='itemCard__card-container'>
                             <div className='itemCard__sticky-notification-container'>
@@ -104,15 +100,15 @@ const ItemCard: React.FC<any> = () => {
                         </div>
                         <div id='description' className='itemCard__item-description'>
                             <h3>{content.description[locale]}:</h3>
-                            <p>{item.description}</p>
+                            <p>{item.description[locale]}</p>
                             <h3 className='itemCard__item-description-inline'>
                                 {content.material[locale]}:{" "}
                             </h3>
-                            <p>{item.material}</p>
+                            <p>{item.material[locale]}</p>
                             <h3 className='itemCard__item-description-inline'>
                                 {content.style[locale]}:
                             </h3>
-                            <p>{item.style}</p>
+                            <p>{item.style[locale]}</p>
                         </div>
                     </>
                 ) : (

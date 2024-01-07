@@ -107,7 +107,7 @@ useEffect(() => {
         <Route path='/' element={<WelcomePage />} />
         <Route path='/about' element={<About />} />
         <Route path='/shop' element={<Shop />} />
-        <Route path='/shop/:slug' element={<Item />} />
+        <Route path='/shop/:id' element={<Item />} />
         <Route
           path='/account'
           element={loggedIn ? <Account /> : <Navigate to='/login' />}
