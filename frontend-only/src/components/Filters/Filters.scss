@@ -1,0 +1,26 @@
+@import '../../mixins/mixins.scss';
+
+.filters {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filters__container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+@media (max-width: 768px) {
+    .filters__buttons {
+        width: 100%;
+        margin: 20px 20px 20px;
+        font-size: 40px;
+    }
+
+    .filters {
+        justify-content: center;
+    }
+}

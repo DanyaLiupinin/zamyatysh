@@ -1,0 +1,64 @@
+@import "../../../mixins/mixins.scss";
+
+.account {
+    background-color: rgba(237, 237, 237, 0.3843137255);
+}
+
+.account__container {
+    outline: 1px solid black;
+    display: grid;
+    grid-template-columns: 39% 59%;
+    @include container;
+    padding: 20px 20px;
+    gap: 2%;
+    box-sizing: border-box;
+}
+
+// USERCARD
+
+.account__user-card {
+    outline: 1px solid red;
+    min-height: 200px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+
+
+
+// USERORDERS
+
+
+
+@media (max-width: 900px) {
+
+    .account {
+        padding: 50px 0;
+    }
+    
+.account__container {
+    outline: 1px solid black;
+    grid-template-columns: 1fr;
+    @include container;
+    gap: 2%;
+    box-sizing: border-box;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+}
+}
+
+@media (max-width: 900px) {
+    .account__container {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .account__container {
+        width: 95%;
+    }
+}
+

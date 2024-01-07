@@ -1,0 +1,17 @@
+@font-face {
+     font-family: 'Zamyatysh-ru';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: url("./Zamyatysh_ru-Regular.otf") format("opentype"),
+          url("./Zamyatysh_ru-Regular.ttf") format("truetype")
+}
+
+@font-face {
+     font-family: 'Zamyatysh-en';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: url("./Zamyatysh_eng-Regular.otf") format("opentype"),
+          url("./Zamyatysh_eng-Regular.ttf") format("truetype")
+}

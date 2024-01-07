@@ -1,0 +1,42 @@
+{
+    "name": {
+        "ru": "имя",
+        "en": "name"
+    },
+    "email": {
+        "ru": "почта",
+        "en": "email"
+    },
+    "phone": {
+        "ru": "телефон",
+        "en": "phone"
+    },
+    "country": {
+        "ru": "страна",
+        "en": "country"
+    },
+    "city": {
+        "ru": "город",
+        "en": "city"
+    },
+    "street": {
+        "ru": "улица",
+        "en": "street"
+    },
+    "floor": {
+        "ru": "этаж",
+        "en": "floor"
+    },
+    "apartment": {
+        "ru": "материал",
+        "en": "apartment"
+    },
+    "edit": {
+        "ru": "материал",
+        "en": "Edit"
+    },
+    "save": {
+        "ru": "материал",
+        "en": "Save"
+    }
+}

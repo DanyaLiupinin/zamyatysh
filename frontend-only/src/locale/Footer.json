@@ -1,0 +1,22 @@
+{
+    "copyright": {
+        "ru": "(c) замятыш",
+        "en": "(c) zamyatysh"
+    },
+    "delivery": {
+        "ru": "доставка и оплата",
+        "en": "shipping and payment"
+    },
+    "sizes": {
+        "ru": "таблица размеров",
+        "en": "size table"
+    },
+    "contacts": {
+        "ru": "контакты",
+        "en": "contacts"
+    },
+    "copyrightAlt": {
+        "ru": "копирайт замятыш",
+        "en": "copyright zamyatysh"
+    }
+}

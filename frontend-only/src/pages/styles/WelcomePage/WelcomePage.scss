@@ -1,0 +1,112 @@
+@import '../../../mixins/mixins.scss';
+
+.welcome {
+    background-color: white;
+}
+
+.welcome__container {
+    @include container;
+    overflow: hidden;
+}
+
+.welcome__links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 25vh;
+}
+
+.welcome__link {
+    @include buttonNormalize;
+    width: 200px;
+    height: 50px;
+    font-size: 40px;    
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome__link:hover {
+    cursor: inherit;
+}
+
+.welcome__link:hover {
+    opacity: .7;
+}
+
+.welcome__link:not(:last-child) {
+    margin-right: 100px;
+}
+
+@media (max-width: 620px) {
+
+    .welcome__links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .welcome__link {
+        width: 70%;
+        height: 60px;
+    }
+
+    .welcome__link:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+}
+
+
+
+.welcome__gif {
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    bottom: 10%;
+    margin: 0 auto;
+    z-index: 0;
+    //outline: 1px solid red;
+}
+
+
+@media (max-width: 1120px) {
+    .welcome__gif {
+        width: 65%;
+        left: 20%;
+        bottom: 25%;
+    }
+}
+
+@media (max-width: 750px) {
+    .welcome__gif {
+        width: 80%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 800px) {
+    .welcome__gif {
+        width: 80%;
+        left: 5%;
+    }
+}
+
+@media (max-width: 620px) {
+    .welcome__gif {
+        width: 75%;
+        left: 15%;
+        bottom: 12%;
+    }
+}
+
+@media (max-width: 400px) {
+    .welcome__gif {
+        width: 95%;
+        left: 5%;
+        bottom: 8%;
+    }
+}
