@@ -7,8 +7,18 @@ import { TLocale } from "../../../types/components";
 import content from '../../../locale/Order.json';
 import { useSelector } from "react-redux";
 
+interface IItemProps {
+    id: number,
+    size: string,
+    price: string
+}
 
-const Order = () => {
+interface IOrderProps {
+    id: number, 
+    items: IItemProps[]
+}
+
+const Order = ({id, items}: IOrderProps) => {
     const [isOrderOpened, setOrderOpened] = useState(false);
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
@@ -17,7 +27,7 @@ const Order = () => {
         <>
             <div className='order'>
                 <div className='order__card'>
-                    <p className='order__title'>{content.order[locale]} #12345</p>
+                    <p className='order__title'>{content.order[locale]}#{id}</p>
                     <button
                         className='order__details-btn'
                         onClick={() => setOrderOpened(!isOrderOpened)}
@@ -34,21 +44,20 @@ const Order = () => {
                             <p className='order-details__status'>oplacheno</p>
                         </div>
                         <div className='order-details__items'>
-                            <div className='order-item'>
-                                <p>tshirt nomer 55</p>
-                                <p>size: m</p>
-                                <p>5000 kwaks</p>
-                            </div>
-                            <div className='order-item'>
-                                <p>tshirt nomer 55</p>
-                                <p>size: m</p>
-                                <p>5000 kwaks</p>
-                            </div>
-                            <div className='order-item'>
-                                <p>tshirt nomer 55</p>
-                                <p>size: m</p>
-                                <p>5000 kwaks</p>
-                            </div>
+                            {
+                                items?.length > 0 && items.map((item) => {
+                                    return (
+                                    <div className='order-item'>
+                                        <p>name</p>
+                                        <p>{item.size}</p>
+                                        <p>{item.price}</p>
+                                    </div>
+                                    )
+                                })
+
+                            }
+
+
                         </div>
                         <p className='order-details__total'>total: 200000 kwaks</p>
                     </div>

@@ -44,6 +44,7 @@ const Basket = () => {
         getFinalPrice();
     }, []);
 
+
     return (
         <>
             {/*<Notification />*/}

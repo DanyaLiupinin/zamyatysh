@@ -3,11 +3,17 @@ import { useSelector } from "react-redux";
 
 import { TLocale } from "../../../types/components";
 
+import { setOrderHandler } from "../../../shared/lib/localstorage/orders/setOrderHandler";
+
 import './BasketColumnRight.scss';
 
 import content from '../../../locale/Basket.json';
 
+
 export const BasketColumnRight = ({ finalPrice }: { finalPrice: number }) => {
+
+    
+    const basketShort = useSelector((state: any) => state.items.basketItemsShort);
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const locale: TLocale = useSelector((state: any) => state.items.locale);
@@ -40,7 +46,7 @@ export const BasketColumnRight = ({ finalPrice }: { finalPrice: number }) => {
             </div>
             <div className='basket__price-container'>
                 <p>{content.finalPrice[locale]} {finalPrice} {content.kwaks[locale]}</p>
-                <button className='basket__submit-btn' type='button'>
+                <button onClick={() => setOrderHandler(basketShort)} className='basket__submit-btn' type='button'>
                     {content.buy[locale]}
                 </button>
             </div>
