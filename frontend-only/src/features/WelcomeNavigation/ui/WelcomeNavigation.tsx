@@ -4,11 +4,12 @@ import './WelcomeNavigation.scss';
 
 interface IWelcomeNavigationProps {
     children: ReactNode,
-    sendTo: string
+    sendTo: string,
+    className?: string,
 }
 
-export const WelcomeNavigation = ({children, sendTo}: IWelcomeNavigationProps) => {
+export const WelcomeNavigation = ({children, sendTo, className}: IWelcomeNavigationProps) => {
     return (
-        <Link to={sendTo} className='welcomeNavigation'>{children}</Link>
+        <Link to={sendTo} className={`${className} welcomeNavigation`}>{children}</Link>
     );
 };

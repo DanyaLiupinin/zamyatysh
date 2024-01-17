@@ -1,0 +1,33 @@
+@import '../../../mixins/mixins.scss';
+
+.welcome__languages {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.welcome__language {
+    @include buttonNormalize;
+    width: fit-content;
+    height: fit-content; 
+    margin-right: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome__language_active {
+    border-bottom: 1px solid black;
+}
+
+.welcome__language:hover {
+    opacity: .6;
+}
+
+
+.welcome__language-text {
+    @include pNormalize;
+    margin: 0;
+    position: relative;
+    font-size: 35px;
+}
