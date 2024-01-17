@@ -19,6 +19,10 @@ const Userdata = ({ data, changeDataHandler }: any) => {
         setEditData(false);
     };
 
+    const onExit = () => {
+        localStorage.clear();
+    };
+
     return (
         <section className='userdata'>
             <div className='avatar-container'>
@@ -149,6 +153,9 @@ const Userdata = ({ data, changeDataHandler }: any) => {
                         {content.save[locale]}
                     </button>
                 </div>
+                <button onClick={onExit} className='userdata__exit'>
+                    Exit
+                </button>
             </form>
             </section>
     );

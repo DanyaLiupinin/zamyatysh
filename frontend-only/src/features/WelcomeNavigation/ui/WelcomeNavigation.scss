@@ -1,0 +1,45 @@
+@import '../../../mixins/mixins.scss';
+
+
+.welcomeNavigation {
+    @include buttonNormalize;
+    width: 200px;
+    height: 50px;
+    font-size: 40px;    
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeNavigation:hover {
+    cursor: inherit;
+}
+
+.welcomeNavigation:hover {
+    opacity: .7;
+}
+
+.welcomeNavigation:not(:last-child) {
+    margin-right: 100px;
+}
+
+@media (max-width: 620px) {
+
+
+    .welcomeNavigation {
+        width: 70%;
+        height: 60px;
+    }
+
+    .welcomeNavigation:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+}

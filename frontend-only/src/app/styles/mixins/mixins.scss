@@ -1,0 +1,16 @@
+@mixin container {
+    max-width: 1280px;  
+    margin: 0 auto;
+}
+
+@mixin buttonNormalize {
+    background-color: unset;
+    border: 0;
+    padding: 0;
+    transition: .3s;
+}
+
+@mixin pNormalize {
+    margin: 0;
+    padding: 0;
+}
