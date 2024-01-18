@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./src",
+    "paths": {
+      "@hooks/*": ["./shared/hooks/index.ts"],
+      "@features/*": ["features/*"],
+      "@handlers/*": ["./shared/lib/*"],
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -24,8 +29,4 @@
   "include": [
     "src"
   ],
-  "paths": {
-    "@hooks/*": ["./shared/hooks/index.ts"],
-    "@features/*": ["./features/index.ts"],
-  }
 }

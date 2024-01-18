@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { TLocale } from "../../../types/components";
 
-import { setOrderHandler } from "../../../shared/lib/localstorage/orders/setOrderHandler";
+import {setOrderHandler} from "@handlers/index";
 
 import './BasketColumnRight.scss';
 

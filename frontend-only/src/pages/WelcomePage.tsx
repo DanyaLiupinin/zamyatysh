@@ -7,6 +7,7 @@ import { TLocale } from '../types/components';
 import content from '../locale/WelcomPageLocale.json';
 
 import { WelcomeNavigation } from 'features/WelcomeNavigation';
+
 import './styles/WelcomePage/WelcomePage.scss';
 
 const logo = require('../images/gifka.GIF');
