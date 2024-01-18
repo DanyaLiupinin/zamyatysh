@@ -1,11 +1,7 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "baseUrl": "./src",
-    "paths": {
-      "@hooks/*": ["./shared/hooks/index.ts"],
-      "@features/*": ["features/*"],
-      "@handlers/*": ["./shared/lib/*"],
-    },
     "target": "es5",
     "lib": [
       "dom",
@@ -28,5 +24,5 @@
   },
   "include": [
     "src"
-  ],
+  ]
 }

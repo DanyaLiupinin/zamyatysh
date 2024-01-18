@@ -3,7 +3,9 @@ import { useSelector } from "react-redux";
 
 import { TLocale } from "../../../types/components";
 
-import {setOrderHandler} from "@handlers/index";
+import { setOrderHandler } from "@hahandler";
+
+import { WelcomeNavigation } from "@features";
 
 import './BasketColumnRight.scss';
 

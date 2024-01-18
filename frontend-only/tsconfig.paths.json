@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@hooks": [
+                "shared/index.ts"
+            ],
+            "@features": [
+                "features/index.ts"
+            ],
+            "@hahandler": [
+                "shared/index.ts"
+            ],
+            "@mixins": [
+                "app/styles/mixins/mixins.scss"
+            ]
+        }
+    }
+}

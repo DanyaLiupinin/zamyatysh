@@ -1,1 +1,1 @@
-export * from './WelcomeNavigation';
+export * from './WelcomeNavigation/index';
