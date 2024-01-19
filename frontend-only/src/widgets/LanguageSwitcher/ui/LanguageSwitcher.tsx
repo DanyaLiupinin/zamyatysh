@@ -1,9 +1,13 @@
 import { Language } from "@features";
 import { languages } from "@constants";
 
-export const LanguageSwitcher: React.FC = () => {
+interface LanguageSwitcherProps {
+    className?: String,
+}
+
+export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({className = ''}) => {
     return (
-        <div>
+        <div className={`languageSwitcher ${className}`} >
             {
                 languages &&
                 languages.map((lang, key) => (
