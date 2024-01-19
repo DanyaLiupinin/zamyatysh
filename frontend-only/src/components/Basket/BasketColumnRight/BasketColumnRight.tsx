@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { TLocale } from "../../../types/components";
 
-import { setOrderHandler } from "@hahandler";
+import { setOrderHandler } from "@handlers";
 
 import { WelcomeNavigation } from "@features";
 

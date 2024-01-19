@@ -3,13 +3,16 @@
         "baseUrl": "./src",
         "paths": {
             "@hooks": [
-                "shared/index.ts"
+                "shared/index.tsx"
             ],
             "@features": [
-                "features/index.ts"
+                "features/index.tsx"
             ],
-            "@hahandler": [
-                "shared/index.ts"
+            "@handlers": [
+                "shared/lib/handlers/index.tsx"
+            ],
+            "@types": [
+                "shared/types/index.tsx"
             ],
             "@mixins": [
                 "app/styles/mixins/mixins.scss"
