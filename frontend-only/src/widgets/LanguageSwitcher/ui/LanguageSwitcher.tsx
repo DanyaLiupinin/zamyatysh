@@ -6,6 +6,7 @@ interface LanguageSwitcherProps {
 }
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({className = ''}) => {
+
     return (
         <div className={`languageSwitcher ${className}`} >
             {
@@ -16,4 +17,5 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({className = '
             }
         </div>
     );
+    
 };
