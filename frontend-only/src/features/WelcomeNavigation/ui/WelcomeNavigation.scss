@@ -26,20 +26,11 @@
     opacity: .7;
 }
 
-.welcomeNavigation:not(:last-child) {
-    margin-right: 100px;
-}
-
 @media (max-width: 620px) {
 
 
     .welcomeNavigation {
         width: 70%;
         height: 60px;
-    }
-
-    .welcomeNavigation:not(:last-child) {
-        margin-right: 0;
-        margin-bottom: 50px;
     }
 }

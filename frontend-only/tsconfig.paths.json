@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@hooks": [
+                "shared/index.tsx"
+            ],
+            "@features": [
+                "features/index.tsx"
+            ],
+            "@widgets": [
+                "widgets/index.tsx"
+            ],
+            "@handlers": [
+                "shared/lib/handlers/index.tsx"
+            ],
+            "@constants": [
+                "shared/constants/index.tsx"
+            ],
+            "@types": [
+                "shared/types/index.tsx"
+            ],
+            "@mixins": [
+                "app/styles/mixins/mixins.scss"
+            ]
+        }
+    }
+}

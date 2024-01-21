@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import '../../../mixins/mixins.scss';
 
 .welcome__languages {
@@ -6,12 +7,19 @@
     display: flex;
     justify-content: flex-end;
 }
+=======
+@import '@mixins';
+>>>>>>> 3a9b40575fffb8c3ebef623232a2e64081b54388
 
 .welcome__language {
     @include buttonNormalize;
     width: fit-content;
     height: fit-content; 
+<<<<<<< HEAD
     margin-right: 30px;
+=======
+    margin-right: 20px;
+>>>>>>> 3a9b40575fffb8c3ebef623232a2e64081b54388
     position: relative;
     z-index: 1;
 }

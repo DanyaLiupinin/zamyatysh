@@ -1,6 +1,7 @@
+@import 'tailwindcss/base.css';
+@import 'tailwindcss/components.css';
+@import 'tailwindcss/utilities.css';
+
+/* Ваши остальные импорты здесь */
 @import url('./vendor/normalize.scss');
 @import url('./vendor/fonts/fonts.scss');
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-

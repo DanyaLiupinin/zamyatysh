@@ -1,6 +1,7 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "target": "es5",
     "lib": [
       "dom",
@@ -23,9 +24,5 @@
   },
   "include": [
     "src"
-  ],
-  "paths": {
-    "hooks/*": ["/shared/hooks/index.ts"],
-    "kek/shpek": ["/features/*"],
-  }
+  ]
 }
