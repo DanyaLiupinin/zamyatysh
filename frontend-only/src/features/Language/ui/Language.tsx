@@ -4,12 +4,13 @@ import { changeLanguageHandler } from 'shared/lib/localstorage/languages/changeL
 
 import './Language.scss';
 
+
 interface ILanguageProps {
     title: string,
     className?: string
 }
 
-const Language = ({ title, className }: ILanguageProps) => {
+export const Language = ({ title, className }: ILanguageProps) => {
 
     const { changeLanguage } = useActionCreators(itemsActions);
 
@@ -31,5 +32,3 @@ const Language = ({ title, className }: ILanguageProps) => {
         </button>
     );
 };
-
-export default Language;

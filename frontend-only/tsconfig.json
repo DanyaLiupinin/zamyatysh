@@ -25,7 +25,7 @@
     "src"
   ],
   "paths": {
-    "@hooks/*": ["./shared/hooks/index.ts"],
-    "@features/*": ["./features/index.ts"],
+    "hooks/*": ["/shared/hooks/index.ts"],
+    "kek/shpek": ["/features/*"],
   }
 }
