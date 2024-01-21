@@ -1,11 +1,14 @@
 import React from 'react';
-import { LanguageSwitcher, MainMenu } from '@widgets';
+import { LanguageSwitcher, MainMenu, MainAnimation } from '@widgets';
 
 export const WelcomePageFS: React.FC = () => {
     return (
         <div>
-            <LanguageSwitcher />
+            <LanguageSwitcher
+                className={'text-end'}
+            />
             <MainMenu />
+            <MainAnimation />
         </div>
     );
 };

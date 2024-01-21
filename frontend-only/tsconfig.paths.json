@@ -20,6 +20,12 @@
             "@types": [
                 "shared/types/index.tsx"
             ],
+            "@icons/*": [
+                "shared/ui/assets/icons/*"
+            ],
+            "@images/*": [
+                "shared/ui/assets/images/*"
+            ],
             "@mixins": [
                 "app/styles/mixins/mixins.scss"
             ]

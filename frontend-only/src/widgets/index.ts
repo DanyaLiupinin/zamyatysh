@@ -1,1 +1,2 @@
-export * from './LanguageSwitcher/LanguageSwitcher';
+export * from './LanguageSwitcher/index';
+export * from './MainMenu/index';
