@@ -1,4 +1,14 @@
 .mainMenu {
     display: flex;
-    gap: 30px;
+    gap: 80px;
+}
+
+@media (max-width: 500px) {
+
+    .mainMenu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
 }
