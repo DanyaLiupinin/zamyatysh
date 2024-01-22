@@ -1,4 +1,5 @@
-import { AuthForm } from "@components"
+import { AuthForm, AuthInput } from "@components"
+import { FormEvent } from "react"
 
 export const RegisterFS = () => {
 
@@ -6,12 +7,16 @@ export const RegisterFS = () => {
 
     }
 
+    const onIputChange = (e: FormEvent) => {
+
+    }
+//dobavit checkbox pri registrasii chto ya milaya liaguska 
     return (
         <AuthForm
             formTitle='title'
             handleSubmit={handleSubmit}
         >
-            <p>12345</p>
+            <AuthInput  value='value' handleInputChange={onIputChange} name='username' minLength={3} maxLength={20} placeholder={'placeholder'}/>
         </AuthForm>
     )
 }
