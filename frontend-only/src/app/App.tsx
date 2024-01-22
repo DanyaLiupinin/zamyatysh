@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 import "./App.scss";
 
-import WelcomePage from "../pages/WelcomePage";
 import About from "../pages/About";
 import Shop from "../pages/Shop";
 import Item from "../pages/Item";
@@ -16,6 +15,7 @@ import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
 import { usersActions } from "../store/user";
 import { WelcomePageFS } from "pages/WelcomePageFS";
+import { RegisterFS } from "pages/RegisterFS";
 
 const App: React.FC<any> = () => {
 
@@ -106,7 +106,7 @@ const App: React.FC<any> = () => {
       <Routes>
         <Route
           path='/register'
-          element={loggedIn ? <Navigate to='/account' /> : <Register />}
+          element={loggedIn ? <Navigate to='/account' /> : <RegisterFS />}
         />{" "}
         <Route
           path='/login'
