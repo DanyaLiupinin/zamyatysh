@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux';
 
 import './Header.scss';
 
-import Burger from '../Burger [done]/Burger';
-import logo from '../../images/logo.svg';
-import { TLocale } from '../../types/components';
+import { Burger } from '@components';
+import logo from '../../../images/logo.svg';
+import { TLocale } from '../../../types/components';
 
-import content from '../../locale/Header.json';
+import content from '../../../locale/Header.json';
 
-const Header: React.FC<any> = () => {
+export const Header: React.FC<any> = () => {
 
     const [burgerOpened, setBurgerOpened] = useState(false);
 
@@ -48,5 +48,3 @@ const Header: React.FC<any> = () => {
         </header>
     );
 };
-
-export default Header;

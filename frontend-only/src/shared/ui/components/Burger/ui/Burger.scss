@@ -1,0 +1,27 @@
+@import '@mixins';
+
+.burger__button {
+    @include buttonNormalize;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    right: 30px;
+    display: none;
+    z-index: 3;
+    transition: .3s;
+
+    &:hover {
+        opacity: .6;
+    }
+}
+
+.burger__image {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .burger__button {
+        display: block;
+    }
+}

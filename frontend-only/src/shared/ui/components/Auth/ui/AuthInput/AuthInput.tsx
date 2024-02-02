@@ -1,6 +1,9 @@
 import { FormEvent } from "react"
 
+import './AuthInput.scss';
+
 interface AuthInputProps {
+    className?: string,
     inputTitle?: string
     name: string,
     minLength: number,
@@ -11,19 +14,21 @@ interface AuthInputProps {
 }
 
 export const AuthInput: React.FC<AuthInputProps> = ({
-    inputTitle, 
+    inputTitle,
     name,
     minLength,
-    maxLength, 
-    value, 
+    maxLength,
+    value,
     handleInputChange,
-    placeholder
+    placeholder,
+    className = ''
 }) => {
     return (
-        <div>
+        <div className="authInput-container" >
 
             <p>{inputTitle}</p>
             <input
+                className={`authInput ${className}`}
                 minLength={minLength}
                 maxLength={maxLength}
                 name={name}

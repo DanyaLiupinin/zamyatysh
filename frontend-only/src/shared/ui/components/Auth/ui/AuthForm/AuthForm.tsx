@@ -11,8 +11,8 @@ interface IAuthFormProps {
 
 export const AuthForm: React.FC<IAuthFormProps> = ({className = '', children, handleSubmit, formTitle}) => {
     return (
-            <form className={`auth-form ${className}`}  onSubmit={handleSubmit}>
-                <h2 className='auth__title'>{formTitle}</h2>
+            <form className={`authForm ${className}`}  onSubmit={handleSubmit}>
+                <h2 className='authTitle'>{formTitle}</h2>
                 {children}
             </form>
     )

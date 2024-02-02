@@ -2,9 +2,9 @@ import { Dispatch, SetStateAction } from 'react';
 
 import './Burger.scss';
 
-const burger = require('../../images/burger.png');
+const burger = require('../../../../../images/burger.png');
 
-const Burger: React.FC<any> = ({ burgerOpened, setBurgerOpened }:
+export const Burger: React.FC<any> = ({ burgerOpened, setBurgerOpened }:
     {
         burgerOpened: Boolean,
         setBurgerOpened: Dispatch<SetStateAction<boolean>>;
@@ -18,5 +18,3 @@ const Burger: React.FC<any> = ({ burgerOpened, setBurgerOpened }:
         </div>
     );
 };
-
-export default Burger;

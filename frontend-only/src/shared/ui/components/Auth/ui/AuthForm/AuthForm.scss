@@ -1,13 +1,13 @@
 @import '@mixins';
 
-.auth__title {
+.authTitle {
     font-size: 70px;
     font-weight: 500;
     margin: 0 0 20px 0;
 }
 
-.auth-form {
-    width: 80%;
+.authForm {
+    width: 45%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -26,11 +26,11 @@
 
 
 @media (max-width: 750px) {
-    .auth__title {
+    .authTitle {
         font-size: 55px;
     }
 
-    .auth-form {
+    .authForm {
         p {
             font-size: 35px;
         }
@@ -39,7 +39,7 @@
 
 
 @media (max-width: 450px) {
-    .auth__title {
+    .authTitle {
         font-size: 45px;
     }
 }

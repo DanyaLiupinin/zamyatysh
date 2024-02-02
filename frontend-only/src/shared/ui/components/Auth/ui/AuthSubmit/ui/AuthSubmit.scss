@@ -1,0 +1,25 @@
+.authSubmit {
+    width: fit-content;
+    height: 50px;
+    font-size: 35px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.authSubmit:hover {
+    color: black;
+    background-color: white;
+}
+
+@media (max-width: 500px) {
+    .authSubmit {
+        height: 40px;
+        font-size: 30px;
+    }
+}
