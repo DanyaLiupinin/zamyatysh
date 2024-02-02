@@ -8,7 +8,6 @@ export const RegisterFS = () => {
     const handleSubmit = () => { };
 
     const onIputChange = (e: FormEvent) => { };
-    //dobavit checkbox pri registrasii chto ya milaya liaguska
     return (
         <>
             <Header />
@@ -32,7 +31,7 @@ export const RegisterFS = () => {
                         minLength={3}
                         maxLength={20}
                         placeholder={"password"}
-                        error="12"
+                        error="error"
                     />
                 </div>
 
@@ -46,8 +45,6 @@ export const RegisterFS = () => {
                 linkText="login" 
                 link='/login' />
                 
-
-
             </AuthForm>
         </>
     );
