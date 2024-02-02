@@ -13,8 +13,10 @@ import Basket from "../pages/Basket";
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
 import { usersActions } from "../store/user";
+
 import { WelcomePageFS } from "pages/WelcomePageFS";
 import { RegisterFS } from "pages/RegisterFS";
+import { LoginFS } from "pages/LoginFS";
 
 const App: React.FC<any> = () => {
 
@@ -109,7 +111,7 @@ const App: React.FC<any> = () => {
         />{" "}
         <Route
           path='/login'
-          element={loggedIn ? <Navigate to='/account' /> : <Login />}
+          element={loggedIn ? <Navigate to='/account' /> : <LoginFS />}
         />{" "}
         <Route path='/' element={<WelcomePageFS />} />
         <Route path='/about' element={<About />} />
