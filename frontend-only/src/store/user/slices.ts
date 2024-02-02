@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { userRegisterThunk, userLoginThunk, getUserDataThunk } from "./thunks";
 
 export const usersState: any = {
-    loggedIn: false,
+    loggedIn: true,
     username: null,
     id: null,
     email: null,
