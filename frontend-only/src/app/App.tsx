@@ -7,7 +7,6 @@ import "./App.scss";
 import About from "../pages/About";
 import Shop from "../pages/Shop";
 import Item from "../pages/Item";
-import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Account from "../pages/Account";
 import Basket from "../pages/Basket";

@@ -9,7 +9,6 @@ import { TLocale } from "../types/components";
 
 import content from '../locale/AuthLocale.json';
 
-import './styles/Auth/Auth.scss';
 
 const Login = () => {
 
