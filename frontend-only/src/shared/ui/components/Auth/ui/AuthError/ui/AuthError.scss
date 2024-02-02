@@ -1,0 +1,17 @@
+.authError {
+    color: red;
+    font-size: 30px;
+    height: 35px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+
+@media (max-width: 600px) {
+    .authError {
+        font-size: 20px;
+    }
+}

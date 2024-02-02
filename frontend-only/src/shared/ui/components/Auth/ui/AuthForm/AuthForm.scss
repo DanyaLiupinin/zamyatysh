@@ -7,7 +7,7 @@
 }
 
 .authForm {
-    width: 45%;
+    width: 750px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -21,9 +21,17 @@
     align-items: center;
     border-radius: 5px;
     
-    padding: 20px 40px 5px;
+    padding: 20px 20px 5px;
+    padding-bottom: 40px;
+
+    box-sizing: border-box;
 }
 
+@media (max-width: 1000px) {
+    .authForm {
+        width: 500px;
+    }
+}
 
 @media (max-width: 750px) {
     .authTitle {
@@ -31,15 +39,27 @@
     }
 
     .authForm {
+        width: 450px;
         p {
             font-size: 35px;
         }
     }
 }
 
+@media (max-width: 600px) {
+    .authForm {
+        width: 350px;
+    }
+}
 
 @media (max-width: 450px) {
     .authTitle {
         font-size: 45px;
+    }
+}
+
+@media (max-width: 400px) {
+    .authForm {
+        width: 300px;
     }
 }
