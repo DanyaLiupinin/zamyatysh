@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { TLocale } from "../../types/components";
-import content from '../../locale/NavButton.json';
-import array from '../../images/historyArray.svg';
+import { TLocale } from "../../../types/components";
+import content from '../../../locale/NavButton.json';
+import array from '../../../images/historyArray.svg';
 
 export const NavButton = () => {
 

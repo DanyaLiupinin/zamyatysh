@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 
-import './BasketColumnLeft.scss';
+import './BasketList.scss';
 
-//import { BasketItem } from "../BasketItem/BasketItem";
-import { BasketItem } from "@components";
+import { BasketItem } from "@features";
+
 import basketImage from "../../../images/basket-image.svg";
 
-export const BasketColumnLeft = ({deleteItemHandler}: any) => {
+export const BasketList = ({deleteItemHandler}: any) => {
     
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
 

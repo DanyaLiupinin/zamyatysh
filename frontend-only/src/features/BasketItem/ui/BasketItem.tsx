@@ -5,22 +5,26 @@ import { useSelector } from "react-redux";
 import './BasketItem.scss';
 
 import { IItem } from "types/types";
-import deleteImage from '../../../../../images/deleteicon.svg';
+import deleteImage from '../../../images/deleteicon.svg';
 import { items } from "constants/constants";
 import { TLocale } from "types/components";
 import { IShortItem } from "types/types";
 
-export const BasketItem = ({ shortItem, deleteItemHandler, id }: { shortItem: IShortItem, deleteItemHandler: (id: number) => void, id: number }) => {
+export const BasketItem = ({ 
+    shortItem, 
+    deleteItemHandler, 
+    id 
+}: { shortItem: IShortItem, deleteItemHandler: (id: number) => void, id: number }) => {
 
     const [item, setItem] = useState<IItem | ''>('');
 
     //const locale: TLocale = useSelector((state: any) => state.items.locale);
 
-    /*useEffect(() => {
+    useEffect(() => {
         const actualItem = items.find(i => Number(i.id) === Number(shortItem.id));
         if (actualItem)
             setItem(actualItem);
-    }, []);*/
+    }, []);
 
     return (
         <>

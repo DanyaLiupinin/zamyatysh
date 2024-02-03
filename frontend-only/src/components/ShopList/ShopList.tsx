@@ -1,7 +1,8 @@
 import { useSelector } from 'react-redux';
 
 import { TLocale } from '../../types/components';
-import BasketNotification from '../Basket/BasketNotification/BasketNotification';
+
+import { BasketNotification } from '@features';
 import content from '../../locale/ItemList.json';
 
 import ShopCard from './ShopCard/ShopCard';

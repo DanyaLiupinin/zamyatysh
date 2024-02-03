@@ -1,17 +1,20 @@
 import './styles/Basket/Basket.scss';
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import {
+    BasketList,
+    BasketInteraction,
+    Header, 
+    Footer
+} from '@widgets';
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
 import Notification from '../components/Popup/Notification/Notification';
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
 import { TLocale } from '../types/components';
 import content from '../locale/Basket.json';
-import { NavButton } from '../components/NavButton/NavButton';
-import { BasketColumnRight } from '../components/Basket/BasketColumnRight/BasketColumnRight';
-import { BasketColumnLeft } from '../components/Basket/BasketColumnLeft/BasketColumnLeft';
+
+import { NavButton } from '@features';
 
 const Basket = () => {
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
@@ -55,10 +58,10 @@ const Basket = () => {
 
                 {basketShort?.length > 0 ?
                     <div className='basket__container'>
-                        <BasketColumnLeft
+                        <BasketList
                             deleteItemHandler={deleteItemHandler}
                         />
-                        <BasketColumnRight
+                        <BasketInteraction
                             finalPrice={finalPrice}
                         />
                     </div>
@@ -67,7 +70,7 @@ const Basket = () => {
                         {content.noItems[locale]}
                     </p>
                 }
-                
+
             </section>
             <Footer />
         </>

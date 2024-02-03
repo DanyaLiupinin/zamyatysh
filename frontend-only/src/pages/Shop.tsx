@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from "../components/Header/Header";
+
 import ShopList from '../components/ShopList/ShopList';
 import Filters from "../components/Filters/Filters";
-import Footer from "../components/Footer/Footer";
+
+import { Header, Footer } from '@widgets';
 
 import './styles/Shop/Shop.scss';
 

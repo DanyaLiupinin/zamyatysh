@@ -1,6 +1,6 @@
 import './styles/About/About.scss';
 
-import Header from '../components/Header/Header';
+import { Header } from '@widgets';
 
 const image = require('../images/aboutUs.png');
 

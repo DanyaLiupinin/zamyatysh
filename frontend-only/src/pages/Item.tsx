@@ -4,15 +4,18 @@ import { useSelector } from "react-redux";
 
 import "./styles/Item/Item.scss";
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import { Header, Footer } from "@widgets";
+
 import ImageCarousel from "../components/Item/ImageCarousel/ImageCarousel";
-import BasketNotification from "../components/Basket/BasketNotification/BasketNotification";
+
+import { BasketNotification } from "@features";
+
 import ItemMenu from "../components/Item/ItemMenu/ItemMenu";
 import { itemsActions } from "../store/items/index";
 import { useActionCreators } from "../store";
 import { ItemInformation } from "../components/Item/ItemInformation/ItemInformation";
-import { NavButton } from "../components/NavButton/NavButton";
+
+import { NavButton } from "@features";
 import { items } from "../constants/constants";
 import { IItem } from "../types/types";
 

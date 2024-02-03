@@ -7,12 +7,12 @@ import { setOrderHandler } from "@handlers";
 
 import { WelcomeNavigation } from "@features";
 
-import './BasketColumnRight.scss';
+import './BasketInteraction.scss';
 
 import content from '../../../locale/Basket.json';
 
 
-export const BasketColumnRight = ({ finalPrice }: { finalPrice: number }) => {
+export const BasketInteraction = ({ finalPrice }: { finalPrice: number }) => {
 
     
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);

@@ -1,8 +1,7 @@
 import { useSelector } from "react-redux";
 import React, { useEffect, useState } from 'react';
 
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import { Header, Footer } from "@widgets";
 import Userdata from "../components/Account/UserData/Userdata";
 import Orders from "../components/Account/Orders/Orders";
 import './styles/Account/Account.scss';

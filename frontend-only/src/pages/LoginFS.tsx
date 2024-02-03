@@ -17,36 +17,36 @@ export const LoginFS = () => {
     return (
         <>
             <Header />
-            <AuthForm formTitle="Authorization" handleSubmit={handleSubmit}>
+            <AuthForm formTitle='Authorization' handleSubmit={handleSubmit}>
 
-                <div className="ml-auto mr-auto w-full flex flex-col gap-5 items-center">
+                <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
                     <AuthInput
-                        value=""
+                        value=''
                         handleInputChange={onIputChange}
-                        name="email"
+                        name='email'
                         minLength={3}
                         maxLength={20}
                         placeholder={"email"}
-                        error=""
+                        error=''
                     />
 
                     <AuthInput
-                        value=""
+                        value=''
                         handleInputChange={onIputChange}
-                        name="password"
+                        name='password'
                         minLength={3}
                         maxLength={20}
                         placeholder={"password"}
-                        error="error"
+                        error='error'
                     />
                 </div>
 
-                <AuthSubmit className="mt-10">Login</AuthSubmit>
+                <AuthSubmit className='mt-10'>Login</AuthSubmit>
 
                 <AuthCaption
-                    className="mt-5"
-                    text="you dont have an account?"
-                    linkText="register"
+                    className='mt-5'
+                    text='you dont have an account?'
+                    linkText='register'
                     link='/register' />
 
             </AuthForm>

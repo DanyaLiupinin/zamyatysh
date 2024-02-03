@@ -11,38 +11,38 @@ export const RegisterFS = () => {
     return (
         <>
             <Header />
-            <AuthForm formTitle="Registration" handleSubmit={handleSubmit}>
+            <AuthForm formTitle='Registration' handleSubmit={handleSubmit}>
 
-                <div className="ml-auto mr-auto w-full flex flex-col gap-5 items-center">
+                <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
                     <AuthInput
-                        value=""
+                        value=''
                         handleInputChange={onIputChange}
-                        name="email"
+                        name='email'
                         minLength={3}
                         maxLength={20}
                         placeholder={"email"}
-                        error=""
+                        error=''
                     />
 
                     <AuthInput
-                        value=""
+                        value=''
                         handleInputChange={onIputChange}
-                        name="password"
+                        name='password'
                         minLength={3}
                         maxLength={20}
                         placeholder={"password"}
-                        error="error"
+                        error='error'
                     />
                 </div>
 
-                <AuthCheckbox className="mt-6">I confirm that i am cute little frog</AuthCheckbox>
+                <AuthCheckbox className='mt-6'>I confirm that i am cute little frog</AuthCheckbox>
 
-                <AuthSubmit className="mt-10">Register</AuthSubmit>
+                <AuthSubmit className='mt-10'>Register</AuthSubmit>
 
                 <AuthCaption 
-                className="mt-5"
-                text="are you already registered?" 
-                linkText="login" 
+                className='mt-5'
+                text='are you already registered?' 
+                linkText='login' 
                 link='/login' />
                 
             </AuthForm>
