@@ -6,7 +6,7 @@ import "./styles/Item/Item.scss";
 
 import { Header, Footer } from "@widgets";
 
-import ImageCarousel from "../components/Item/ImageCarousel/ImageCarousel";
+import { ImageCarousel } from "@components";
 
 import { BasketNotification } from "@features";
 

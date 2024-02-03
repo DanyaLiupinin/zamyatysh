@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import './ImageCarousel.scss';
 
-import arrayLeft from '../../../images/lapkaleft.svg';
-import arrayRight from '../../../images/lapkaright.svg';
+import arrayLeft from '../../../../../images/lapkaleft.svg';
+import arrayRight from '../../../../../images/lapkaright.svg';
 
-const ImageCarousel = ({ item }: any) => {
+export const ImageCarousel = ({ item }: any) => {
 
     const [imageWidth, setImageWidth] = useState<number>(0);
     const [imageActive, setImageActive] = useState<number>(1);
@@ -121,5 +121,3 @@ const ImageCarousel = ({ item }: any) => {
         </div>
     );
 };
-
-export default ImageCarousel;
