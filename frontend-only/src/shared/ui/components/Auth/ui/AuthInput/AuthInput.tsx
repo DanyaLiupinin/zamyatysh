@@ -1,4 +1,4 @@
-import { FormEvent } from "react"
+import { ChangeEvent } from "react"
 
 import './AuthInput.scss';
 import { AuthError } from "../AuthError";
@@ -12,7 +12,7 @@ interface AuthInputProps {
     value: string,
     placeholder: string,
     error?: string,
-    handleInputChange: (e: FormEvent) => void
+    handleInputChange: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const AuthInput: React.FC<AuthInputProps> = ({

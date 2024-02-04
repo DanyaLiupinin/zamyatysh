@@ -1,11 +1,11 @@
-import { ReactNode } from "react"
+import { FormEvent, ReactNode } from "react"
 
 import './AuthForm.scss'
 
 interface IAuthFormProps {
     className?: String,
     children: ReactNode,
-    handleSubmit: () => void,
+    handleSubmit: (e: FormEvent<HTMLFormElement>) => void,
     formTitle: String
 }
 

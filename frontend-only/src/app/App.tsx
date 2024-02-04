@@ -32,18 +32,18 @@ const App: React.FC<any> = () => {
     getAllCategoriesThunk,
     getAllItemsThunk,
     changeLanguage,
-    setBasket
+    setBasket,
   } = useActionCreators(itemsActions);
 
-  const { getUserDataThunk, setLoggedIn } = useActionCreators(usersActions);
-
+  const { getUserDataThunk, setLoggedIn, setRedirectPath } = useActionCreators(usersActions);
+/*
   useEffect(() => {
     if (localStorage.getItem("jwt") && localStorage.getItem("userId")) {
       const id = localStorage.getItem("userId");
       getUserDataThunk(id);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []);*/
 
   useEffect(() => {
     if (localStorage.getItem("locale")) {
@@ -69,7 +69,10 @@ const App: React.FC<any> = () => {
     */
 
   useEffect(() => {
-    if (redirectPath) navigate(redirectPath);
+    if (redirectPath) {
+      navigate(redirectPath);
+      setRedirectPath(null);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [redirectPath]);
 
@@ -95,8 +98,8 @@ const App: React.FC<any> = () => {
   }, [basketItems]);
 
   useEffect(() => {
-    const storedData = localStorage.getItem('userData');
-    if (storedData) {
+    const loggedIn = localStorage.getItem('loggedIn');
+    if (loggedIn && loggedIn === 'true') {
       setLoggedIn(true);
     };
   }, []);

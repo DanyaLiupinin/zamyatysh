@@ -7,13 +7,57 @@ import {
     AuthError
 } from "@components";
 import { Header } from "@widgets";
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent, FormEventHandler, useEffect, useState } from "react";
+import { validateEmail } from "@handlers";
+import { useActionCreators } from "store";
+import { usersActions } from "store/user";
 
 
 export const LoginFS = () => {
-    const handleSubmit = () => { };
 
-    const onIputChange = (e: FormEvent) => { };
+    
+  const { 
+    setLoggedIn,
+    setRedirectPath
+  } = useActionCreators(usersActions);
+
+    const [data, setData] = useState({
+        email: '',
+        password: ''
+    });
+
+    const [error, setError] = useState({
+        email: '',
+        password: ''
+    }); 
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const emailError = validateEmail(data.email);
+
+        if (emailError === '') {
+            localStorage.setItem('loggedIn', 'true');
+            setLoggedIn(true);
+            setRedirectPath('/shop');
+            return;
+        }
+
+        setError({...error, email: emailError});
+
+    };
+
+    const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setData({ ...data, [e.currentTarget.name]: e.currentTarget.value });
+    };
+
+    useEffect(() => {
+        setError({
+            email: '',
+            password: ''
+        });
+    }, [data]);
+
     return (
         <>
             <Header />
@@ -21,23 +65,23 @@ export const LoginFS = () => {
 
                 <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
                     <AuthInput
-                        value=''
-                        handleInputChange={onIputChange}
+                        value={data.email}
+                        handleInputChange={onInputChange}
                         name='email'
                         minLength={3}
-                        maxLength={20}
+                        maxLength={50}
                         placeholder={"email"}
-                        error=''
+                        error={error.email}
                     />
 
                     <AuthInput
-                        value=''
-                        handleInputChange={onIputChange}
+                        value={data.password}
+                        handleInputChange={onInputChange}
                         name='password'
                         minLength={3}
                         maxLength={20}
                         placeholder={"password"}
-                        error='error'
+                        error={error.password}
                     />
                 </div>
 

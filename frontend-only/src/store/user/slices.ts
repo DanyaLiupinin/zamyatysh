@@ -20,6 +20,9 @@ export const usersSlice = createSlice({
         },
         clearError: (state) => {
             state.error = '';
+        },
+        setRedirectPath: (state, action) => {
+            state.rediretcPath = action.payload;
         }
     },
     extraReducers: (builder) => {
