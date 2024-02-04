@@ -15,5 +15,5 @@ export const AuthForm: React.FC<IAuthFormProps> = ({className = '', children, ha
                 <h2 className='authTitle'>{formTitle}</h2>
                 {children}
             </form>
-    )
+    );
 }

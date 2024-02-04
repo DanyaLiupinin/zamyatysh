@@ -7,7 +7,7 @@ import {
     AuthError
 } from "@components";
 import { Header } from "@widgets";
-import { ChangeEvent, FormEvent, FormEventHandler, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { validateEmail } from "@handlers";
 import { useActionCreators } from "store";
 import { usersActions } from "store/user";
@@ -15,11 +15,13 @@ import { usersActions } from "store/user";
 
 export const LoginFS = () => {
 
-    
-  const { 
-    setLoggedIn,
-    setRedirectPath
-  } = useActionCreators(usersActions);
+    /// перенести форму в виджеты
+
+
+    const {
+        setLoggedIn,
+        setRedirectPath
+    } = useActionCreators(usersActions);
 
     const [data, setData] = useState({
         email: '',
@@ -29,7 +31,7 @@ export const LoginFS = () => {
     const [error, setError] = useState({
         email: '',
         password: ''
-    }); 
+    });
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -43,7 +45,7 @@ export const LoginFS = () => {
             return;
         }
 
-        setError({...error, email: emailError});
+        setError({ ...error, email: emailError });
 
     };
 

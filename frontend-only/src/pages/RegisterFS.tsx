@@ -1,13 +1,71 @@
 import { AuthForm, AuthInput, AuthSubmit, AuthCheckbox, AuthCaption, AuthError } from "@components";
 import { Header } from "@widgets";
-import { FormEvent } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
-import './test.scss'
+import './test.scss';
+
+import { validateEmail } from "@handlers";
+import { useActionCreators } from "store";
+import { usersActions } from "store/user";
 
 export const RegisterFS = () => {
-    const handleSubmit = () => { };
 
-    const onIputChange = (e: FormEvent) => { };
+    /// перенести форму в widgets
+
+    const {
+        setLoggedIn,
+        setRedirectPath
+    } = useActionCreators(usersActions);
+
+    const [data, setData] = useState({
+        email: '',
+        password: '',
+        checkbox: false
+    });
+
+    const [error, setError] = useState({
+        email: '',
+        password: '',
+        checkbox: true
+    });
+
+    const handleSuccessfulSubmission = () => {
+        localStorage.setItem('loggedIn', 'true');
+        setLoggedIn(true);
+        setRedirectPath('/shop');
+    };
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const emailError = validateEmail(data.email);
+
+        if (!data.checkbox) {
+            setError({...error, checkbox: true});
+        }
+
+        if (emailError !== '') {
+            setError({ ...error, email: emailError });
+        }
+
+        if (emailError === '' && data.checkbox) {
+            handleSuccessfulSubmission();
+        }
+
+    };
+
+    const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setData({ ...data, [e.currentTarget.name]: e.currentTarget.value });
+    };
+
+    useEffect(() => {
+        setError({
+            email: '',
+            password: '',
+            checkbox: false
+        });
+    }, [data]);
+
     return (
         <>
             <Header />
@@ -15,36 +73,36 @@ export const RegisterFS = () => {
 
                 <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
                     <AuthInput
-                        value=''
-                        handleInputChange={onIputChange}
+                        value={data.email}
+                        handleInputChange={onInputChange}
                         name='email'
                         minLength={3}
-                        maxLength={20}
+                        maxLength={50}
                         placeholder={"email"}
-                        error=''
+                        error={error.email}
                     />
 
                     <AuthInput
-                        value=''
-                        handleInputChange={onIputChange}
+                        value={data.password}
+                        handleInputChange={onInputChange}
                         name='password'
                         minLength={3}
                         maxLength={20}
                         placeholder={"password"}
-                        error='error'
+                        error={error.password}
                     />
                 </div>
 
-                <AuthCheckbox className='mt-6'>I confirm that i am cute little frog</AuthCheckbox>
+                <AuthCheckbox onClick={() => setData({ ...data, checkbox: !data.checkbox })} checked={data.checkbox} error={error.checkbox} className='mt-6'>I confirm that i am cute little frog</AuthCheckbox>
 
                 <AuthSubmit className='mt-10'>Register</AuthSubmit>
 
-                <AuthCaption 
-                className='mt-5'
-                text='are you already registered?' 
-                linkText='login' 
-                link='/login' />
-                
+                <AuthCaption
+                    className='mt-5'
+                    text='are you already registered?'
+                    linkText='login'
+                    link='/login' />
+
             </AuthForm>
         </>
     );
