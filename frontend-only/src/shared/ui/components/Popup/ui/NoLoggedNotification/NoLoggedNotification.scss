@@ -72,3 +72,20 @@ button {
         }
     }
 }
+
+@media (max-width: 700px) {
+    .notification__buttons {
+        flex-direction: column;
+        gap: 10px;
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .notification__popup {
+        max-width: 85%;
+    }
+}

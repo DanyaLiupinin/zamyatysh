@@ -1,25 +1,30 @@
-import './Notification.scss';
+import './NoLoggedNotification.scss';
 import { Link } from 'react-router-dom';
-import krestik from '../../../images/krestik.png';
+import krestik from '../../../../../../images/krestik.png';
+import { FC } from 'react';
 
-const Notification = () => {
+export const NoLoggedNotification: FC<any> = ({
+    onClose,
+    onSkip
+}: any) => {
 
     return (
         <div className='notification'>
             <div className='notification__popup'>
+
                     <button>
-                        <img className='notification__close-btn' src={krestik} alt='close' />
+                        <img onClick={onClose} className='notification__close-btn' src={krestik} alt='close' />
                     </button>
 
                 <p>
-                    Если вы зарегистрируетесь, то сможете отслеживать заказы в личном кабинете
+                    If you create an account, you can see your orders in personal account
                 </p>
                 <div className='notification__buttons'>
                     <button>
-                        Продолжить оформление</button>
+                        Skip</button>
                     <button>
                         <Link to='/register'>
-                            Зарегистрироваться
+                            Register
                         </Link>
                     </button>
                 </div>
@@ -27,5 +32,3 @@ const Notification = () => {
         </div>
     );
 };
-
-export default Notification;

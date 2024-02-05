@@ -12,13 +12,26 @@ import './BasketInteraction.scss';
 import content from '../../../locale/Basket.json';
 
 
-export const BasketInteraction = ({ finalPrice }: { finalPrice: number }) => {
+export const BasketInteraction = ({ finalPrice, noLoggedInNotification }: 
+    { finalPrice: number, noLoggedInNotification: any 
+    }) => {
 
     
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const locale: TLocale = useSelector((state: any) => state.items.locale);
+
+    const createOrderHandler = () => {
+        
+
+        if (!loggedIn) {
+            noLoggedInNotification();
+        }
+
+
+        //setOrderHandler(basketShort);
+    }
 
     return (
         <div className='basket__column basket__column-right'>
@@ -48,7 +61,7 @@ export const BasketInteraction = ({ finalPrice }: { finalPrice: number }) => {
             </div>
             <div className='basket__price-container'>
                 <p>{content.finalPrice[locale]} {finalPrice} {content.kwaks[locale]}</p>
-                <button onClick={() => setOrderHandler(basketShort)} className='basket__submit-btn' type='button'>
+                <button onClick={createOrderHandler} className='basket__submit-btn' type='button'>
                     {content.buy[locale]}
                 </button>
             </div>
