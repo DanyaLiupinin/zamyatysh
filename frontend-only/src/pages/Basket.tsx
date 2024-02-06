@@ -7,7 +7,7 @@ import {
     Header,
     Footer
 } from '@widgets';
-import { NoLoggedNotification } from '@components';
+import { NoLoggedNotification, SuccessOrder } from '@components';
 
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
@@ -47,10 +47,14 @@ const Basket = () => {
         setBasket(newArray);
     };
 
+    const completeOrderHandler = () => {
+        
+    }
+
     const onSkipNotification = () => {
         setNoLoggedInNotification(false);
-        setSuccessOrder(true); // tut dolzhen otrkivatsisa popup
-        // tut dolzhen ochishiatsia localstorage
+        setSuccessOrder(true);
+        completeOrderHandler();
     }
 
     useEffect(() => {
@@ -69,6 +73,14 @@ const Basket = () => {
                     noLoggedInNotification &&
                     <NoLoggedNotification
                         onClose={() => setNoLoggedInNotification(false)}
+                        onSkip={onSkipNotification}
+                    />
+                }
+
+                {
+                    isSuccessOrder &&
+                    <SuccessOrder
+                        onClose={() => setSuccessOrder(false)}
                     />
                 }
 

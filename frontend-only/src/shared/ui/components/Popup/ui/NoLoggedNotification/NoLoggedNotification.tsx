@@ -20,7 +20,7 @@ export const NoLoggedNotification: FC<any> = ({
                     If you create an account, you can see your orders in personal account
                 </p>
                 <div className='notification__buttons'>
-                    <button>
+                    <button onClick={onSkip} >
                         Skip</button>
                     <button>
                         <Link to='/register'>
