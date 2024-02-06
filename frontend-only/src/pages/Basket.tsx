@@ -26,7 +26,6 @@ const Basket = () => {
     const [isSuccessOrder, setSuccessOrder] = useState(false);
     ////
 
-
     const { setBasket } = useActionCreators(itemsActions);
 
     const getFinalPrice = () => {
@@ -48,7 +47,7 @@ const Basket = () => {
     };
 
     const completeOrderHandler = () => {
-        
+
     }
 
     const onSkipNotification = () => {
@@ -59,7 +58,7 @@ const Basket = () => {
 
     useEffect(() => {
         getFinalPrice();
-    }, []);
+    }, [basketShort]);
 
     return (
         <>
