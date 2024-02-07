@@ -47,7 +47,7 @@ const Basket = () => {
     };
 
     const completeOrderHandler = () => {
-
+        setBasket([]);
     }
 
     const onSkipNotification = () => {
@@ -92,6 +92,7 @@ const Basket = () => {
                         <BasketInteraction
                             finalPrice={finalPrice}
                             noLoggedInNotification={() => setNoLoggedInNotification(true)}
+                            isSuccessOrder={() => setSuccessOrder(true)}
                         />
                     </div>
                     :

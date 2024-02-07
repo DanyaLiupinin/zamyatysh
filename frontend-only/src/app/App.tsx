@@ -89,6 +89,7 @@ const App: React.FC<any> = () => {
   }, []);
 
   useEffect(() => {
+    console.log('here')
     if (basketItems) {
       localStorage.setItem('basketItems', JSON.stringify(basketItems));
     } else {

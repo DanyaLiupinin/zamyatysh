@@ -5,16 +5,19 @@ import { TLocale } from "../../../types/components";
 
 import { setOrderHandler } from "@handlers";
 
-import { WelcomeNavigation } from "@features";
-
 import './BasketInteraction.scss';
 
 import content from '../../../locale/Basket.json';
+import { itemsActions } from "store/items";
+import { useActionCreators } from "store";
 
 
-export const BasketInteraction = ({ finalPrice, noLoggedInNotification }: 
-    { finalPrice: number, noLoggedInNotification: any 
+export const BasketInteraction = ({ finalPrice, noLoggedInNotification, isSuccessOrder }: 
+    { finalPrice: number, noLoggedInNotification: any, isSuccessOrder: any
     }) => {
+
+        
+    const { setBasket } = useActionCreators(itemsActions);
 
     
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
@@ -22,15 +25,15 @@ export const BasketInteraction = ({ finalPrice, noLoggedInNotification }:
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
-    const createOrderHandler = () => {
-        
+    const makeOrderHandler = () => {
 
         if (!loggedIn) {
             noLoggedInNotification();
+        } else {
+            setOrderHandler(basketShort)
+            setBasket([]);
+            isSuccessOrder();
         }
-
-
-        //setOrderHandler(basketShort);
     }
 
     return (
@@ -61,7 +64,7 @@ export const BasketInteraction = ({ finalPrice, noLoggedInNotification }:
             </div>
             <div className='basket__price-container'>
                 <p>{content.finalPrice[locale]} {finalPrice} {content.kwaks[locale]}</p>
-                <button onClick={createOrderHandler} className='basket__submit-btn' type='button'>
+                <button onClick={makeOrderHandler} className='basket__submit-btn' type='button'>
                     {content.buy[locale]}
                 </button>
             </div>
