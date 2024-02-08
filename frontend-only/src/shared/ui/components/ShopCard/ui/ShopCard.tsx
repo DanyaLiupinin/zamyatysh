@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-import defaultImage from '../../../images/tshirt.png';
+import defaultImage from '../../../../../images/tshirt.png';
 
 import "./ShopCard.scss";
 
-const ShopCard = ({
+export const ShopCard = ({
     images,
     price,
     title,
@@ -35,4 +35,3 @@ const ShopCard = ({
     );
 };
 
-export default ShopCard;

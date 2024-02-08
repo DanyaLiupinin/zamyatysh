@@ -1,9 +1,7 @@
 import { useSelector } from "react-redux";
 import React, { useEffect, useState } from 'react';
 
-import { Header, Footer } from "@widgets";
-import Userdata from "../components/Account/UserData/Userdata";
-import Orders from "../components/Account/Orders/Orders";
+import { Header, Footer, Userdata, Orders } from "@widgets";
 import './styles/Account/Account.scss';
 
 interface IUserData {

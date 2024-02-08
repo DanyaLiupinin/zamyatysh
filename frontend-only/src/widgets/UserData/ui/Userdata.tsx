@@ -8,7 +8,7 @@ import { TLocale } from "../../../types/components";
 import content from '../../../locale/Userdata.json';
 
 
-const Userdata = ({ data, changeDataHandler }: any) => {
+export const Userdata = ({ data, changeDataHandler }: any) => {
 
     const [isEditData, setEditData] = useState(false);
 
@@ -160,5 +160,3 @@ const Userdata = ({ data, changeDataHandler }: any) => {
             </section>
     );
 };
-
-export default Userdata;

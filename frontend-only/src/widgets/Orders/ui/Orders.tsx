@@ -1,6 +1,6 @@
 import './Orders.scss';
 
-import Order from '../Order/Order';
+import { Order } from '@components';
 import { TLocale } from '../../../types/components';
 import { useSelector } from 'react-redux';
 
@@ -9,7 +9,7 @@ import content from '../../../locale/Orders.json';
 
 import { useGetOrders } from 'shared/hooks';
 
-const Orders = () => {
+export const Orders = () => {
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
 
@@ -37,5 +37,3 @@ const Orders = () => {
         </div>
     );
 };
-
-export default Orders;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ShopList from '../components/ShopList/ShopList';
+import { ShopList } from '@widgets';
 import Filters from "../components/Filters/Filters";
 
 import { Header, Footer } from '@widgets';

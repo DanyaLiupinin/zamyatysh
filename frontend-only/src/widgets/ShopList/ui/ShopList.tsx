@@ -1,22 +1,22 @@
 import { useSelector } from 'react-redux';
 
-import { TLocale } from '../../types/components';
+import { TLocale } from '../../../types/components';
 
 import { BasketNotification } from '@features';
-import content from '../../locale/ItemList.json';
+import content from '../../../locale/ItemList.json';
 
-import ShopCard from './ShopCard/ShopCard';
+import { ShopCard } from '@components';
 
 import './ShopList.scss';
 
 // eslint-disable-next-line import/order
-import { items } from '../../constants/constants';
+import { items } from '../../../constants/constants';
 import { useEffect, useState } from 'react';
-import { IItem } from '../../types/types';
+import { IItem } from '../../../types/types';
 
-const ShopList: React.FC<any> = () => {
+export const ShopList: React.FC<any> = () => {
 
-    const [visibleItems, setVisibleItems] = useState<IItem[] | []>(items);
+    const [visibleItems, setVisibleItems] = useState<any[] | []>(items);
 
     const locale: TLocale = useSelector((state: any) => state.items.locale);
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
@@ -57,5 +57,3 @@ useEffect(() => {
         </div>
     );
 };
-
-export default ShopList;

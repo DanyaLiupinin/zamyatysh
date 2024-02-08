@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Order.scss";
 
-import dropdown from "../../../images/dropdown.svg";
+import dropdown from "../../../../../images/dropdown.svg";
 
-import { TLocale } from "../../../types/components";
-import content from '../../../locale/Order.json';
+//import { TLocale } from "../../../../types/languages/languagesTypes";
+//import content from '../../../locale/Order.json';
 import { useSelector } from "react-redux";
 
 interface IItemProps {
@@ -18,16 +18,19 @@ interface IOrderProps {
     items: IItemProps[]
 }
 
-const Order = ({id, items}: IOrderProps) => {
+export const Order = ({id, items}: IOrderProps) => {
     const [isOrderOpened, setOrderOpened] = useState(false);
 
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    //const locale: TLocale = useSelector((state: any) => state.items.locale);
 
     return (
         <>
             <div className='order'>
                 <div className='order__card'>
-                    <p className='order__title'>{content.order[locale]}#{id}</p>
+                    <p className='order__title'>
+                        {/*content.order[locale]}#{id */}
+                        order #{id}
+                    </p>
                     <button
                         className='order__details-btn'
                         onClick={() => setOrderOpened(!isOrderOpened)}
@@ -67,4 +70,3 @@ const Order = ({id, items}: IOrderProps) => {
     );
 };
 
-export default Order;
