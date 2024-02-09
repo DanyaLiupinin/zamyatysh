@@ -17,7 +17,7 @@ import { ItemMenu, ItemInformation } from "@widgets";
 
 import { NavButton } from "@features";
 import { items } from "../shared/constants/data";
-import { IItem } from "../types/types";
+import { IItem } from "@types";
 
 const ItemCard: React.FC<any> = () => {
 

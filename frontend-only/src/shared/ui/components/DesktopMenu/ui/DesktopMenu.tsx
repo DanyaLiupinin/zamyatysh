@@ -2,7 +2,7 @@ import './DesktopMenu.scss';
 import { useSelector } from 'react-redux';
 
 import { TLocale } from '../../../../../types/components';
-import { ICategory } from '../../../../../types/types';
+import { ICategory } from '../../../../../types/entitiesType';
 
 export const DesktopMenu = ({ categories, onClickFilter }:
     {

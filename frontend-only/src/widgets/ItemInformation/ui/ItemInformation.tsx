@@ -3,13 +3,12 @@ import { useSelector } from 'react-redux';
 import './ItemInformation.scss';
 
 import content from '../../../locale/ItemInformation.json';
-import { IItem } from '../../../types/types';
-import { TLocale } from '../../../types/components';
+import { TLanguage, IItem } from '@types';
 
 
 export const ItemInformation = ({ item }: { item: IItem }) => {
 
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
         <div id='description' className='itemCard__item-description'>

@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 
 import './BasketItem.scss';
 
-import { IItem } from "types/types";
 import deleteImage from '../../../images/deleteicon.svg';
-import { TLocale } from "types/components";
-import { IShortItem } from "types/types";
 import { items } from "@constants";
+
+import { IItem, IShortItem } from "@types";
 
 export const BasketItem = ({ 
     shortItem, 

@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux';
 
-import { TLocale } from '../../../types/components';
-
 import { BasketNotification } from '@features';
 import content from '../../../locale/ItemList.json';
 
@@ -12,13 +10,14 @@ import './ShopList.scss';
 // eslint-disable-next-line import/order
 import { items } from '@constants';
 import { useEffect, useState } from 'react';
-import { IItem } from '../../../types/types';
+
+import { TLanguage, IItem } from '@types';
 
 export const ShopList: React.FC<any> = () => {
 
     const [visibleItems, setVisibleItems] = useState<any[] | []>(items);
 
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
 
 useEffect(() => {

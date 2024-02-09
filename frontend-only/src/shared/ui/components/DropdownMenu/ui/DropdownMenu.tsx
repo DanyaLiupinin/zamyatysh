@@ -6,7 +6,7 @@ import { Dispatch, SetStateAction } from 'react';
 import content from '../../../../../locale/Filters.json';
 import { TLocale } from '../../../../../types/components';
 import dropdowns from '../../../../../images/dropdown.svg';
-import { ICategory } from '../../../../../types/types';
+import { ICategory } from '../../../../../types/entitiesType';
 
 
 export const DropdownMenu = ({ dropdown, categories, onClickFilter, setDropdown }:

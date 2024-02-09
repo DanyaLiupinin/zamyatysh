@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 
 import './ItemMenu.scss';
 
-import { TLocale } from '../../../types/components';
 import frog from '../../../images/vkorzini.svg';
 import content from '../../../locale/ItemMenu.json';
-import { IItem } from '../../../types/types';
+
+import { TLanguage, IItem } from '@types';
 
 export const ItemMenu = ({
     item,
@@ -26,7 +26,7 @@ export const ItemMenu = ({
 
     const [isCaptionActive, setCaptionActive] = useState(false);
 
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     const onSizeClick = (size: string) => {
         if (chosenSize.includes(size)) {
