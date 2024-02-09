@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 import { useActionCreators } from '../../../store';
 import { itemsActions } from '../../../store/items/index';
-import { categories } from '../../../constants/constants';
+import { categories } from '../../../shared/constants/data';
 
 import { DropdownMenu, DesktopMenu, ClearFilters } from '@components';
 

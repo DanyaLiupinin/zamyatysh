@@ -6,9 +6,9 @@ import './BasketItem.scss';
 
 import { IItem } from "types/types";
 import deleteImage from '../../../images/deleteicon.svg';
-import { items } from "constants/constants";
 import { TLocale } from "types/components";
 import { IShortItem } from "types/types";
+import { items } from "@constants";
 
 export const BasketItem = ({ 
     shortItem, 

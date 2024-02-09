@@ -10,13 +10,13 @@ import { ImageCarousel } from "@components";
 
 import { BasketNotification } from "@features";
 
-import ItemMenu from "../components/Item/ItemMenu/ItemMenu";
 import { itemsActions } from "../store/items/index";
 import { useActionCreators } from "../store";
-import { ItemInformation } from "../components/Item/ItemInformation/ItemInformation";
+
+import { ItemMenu, ItemInformation } from "@widgets";
 
 import { NavButton } from "@features";
-import { items } from "../constants/constants";
+import { items } from "../shared/constants/data";
 import { IItem } from "../types/types";
 
 const ItemCard: React.FC<any> = () => {

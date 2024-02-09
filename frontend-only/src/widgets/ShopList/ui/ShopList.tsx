@@ -10,7 +10,7 @@ import { ShopCard } from '@components';
 import './ShopList.scss';
 
 // eslint-disable-next-line import/order
-import { items } from '../../../constants/constants';
+import { items } from '@constants';
 import { useEffect, useState } from 'react';
 import { IItem } from '../../../types/types';
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { BASE_URL } from "../constants/constants";
+import { BASE_URL } from "@constants";
 
 // ITEMS
 
