@@ -6,8 +6,7 @@ import './Header.scss';
 
 import { Burger } from '@components';
 import logo from '../../../images/logo.svg';
-import { TLocale } from '../../../types/components';
-
+import { TLanguage } from '@types';
 import content from '../../../locale/Header.json';
 
 export const Header: React.FC<any> = () => {
@@ -16,7 +15,7 @@ export const Header: React.FC<any> = () => {
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
     
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
         <header className='header'>

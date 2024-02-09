@@ -1,8 +1,7 @@
 import './DesktopMenu.scss';
 import { useSelector } from 'react-redux';
 
-import { TLocale } from '../../../../../types/components';
-import { ICategory } from '../../../../../types/entitiesType';
+import { TLanguage, ICategory } from '@types';
 
 export const DesktopMenu = ({ categories, onClickFilter }:
     {
@@ -12,7 +11,7 @@ export const DesktopMenu = ({ categories, onClickFilter }:
 ) => {
 
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
         <div className='desktopMenu'>

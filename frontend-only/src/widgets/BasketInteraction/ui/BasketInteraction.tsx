@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { TLocale } from "../../../types/components";
+import { TLanguage } from "@types";
 
 import { setOrderHandler } from "@handlers";
 
@@ -23,7 +23,7 @@ export const BasketInteraction = ({ finalPrice, noLoggedInNotification, isSucces
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
 
     const loggedIn = useSelector((state: any) => state.user.loggedIn);
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     const makeOrderHandler = () => {
 

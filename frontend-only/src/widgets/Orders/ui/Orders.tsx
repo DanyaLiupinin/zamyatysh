@@ -1,7 +1,7 @@
 import './Orders.scss';
 
 import { Order } from '@components';
-import { TLocale } from '../../../types/components';
+import { TLanguage } from '@types';
 import { useSelector } from 'react-redux';
 
 
@@ -11,7 +11,7 @@ import { useGetOrders } from 'shared/hooks';
 
 export const Orders = () => {
 
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     const { orders } = useGetOrders();
 

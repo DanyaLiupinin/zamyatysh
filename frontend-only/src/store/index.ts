@@ -8,7 +8,7 @@ import {
 } from "@reduxjs/toolkit";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
 
-import { BoundActions } from "../types/common";
+import { BoundActions } from "@types";
 
 import { itemsReducer } from "./items";
 import { userReducer } from "./user";

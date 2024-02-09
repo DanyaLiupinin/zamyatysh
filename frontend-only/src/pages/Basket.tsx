@@ -11,7 +11,7 @@ import { NoLoggedNotification, SuccessOrder } from '@components';
 
 import { useActionCreators } from "../store";
 import { itemsActions } from "../store/items";
-import { TLocale } from '../types/components';
+import { TLanguage } from '@types';
 import content from '../locale/Basket.json';
 
 import { NavButton } from '@features';
@@ -19,7 +19,7 @@ import { NavButton } from '@features';
 const Basket = () => {
 
     const basketShort = useSelector((state: any) => state.items.basketItemsShort);
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     const [finalPrice, setFinalPrice] = useState(0);
     const [noLoggedInNotification, setNoLoggedInNotification] = useState(false);

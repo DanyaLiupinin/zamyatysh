@@ -4,9 +4,9 @@ import { useSelector } from 'react-redux';
 import { Dispatch, SetStateAction } from 'react';
 
 import content from '../../../../../locale/Filters.json';
-import { TLocale } from '../../../../../types/components';
 import dropdowns from '../../../../../images/dropdown.svg';
-import { ICategory } from '../../../../../types/entitiesType';
+
+import { TLanguage, ICategory } from '@types';
 
 
 export const DropdownMenu = ({ dropdown, categories, onClickFilter, setDropdown }:
@@ -19,7 +19,7 @@ export const DropdownMenu = ({ dropdown, categories, onClickFilter, setDropdown 
 ) => {
 
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
-    const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
         <div className='filters__dropdown'>
