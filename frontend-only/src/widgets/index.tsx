@@ -8,3 +8,6 @@ export * from './Footer/index';
 export * from './UserData/index';
 export * from './Orders/index';
 export * from './ShopList/index';
+export * from './Filters/index';
+export * from './ItemMenu/index';
+export * from './ItemMenu/index';

@@ -8,7 +8,7 @@ import frog from '../../../images/vkorzini.svg';
 import content from '../../../locale/ItemMenu.json';
 import { IItem } from '../../../types/types';
 
-const ItemMenu = ({
+export const ItemMenu = ({
     item,
     chosenSize,
     setChosenSize,
@@ -95,5 +95,3 @@ const ItemMenu = ({
         </div>
     );
 };
-
-export default ItemMenu;
