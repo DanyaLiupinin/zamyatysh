@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { itemsActions, useActionCreators } from '@store';
+import { DropdownMenu, DesktopMenu, ClearFilters } from '@components';
 
-import { useActionCreators } from '../../../store';
-import { itemsActions } from '../../../store/items/index';
 import { categories } from '../../../shared/constants/data';
 
-import { DropdownMenu, DesktopMenu, ClearFilters } from '@components';
 
 
 import './Filters.scss';

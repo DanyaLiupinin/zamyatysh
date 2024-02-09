@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import './ImageCarousel.scss';
 
-import arrayLeft from '../../../../../images/lapkaleft.svg';
-import arrayRight from '../../../../../images/lapkaright.svg';
+import arrayLeft from '@images/lapkaleft.svg';
+import arrayRight from '@images/lapkaright.svg';
 
 export const ImageCarousel = ({ item }: any) => {
 

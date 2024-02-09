@@ -1,5 +1,5 @@
 
-import tshirts from '../../images/tshirt.png';
+import tshirts from '@images/tshirt.png';
 
 export const items = [
     {   

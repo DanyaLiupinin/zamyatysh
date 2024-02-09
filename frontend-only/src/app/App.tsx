@@ -4,18 +4,17 @@ import { useSelector } from "react-redux";
 
 import "./App.scss";
 
+import { useActionCreators, itemsActions, usersActions } from "@store";
+import { WelcomePageFS } from "pages/WelcomePageFS";
+import { RegisterFS } from "pages/RegisterFS";
+import { LoginFS } from "pages/LoginFS";
+
 import About from "../pages/About";
 import Shop from "../pages/Shop";
 import Item from "../pages/Item";
 import Account from "../pages/Account";
 import Basket from "../pages/Basket";
-import { useActionCreators } from "../store";
-import { itemsActions } from "../store/items";
-import { usersActions } from "../store/user";
 
-import { WelcomePageFS } from "pages/WelcomePageFS";
-import { RegisterFS } from "pages/RegisterFS";
-import { LoginFS } from "pages/LoginFS";
 
 const App: React.FC<any> = () => {
 
@@ -89,7 +88,7 @@ const App: React.FC<any> = () => {
   }, []);
 
   useEffect(() => {
-    console.log('here')
+    console.log('here');
     if (basketItems) {
       localStorage.setItem('basketItems', JSON.stringify(basketItems));
     } else {

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import './BasketItem.scss';
 
-import deleteImage from '../../../images/deleteicon.svg';
+import deleteImage from '@images/deleteicon.svg';
 import { items } from "@constants";
 
 import { IItem, IShortItem } from "@types";

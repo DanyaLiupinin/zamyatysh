@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import './Header.scss';
 
 import { Burger } from '@components';
-import logo from '../../../images/logo.svg';
+import logo from '@images/logo.svg';
 import { TLanguage } from '@types';
 import content from '../../../locale/Header.json';
 

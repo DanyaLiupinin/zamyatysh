@@ -1,17 +1,18 @@
 import { useMemo } from "react";
 import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
-
 import {
   ActionCreatorsMapObject,
   bindActionCreators,
   configureStore,
 } from "@reduxjs/toolkit";
 import { ToolkitStore } from "@reduxjs/toolkit/dist/configureStore";
-
 import { BoundActions } from "@types";
 
 import { itemsReducer } from "./items";
 import { userReducer } from "./user";
+
+export * from './items/index';
+export * from './user/index';
 
 
 export interface IStore {

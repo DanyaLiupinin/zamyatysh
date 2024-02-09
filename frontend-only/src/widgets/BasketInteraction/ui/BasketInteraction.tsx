@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 import { TLanguage } from "@types";
-
 import { setOrderHandler } from "@handlers";
 
 import './BasketInteraction.scss';
 
+import { itemsActions, useActionCreators } from "@store";
+
 import content from '../../../locale/Basket.json';
-import { itemsActions } from "store/items";
-import { useActionCreators } from "store";
 
 
 export const BasketInteraction = ({ finalPrice, noLoggedInNotification, isSuccessOrder }: 
@@ -30,11 +28,11 @@ export const BasketInteraction = ({ finalPrice, noLoggedInNotification, isSucces
         if (!loggedIn) {
             noLoggedInNotification();
         } else {
-            setOrderHandler(basketShort)
+            setOrderHandler(basketShort);
             setBasket([]);
             isSuccessOrder();
         }
-    }
+    };
 
     return (
         <div className='basket__column basket__column-right'>

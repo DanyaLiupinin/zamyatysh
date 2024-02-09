@@ -10,8 +10,7 @@ import { ImageCarousel } from "@components";
 
 import { BasketNotification } from "@features";
 
-import { itemsActions } from "../store/items/index";
-import { useActionCreators } from "../store";
+import { itemsActions, useActionCreators } from "@store";
 
 import { ItemMenu, ItemInformation } from "@widgets";
 

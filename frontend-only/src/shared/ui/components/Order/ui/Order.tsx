@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Order.scss";
 
-import dropdown from "../../../../../images/dropdown.svg";
+import dropdown from "@images/dropdown.svg";
 
 //import { TLocale } from "../../../../types/languages/languagesTypes";
 //import content from '../../../locale/Order.json';

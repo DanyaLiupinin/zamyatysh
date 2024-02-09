@@ -2,7 +2,7 @@ import './styles/About/About.scss';
 
 import { Header } from '@widgets';
 
-const image = require('../images/aboutUs.png');
+import image from '@images/aboutUs.png';
 
 const About: React.FC = () => {
     return (

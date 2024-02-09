@@ -9,8 +9,9 @@ import {
 } from '@widgets';
 import { NoLoggedNotification, SuccessOrder } from '@components';
 
-import { useActionCreators } from "../store";
-import { itemsActions } from "../store/items";
+import { useActionCreators, itemsActions } from '@store';
+
+
 import { TLanguage } from '@types';
 import content from '../locale/Basket.json';
 

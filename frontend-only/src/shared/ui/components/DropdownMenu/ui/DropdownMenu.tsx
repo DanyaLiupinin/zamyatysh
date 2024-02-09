@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Dispatch, SetStateAction } from 'react';
 
 import content from '../../../../../locale/Filters.json';
-import dropdowns from '../../../../../images/dropdown.svg';
+import dropdowns from '@images/dropdown.svg';
 
 import { TLanguage, ICategory } from '@types';
 

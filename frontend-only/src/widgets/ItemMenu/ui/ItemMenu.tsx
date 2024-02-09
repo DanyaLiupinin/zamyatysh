@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import './ItemMenu.scss';
 
-import frog from '../../../images/vkorzini.svg';
+import frog from '@images/vkorzini.svg';
 import content from '../../../locale/ItemMenu.json';
 
 import { TLanguage, IItem } from '@types';

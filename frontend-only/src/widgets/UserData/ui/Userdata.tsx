@@ -3,7 +3,7 @@ import "./Userdata.scss";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import avatar from "../../../images/logo.svg";
+import avatar from "@images/logo.svg";
 import { TLanguage } from "@types";
 import content from '../../../locale/Userdata.json';
 

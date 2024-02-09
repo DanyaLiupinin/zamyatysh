@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 
 import './Burger.scss';
 
-const burger = require('../../../../../images/burger.png');
+import burger from '@images/burger.png';
 
 export const Burger: React.FC<any> = ({ burgerOpened, setBurgerOpened }:
     {

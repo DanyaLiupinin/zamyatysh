@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import './Footer.scss';
 
-import zamyatysh from '../../../images/logo.svg';
+import zamyatysh from '@images/logo.svg';
 //import { TLocale } from '../../types/components';
 
 export const Footer = () => {

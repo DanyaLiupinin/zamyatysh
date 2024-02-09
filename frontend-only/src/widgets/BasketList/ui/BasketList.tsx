@@ -4,7 +4,7 @@ import './BasketList.scss';
 
 import { BasketItem } from "@features";
 
-import basketImage from "../../../images/basket-image.svg";
+import basketImage from "@images/basket-image.svg";
 
 export const BasketList = ({deleteItemHandler}: any) => {
     
