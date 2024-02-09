@@ -1,4 +1,4 @@
-@import '../../../mixins/mixins.scss';
+@import '@mixins';
 
 .itemCard__item-description {
     @include pNormalize;

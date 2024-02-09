@@ -31,6 +31,9 @@
             ],
             "@mixins": [
                 "app/styles/mixins/mixins.scss"
+            ],
+            "@api": [
+                "shared/utils/api.ts"
             ]
         }
     }

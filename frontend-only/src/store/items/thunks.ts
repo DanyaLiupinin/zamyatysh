@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { getCategories, getItems, getBasketItem, getUserItem } from "../../utils/api";
+import { getCategories, getItems } from "@api";
 
 import { getLocale } from "./slices";
 
