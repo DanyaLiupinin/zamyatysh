@@ -1,25 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { itemsActions, useActionCreators } from '@store';
-import { 
-    ClearFilters 
-} from '@components';
 import { categories } from '@constants';
+import {itemsActions, useActionCreators } from '@store';
+import { ClearFilters } from '@components';
 
 import { DesktopMenu } from '../content/DesktopMenu';
 import { DropdownMenu } from '../content/DropdownMenu';
-
 import './Filters.scss';
 
-export const Filters: React.FC<any> = () => {
+export const Filters: React.FC = () => {
 
     const [dropdown, setDropdown] = useState(false);
-
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
-
     const { setCategoryFilter } = useActionCreators(itemsActions);
-
     const location = useLocation();
 
     const onClickFilter = (category: string) => {
@@ -35,8 +29,6 @@ export const Filters: React.FC<any> = () => {
         if (location.pathname === '/shop') {
             setCategoryFilter(null);
         }
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.pathname]);
 
     return (

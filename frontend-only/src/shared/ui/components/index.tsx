@@ -6,6 +6,6 @@ export * from './ImageCarousel/index';
 export * from './Popup/index';
 export * from './Order/index';
 export * from './ShopCard/index';
-export * from './DropdownMenu/index';
-export * from './DesktopMenu/index';
 export * from './ClearFilters/index';
+export * from './Dropdown/index';
+export * from './DropdownTrigger/index';

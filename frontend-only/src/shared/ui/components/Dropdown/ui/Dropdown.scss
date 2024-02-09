@@ -1,0 +1,33 @@
+@import '@mixins';
+
+.filters__dropdown-menu {
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 7px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    top: 100%;
+    transition: all .3s ease-out;
+    width: 100%;
+    text-align: center;
+}
+
+.filters__dropdown-menu_show {
+    z-index: 1;
+    visibility: visible;
+    opacity: 1;
+    top: calc(100% + 10px)
+}
+
+.filters__dropdown-filter {
+    display: block;
+    color: black;
+    @include buttonNormalize;
+    width: 100%;
+}
+
+.filters__dropdown-filter:hover {
+    opacity: .6;
+}
