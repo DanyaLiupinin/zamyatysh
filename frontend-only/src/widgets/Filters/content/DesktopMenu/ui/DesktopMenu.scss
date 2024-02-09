@@ -10,16 +10,16 @@
     box-sizing: border-box;
 }
 
-.filters__invisible {
+.desktopMenu__invisible {
     display: none;
     visibility: hidden;
 }
 
-.filters__button_active {
+.desktopMenu__button_active {
     font-weight: 600;
 }
 
-.filters__button {
+.desktopMenu__button {
     @include buttonNormalize;
     text-align: start;
     font-size: 34px;
@@ -37,14 +37,14 @@
 }
 
 @media (max-width: 900px) {
-    .filters__button {
+    .desktopMenu__button {
         font-size: 30px;
     }
 }
 
 @media (max-width: 768px) {
 
-    .filters__button {
+    .desktopMenu__button {
         display: none;
     }
 

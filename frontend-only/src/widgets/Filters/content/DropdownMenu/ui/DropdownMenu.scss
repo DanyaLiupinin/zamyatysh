@@ -1,6 +1,6 @@
 @import '@mixins';
 
-.filters__dropdown {
+.dropdownMenu {
     visibility: hidden;
     position: relative;
     display: inline-block;
@@ -10,7 +10,7 @@
 
 
 @media (max-width: 768px) {
-    .filters__dropdown {
+    .dropdownMenu {
         visibility: visible;
     }
 }

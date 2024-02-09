@@ -1,11 +1,8 @@
 import { useSelector } from 'react-redux';
-import { Dispatch, SetStateAction } from 'react';
-import dropdowns from '@images/dropdown.svg';
-import { TLanguage, ICategory } from '@types';
+import { ICategory } from '@types';
 import { Dropdown } from '@components';
 
 import './DropdownMenu.scss';
-import content from '../../../../../locale/Filters.json';
 
 type DropdownMenuProps = {
     categories: ICategory[],
@@ -17,7 +14,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({ categories, onClickF
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
 
     return (
-        <div className='filters__dropdown'>
+        <div className='dropdownMenu'>
             <Dropdown
                 categories={categories}
                 activeCategoryFilter={activeCategoryFilter}

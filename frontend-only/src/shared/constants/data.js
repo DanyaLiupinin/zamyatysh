@@ -135,7 +135,6 @@ export const items = [
 ];
 
 
-
 export const categories = [
     {
         id: 2, 

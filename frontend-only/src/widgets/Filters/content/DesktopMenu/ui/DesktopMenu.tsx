@@ -19,8 +19,8 @@ export const DesktopMenu: React.FC<DesktopMenuProps> = ({ categories, onClickFil
                 categories.map((category: any) => {
                     return (
                         <button className={`
-                        filters__button 
-                        ${activeCategoryFilter === category ? 'filters__button_active' : ''}`}
+                        desktopMenu__button 
+                        ${activeCategoryFilter === category ? 'desktopMenu__button_active' : ''}`}
                             onClick={() => onClickFilter(category.title[locale])}
                             type='button' key={category.id}>
                             {`${category.title[locale]}`}
