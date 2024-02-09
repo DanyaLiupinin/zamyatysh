@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { itemsActions, useActionCreators } from '@store';
-import { DropdownMenu, DesktopMenu, ClearFilters } from '@components';
+import { 
+    ClearFilters 
+} from '@components';
+import { categories } from '@constants';
 
-import { categories } from '../../../shared/constants/data';
-
-
+import { DesktopMenu } from '../content/DesktopMenu';
+import { DropdownMenu } from '../content/DropdownMenu';
 
 import './Filters.scss';
 
