@@ -21,11 +21,11 @@ export const DropdownTrigger: FC<DropdownTriggerProps> = ({
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
-        <button className='filters__dropdown-toggle' onClick={dropdownToggle}>
+        <button className='dropdownTrigger' onClick={dropdownToggle}>
             {activeCategoryFilter ? activeCategoryFilter : content.filters[locale]}
             <img className={`
-            filters__dropdown-image 
-            ${dropdown ? 'filters__dropdown-image_up' : ''}`} 
+            dropdownTrigger__icon
+            ${dropdown ? 'dropdownTrigger__icon_up' : ''}`} 
             src={dropdowns} 
             alt='open dropdown icon' />
         </button>

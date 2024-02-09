@@ -1,5 +1,5 @@
 
-.filters__dropdown-toggle {
+.dropdownTrigger {
     width: 100%;
     background-color: unset;
     padding: 0;
@@ -9,7 +9,7 @@
     border-bottom: 1px solid black;
 }
 
-.filters__dropdown-image {
+.dropdownTrigger__icon {
     width: 20px;
     height: 20px;
     position: absolute;
@@ -18,6 +18,6 @@
     transition: all .4s ease-out;
 }
 
-.filters__dropdown-image_up {
+.dropdownTrigger__icon_up{
     rotate: 180deg;
 }
