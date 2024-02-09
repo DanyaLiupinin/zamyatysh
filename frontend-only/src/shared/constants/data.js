@@ -138,13 +138,6 @@ export const items = [
 
 export const categories = [
     {
-        id: 1, 
-        title: {
-            ru: 'все',
-            en: 'all'
-        },
-    },
-    {
         id: 2, 
         title: {
             ru: 'футболки',
