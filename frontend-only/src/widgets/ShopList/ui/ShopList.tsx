@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { BasketNotification } from '@features';
+import { BasketNotification, BasketNotificationContainer } from '@features';
 import { ShopCard } from '@components';
 import { items } from '@constants';
 import { TLanguage, IItem } from '@types';
@@ -29,9 +29,9 @@ export const ShopList: React.FC<any> = () => {
     return (
         <div className='itemList'>
             <div className='itemList__container'>
-                <div className='itemCard__sticky-notification-container'>
+                <BasketNotificationContainer>
                     <BasketNotification />
-                </div>
+                </BasketNotificationContainer>
                 {
                     visibleItems?.length > 0 ? items.map((i: IItem) => {
                         return (

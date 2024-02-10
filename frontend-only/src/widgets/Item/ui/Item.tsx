@@ -11,15 +11,13 @@ import { IItem } from "@types";
 import './Item.scss';
 
 export const Item = () => {
+    
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
     const [isBasketItem, setBasketItem] = useState(false);
     const [basketItemCount, setBasketItemCount] = useState(0);
-
     const basketItems = useSelector((state: any) => state.items.basketItemsShort);
-
     const { setBasket } = useActionCreators(itemsActions);
-
     const param = useParams();
 
     const addItemHandler = () => {
@@ -69,12 +67,10 @@ export const Item = () => {
 
     return (
         <>
-
             {
                 !item &&
                 <p className='itemCard__empty'>oooops, we couldnt find this item</p>
             }
-
             {
                 item &&
                 <>
