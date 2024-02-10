@@ -2,11 +2,11 @@ import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import frog from '@images/vkorzini.svg';
 import { TLanguage, IItem } from '@types';
+import { SizeButton } from '@components';
 
 import content from '../../../locale/ItemMenu.json';
 
 import './ItemMenu.scss';
-
 
 type IItemMenuProps = {
     item: IItem,
@@ -29,7 +29,6 @@ export const ItemMenu: FC<IItemMenuProps> = ({
 }) => {
 
     const [isCaptionActive, setCaptionActive] = useState(false);
-
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     const onSizeClick = (size: string) => {
@@ -51,33 +50,29 @@ export const ItemMenu: FC<IItemMenuProps> = ({
 
     return (
         <div className={`itemMenu ${className}`}>
-            {/* shared или оставить так */}
             <h2 className='itemMenu__title'>{item.title[locale]}</h2>
             <p className='itemMenu__price'>{item.price} kwaks</p>
-            {/* один size - feature, много size - widget */}
             <div className='itemMenu__sizes'>
                 {
-                    item.sizes && item.sizes.map((size: string, index: number) => {
+                    item?.sizes && item.sizes.map((size: string, i: number) => {
                         return (
-                            <div
-                                onClick={() => onSizeClick(size.toUpperCase())}
-                                key={index}
-                                className={`itemMenu__size ${chosenSize === size.toUpperCase() ? 'itemMenu__size_active' : ''}`}>
-                                <p>{size.toUpperCase()}</p>
-                            </div>
+                            <SizeButton
+                                key={i}
+                                size={size}
+                                onSizeClick={onSizeClick}
+                                chosenSize={chosenSize}
+                            />
                         );
                     })
                 }
             </div>
             {/* shared или оставить так */}
             <p className='itemMenu__size-guide'>{content.howToSize[locale]}</p>
-
             <div className='itemMenu__basket-container'>
                 <img
                     src={frog}
                     className={`itemMenu__basket-image ${chosenSize !== '' ? 'itemMenu__basket-image_active' : ''}`}
                     alt='frog wants you to buy something'></img>
-                {/* button - shared */}
                 <button
                     onClick={onAddItem}
                     disabled={isCaptionActive ? true : false}

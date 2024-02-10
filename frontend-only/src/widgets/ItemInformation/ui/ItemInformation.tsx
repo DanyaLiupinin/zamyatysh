@@ -1,10 +1,9 @@
+import { FC } from 'react';
 import { useSelector } from 'react-redux';
-
-import './ItemInformation.scss';
+import { TLanguage, IItem } from '@types';
 
 import content from '../../../locale/ItemInformation.json';
-import { TLanguage, IItem } from '@types';
-import { FC } from 'react';
+import './ItemInformation.scss';
 
 type ItemInformationProps = {
     item: IItem,

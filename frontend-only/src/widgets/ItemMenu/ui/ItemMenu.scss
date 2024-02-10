@@ -34,25 +34,6 @@
     margin-top: 56px;
 }
 
-.itemMenu__size {
-    border: 4px solid rgba(195, 195, 195, 1);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-
-    p {
-        padding: 0;
-        display: block;
-        font-size: 50px;
-    }
-}
-
-.itemMenu__size_active {
-    border: 4px solid black;
-}
 
 
 .itemMenu__size-guide {
@@ -128,16 +109,5 @@
 
     .itemMenu__basket-container {
         margin: 0 auto;
-    }
-}
-
-@media (max-width: 500px) {
-    .itemMenu__size {
-        width: 35px;
-        height: 35px;
-
-        p {
-            font-size: 40px;
-        }
     }
 }
