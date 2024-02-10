@@ -1,36 +1,30 @@
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
 import { BasketNotification } from '@features';
+import { ShopCard } from '@components';
+import { items } from '@constants';
+import { TLanguage, IItem } from '@types';
+
 import content from '../../../locale/ItemList.json';
 
-import { ShopCard } from '@components';
-
 import './ShopList.scss';
-
-// eslint-disable-next-line import/order
-import { items } from '@constants';
-import { useEffect, useState } from 'react';
-
-import { TLanguage, IItem } from '@types';
 
 export const ShopList: React.FC<any> = () => {
 
     const [visibleItems, setVisibleItems] = useState<any[] | []>(items);
-
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
 
-useEffect(() => {
-    if (activeCategoryFilter) {
-        const filteredItems = items.filter((i: IItem) => {
-            return i.category[locale] === activeCategoryFilter;
-        });
-
-        setVisibleItems(filteredItems);
-    } else {
-        setVisibleItems(items);
-    }
-}, [activeCategoryFilter]);
+    useEffect(() => {
+        if (activeCategoryFilter) {
+            const filteredItems = items.filter((i: IItem) => {
+                return i.category[locale] === activeCategoryFilter;
+            });
+            setVisibleItems(filteredItems);
+        } else {
+            setVisibleItems(items);
+        }
+    }, [activeCategoryFilter]);
 
     return (
         <div className='itemList'>
