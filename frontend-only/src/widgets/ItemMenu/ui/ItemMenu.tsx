@@ -1,27 +1,31 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
+import frog from '@images/vkorzini.svg';
+import { TLanguage, IItem } from '@types';
+
+import content from '../../../locale/ItemMenu.json';
 
 import './ItemMenu.scss';
 
-import frog from '@images/vkorzini.svg';
-import content from '../../../locale/ItemMenu.json';
 
-import { TLanguage, IItem } from '@types';
-
-export const ItemMenu = ({
-    item,
-    chosenSize,
-    setChosenSize,
-    addItemHandler,
-    isBasketItem,
-    basketItemCount
-}: {
+type IItemMenuProps = {
     item: IItem,
     chosenSize: string,
     setChosenSize: React.Dispatch<React.SetStateAction<string>>,
     isBasketItem: boolean,
     addItemHandler: () => void,
     basketItemCount: number;
+    className?: string;
+}
+
+export const ItemMenu: FC<IItemMenuProps> = ({
+    item,
+    chosenSize,
+    setChosenSize,
+    addItemHandler,
+    isBasketItem,
+    basketItemCount,
+    className = '',
 }) => {
 
     const [isCaptionActive, setCaptionActive] = useState(false);
@@ -46,7 +50,7 @@ export const ItemMenu = ({
     };
 
     return (
-        <div className='itemMenu'>
+        <div className={`itemMenu ${className}`}>
             {/* shared или оставить так */}
             <h2 className='itemMenu__title'>{item.title[locale]}</h2>
             <p className='itemMenu__price'>{item.price} kwaks</p>
@@ -83,13 +87,13 @@ export const ItemMenu = ({
                         content.addToBasket[locale]
                     }
                 </button>
- {/* ошибки - shared */}
-                {isCaptionActive ?  
+                {/* ошибки - shared */}
+                {isCaptionActive ?
                     <p className='itemMenu__caption'>choose size please c:</p> : ''
                 }
                 {
-                isBasketItem ?
-                    <p className='itemMenu__caption'>you've already added {basketItemCount} c:</p> : ''
+                    isBasketItem ?
+                        <p className='itemMenu__caption'>you've already added {basketItemCount} c:</p> : ''
                 }
             </div>
         </div>

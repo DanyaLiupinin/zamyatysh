@@ -8,7 +8,7 @@ export const WelcomePageFS: React.FC = () => {
     return (
         <Container className='relative'>
             <LanguageSwitcher
-                className={'text-right '}
+                className={'text-right'}
             />
             <div className='menuContainer'>
                 <MainMenu
@@ -16,7 +16,6 @@ export const WelcomePageFS: React.FC = () => {
                 />
                 <MainAnimation />
             </div>
-            
         </Container>
     );
 };
