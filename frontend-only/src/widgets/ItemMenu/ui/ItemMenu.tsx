@@ -1,8 +1,6 @@
 import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
-import frog from '@images/vkorzini.svg';
 import { TLanguage, IItem } from '@types';
-import { SizeButton } from '@components';
 import { ItemSizes, AddItem } from '@features';
 import { ItemCaption } from '@components';
 

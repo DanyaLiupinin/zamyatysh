@@ -5,3 +5,5 @@ export * from './BasketNotification/index';
 export * from './NavButton/index';
 export * from './ItemSizes';
 export * from './AddItem/index';
+export * from './ItemInformation/index';
+export * from './BasketNotificationContainer/index';

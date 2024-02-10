@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Header, Footer, ItemMenu, ItemInformation } from "@widgets";
+import { ItemMenu } from "@widgets";
 import { ImageCarousel } from "@components";
-import { BasketNotification } from "@features";
+import { BasketNotification, ItemInformation, BasketNotificationContainer} from "@features";
 import { itemsActions, useActionCreators } from "@store";
 import { items } from "@constants";
 import { IItem } from "@types";
@@ -79,9 +79,10 @@ export const Item = () => {
                 item &&
                 <>
                     <div className='itemCard__card-container'>
-                        <div className='itemCard__sticky-notification-container'>
+                        <BasketNotificationContainer>
                             <BasketNotification />
-                        </div>
+                        </BasketNotificationContainer>
+
                         <ImageCarousel item={item} />
                         <ItemMenu
                             className='iMenu'
@@ -93,13 +94,12 @@ export const Item = () => {
                             basketItemCount={basketItemCount}
                         />
                         <ItemInformation
-                            className='itemInfo'
+                            className='IInfo'
                             item={item}
                         />
                     </div>
                 </>
             }
-
         </>
     );
 };

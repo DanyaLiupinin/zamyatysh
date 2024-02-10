@@ -10,5 +10,4 @@ export * from './Orders/index';
 export * from './ShopList/index';
 export * from './Filters/index';
 export * from './ItemMenu/index';
-export * from './ItemInformation/index';
 export * from './Item/index';
