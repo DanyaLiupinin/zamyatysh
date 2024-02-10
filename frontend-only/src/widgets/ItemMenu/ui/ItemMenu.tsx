@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import frog from '@images/vkorzini.svg';
 import { TLanguage, IItem } from '@types';
 import { SizeButton } from '@components';
+import { ItemSizes } from '@features';
 
 import content from '../../../locale/ItemMenu.json';
 
@@ -52,20 +53,11 @@ export const ItemMenu: FC<IItemMenuProps> = ({
         <div className={`itemMenu ${className}`}>
             <h2 className='itemMenu__title'>{item.title[locale]}</h2>
             <p className='itemMenu__price'>{item.price} kwaks</p>
-            <div className='itemMenu__sizes'>
-                {
-                    item?.sizes && item.sizes.map((size: string, i: number) => {
-                        return (
-                            <SizeButton
-                                key={i}
-                                size={size}
-                                onSizeClick={onSizeClick}
-                                chosenSize={chosenSize}
-                            />
-                        );
-                    })
-                }
-            </div>
+            <ItemSizes
+                item={item}
+                onSizeClick={onSizeClick}
+                chosenSize={chosenSize}
+            />
             {/* shared или оставить так */}
             <p className='itemMenu__size-guide'>{content.howToSize[locale]}</p>
             <div className='itemMenu__basket-container'>
