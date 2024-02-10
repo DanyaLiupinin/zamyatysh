@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import frog from '@images/vkorzini.svg';
 import { TLanguage, IItem } from '@types';
 import { SizeButton } from '@components';
-import { ItemSizes } from '@features';
+import { ItemSizes, AddItem } from '@features';
 
 import content from '../../../locale/ItemMenu.json';
 
@@ -60,20 +60,11 @@ export const ItemMenu: FC<IItemMenuProps> = ({
             />
             {/* shared или оставить так */}
             <p className='itemMenu__size-guide'>{content.howToSize[locale]}</p>
-            <div className='itemMenu__basket-container'>
-                <img
-                    src={frog}
-                    className={`itemMenu__basket-image ${chosenSize !== '' ? 'itemMenu__basket-image_active' : ''}`}
-                    alt='frog wants you to buy something'></img>
-                <button
-                    onClick={onAddItem}
-                    disabled={isCaptionActive ? true : false}
-                    className={`itemMenu__add-button`}
-                    type='button'>
-                    {
-                        content.addToBasket[locale]
-                    }
-                </button>
+                <AddItem
+                    chosenSize={chosenSize}
+                    onAddItem={onAddItem}
+                    isCaptionActive={isCaptionActive}
+                />
                 {/* ошибки - shared */}
                 {isCaptionActive ?
                     <p className='itemMenu__caption'>choose size please c:</p> : ''
@@ -82,7 +73,6 @@ export const ItemMenu: FC<IItemMenuProps> = ({
                     isBasketItem ?
                         <p className='itemMenu__caption'>you've already added {basketItemCount} c:</p> : ''
                 }
-            </div>
         </div>
     );
 };
