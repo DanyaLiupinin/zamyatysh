@@ -9,3 +9,4 @@ export * from './ShopCard/index';
 export * from './ClearFilters/index';
 export * from './Dropdown/index';
 export * from './SizeButton/index';
+export * from './ItemCaption/index';

@@ -4,6 +4,7 @@ import frog from '@images/vkorzini.svg';
 import { TLanguage, IItem } from '@types';
 import { SizeButton } from '@components';
 import { ItemSizes, AddItem } from '@features';
+import { ItemCaption } from '@components';
 
 import content from '../../../locale/ItemMenu.json';
 
@@ -58,21 +59,19 @@ export const ItemMenu: FC<IItemMenuProps> = ({
                 onSizeClick={onSizeClick}
                 chosenSize={chosenSize}
             />
-            {/* shared или оставить так */}
             <p className='itemMenu__size-guide'>{content.howToSize[locale]}</p>
-                <AddItem
-                    chosenSize={chosenSize}
-                    onAddItem={onAddItem}
-                    isCaptionActive={isCaptionActive}
-                />
-                {/* ошибки - shared */}
-                {isCaptionActive ?
-                    <p className='itemMenu__caption'>choose size please c:</p> : ''
-                }
-                {
-                    isBasketItem ?
-                        <p className='itemMenu__caption'>you've already added {basketItemCount} c:</p> : ''
-                }
+            <AddItem
+                chosenSize={chosenSize}
+                onAddItem={onAddItem}
+                isCaptionActive={isCaptionActive}
+            />
+            {isCaptionActive &&
+                <ItemCaption>choose size please c:</ItemCaption>
+            }
+            {
+                isBasketItem &&
+                <ItemCaption>you've already added {basketItemCount} c:</ItemCaption>
+            }
         </div>
     );
 };
