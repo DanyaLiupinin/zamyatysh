@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { categories } from '@constants';
 import {itemsActions, useActionCreators } from '@store';
 import { ClearFilters } from '@components';
 
-import { DesktopMenu } from '../content/DesktopMenu';
-import { DropdownMenu } from '../content/DropdownMenu';
+import { DesktopMenu } from './content/DesktopMenu';
+import { DropdownMenu } from './content/DropdownMenu';
 import './Filters.scss';
 
 export const Filters: React.FC = () => {
