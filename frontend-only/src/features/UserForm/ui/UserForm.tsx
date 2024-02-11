@@ -1,6 +1,7 @@
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode } from "react";
 import { TLanguage } from "@types";
 import { useSelector } from "react-redux";
+import avatar from "@images/logo.svg";
 
 import content from '../../../locale/Userdata.json';
 import './UserForm.scss';
@@ -12,14 +13,15 @@ type UserFormType = {
     isEditData: boolean;
 }
 
-export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, isEditData}) => {
+export const UserForm: FC<UserFormType> = ({ data, changeDataHandler, children, isEditData }) => {
 
-    
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
-        <form className='userdata__form'>
-
+        <form className='userForm'>
+            <div className='userForm__avatar'>
+                <img src={avatar} alt='...' />
+            </div>
             <div className='data'>
                 <p className='data__name'>{'username'}:</p>
                 <input
@@ -31,7 +33,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("username", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.name[locale]}:</p>
                 <input
@@ -43,7 +44,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("name", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.email[locale]}: </p>
                 <input
@@ -55,7 +55,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("email", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.phone[locale]}: </p>
                 <input
@@ -67,7 +66,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("phone", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.country[locale]}: </p>
                 <input
@@ -79,7 +77,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("country", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.city[locale]}: </p>
                 <input
@@ -91,7 +88,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("city", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.street[locale]}: </p>
                 <input
@@ -103,7 +99,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("street", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.floor[locale]}: </p>
                 <input
@@ -115,7 +110,6 @@ export const UserForm: FC<UserFormType> = ({data, changeDataHandler, children, i
                     onChange={(e) => changeDataHandler("planta", e.target.value)}
                 />
             </div>
-
             <div className='data'>
                 <p className='data__name'>{content.apartment[locale]}: </p>
                 <input

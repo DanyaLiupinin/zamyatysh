@@ -1,6 +1,6 @@
 @import "@mixins";
 
-.userdata__form {
+.userForm {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -8,6 +8,22 @@
     font-size: 30px;
     padding: 30px 0;
 }
+
+.userForm__avatar {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    outline: 2px solid black;
+    border-radius: 100%;
+    margin: 30px auto 0;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 
 
 .data {

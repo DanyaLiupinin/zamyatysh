@@ -3,11 +3,11 @@ import "./Userdata.scss";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
-import avatar from "@images/logo.svg";
 import { TLanguage } from "@types";
 import content from '../../../locale/Userdata.json';
 
 import { Logout, UserForm } from "@features";
+import { AccountButton } from "@components";
 
 export const Userdata = ({ data, changeDataHandler }: any) => {
 
@@ -21,37 +21,29 @@ export const Userdata = ({ data, changeDataHandler }: any) => {
     };
 
     return (
-        <section className='userdata'>
-            <div className='avatar-container'>
-                <img src={avatar} alt='...' />
-            </div>
-
-
-                <UserForm
-                    data={data}
-                    isEditData={isEditData}
-                    changeDataHandler={changeDataHandler}
-                >
-
-                    <div className='userdata__buttons'>
-                        <button
-                            onClick={() => setEditData(true)}
-                            disabled={isEditData ? true : false}
-                        >
-                            {content.edit[locale]}
-                        </button>
-                        <button
-                            type='submit'
-                            disabled={isEditData ? false : true}
-                            onClick={onUpdateData}
-                        >
-                            {content.save[locale]}
-                        </button>
-                    </div>
-                    <Logout />
-
-                </UserForm>
-
-        </section>
+        <>
+            <UserForm
+                data={data}
+                isEditData={isEditData}
+                changeDataHandler={changeDataHandler}
+            >
+                <div className='userdata__buttons'>
+                    <AccountButton
+                        onClick={() => setEditData(true)}
+                        isDisabled={isEditData ? true : false}
+                    >
+                        Edit
+                    </AccountButton>
+                    <AccountButton
+                        type='submit'
+                        isDisabled={isEditData ? false : true}
+                        onClick={onUpdateData}
+                    >
+                        Save
+                    </AccountButton>
+                </div>
+                <Logout />
+            </UserForm>
+        </>
     );
 };
