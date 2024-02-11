@@ -9,17 +9,14 @@ const ItemCard: React.FC<any> = () => {
 
     return (
         <>
-
-                <Header />
-                
+            <Header />
             <Container>
                 <section className='itemCard'>
                     <NavButton />
                     <Item />
                 </section>
-                
             </Container>
-                <Footer />
+            <Footer />
 
         </>
     );

@@ -9,3 +9,4 @@ export * from './ShopList/index';
 export * from './Filters/index';
 export * from './Item/index';
 export * from './Basket/index';
+export * from './Account/index';
