@@ -7,3 +7,4 @@ export * from './ItemInformation/index';
 export * from './BasketNotificationContainer/index';
 export * from './VisibleItems/index';
 export * from './ItemMenu/index';
+export * from './Logout/index';

@@ -7,6 +7,7 @@ import avatar from "@images/logo.svg";
 import { TLanguage } from "@types";
 import content from '../../../locale/Userdata.json';
 
+import { Logout } from "@features";
 
 export const Userdata = ({ data, changeDataHandler }: any) => {
 
@@ -153,9 +154,7 @@ export const Userdata = ({ data, changeDataHandler }: any) => {
                         {content.save[locale]}
                     </button>
                 </div>
-                <button onClick={onExit} className='userdata__exit'>
-                    Exit
-                </button>
+                <Logout />
             </form>
             </section>
     );
