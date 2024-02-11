@@ -1,10 +1,13 @@
 import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { TLanguage, IItem } from '@types';
-import { ItemSizes, AddItem } from '@features';
 import { ItemCaption } from '@components';
 
 import content from '../../../locale/ItemMenu.json';
+
+import { ItemSizes } from './ItemSizes';
+import { AddItem } from './AddItem';
+
 
 import './ItemMenu.scss';
 

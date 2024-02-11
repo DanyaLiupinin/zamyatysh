@@ -1,20 +1,26 @@
 import React from "react";
-import { Header, Footer } from "@widgets";
+import { Header, Footer, Item } from "@widgets";
 import { NavButton } from "@features";
-import { Item } from "@widgets";
 
 import "./styles/Item/Item.scss";
+import { Container } from "@components";
 
 const ItemCard: React.FC<any> = () => {
 
     return (
         <>
-            <Header />
-            <section className='itemCard'>
-                <NavButton />
-                <Item />
-            </section>
-            <Footer />
+
+                <Header />
+                
+            <Container>
+                <section className='itemCard'>
+                    <NavButton />
+                    <Item />
+                </section>
+                
+            </Container>
+                <Footer />
+
         </>
     );
 };

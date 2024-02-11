@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { ItemMenu } from "@widgets";
 import { ImageCarousel } from "@components";
-import { BasketNotification, ItemInformation, BasketNotificationContainer} from "@features";
+import {
+    BasketNotification,
+    ItemInformation,
+    BasketNotificationContainer,
+    ItemMenu
+} from "@features";
 import { itemsActions, useActionCreators } from "@store";
 import { items } from "@constants";
 import { IItem } from "@types";
@@ -11,7 +15,7 @@ import { IItem } from "@types";
 import './Item.scss';
 
 export const Item = () => {
-    
+
     const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
     const [isBasketItem, setBasketItem] = useState(false);
@@ -73,28 +77,25 @@ export const Item = () => {
             }
             {
                 item &&
-                <>
-                    <div className='itemCard__card-container'>
-                        <BasketNotificationContainer>
-                            <BasketNotification />
-                        </BasketNotificationContainer>
-
-                        <ImageCarousel item={item} />
-                        <ItemMenu
-                            className='iMenu'
-                            chosenSize={chosenSize}
-                            setChosenSize={setChosenSize}
-                            item={item}
-                            addItemHandler={addItemHandler}
-                            isBasketItem={isBasketItem}
-                            basketItemCount={basketItemCount}
-                        />
-                        <ItemInformation
-                            className='IInfo'
-                            item={item}
-                        />
-                    </div>
-                </>
+                <div className='itemCard__card-container'>
+                    <BasketNotificationContainer>
+                        <BasketNotification />
+                    </BasketNotificationContainer>
+                    <ImageCarousel item={item} />
+                    <ItemMenu
+                        className='iMenu'
+                        chosenSize={chosenSize}
+                        setChosenSize={setChosenSize}
+                        item={item}
+                        addItemHandler={addItemHandler}
+                        isBasketItem={isBasketItem}
+                        basketItemCount={basketItemCount}
+                    />
+                    <ItemInformation
+                        className='iInfo'
+                        item={item}
+                    />
+                </div>
             }
         </>
     );

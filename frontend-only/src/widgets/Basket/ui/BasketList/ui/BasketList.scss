@@ -1,10 +1,7 @@
-.basket__column {
+.basketList {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.basket__column-left {
     position: relative;
     box-sizing: border-box;
     width: 100%;
@@ -12,7 +9,7 @@
     height: auto;
 }
 
-.basket__image {
+.basketList__image {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -21,17 +18,14 @@
 }
 
 @media (max-width: 790px) {
-    .basket__image {
+    .basketList__image {
         right: -70px;
     }
 }
 
-
 @media (max-width: 700px) {
-
-    .basket__image {
+    .basketList__image {
         bottom: -50px;
         right: -30px;
     }
-
 }

@@ -1,7 +1,6 @@
 @import '@mixins';
 
 .itemCard {
-    @include container;
     //outline: 1px solid red;
     background-color: rgba(237, 237, 237, 0.3843137255);
     padding-bottom: 5px;

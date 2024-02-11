@@ -1,0 +1,55 @@
+@import '@mixins';
+
+.mainBasketSection {
+    display: grid;
+    grid-template-columns: 65% 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 50px;
+    margin-top: 40px;
+    padding: 0 30px;
+}
+
+.basket__no-items {
+    font-size: 50px;
+    text-align: center;
+    margin: 10%;
+    height: 100%;
+}
+
+.basketTitle {
+    font-size: 70px;
+    font-weight: 400;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+
+@media (max-width: 790px) {
+    .basketTitle {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 700px) {
+    .mainBasketSection {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+
+    .basketTitle {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 540px) {
+    .mainBasketSection {
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    .basketTitle {
+        margin-top: 20px;
+    }
+}
+
+    

@@ -6,14 +6,16 @@ import './styles/Shop/Shop.scss';
 
 const Shop: React.FC = () => {
     return (
-        <Container>
+        <>
             <Header />
-            <main className='mainShop'>
-                <Filters />
-                <ShopList />
-            </main>
+            <Container>
+                <main className='mainShop'>
+                    <Filters />
+                    <ShopList />
+                </main>
+            </Container>
             <Footer />
-        </Container>
+        </>
     );
 };
 

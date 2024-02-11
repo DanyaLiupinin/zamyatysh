@@ -3,7 +3,7 @@ import frog from '@images/vkorzini.svg';
 import { useSelector } from "react-redux";
 import { TLanguage } from "@types";
 
-import content from '../../../locale/ItemMenu.json';
+import content from '../../../../../locale/ItemMenu.json';
 
 import './AddItem.scss';
 

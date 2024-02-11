@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';   
+import { Burger } from '@components';
+import { TLanguage } from '@types';
+import logo from '@images/logo.svg';
+
+import content from '../../../locale/Header.json';
 
 import './Header.scss';
-
-import { Burger } from '@components';
-import logo from '@images/logo.svg';
-import { TLanguage } from '@types';
-import content from '../../../locale/Header.json';
 
 export const Header: React.FC<any> = () => {
 

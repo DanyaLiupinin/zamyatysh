@@ -1,0 +1,131 @@
+.basketNote {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid black;
+    padding: 0 20px 20px;
+}
+
+.basketNote__text {
+    margin: 0;
+    padding: 0 0 20px 0;
+    font-size: 40px;
+}
+
+.basketNote__register {
+    width: 100%;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    border-radius: 10px;
+    border: 0;
+    font-size: 40px;
+    transition: 0.3s;
+}
+
+.basketNote__register-text {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: block;
+}
+
+.basketNote__register:hover {
+    background-color: rgb(55, 52, 52);
+}
+
+.basketNote__caption {
+    margin: 10px 0 0 0;
+    font-size: 25px;
+    color: #7cca92;
+
+    a {
+        color: inherit;
+        font-size: 35px;
+    }
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+    .basketNote__register {
+        font-size: 30px;
+        height: 45px;
+    }
+
+    .basketNote__caption {
+        text-align: center;
+
+        a {
+            font-size: 25px;
+        }
+    }
+
+    .basketNote__text {
+        font-size: 30px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .basketNote__register {
+        height: 45px;
+    }
+
+
+    .basketNote__caption {
+        font-size: 30px;
+    }
+
+    .basketNote__text {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .basketNote__text {
+        font-size: 35px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .basketNote__register {
+        font-size: 30px;
+        height: 45px;
+    }
+
+    .basketNote__caption {
+        a {
+            font-size: 25px;
+        }
+    }
+
+    .basketNote__text {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 540px) {
+
+    .basketNote__register {
+        font-size: 25px;
+        height: 35px;
+    }
+
+    .basketNote__text {
+        font-size: 25px;
+    }
+
+    .basketNote__caption {
+        a {
+            font-size: 25px;
+        }
+    }
+
+}

@@ -23,15 +23,6 @@
     padding: 0 30px;
 }
 
-.basket__column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.basket__column-left {
-    position: relative;
-}
 
 .basket__items {
     box-sizing: border-box;
@@ -117,13 +108,6 @@
 /// right column
 ///
 ///
-
-.basket__column-right {
-    background-color: white;
-    padding-bottom: 10px;
-    border-radius: 10px;
-    height: fit-content;
-}
 
 .basket__notification {
     width: 100%;
@@ -285,11 +269,6 @@
     .basket__image {
         bottom: -50px;
         right: -30px;
-    }
-
-    .basket__column-right {
-        margin-top: 50px;
-        padding-bottom: 0;
     }
 
     .basket__item {
