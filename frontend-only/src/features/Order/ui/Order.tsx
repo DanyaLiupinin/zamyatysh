@@ -1,10 +1,11 @@
 import { FC, useState } from "react";
 import { getFinalPrice } from "@handlers";
-import "./Order.scss";
 
 import { OrderItems } from "./OrderItems";
 import { OrderHeader } from "./OrderHeader";
+import { OrderBody } from "./OrderBody";
 
+import "./Order.scss";
 
 interface IItemProps {
     id: number,
@@ -25,25 +26,20 @@ export const Order: FC<IOrderProps> = ({ id, items, date }) => {
 
     return (
         <>
-            <div className='order'>
-                <OrderHeader
-                    id={id}
-                    onClickOrder={() => setOrderOpened(!isOrderOpened)}
-                />
-
-                {isOrderOpened && (
-                    <div className='order-details'>
-                        <div className='order-details__info'>
-                            <p className='order-details__date'>{date}</p>
-                            <p className='order-details__status'>paid</p>
-                        </div>
-                        <OrderItems
-                            items={items}
-                        />
-                        <p className='order-details__total'>total: {price}</p>
-                    </div>
-                )}
-            </div>
+            <OrderHeader
+                id={id}
+                onClickOrder={() => setOrderOpened(!isOrderOpened)}
+            />
+            {isOrderOpened &&
+                <OrderBody
+                    date={date}
+                    price={price}
+                >
+                    <OrderItems
+                        items={items}
+                    />
+                </OrderBody>
+            }
         </>
     );
 };
