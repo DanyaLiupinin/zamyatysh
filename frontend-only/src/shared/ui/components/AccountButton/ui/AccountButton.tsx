@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import './AccountButton.scss';
 
 type AccountButtonProps = {
     onClick: any;
@@ -10,6 +11,7 @@ type AccountButtonProps = {
 export const AccountButton: FC<AccountButtonProps> = ({ onClick, isDisabled, children, type }) => {
     return (
         <button
+            className='accountButton'
             type={type || 'button'}
             onClick={onClick}
             disabled={isDisabled}
