@@ -26,7 +26,7 @@
 
 
 
-.data {
+.userInput {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,26 +35,26 @@
     border-bottom: 1px solid #6f6f6f;
 }
 
-.data__name,
-.data__content {
+.userInput__label,
+.userInput__content {
     @include pNormalize;
     width: fit-content;
 
 }
 
-.data__content {
+.userInput__content {
     text-align: end;
     border: 0;
     height: fit-content;
     width: 80%;
 }
 
-.data__content:focus {
+.userInput__content:focus {
     border: none;
     outline: none;
 }
 
-.data__content:disabled {
+.userInput__content:disabled {
     background-color: unset;
 
 }

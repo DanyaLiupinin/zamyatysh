@@ -1,19 +1,11 @@
-import "./Userdata.scss";
-
 import { useState } from "react";
-import { useSelector } from "react-redux";
-
-import { TLanguage } from "@types";
-import content from '../../../locale/Userdata.json';
-
 import { Logout, UserForm } from "@features";
 import { AccountButton } from "@components";
+import "./Userdata.scss";
 
 export const Userdata = ({ data, changeDataHandler }: any) => {
 
     const [isEditData, setEditData] = useState(false);
-
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     const onUpdateData = () => {
         localStorage.setItem('userData', JSON.stringify(data));

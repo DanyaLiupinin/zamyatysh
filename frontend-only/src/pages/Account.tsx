@@ -1,8 +1,8 @@
 
-import { 
-    Header, 
-    Footer, 
-    Account as AccountSection 
+import {
+    Header,
+    Footer,
+    Account as AccountSection
 } from "@widgets";
 import './styles/Account/Account.scss';
 
