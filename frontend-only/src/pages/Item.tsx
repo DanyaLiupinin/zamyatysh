@@ -1,12 +1,11 @@
 import React from "react";
 import { Header, Footer, Item } from "@widgets";
 import { NavButton } from "@features";
-
-import "./styles/Item/Item.scss";
 import { Container } from "@components";
 
-const ItemCard: React.FC<any> = () => {
+import "./styles/Item/Item.scss";
 
+const ItemCard: React.FC<any> = () => {
     return (
         <>
             <Header />
@@ -17,7 +16,6 @@ const ItemCard: React.FC<any> = () => {
                 </section>
             </Container>
             <Footer />
-
         </>
     );
 };

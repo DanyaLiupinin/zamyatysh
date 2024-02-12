@@ -1,8 +1,6 @@
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { AuthForm, AuthInput, AuthSubmit, AuthCheckbox, AuthCaption } from "@components";
 import { Header } from "@widgets";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-
-import './test.scss';
 
 import { validateEmail } from "@handlers";
 import { useActionCreators, usersActions } from "@store";

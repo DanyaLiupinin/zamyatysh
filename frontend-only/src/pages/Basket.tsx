@@ -9,12 +9,8 @@ import { NavButton } from '@features';
 import { MainBasketSection } from '@widgets';
 import { Container } from '@components';
 
-import content from '../locale/Basket.json';
 
 const Basket = () => {
-
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
-
     return (
         <>
             <Header />

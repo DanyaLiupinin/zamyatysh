@@ -9,3 +9,4 @@ export * from './VisibleItems/index';
 export * from './ItemMenu/index';
 export * from './Logout/index';
 export * from './UserForm/index';
+export * from './Order/index';

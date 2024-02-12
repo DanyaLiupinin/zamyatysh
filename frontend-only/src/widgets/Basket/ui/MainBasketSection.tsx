@@ -8,6 +8,7 @@ import content from '../../../locale/Basket.json';
 
 import { BasketList } from './BasketList';
 import { BasketInteraction } from './BasketInteraction';
+import { getFinalPrice } from "@handlers";
 
 import './MainBasketSection.scss';
 
@@ -19,18 +20,6 @@ export const MainBasketSection = () => {
     const [noLoggedInNotification, setNoLoggedInNotification] = useState(false);
     const [isSuccessOrder, setSuccessOrder] = useState(false);
     const { setBasket } = useActionCreators(itemsActions);
-
-    const getFinalPrice = () => {
-        if (basketShort && basketShort.length > 0) {
-            const regex = /\d+/g;
-            let total = 0;
-            for (let i = 0; i < basketShort.length; i++) {
-                const itemPrice = Number(basketShort[i].price.match(regex)[0]);
-                total = total + itemPrice;
-            }
-            setFinalPrice(total);
-        }
-    };
 
     const deleteItemHandler = (id: number) => {
         const newArray = [...basketShort];
@@ -49,7 +38,8 @@ export const MainBasketSection = () => {
     };
 
     useEffect(() => {
-        getFinalPrice();
+        const price = getFinalPrice(basketShort);
+        setFinalPrice(price as number);
     }, [basketShort]);
 
     return (

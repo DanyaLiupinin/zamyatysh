@@ -1,4 +1,4 @@
-import { Order } from '@components';
+import { Order } from '@features';
 import { TLanguage } from '@types';
 import { useSelector } from 'react-redux';
 import { useGetOrders } from 'shared/hooks';
@@ -9,7 +9,6 @@ import './Orders.scss';
 export const Orders = () => {
 
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
-
     const { orders } = useGetOrders();
 
     return (
@@ -24,6 +23,7 @@ export const Orders = () => {
                                 key={order.id}
                                 id={order.id}
                                 items={order.items}
+                                date={order.date}
                             />
                         );
                     })
