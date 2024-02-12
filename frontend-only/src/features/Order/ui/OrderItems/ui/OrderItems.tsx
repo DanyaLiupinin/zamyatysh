@@ -22,6 +22,7 @@ export const OrderItems: FC<OrderItemsProps> = ({ items }) => {
                     const { title } = foundItem;
                     return (
                         <OrderItem
+                            key={index}
                             title={title[locale]}
                             price={item.price}
                             size={item.size}

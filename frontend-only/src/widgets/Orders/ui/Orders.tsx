@@ -14,7 +14,7 @@ export const Orders = () => {
     return (
         <div className='orders' >
             <h2>{content.orders[locale]}</h2>
-            <div className='orders__order-cards' >
+            <div className='orders__list' >
                 {
                     orders && orders?.length > 0 &&
                     orders.map((order: any) => {

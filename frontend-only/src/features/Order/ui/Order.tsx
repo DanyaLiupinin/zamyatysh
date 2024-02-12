@@ -33,9 +33,7 @@ export const Order: FC<IOrderProps> = ({ id, items, date }) => {
                     date={date}
                     price={price}
                 >
-                    <OrderItems
-                        items={items}
-                    />
+                    <OrderItems items={items} />
                 </OrderBody>
             }
         </div>
