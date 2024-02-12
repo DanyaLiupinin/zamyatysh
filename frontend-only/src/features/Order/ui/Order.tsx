@@ -1,10 +1,10 @@
 import { FC, useState } from "react";
-import { items as itemsList } from "@constants";
-import "./Order.scss";
-import dropdown from "@images/dropdown.svg";
-import { useSelector } from "react-redux";
-import { TLanguage } from "@types";
 import { getFinalPrice } from "@handlers";
+import dropdown from "@images/dropdown.svg";
+import "./Order.scss";
+
+import { OrderItems } from "./OrderItems";
+
 
 interface IItemProps {
     id: number,
@@ -20,8 +20,6 @@ interface IOrderProps {
 
 export const Order: FC<IOrderProps> = ({ id, items, date }) => {
     const [isOrderOpened, setOrderOpened] = useState(false);
-
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     const price  = getFinalPrice(items);
 
@@ -47,23 +45,9 @@ export const Order: FC<IOrderProps> = ({ id, items, date }) => {
                             <p className='order-details__date'>{date}</p>
                             <p className='order-details__status'>paid</p>
                         </div>
-                        <div className='order-details__items'>
-                            {items?.length > 0 && items.map((item, index) => {
-                                const foundItem = itemsList.find(i => i.id === Number(item.id));
-                                if (foundItem) {
-                                    const { title } = foundItem;
-                                    return (
-                                        <div className='order-item' key={index}>
-                                            <p>{title[locale]}</p>
-                                            <p>{item.size}</p>
-                                            <p>{item.price}</p>
-                                        </div>
-                                    );
-                                }
-                                return null;
-                            })}
-
-                        </div>
+                        <OrderItems
+                            items={items}
+                        />
                         <p className='order-details__total'>total: {price}</p>
                     </div>
                 )}
