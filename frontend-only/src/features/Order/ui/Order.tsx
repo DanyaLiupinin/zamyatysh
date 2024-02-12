@@ -5,8 +5,6 @@ import { OrderItems } from "./OrderItems";
 import { OrderHeader } from "./OrderHeader";
 import { OrderBody } from "./OrderBody";
 
-import "./Order.scss";
-
 interface IItemProps {
     id: number,
     size: string,
@@ -25,7 +23,7 @@ export const Order: FC<IOrderProps> = ({ id, items, date }) => {
     const price = getFinalPrice(items);
 
     return (
-        <>
+        <div>
             <OrderHeader
                 id={id}
                 onClickOrder={() => setOrderOpened(!isOrderOpened)}
@@ -40,7 +38,7 @@ export const Order: FC<IOrderProps> = ({ id, items, date }) => {
                     />
                 </OrderBody>
             }
-        </>
+        </div>
     );
 };
 

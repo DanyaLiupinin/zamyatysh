@@ -1,6 +1,6 @@
 // DETAILS
 
-.order-details {
+.orderBody {
     margin: 10px auto 0;
     width: 90%;
     outline: 1px solid black;
@@ -10,18 +10,18 @@
     padding: 10px 20px 0px;
 }
 
-.order-details__info {
+.orderBody__info {
     display: flex;
     justify-content: space-between;
 }
 
-.order-details__date,
-.order-details__status {
+.orderBody__date,
+.orderBody__status {
     font-size: 35px;
     margin: 0;
 }
 
-.order-details__total {
+.orderBody__price {
     margin: 10px 0 0 0;
     font-size: 40px;
     text-align: right;

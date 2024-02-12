@@ -13,7 +13,7 @@ export const OrderItems: FC<OrderItemsProps> = ({items}) => {
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
-        <div className='order-details__items'>
+        <div className='orderItems'>
             {items?.length > 0 && items.map((item: any, index: any) => {
                 const foundItem = itemsList.find(i => i.id === Number(item.id));
                 if (foundItem) {

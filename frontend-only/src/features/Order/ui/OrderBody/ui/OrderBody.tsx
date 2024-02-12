@@ -9,13 +9,13 @@ type OrderBodyProps = {
 
 export const OrderBody: FC<OrderBodyProps> = ({date, price = 0, children}) => {
     return (
-        <div className='order-details'>
-            <div className='order-details__info'>
-                <p className='order-details__date'>{date}</p>
-                <p className='order-details__status'>paid</p>
+        <div className='orderBody'>
+            <div className='orderBody__info'>
+                <p className='orderBody__date'>{date}</p>
+                <p className='orderBody__status'>paid</p>
             </div>
             {children}
-            <p className='order-details__total'>total: {price}</p>
+            <p className='orderBody__price'>total: {price}</p>
         </div>
     );
 };
