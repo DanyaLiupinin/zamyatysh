@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
 import { getFinalPrice } from "@handlers";
-import dropdown from "@images/dropdown.svg";
 import "./Order.scss";
 
 import { OrderItems } from "./OrderItems";
+import { OrderHeader } from "./OrderHeader";
 
 
 interface IItemProps {
@@ -21,23 +21,15 @@ interface IOrderProps {
 export const Order: FC<IOrderProps> = ({ id, items, date }) => {
     const [isOrderOpened, setOrderOpened] = useState(false);
 
-    const price  = getFinalPrice(items);
+    const price = getFinalPrice(items);
 
     return (
         <>
             <div className='order'>
-                <div className='order__card'>
-                    <p className='order__title'>
-                        {/*content.order[locale]}#{id */}
-                        order #{id}
-                    </p>
-                    <button
-                        className='order__details-btn'
-                        onClick={() => setOrderOpened(!isOrderOpened)}
-                    >
-                        <img src={dropdown} alt='open order details' />
-                    </button>
-                </div>
+                <OrderHeader
+                    id={id}
+                    onClickOrder={() => setOrderOpened(!isOrderOpened)}
+                />
 
                 {isOrderOpened && (
                     <div className='order-details'>

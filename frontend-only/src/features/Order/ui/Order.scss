@@ -1,38 +1,4 @@
 
-
-.order__card {
-    width: 90%;
-    height: 50px;
-    margin: 0 auto;
-    outline: 1px solid black;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5px 0 20px;
-    box-sizing: border-box;
-}
-
-.order__title {
-    height: 100%;
-    font-size: 40px;
-    margin: 0;
-}
-
-.order__details-btn {
-    width: 60px;
-    height: 100%;
-    background-color: unset;
-    border: 0;
-    padding: 0;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
 // DETAILS
 
 .order-details {
@@ -59,15 +25,4 @@
     margin: 10px 0 0 0;
     font-size: 40px;
     text-align: right;
-}
-
-
-@media (max-width: 900px) {
-
-    .order__title {
-        font-size: 30px;
-        display: flex;
-        align-items: center;
-    }
-
 }

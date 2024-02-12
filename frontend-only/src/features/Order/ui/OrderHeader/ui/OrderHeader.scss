@@ -1,0 +1,43 @@
+
+
+.orderHeader {
+    width: 90%;
+    height: 50px;
+    margin: 0 auto;
+    outline: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px 0 20px;
+    box-sizing: border-box;
+
+    button {
+        width: 60px;
+        height: 100%;
+        background-color: unset;
+        border: 0;
+        padding: 0;
+    
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.orderHeader__title {
+    height: 100%;
+    font-size: 40px;
+    margin: 0;
+}
+
+
+@media (max-width: 900px) {
+    .orderHeader__title {
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+    }
+}
