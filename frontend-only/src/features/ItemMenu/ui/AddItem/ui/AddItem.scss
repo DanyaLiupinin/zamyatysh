@@ -1,12 +1,28 @@
 @import '@mixins';
 
-.addItem-container {
+.addItem {
     width: fit-content;
     height: fit-content;
     position: relative;
+
+    button {
+        @include buttonNormalize;
+        margin-top: 44px;
+        border: 2px solid rgba(195, 195, 195, 1);
+        width: 256px;
+        height: 66px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 42px;
+        line-height: 150%;
+        border-radius: 6px;
+        background-color: white;
+        z-index: 2;
+        position: relative;
+    }
 }
 
-.itemMenu__basket-image {
+.addItem__image {
     position: absolute;
     z-index: 1;
     top: 17px;
@@ -16,28 +32,12 @@
     transition: .3s;
 }
 
-.itemMenu__basket-image_active {
+.addItem__image_active {
     top: -20px;
 }
 
-.itemMenu__add-button {
-    @include buttonNormalize;
-    margin-top: 44px;
-    border: 2px solid rgba(195, 195, 195, 1);
-    width: 256px;
-    height: 66px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 42px;
-    line-height: 150%;
-    border-radius: 6px;
-    background-color: white;
-    z-index: 2;
-    position: relative;
-}
-
 @media (max-width: 800px) {
-    .addItem-container {
+    .addItem {
         margin: 0 auto;
     }
 }

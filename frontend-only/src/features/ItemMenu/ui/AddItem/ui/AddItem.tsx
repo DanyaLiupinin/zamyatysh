@@ -18,16 +18,15 @@ export const AddItem: FC<AddItemProps> = ({ chosenSize, onAddItem, isCaptionActi
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
-        <div className='addItem-container'>
+        <div className='addItem'>
             <img
                 src={frog}
-                className={`itemMenu__basket-image ${chosenSize !== '' ? 'itemMenu__basket-image_active' : ''}`}
+                className={`addItem__image ${chosenSize !== '' ? 'addItem__image_active' : ''}`}
                 alt='frog wants you to buy something'>
             </img>
             <button
                 onClick={onAddItem}
                 disabled={isCaptionActive ? true : false}
-                className={`itemMenu__add-button`}
                 type='button'>
                 {
                     content.addToBasket[locale]
