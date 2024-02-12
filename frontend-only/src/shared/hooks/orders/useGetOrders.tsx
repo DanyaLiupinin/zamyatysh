@@ -1,12 +1,19 @@
+import { useEffect, useState } from "react";
+
 export const useGetOrders = () => {
 
-    let orders = [];
+    const [orders, setOrders] = useState([]);
 
-    const storageOrders = localStorage.getItem("orders");
+    useEffect(() => {
 
-    if (storageOrders) {
-        orders = JSON.parse(storageOrders);
-    }
+        const storageOrders = localStorage.getItem("orders");
+
+        if (storageOrders) {
+            const ordersArr = JSON.parse(storageOrders);
+            setOrders(ordersArr);
+        }
+
+    }, []);
 
     return {
         orders

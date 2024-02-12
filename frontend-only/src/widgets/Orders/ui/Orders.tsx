@@ -1,13 +1,10 @@
-import './Orders.scss';
-
 import { Order } from '@components';
 import { TLanguage } from '@types';
 import { useSelector } from 'react-redux';
-
+import { useGetOrders } from 'shared/hooks';
 
 import content from '../../../locale/Orders.json';
-
-import { useGetOrders } from 'shared/hooks';
+import './Orders.scss';
 
 export const Orders = () => {
 
@@ -20,19 +17,17 @@ export const Orders = () => {
             <h2>{content.orders[locale]}</h2>
             <div className='orders__order-cards' >
                 {
-                    orders?.length > 0 &&
+                    orders && orders?.length > 0 &&
                     orders.map((order: any) => {
                         return (
-                            <Order 
-                            key={order.id}
+                            <Order  
+                                key={order.id}
                                 id={order.id}
                                 items={order.items}
                             />
-                        )
+                        );
                     })
                 }
-
-
             </div>
         </div>
     );
