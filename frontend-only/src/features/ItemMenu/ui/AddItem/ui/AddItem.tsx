@@ -13,25 +13,26 @@ type AddItemProps = {
     isCaptionActive: any
 }
 
-export const AddItem: FC<AddItemProps> = ({chosenSize, onAddItem, isCaptionActive}) => {
+export const AddItem: FC<AddItemProps> = ({ chosenSize, onAddItem, isCaptionActive }) => {
 
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     return (
         <div className='addItem-container'>
             <img
-                    src={frog}
-                    className={`itemMenu__basket-image ${chosenSize !== '' ? 'itemMenu__basket-image_active' : ''}`}
-                    alt='frog wants you to buy something'></img>
-                <button
-                    onClick={onAddItem}
-                    disabled={isCaptionActive ? true : false}
-                    className={`itemMenu__add-button`}
-                    type='button'>
-                    {
-                        content.addToBasket[locale]
-                    }
-                </button>
+                src={frog}
+                className={`itemMenu__basket-image ${chosenSize !== '' ? 'itemMenu__basket-image_active' : ''}`}
+                alt='frog wants you to buy something'>
+            </img>
+            <button
+                onClick={onAddItem}
+                disabled={isCaptionActive ? true : false}
+                className={`itemMenu__add-button`}
+                type='button'>
+                {
+                    content.addToBasket[locale]
+                }
+            </button>
         </div>
     );
 };

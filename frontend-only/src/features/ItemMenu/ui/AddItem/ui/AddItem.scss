@@ -8,7 +8,7 @@
 
 .itemMenu__basket-image {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     top: 17px;
     left: 30px;
     bottom: 0;
@@ -32,6 +32,8 @@
     line-height: 150%;
     border-radius: 6px;
     background-color: white;
+    z-index: 2;
+    position: relative;
 }
 
 @media (max-width: 800px) {
