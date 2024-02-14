@@ -40,15 +40,14 @@
 
     .authForm {
         width: 450px;
-        p {
-            font-size: 35px;
-        }
     }
 }
 
 @media (max-width: 600px) {
     .authForm {
         width: 350px;
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
 }
 

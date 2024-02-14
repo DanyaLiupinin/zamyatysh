@@ -3,6 +3,7 @@
     margin: 15px 0 0 0;
     width: 80%;
     display: block;
+    text-align: center;
 
     a {
         font-size: 40px;
@@ -42,3 +43,13 @@
     margin: 0;
 }
 }
+
+@media (max-width: 600px) {
+    .authCaption {
+        font-size: 20px;
+
+        a {
+            font-size: 36px;
+        }
+    }
+    }
