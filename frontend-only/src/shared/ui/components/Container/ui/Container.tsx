@@ -9,7 +9,7 @@ interface IContainerProps {
 
 export const Container: React.FC<IContainerProps> = ({children, className = ''}) => {
     return (
-        <section className={`container ${className}`} >
+        <section className={`cont ${className}`} >
             {children}
         </section>
     );

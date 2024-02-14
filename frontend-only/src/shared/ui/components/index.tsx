@@ -11,3 +11,4 @@ export * from './SizeButton/index';
 export * from './ItemCaption/index';
 export * from './AccountButton/index';
 export * from './OrderItem/index';
+export * from './Content/index';
