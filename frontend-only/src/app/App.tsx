@@ -5,15 +5,17 @@ import { useSelector } from "react-redux";
 import "./App.scss";
 
 import { useActionCreators, itemsActions, usersActions } from "@store";
-import { WelcomePageFS } from "pages/WelcomePageFS";
-import { RegisterFS } from "pages/RegisterFS";
-import { LoginFS } from "pages/LoginFS";
 
-import About from "../pages/About";
-import Shop from "../pages/Shop";
-import Item from "../pages/Item";
-import Account from "../pages/Account";
-import Basket from "../pages/Basket";
+import {
+  About,
+  Account,
+  Basket,
+  ItemCard,
+  Shop,
+  WelcomePageFS,
+  LoginFS,
+  RegisterFS
+} from "@pages";
 
 
 const App: React.FC<any> = () => {
@@ -35,14 +37,14 @@ const App: React.FC<any> = () => {
   } = useActionCreators(itemsActions);
 
   const { getUserDataThunk, setLoggedIn, setRedirectPath } = useActionCreators(usersActions);
-/*
-  useEffect(() => {
-    if (localStorage.getItem("jwt") && localStorage.getItem("userId")) {
-      const id = localStorage.getItem("userId");
-      getUserDataThunk(id);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);*/
+  /*
+    useEffect(() => {
+      if (localStorage.getItem("jwt") && localStorage.getItem("userId")) {
+        const id = localStorage.getItem("userId");
+        getUserDataThunk(id);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);*/
 
   useEffect(() => {
     if (localStorage.getItem("locale")) {
@@ -118,7 +120,7 @@ const App: React.FC<any> = () => {
         <Route path='/' element={<WelcomePageFS />} />
         <Route path='/about' element={<About />} />
         <Route path='/shop' element={<Shop />} />
-        <Route path='/shop/:id' element={<Item />} />
+        <Route path='/shop/:id' element={<ItemCard />} />
         <Route
           path='/account'
           element={loggedIn ? <Account /> : <Navigate to='/login' />}

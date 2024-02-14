@@ -3,9 +3,9 @@ import { Header, Footer, Item } from "@widgets";
 import { NavButton } from "@features";
 import { Container } from "@components";
 
-import "./styles/Item/Item.scss";
+import "./Item.scss";
 
-const ItemCard: React.FC<any> = () => {
+export const ItemCard: React.FC<any> = () => {
     return (
         <>
             <Header />
@@ -19,5 +19,3 @@ const ItemCard: React.FC<any> = () => {
         </>
     );
 };
-
-export default ItemCard;

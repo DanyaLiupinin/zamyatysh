@@ -11,6 +11,9 @@
             "@widgets": [
                 "widgets/index.tsx"
             ],
+            "@pages": [
+                "pages/index.tsx"
+            ],
             "@handlers": [
                 "shared/lib/handlers/index.tsx"
             ],

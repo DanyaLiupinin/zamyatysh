@@ -2,9 +2,9 @@ import React from 'react';
 import { Container } from '@components';
 import { ShopList, Filters, Header, Footer } from '@widgets';
 
-import './styles/Shop/Shop.scss';
+import './Shop.scss';
 
-const Shop: React.FC = () => {
+export const Shop: React.FC = () => {
     return (
         <>
             <Header />
@@ -18,5 +18,3 @@ const Shop: React.FC = () => {
         </>
     );
 };
-
-export default Shop;

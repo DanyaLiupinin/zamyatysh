@@ -3,9 +3,9 @@ import {
     Footer,
     Account as AccountSection
 } from "@widgets";
-import './styles/Account/Account.scss';
+import './Account.scss';
 
-const Account = () => {
+export const Account = () => {
 
     return (
         <>
@@ -15,5 +15,3 @@ const Account = () => {
         </>
     );
 };
-
-export default Account;

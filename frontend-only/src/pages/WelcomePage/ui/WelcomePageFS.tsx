@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '@components';
 import { LanguageSwitcher, MainMenu, MainAnimation } from '@widgets';
 
-import './styles/WelcomePageFS/WelcomePageFS.scss';
+import './WelcomePageFS.scss';
 
 export const WelcomePageFS: React.FC = () => {
     return (

@@ -1,4 +1,4 @@
-import './styles/Basket/Basket.scss';
+import './Basket.scss';
 import {
     Header,
     Footer
@@ -8,7 +8,7 @@ import { MainBasketSection } from '@widgets';
 import { Container } from '@components';
 
 
-const Basket = () => {
+export const Basket = () => {
     return (
         <>
             <Header />
@@ -21,4 +21,3 @@ const Basket = () => {
     );
 };
 
-export default Basket;

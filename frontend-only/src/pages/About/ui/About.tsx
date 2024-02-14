@@ -1,9 +1,9 @@
-import './styles/About/About.scss';
+import './About.scss';
 
 import { Header } from '@widgets';
 import image from '@images/aboutUs.png';
 
-const About: React.FC = () => {
+export const About: React.FC = () => {
     return (
         <>
             <div className='about'>
@@ -15,5 +15,3 @@ const About: React.FC = () => {
         </>
     );
 };
-
-export default About;
