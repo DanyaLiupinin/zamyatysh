@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '@components';
+import { Container, Content } from '@components';
 import { LanguageSwitcher, MainMenu, MainAnimation } from '@widgets';
 
 import './WelcomePageFS.scss';
@@ -7,6 +7,7 @@ import './WelcomePageFS.scss';
 export const WelcomePageFS: React.FC = () => {
     return (
         <Container className='relative'>
+            <Content>
             <LanguageSwitcher
                 className={'text-right'}
             />
@@ -16,6 +17,7 @@ export const WelcomePageFS: React.FC = () => {
                 />
                 <MainAnimation />
             </div>
+            </Content>
         </Container>
     );
 };

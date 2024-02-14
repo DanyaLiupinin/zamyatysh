@@ -5,9 +5,7 @@
     font-size: 40px;
     display: flex;
     align-items: center;
-    margin-left: 20px;
     text-decoration: none;
-    //outline: 1px solid red;
 }
 
 .itemCard__navigation-image {
@@ -17,7 +15,6 @@
 }
 
 @media (max-width: 500px) {
-
     .itemCard__navigation {
         font-size: 30px;
     }

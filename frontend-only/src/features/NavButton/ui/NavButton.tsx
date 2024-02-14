@@ -5,6 +5,8 @@ import array from '@images/historyArray.svg';
 
 import content from '../../../locale/NavButton.json';
 
+import './NavButton.scss';
+
 export const NavButton = () => {
 
     const navigate = useNavigate();

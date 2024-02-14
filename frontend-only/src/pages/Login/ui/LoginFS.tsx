@@ -1,10 +1,16 @@
+import { Container } from "@components";
+import { Content } from "@radix-ui/react-dropdown-menu";
 import { Header, Login } from "@widgets";
 
 export const LoginFS = () => {
     return (
         <>
             <Header />
-            <Login />
+            <Container>
+                <Content>
+                    <Login />
+                </Content>
+            </Container>
         </>
     );
 };

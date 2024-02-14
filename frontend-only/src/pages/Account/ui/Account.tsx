@@ -3,14 +3,18 @@ import {
     Footer,
     Account as AccountSection
 } from "@widgets";
-import './Account.scss';
+import { Container, Content } from "@components";
 
 export const Account = () => {
 
     return (
         <>
             <Header />
-            <AccountSection />
+            <Container>
+                <Content>
+                    <AccountSection />
+                </Content>
+            </Container>
             <Footer />
         </>
     );

@@ -1,11 +1,9 @@
 @import '@mixins';
 
 .mainShop {
-    @include container;
     display: grid;
     grid-template-columns: 20% 80%;
-    padding: 30px 20px 0;
-    background-color: #ededed62;
+    padding: 30px 0 0;
     position: relative;
     border-radius: 5px;
 }

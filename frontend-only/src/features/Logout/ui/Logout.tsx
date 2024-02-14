@@ -6,7 +6,8 @@ export const Logout: FC = () => {
 
     const { setLoggedIn } = useActionCreators(usersActions);
 
-    const onExit = () => {
+    const onExit = (e: any) => {
+        e.preventDefault();
         setLoggedIn(false);
     };
 

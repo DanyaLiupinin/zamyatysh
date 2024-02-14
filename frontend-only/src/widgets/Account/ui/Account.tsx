@@ -54,12 +54,10 @@ export const Account = () => {
         <>
             {loggedIn && (
                 <section className='account'>
-                    <div className='account__container'>
                         <Userdata
                             changeDataHandler={onChangeData}
                             data={userData} />
                         <Orders />
-                    </div>
                 </section>
             )}
         </>

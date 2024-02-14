@@ -1,11 +1,10 @@
-import './Basket.scss';
 import {
     Header,
     Footer
 } from '@widgets';
 import { NavButton } from '@features';
 import { MainBasketSection } from '@widgets';
-import { Container } from '@components';
+import { Container, Content } from '@components';
 
 
 export const Basket = () => {
@@ -13,8 +12,10 @@ export const Basket = () => {
         <>
             <Header />
             <Container>
-                <NavButton />
-                <MainBasketSection />
+                <Content>
+                    <NavButton />
+                    <MainBasketSection />
+                </Content>
             </Container>
             <Footer />
         </>
