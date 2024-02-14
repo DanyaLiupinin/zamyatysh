@@ -11,3 +11,4 @@ export * from './Item/index';
 export * from './Basket/index';
 export * from './Account/index';
 export * from './Login/index';
+export * from './Register/index';

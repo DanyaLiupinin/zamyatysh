@@ -2,15 +2,11 @@ import {
     AuthForm,
     AuthInput,
     AuthSubmit,
-    AuthCheckbox,
     AuthCaption,
-    AuthError
 } from "@components";
-import { Header } from "@widgets";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { validateEmail } from "@handlers";
-import { useActionCreators } from "store";
-import { usersActions } from "store/user";
+import { useActionCreators, usersActions } from "@store";
 
 export const Login = () => {
     
