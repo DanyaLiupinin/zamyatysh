@@ -1,0 +1,27 @@
+@import '@mixins';
+
+.dropdown {
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 7px;
+    visibility: hidden;
+    opacity: 0;
+    width: 90vw;
+    text-align: center;
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown__filter {
+    display: block;
+    color: black;
+    font-size: 24px;
+    @include buttonNormalize;
+    width: 100%;
+}
+
+.dropdown__filter:hover {
+    border: none;
+    outline: none;
+    text-decoration: underline;
+}

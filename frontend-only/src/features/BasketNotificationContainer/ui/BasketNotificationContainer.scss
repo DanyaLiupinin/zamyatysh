@@ -1,0 +1,48 @@
+///
+/// 
+.notificationContainer {
+    position: absolute;
+    top: 30px;
+    right: -50px;
+    width: fit-content;
+    height: 100vh;
+}
+
+@media (max-width: 1400px) {
+    .notificationContainer {
+        right: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .notificationContainer {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .notificationContainer {
+        height: 100vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .notificationContainer {
+        height: 75vh;
+    }
+}
+
+@media (max-width: 550px) {
+    .notificationContainer {
+        right: 20px;
+        top: 15px;
+        height: 28vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .notificationContainer {
+        height: 63vh;
+        right: 5px;
+    }
+}

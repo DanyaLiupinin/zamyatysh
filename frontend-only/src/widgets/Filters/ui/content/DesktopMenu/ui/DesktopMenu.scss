@@ -1,0 +1,51 @@
+@import '@mixins';
+
+.desktopMenu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    word-break: break-word;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.desktopMenu__invisible {
+    display: none;
+    visibility: hidden;
+}
+
+.desktopMenu__button_active {
+    font-weight: 600;
+}
+
+.desktopMenu__button {
+    @include buttonNormalize;
+    text-align: start;
+    font-size: 34px;
+    width: fit-content;
+    transition: .3s;
+
+
+    &:not(:first-child) {
+        margin-top: 30px;
+    }
+
+    &:hover {
+        opacity: .5;
+    }
+}
+
+@media (max-width: 900px) {
+    .desktopMenu__button {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .desktopMenu__button {
+        display: none;
+    }
+
+}

@@ -1,29 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { categories } from '@constants';
+import {itemsActions, useActionCreators } from '@store';
+import { ClearFilters } from '@components';
 
-import { useActionCreators } from '../../../store';
-import { itemsActions } from '../../../store/items/index';
-import { categories } from '../../../shared/constants/data';
-
-import { DropdownMenu, DesktopMenu, ClearFilters } from '@components';
-
-
+import { DesktopMenu } from './content/DesktopMenu';
+import { DropdownMenu } from './content/DropdownMenu';
 import './Filters.scss';
 
-export const Filters: React.FC<any> = () => {
-
-    const [dropdown, setDropdown] = useState(false);
+export const Filters: React.FC = () => {
 
     const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
-
     const { setCategoryFilter } = useActionCreators(itemsActions);
-
     const location = useLocation();
 
     const onClickFilter = (category: string) => {
         setCategoryFilter(category);
-        setDropdown(false);
     };
 
     const onClearFilter = () => {
@@ -34,8 +27,6 @@ export const Filters: React.FC<any> = () => {
         if (location.pathname === '/shop') {
             setCategoryFilter(null);
         }
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.pathname]);
 
     return (
@@ -50,10 +41,8 @@ export const Filters: React.FC<any> = () => {
                     <ClearFilters onClickHandler={onClearFilter} isActive={true} />
                 }
                 <DropdownMenu
-                    dropdown={dropdown}
                     categories={categories}
                     onClickFilter={onClickFilter}
-                    setDropdown={setDropdown}
                 />
             </div>
         </div>

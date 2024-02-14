@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./BasketNotification.scss";
 
-import image from "../../../images/basket-image.svg";
+import image from "@images/basket-image.svg";
 
 export const BasketNotification = () => {
     

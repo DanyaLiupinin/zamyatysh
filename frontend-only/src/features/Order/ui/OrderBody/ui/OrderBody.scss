@@ -1,0 +1,28 @@
+// DETAILS
+
+.orderBody {
+    margin: 10px auto 0;
+    width: 90%;
+    outline: 1px solid black;
+    height: fit-content;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px 20px 0px;
+}
+
+.orderBody__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderBody__date,
+.orderBody__status {
+    font-size: 35px;
+    margin: 0;
+}
+
+.orderBody__price {
+    margin: 10px 0 0 0;
+    font-size: 40px;
+    text-align: right;
+}

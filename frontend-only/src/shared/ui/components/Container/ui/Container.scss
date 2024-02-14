@@ -1,6 +1,7 @@
 .container {
-    max-width: 1600px;
+    max-width: 1400px;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
     outline: 1px solid red;
+    background-color: #f9f9f9;
 }

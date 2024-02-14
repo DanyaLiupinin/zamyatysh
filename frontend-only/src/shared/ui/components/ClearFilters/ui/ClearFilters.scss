@@ -1,6 +1,7 @@
 .clear-button {
     background-color: rgba(0, 0, 0, 0.9);
-    padding: 5px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
     margin: 30px 0 0 0;
     width: fit-content;
     max-width: 90%;
@@ -12,6 +13,11 @@
     color: white;
     border: none;
     word-break: break-word;
+    transition: .3s;
+}
+
+.clear-button:hover {
+    opacity: .8;
 }
 
 .clear-button_active {

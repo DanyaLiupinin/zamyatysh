@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './SuccessOrder.scss';
 
 
-import krestik from '../../../../../../images/krestik.png';
+import krestik from '@images/krestik.png';
 import { useSelector } from 'react-redux';
 
 export const SuccessOrder = ({

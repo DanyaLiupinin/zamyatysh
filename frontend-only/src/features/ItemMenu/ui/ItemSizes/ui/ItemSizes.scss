@@ -1,0 +1,14 @@
+.itemSizes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin-top: 56px;
+}
+
+
+@media (max-width: 800px) {
+    .itemSizes {
+        justify-content: center;
+    }
+}

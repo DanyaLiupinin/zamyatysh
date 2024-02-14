@@ -1,6 +1,6 @@
 import './NoLoggedNotification.scss';
 import { Link } from 'react-router-dom';
-import krestik from '../../../../../../images/krestik.png';
+import krestik from '@images/krestik.png';
 import { FC } from 'react';
 
 export const NoLoggedNotification: FC<any> = ({

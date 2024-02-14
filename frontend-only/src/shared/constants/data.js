@@ -1,5 +1,5 @@
 
-import tshirts from '../../images/tshirt.png';
+import tshirts from '@images/tshirt.png';
 
 export const items = [
     {   
@@ -135,15 +135,7 @@ export const items = [
 ];
 
 
-
 export const categories = [
-    {
-        id: 1, 
-        title: {
-            ru: 'все',
-            en: 'all'
-        },
-    },
     {
         id: 2, 
         title: {
