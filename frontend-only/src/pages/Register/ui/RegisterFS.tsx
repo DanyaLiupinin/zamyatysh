@@ -1,3 +1,4 @@
+import { Container, Content } from "@components";
 import { Header, Register } from "@widgets";
 
 export const RegisterFS = () => {
@@ -5,7 +6,11 @@ export const RegisterFS = () => {
     return (
         <>
             <Header />
-            <Register />
+            <Container>
+                <Content>
+                    <Register />
+                </Content>
+            </Container>
         </>
     );
 };

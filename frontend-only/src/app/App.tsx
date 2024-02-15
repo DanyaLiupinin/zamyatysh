@@ -82,6 +82,10 @@ const App: React.FC<any> = () => {
     };
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('loggedIn', loggedIn);
+  }, [loggedIn])
+
   return (
     <div className='App'>
       <Routes>
