@@ -9,11 +9,9 @@ export const Shop: React.FC = () => {
         <>
             <Header />
             <Container>
-                <Content>
-                <main className='mainShop'>
+                <Content className='mainShop'>
                     <Filters />
                     <ShopList />
-                </main>
                 </Content>
             </Container>
             <Footer />
