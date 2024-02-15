@@ -2,15 +2,14 @@ import { FC } from "react";
 import { IItem, TLanguage } from "@types";
 import { ShopCard } from "@components";
 import { useSelector } from "react-redux";
+import { selectLocale } from "../model/selectors";
 
 type VisibleItemsProps = {
     visibleItems: IItem[],
 }
 
 export const VisibleItems: FC<VisibleItemsProps> = ({ visibleItems }) => {
-
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
-
+    const locale: TLanguage = useSelector(selectLocale);
     return (
         <>
             {

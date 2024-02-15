@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-
 import defaultImage from '@images/tshirt.png';
-
 import "./ShopCard.scss";
 
 export const ShopCard = ({

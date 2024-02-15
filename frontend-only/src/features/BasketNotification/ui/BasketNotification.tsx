@@ -1,14 +1,11 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { selectBasketItems } from "../model/selectors";
+import image from "@images/basket-image.svg";
 import "./BasketNotification.scss";
 
-import image from "@images/basket-image.svg";
-
 export const BasketNotification = () => {
-    
-    const basketItems = useSelector((state: any) => state.items.basketItemsShort);
-
+    const basketItems = useSelector(selectBasketItems);
     return (
         <Link
             className={`basketNotification ${basketItems && basketItems.length > 0 ? "basketNotification_active" : ""
