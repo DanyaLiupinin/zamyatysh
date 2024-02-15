@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { TLanguage } from "@types";
 import array from '@images/historyArray.svg';
 
-import content from '../../../locale/NavButton.json';
+import content from '@locale/NavButton.json';
 
 import './NavButton.scss';
 

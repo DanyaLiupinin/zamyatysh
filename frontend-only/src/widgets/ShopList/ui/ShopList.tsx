@@ -5,7 +5,7 @@ import { TLanguage, IItem } from '@types';
 import useVisibleItems from '../lib/useVisibleItems'; 
 import { selectLocale } from '../model/selectors';
 
-import content from '../../../locale/ItemList.json';
+import content from '@locale/ItemInformation.json';
 
 import './ShopList.scss';
 

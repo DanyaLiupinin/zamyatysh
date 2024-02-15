@@ -2,8 +2,7 @@ import { Order } from '@features';
 import { TLanguage } from '@types';
 import { useSelector } from 'react-redux';
 import { useGetOrders } from 'shared/hooks';
-
-import content from '../../../locale/Orders.json';
+import content from '@locale/Orders.json';
 import './Orders.scss';
 
 export const Orders = () => {

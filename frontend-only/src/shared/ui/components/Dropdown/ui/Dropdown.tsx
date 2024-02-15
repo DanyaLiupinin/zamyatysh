@@ -9,7 +9,7 @@ import './DropdownTrigger.scss';
 import dropdowns from '@images/dropdown.svg';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-import content from '../../../../../locale/Filters.json';
+import content from '@locale/Filters.json';
 
 type DropdownProps = {
     categories: any,

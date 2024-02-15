@@ -1,24 +1,21 @@
 import { useSelector } from 'react-redux';   
-
+import content from "@locale/Footer.json";
+import { TLanguage } from '@types';
+import zamyatysh from '@images/logo.svg';
 import './Footer.scss';
 
-import zamyatysh from '@images/logo.svg';
-//import { TLocale } from '../../types/components';
-
 export const Footer = () => {
-    
-   // const locale: TLocale = useSelector((state: any) => state.items.locale);
-
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
     return (
         <footer className='footer'>
             <div className='footer__container'>
                 <p className='footer__copyright'>{`(c) zamyatysh`}</p>
                 <div className='footer__info'>
-                    <p>доставка</p>
-                    <p>размеры</p>
-                    <p>контакты</p>
+                    <p>{content.delivery[locale]}</p>
+                    <p>{content.sizes[locale]}</p>
+                    <p>{content.contacts[locale]}</p>
                     <div className='footer__image'>
-                        <img src={zamyatysh} alt={zamyatysh}></img>
+                        <img src={zamyatysh} alt={content.copyrightAlt[locale]}></img>
                     </div>
                 </div>
                 <div className='footer__links'>

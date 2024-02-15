@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { TLanguage } from '@types';
 import { useSelector } from 'react-redux';
 
-import content from '../../../../../locale/Basket.json';
+import content from '@locale/Basket.json';
 
 import './MakeOrder.scss';
 

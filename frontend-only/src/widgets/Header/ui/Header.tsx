@@ -5,7 +5,7 @@ import { Burger } from '@components';
 import { TLanguage } from '@types';
 import logo from '@images/logo.svg';
 
-import content from '../../../locale/Header.json';
+import content from '@locale/Header.json';
 
 import './Header.scss';
 

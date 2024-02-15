@@ -40,6 +40,9 @@
             ],
             "@store": [
                 "app/store/index.ts"
+            ],
+            "@locale/*": [
+                "app/locale/*"
             ]
         }
     }

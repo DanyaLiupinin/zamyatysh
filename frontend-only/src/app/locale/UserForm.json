@@ -30,13 +30,5 @@
     "apartment": {
         "ru": "материал",
         "en": "apartment"
-    },
-    "edit": {
-        "ru": "материал",
-        "en": "Edit"
-    },
-    "save": {
-        "ru": "материал",
-        "en": "Save"
     }
 }

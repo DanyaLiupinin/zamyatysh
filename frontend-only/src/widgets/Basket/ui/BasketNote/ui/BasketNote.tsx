@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { TLanguage } from "@types";
 
-import content from '../../../../../locale/Basket.json';
+import content from '@locale/Basket.json';
 import './BasketNote.scss';
 
 export const BasketNote = () => {

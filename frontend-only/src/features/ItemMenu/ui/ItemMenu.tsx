@@ -3,11 +3,10 @@ import { useSelector } from 'react-redux';
 import { TLanguage, IItem } from '@types';
 import { ItemCaption } from '@components';
 
-import content from '../../../locale/ItemMenu.json';
+import content from '@locale/ItemMenu.json';
 
 import { ItemSizes } from './ItemSizes';
 import { AddItem } from './AddItem';
-
 
 import './ItemMenu.scss';
 

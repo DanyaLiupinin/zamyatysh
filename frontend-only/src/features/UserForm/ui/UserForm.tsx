@@ -3,7 +3,7 @@ import { TLanguage } from "@types";
 import { useSelector } from "react-redux";
 import avatar from "@images/logo.svg";
 
-import content from '../../../locale/Userdata.json';
+import content from '@locale/UserForm.json';
 import './UserForm.scss';
 
 type UserFormType = {

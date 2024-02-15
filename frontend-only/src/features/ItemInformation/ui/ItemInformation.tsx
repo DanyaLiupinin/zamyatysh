@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { TLanguage, IItem } from '@types';
 
-import content from '../../../locale/ItemInformation.json';
+import content from '@locale/ItemInformation.json';
 import './ItemInformation.scss';
 
 type ItemInformationProps = {

@@ -4,7 +4,7 @@ import { NoLoggedNotification, SuccessOrder } from '@components';
 import { useActionCreators, itemsActions } from '@store';
 import { TLanguage } from '@types';
 
-import content from '../../../locale/Basket.json';
+import content from '@locale/Basket.json';
 
 import { BasketList } from './BasketList';
 import { BasketInteraction } from './BasketInteraction';

@@ -10,5 +10,9 @@
     "style": {
         "ru": "фасон",
         "en": "style"
+    },
+    "empty": {
+        "ru": "ничего не найдено",
+        "en": "no items found"
     }
 }
