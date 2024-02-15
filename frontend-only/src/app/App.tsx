@@ -30,21 +30,11 @@ const App: React.FC<any> = () => {
   const redirectPath = useSelector((state: any) => state.user.rediretcPath);
 
   const {
-    getAllCategoriesThunk,
-    getAllItemsThunk,
     changeLanguage,
     setBasket,
   } = useActionCreators(itemsActions);
 
-  const { getUserDataThunk, setLoggedIn, setRedirectPath } = useActionCreators(usersActions);
-  /*
-    useEffect(() => {
-      if (localStorage.getItem("jwt") && localStorage.getItem("userId")) {
-        const id = localStorage.getItem("userId");
-        getUserDataThunk(id);
-      }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);*/
+  const { setLoggedIn, setRedirectPath } = useActionCreators(usersActions);
 
   useEffect(() => {
     if (localStorage.getItem("locale")) {
@@ -55,19 +45,6 @@ const App: React.FC<any> = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  /* 
-    useEffect(() => {
-      if (isFirstRender.current) {
-        isFirstRender.current = false;
-        return;
-      }
-  
-      getAllItemsThunk();
-      getAllCategoriesThunk();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [locale]);
-    */
 
   useEffect(() => {
     if (redirectPath) {
@@ -90,7 +67,6 @@ const App: React.FC<any> = () => {
   }, []);
 
   useEffect(() => {
-    console.log('here');
     if (basketItems) {
       localStorage.setItem('basketItems', JSON.stringify(basketItems));
     } else {

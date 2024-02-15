@@ -8,8 +8,7 @@ export const Logout: FC = () => {
 
     const onExit = (e: any) => {
         e.preventDefault();
-        setRedirectPath('/shop');
-        setLoggedIn(false);
+        setLoggedIn(false)
     };
 
     return (

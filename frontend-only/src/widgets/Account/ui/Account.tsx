@@ -53,14 +53,12 @@ export const Account = () => {
 
     return (
         <>
-            {loggedIn && (
                 <section className='account'>
                         <Userdata
                             changeDataHandler={onChangeData}
                             data={userData} />
                         <Orders />
                 </section>
-            )}
         </>
     );
 };

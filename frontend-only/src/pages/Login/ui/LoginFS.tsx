@@ -1,5 +1,4 @@
-import { Container } from "@components";
-import { Content } from "@radix-ui/react-dropdown-menu";
+import { Container, Content } from "@components";
 import { Header, Login } from "@widgets";
 
 export const LoginFS = () => {
