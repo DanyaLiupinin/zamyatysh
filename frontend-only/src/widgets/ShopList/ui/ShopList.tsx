@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BasketNotification, BasketNotificationContainer, VisibleItems } from '@features';
-import { TLanguage } from '@types';
+import { TLanguage, IItem } from '@types';
 import useVisibleItems from '../lib/useVisibleItems'; 
 import { selectLocale } from '../model/selectors';
 
@@ -9,9 +9,9 @@ import content from '../../../locale/ItemList.json';
 
 import './ShopList.scss';
 
-export const ShopList: React.FC<any> = () => {
+export const ShopList: React.FC = () => {
 
-    const [visibleItems, setVisibleItems] = useState<any[] | []>([]);
+    const [visibleItems, setVisibleItems] = useState<IItem[] | []>([]);
     const locale: TLanguage = useSelector(selectLocale);
     useVisibleItems(setVisibleItems);
 

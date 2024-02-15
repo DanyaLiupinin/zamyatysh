@@ -1,7 +1,8 @@
 
 import tshirts from '@images/tshirt.png';
+import { ICategory, IItem } from '@types';
 
-export const items = [
+export const items: IItem[] = [
     {   
         id: 1,
         title: {
@@ -134,8 +135,7 @@ export const items = [
     },
 ];
 
-
-export const categories = [
+export const categories: ICategory[] = [
     {
         id: 2, 
         title: {

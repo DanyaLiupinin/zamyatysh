@@ -1,14 +1,14 @@
+
 import { createSlice } from "@reduxjs/toolkit";
-
 import { getAllCategoriesThunk, getAllItemsThunk, getFilteredItemsThunk } from "./thunks";
+import { IItemsState } from "@types";
 
-export const itemsState: any = {
+export const itemsState: IItemsState = {
     categories: null,
     items: null,
     activeCategoryFilter: null,
-    locale: null, // perenesti v usera
+    locale: 'en',
     basketItemsShort: null,
-    //basketItemsAll: null
 };
 
 export const itemsSlice = createSlice({

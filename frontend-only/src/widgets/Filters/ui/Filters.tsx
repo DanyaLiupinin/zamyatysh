@@ -2,16 +2,16 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { categories } from '@constants';
-import {itemsActions, useActionCreators } from '@store';
 import { ClearFilters } from '@components';
-
+import {itemsActions, useActionCreators } from '@store';
 import { DesktopMenu } from './content/DesktopMenu';
 import { DropdownMenu } from './content/DropdownMenu';
+import { selectActiveFilters } from '../model/selectors';
 import './Filters.scss';
 
 export const Filters: React.FC = () => {
 
-    const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
+    const activeCategoryFilter = useSelector(selectActiveFilters);
     const { setCategoryFilter } = useActionCreators(itemsActions);
     const location = useLocation();
 
