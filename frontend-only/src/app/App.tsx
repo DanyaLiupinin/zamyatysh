@@ -35,7 +35,17 @@ const App: React.FC<any> = () => {
   } = useActionCreators(itemsActions);
 
   const { setLoggedIn, setRedirectPath } = useActionCreators(usersActions);
-  
+
+  useEffect(() => {
+    if (localStorage.getItem("locale")) {
+      const locale = localStorage.getItem("locale");
+      changeLanguage(locale);
+    } else {
+      changeLanguage("en");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     if (locale)
     localStorage.setItem('locale', locale);

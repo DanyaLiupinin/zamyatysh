@@ -7,7 +7,7 @@ export const itemsState: IItemsState = {
     categories: null,
     items: null,
     activeCategoryFilter: null,
-    locale: 'en',
+    locale: null,
     basketItemsShort: null,
 };
 
