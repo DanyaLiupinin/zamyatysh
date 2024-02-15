@@ -4,10 +4,11 @@ import './Logout.scss';
 
 export const Logout: FC = () => {
 
-    const { setLoggedIn } = useActionCreators(usersActions);
+    const { setLoggedIn, setRedirectPath } = useActionCreators(usersActions);
 
     const onExit = (e: any) => {
         e.preventDefault();
+        setRedirectPath('/shop');
         setLoggedIn(false);
     };
 

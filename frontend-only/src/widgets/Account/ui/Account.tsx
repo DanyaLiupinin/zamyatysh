@@ -50,6 +50,7 @@ export const Account = () => {
         }
     }, []);
 
+
     return (
         <>
             {loggedIn && (
