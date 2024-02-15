@@ -7,13 +7,13 @@ import './BasketItem.scss';
 import deleteImage from '@images/deleteicon.svg';
 import { items } from "@constants";
 
-import { IItem, IShortItem } from "@types";
+import { IItem } from "@types";
 
 export const BasketItem = ({ 
     shortItem, 
     deleteItemHandler, 
     id 
-}: { shortItem: IShortItem, deleteItemHandler: (id: number) => void, id: number }) => {
+}: { shortItem: any, deleteItemHandler: (id: number) => void, id: number }) => {
 
     const [item, setItem] = useState<IItem | ''>('');
 

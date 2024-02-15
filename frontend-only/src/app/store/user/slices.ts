@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { userRegisterThunk, userLoginThunk, getUserDataThunk } from "./thunks";
+import { IUsersState } from "@types";
 
-export const usersState: any = {
+export const usersState: IUsersState = {
     loggedIn: false,
     username: null,
     id: null,
     email: null,
     error: '',
-    rediretcPath: null
+    redirectPath: null
 };
 
 export const usersSlice = createSlice({
@@ -22,7 +23,7 @@ export const usersSlice = createSlice({
             state.error = '';
         },
         setRedirectPath: (state, action) => {
-            state.rediretcPath = action.payload;
+            state.redirectPath = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -37,7 +38,7 @@ export const usersSlice = createSlice({
                 state.email = action.payload.email;
                 state.id = action.payload.user.id;
 
-                state.rediretcPath = '/shop';
+                state.redirectPath = '/shop';
             })
             .addCase(userRegisterThunk.rejected, (state, action) => {
                 state.error = action.error.message;
@@ -55,7 +56,7 @@ export const usersSlice = createSlice({
                 state.email = action.payload.email;
                 state.id = action.payload.user.id;
 
-                state.rediretcPath = '/shop';
+                state.redirectPath = '/shop';
             })
             .addCase(userLoginThunk.rejected, (state, action) => {
                 state.error = action.error.message;
