@@ -4,7 +4,7 @@ export interface IItemsState {
     categories: ICategory[] | [] | null,
     items: IItem[] | [] | null,
     activeCategoryFilter: string | null,
-    locale: TLanguage | null,
+    locale: TLanguage,
     basketItemsShort: IBasketShort | null
 }
 

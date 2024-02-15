@@ -7,8 +7,13 @@ import {
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { validateEmail } from "@handlers";
 import { useActionCreators, usersActions } from "@store";
+import content from '@locale/AuthLocale.json';
+import { IRootState, TLanguage } from "@types";
+import { useSelector } from "react-redux";
 
 export const Login = () => {
+
+    const locale:TLanguage = useSelector((state: IRootState) => state.items.locale);
     
     const {
         setLoggedIn,
@@ -54,8 +59,7 @@ export const Login = () => {
 
 
     return (
-        <AuthForm formTitle='Authorization' handleSubmit={handleSubmit}>
-
+        <AuthForm formTitle={content.logintitle[locale]} handleSubmit={handleSubmit}>
                 <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
                     <AuthInput
                         value={data.email}
@@ -63,29 +67,25 @@ export const Login = () => {
                         name='email'
                         minLength={3}
                         maxLength={50}
-                        placeholder={"email"}
+                        placeholder={content.email[locale]}
                         error={error.email}
                     />
-
                     <AuthInput
                         value={data.password}
                         handleInputChange={onInputChange}
                         name='password'
                         minLength={3}
                         maxLength={20}
-                        placeholder={"password"}
+                        placeholder={content.password[locale]}
                         error={error.password}
                     />
                 </div>
-
-                <AuthSubmit className='mt-10'>Login</AuthSubmit>
-
+                <AuthSubmit className='mt-10'>{content.loggincaptionbutton[locale]}</AuthSubmit>
                 <AuthCaption
                     className='mt-5'
-                    text='you dont have an account?'
-                    linkText='register'
+                    text={content.loggincaption[locale]}
+                    linkText={content.loggincaptionbutton[locale]}
                     link='/register' />
-
             </AuthForm>
     )
 }

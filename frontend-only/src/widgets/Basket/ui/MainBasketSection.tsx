@@ -21,8 +21,6 @@ export const MainBasketSection = () => {
     const [isSuccessOrder, setSuccessOrder] = useState(false);
     const { setBasket } = useActionCreators(itemsActions);
 
-    console.log(basketShort)
-
     const deleteItemHandler = (id: number) => {
         const newArray = [...basketShort];
         newArray.splice(id, 1);
