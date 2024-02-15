@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import './BasketItem.scss';
+import content from '@locale/Basket.json';
 
 import deleteImage from '@images/deleteicon.svg';
 import { items } from "@constants";
 
-import { IItem } from "@types";
+import { IItem, TLanguage } from "@types";
 
 export const BasketItem = ({ 
     shortItem, 
@@ -17,13 +18,15 @@ export const BasketItem = ({
 
     const [item, setItem] = useState<IItem | ''>('');
 
-    //const locale: TLocale = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector((state: any) => state.items.locale);
 
     useEffect(() => {
         const actualItem = items.find(i => Number(i.id) === Number(shortItem.id));
         if (actualItem)
             setItem(actualItem);
     }, []);
+
+    console.log(item)
 
     return (
         <>
@@ -41,13 +44,13 @@ export const BasketItem = ({
                         alt='..'
                     ></img>
                     <p className='basketItem__title basketItem__info'>
-                        title
+                        {item.title[locale]}
                     </p>
                     <p className='basketItem__size basketItem__info'>
-                        size: <br /> {shortItem.size}
+                        {content.size[locale]}: <br /> {shortItem.size}
                     </p>
                     <p className='basketItem__price basketItem__info'>
-                        price: <br /> {item.price}
+                        {content.price[locale]}: <br /> {item.price}
                     </p>
                 </div>
             }

@@ -10,5 +10,9 @@
     "addedToBasket": {
         "ru": "добавлено",
         "en": "already added"
+    },
+    "kwaks": {
+        "ru": "кваков",
+        "en": "kwaks"
     }
 }

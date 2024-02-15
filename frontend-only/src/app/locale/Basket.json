@@ -1,11 +1,11 @@
 {
     "basket": {
-        "ru": "фильтры",
-        "en": "Корзина"
+        "ru": "Корзина",
+        "en": "Basket"
     },
     "noItems": {
         "ru": "фильтры",
-        "en": "в вашей корзине еще нет товаров :c"
+        "en": "There are no items in your cart yet :c"
     },
     "size": {
         "ru": "Размер",

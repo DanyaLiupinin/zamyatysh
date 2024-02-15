@@ -53,7 +53,7 @@ export const ItemMenu: FC<IItemMenuProps> = ({
     return (
         <div className={`itemMenu ${className}`}>
             <h2 className='itemMenu__title'>{item.title[locale]}</h2>
-            <p className='itemMenu__price'>{item.price} kwaks</p>
+            <p className='itemMenu__price'>{item.price} {content.kwaks[locale]}</p>
             <ItemSizes
                 item={item}
                 onSizeClick={onSizeClick}
