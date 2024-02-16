@@ -3,19 +3,16 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';   
 import { Burger } from '@components';
 import { TLanguage } from '@types';
-import logo from '@images/logo.svg';
-
+import { selectLoggedIn, selectLanguage } from '../model/selectors';
 import content from '@locale/Header.json';
-
+import logo from '@images/logo.svg';
 import './Header.scss';
 
-export const Header: React.FC<any> = () => {
+export const Header: React.FC = () => {
 
     const [burgerOpened, setBurgerOpened] = useState(false);
-
-    const loggedIn = useSelector((state: any) => state.user.loggedIn);
-    
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const loggedIn = useSelector(selectLoggedIn);
+    const locale: TLanguage = useSelector(selectLanguage);
 
     return (
         <header className='header'>

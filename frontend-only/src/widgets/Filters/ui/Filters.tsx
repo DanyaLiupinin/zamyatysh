@@ -12,8 +12,8 @@ import './Filters.scss';
 export const Filters: React.FC = () => {
 
     const activeCategoryFilter = useSelector(selectActiveFilters);
-    const location = useLocation();
     const { onClickFilter, onClearFilter } = useFilterFunctions();
+    const location = useLocation();
 
     useEffect(() => {
         if (location.pathname === '/shop') {
