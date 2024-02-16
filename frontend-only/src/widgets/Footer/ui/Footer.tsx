@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';   
-import content from "@locale/Footer.json";
 import { TLanguage } from '@types';
+import { selectLanguage } from '../model/selectors';
+import content from "@locale/Footer.json";
 import zamyatysh from '@images/logo.svg';
 import './Footer.scss';
 
 export const Footer = () => {
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector(selectLanguage);
     return (
         <footer className='footer'>
             <div className='footer__container'>
