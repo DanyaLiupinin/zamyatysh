@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { ICategory } from '@types';
 import { Dropdown } from '@components';
-
+import { selectActiveFilters } from '../../../../model/selectors';
 import './DropdownMenu.scss';
 
 type DropdownMenuProps = {
@@ -10,9 +10,7 @@ type DropdownMenuProps = {
 }
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = ({ categories, onClickFilter }) => {
-
-    const activeCategoryFilter = useSelector((state: any) => state.items.activeCategoryFilter);
-
+    const activeCategoryFilter = useSelector(selectActiveFilters);
     return (
         <div className='dropdownMenu'>
             <Dropdown
