@@ -1,14 +1,11 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { AuthForm, AuthInput, AuthSubmit, AuthCheckbox, AuthCaption } from "@components";
+import { useAuthFunctions } from "../lib/authFunctions";
 import { validateEmail } from "@handlers";
-import { useActionCreators, usersActions } from "@store";
 
 export const Register = () => {
 
-    const {
-        setLoggedIn,
-        setRedirectPath
-    } = useActionCreators(usersActions);
+    const { handleSuccessfulSubmission, resetError } = useAuthFunctions();
 
     const [data, setData] = useState({
         email: '',
@@ -19,32 +16,36 @@ export const Register = () => {
     const [error, setError] = useState({
         email: '',
         password: '',
-        checkbox: true
+        checkbox: false
     });
 
-    const handleSuccessfulSubmission = () => {
-        localStorage.setItem('loggedIn', 'true');
-        setLoggedIn(true);
-        setRedirectPath('/shop');
-    };
-
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
+    const validateForm = () => {
         const emailError = validateEmail(data.email);
 
         if (!data.checkbox) {
-            setError({...error, checkbox: true});
+            setError({ ...error, checkbox: true });
         }
+
+        if (data.password.length < 3) {
+            setError({ ...error, password: 'min password length is 3'});
+        } // ne srabativaet pochemu to
 
         if (emailError !== '') {
             setError({ ...error, email: emailError });
         }
 
-        if (emailError === '' && data.checkbox) {
+        return emailError === '' && error.password === '' && data.checkbox;
+    };
+
+
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    
+        const isValid = validateForm();
+    
+        if (isValid) {
             handleSuccessfulSubmission();
         }
-
     };
 
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -52,13 +53,9 @@ export const Register = () => {
     };
 
     useEffect(() => {
-        setError({
-            email: '',
-            password: '',
-            checkbox: false
-        });
+        resetError(setError);
     }, [data]);
-
+    
     return (
         <AuthForm formTitle='Registration' handleSubmit={handleSubmit}>
             <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
