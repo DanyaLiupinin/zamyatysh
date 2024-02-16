@@ -4,9 +4,7 @@ import { BasketNotification, BasketNotificationContainer, VisibleItems } from '@
 import { TLanguage, IItem } from '@types';
 import useVisibleItems from '../lib/useVisibleItems'; 
 import { selectLocale } from '../model/selectors';
-
 import content from '@locale/ItemInformation.json';
-
 import './ShopList.scss';
 
 export const ShopList: React.FC = () => {

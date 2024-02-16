@@ -1,7 +1,6 @@
-import './About.scss';
-
 import { Header } from '@widgets';
 import image from '@images/aboutUs.png';
+import './About.scss';
 
 export const About: React.FC = () => {
     return (

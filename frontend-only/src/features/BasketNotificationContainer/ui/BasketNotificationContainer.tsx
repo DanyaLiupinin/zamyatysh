@@ -1,5 +1,4 @@
 import { ReactNode, FC } from "react";
-
 import './BasketNotificationContainer.scss';
 
 type BasketNotificationContainerProps = {

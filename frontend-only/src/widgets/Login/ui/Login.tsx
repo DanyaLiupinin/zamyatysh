@@ -57,7 +57,6 @@ export const Login = () => {
         });
     }, [data]);
 
-
     return (
         <AuthForm formTitle={content.logintitle[locale]} handleSubmit={handleSubmit}>
                 <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
