@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ImageCarousel } from "@components";
@@ -9,20 +9,22 @@ import {
     ItemMenu
 } from "@features";
 import { itemsActions, useActionCreators } from "@store";
-import { items } from "@constants";
-import { IItem } from "@types";
 
+import { useGetActualItem, useGetBasketCounter } from "../lib/effects";
+import { selectBasketItems } from '../model/selectors';
 import './Item.scss';
 
 export const Item = () => {
 
-    const [item, setItem] = useState<any>();
     const [chosenSize, setChosenSize] = useState<string>('');
     const [isBasketItem, setBasketItem] = useState(false);
     const [basketItemCount, setBasketItemCount] = useState(0);
-    const basketItems = useSelector((state: any) => state.items.basketItemsShort);
+
+    const basketItems = useSelector(selectBasketItems);
     const { setBasket } = useActionCreators(itemsActions);
     const param = useParams();
+
+    const { item } = useGetActualItem();
 
     const addItemHandler = () => {
         const newItem = {
@@ -40,34 +42,7 @@ export const Item = () => {
     };
 
     // add basket counter to basket items
-    useEffect(() => {
-        const basketItemsHandler = () => {
-            let itemCounter = 0;
-            for (let i = 0; i < basketItems.length; i++) {
-                if (Number(basketItems[i].id) === item.id) {
-                    setBasketItem(true);
-                    itemCounter = ++itemCounter;
-                }
-            }
-            setBasketItemCount(itemCounter);
-        };
-        if (basketItems && item) {
-            basketItemsHandler();
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [basketItems, item]);
-
-    useEffect(() => {
-        const getActualItem = () => {
-            const actualItem = items.find((i: IItem) => {
-                return i.id === Number(param.id);
-            });
-
-            if (actualItem)
-                setItem(actualItem);
-        };
-        getActualItem();
-    }, []);
+    useGetBasketCounter({ basketItems, item, setBasketItem, setBasketItemCount });
 
     return (
         <>

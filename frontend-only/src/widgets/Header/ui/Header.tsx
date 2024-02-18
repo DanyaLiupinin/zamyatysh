@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';   
 import { Burger } from '@components';
 import { TLanguage } from '@types';
-import { selectLoggedIn, selectLanguage } from '../model/selectors';
 import content from '@locale/Header.json';
 import logo from '@images/logo.svg';
+
+import { selectLoggedIn, selectLanguage } from '../model/selectors';
 import './Header.scss';
 
 export const Header: React.FC = () => {
