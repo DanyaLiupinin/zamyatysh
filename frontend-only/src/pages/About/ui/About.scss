@@ -5,6 +5,12 @@
     align-items: space-between;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    p {
+        text-align: center;
+        font-size: 40px;
+        padding: 0 30px;
+    }
 }
 
 .about__image-container {
