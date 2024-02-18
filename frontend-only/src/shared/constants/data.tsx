@@ -17,6 +17,14 @@ import longsliveBlue from '@images/products/longslive-blue.png';
 import longsliveRed from '@images/products/longslive-red.png';
 import longsliveYellow from '@images/products/longslive-yellow.png';
 
+import sweatshirtWhite from '@images/products/sweatshirt-white.png';
+import sweatshirtGreen from '@images/products/sweatshirt-green.png';
+import sweatshirtBlue from '@images/products/sweatshirt-blue.png';
+import sweatshirtOrange from '@images/products/sweatshirt-orange.png';
+import sweatshirtViolet from '@images/products/sweatshirt-violet.png';
+
+import pinWhite from '@images/products/pin-white.png';
+
 
 import { ICategory, IItem } from '@types';
 
@@ -420,6 +428,171 @@ export const items: IItem[] = [
         images: [longsliveYellow, longsliveYellow, longsliveYellow],
         sizes: ['s', 'm', 'l']
     },
+
+
+    /// SWEATSHIRTS
+
+
+    {   
+        id: 16,
+        title: {
+            ru: 'свитшот',
+            en: 'sweatshirt',
+        },
+        category: {
+            ru: 'свитшоты',
+            en: 'sweatshirts',
+        },
+        description: {
+            ru: 'описание свитшота',
+            en: 'sweatshirts description',
+        },
+        material: {
+            ru: 'материальный',
+            en: 'material',
+        },
+        style: {
+            ru: 'фасоновый',
+            en: 'style',
+        },
+        price: '1500', 
+        images: [sweatshirtWhite, sweatshirtWhite, sweatshirtWhite],
+        sizes: ['s', 'm', 'l']
+    },
+    {   
+        id: 17,
+        title: {
+            ru: 'свитшот',
+            en: 'sweatshirt',
+        },
+        category: {
+            ru: 'свитшоты',
+            en: 'sweatshirts',
+        },
+        description: {
+            ru: 'описание свитшота',
+            en: 'sweatshirts description',
+        },
+        material: {
+            ru: 'материальный',
+            en: 'material',
+        },
+        style: {
+            ru: 'фасоновый',
+            en: 'style',
+        },
+        price: '1500', 
+        images: [sweatshirtBlue, sweatshirtBlue, sweatshirtBlue],
+        sizes: ['s', 'm', 'l']
+    },
+    {   
+        id: 18,
+        title: {
+            ru: 'свитшот',
+            en: 'sweatshirt',
+        },
+        category: {
+            ru: 'свитшоты',
+            en: 'sweatshirts',
+        },
+        description: {
+            ru: 'описание свитшота',
+            en: 'sweatshirts description',
+        },
+        material: {
+            ru: 'материальный',
+            en: 'material',
+        },
+        style: {
+            ru: 'фасоновый',
+            en: 'style',
+        },
+        price: '1500', 
+        images: [sweatshirtGreen, sweatshirtGreen, sweatshirtGreen],
+        sizes: ['s', 'm', 'l']
+    },
+    {   
+        id: 19,
+        title: {
+            ru: 'свитшот',
+            en: 'sweatshirt',
+        },
+        category: {
+            ru: 'свитшоты',
+            en: 'sweatshirts',
+        },
+        description: {
+            ru: 'описание свитшота',
+            en: 'sweatshirts description',
+        },
+        material: {
+            ru: 'материальный',
+            en: 'material',
+        },
+        style: {
+            ru: 'фасоновый',
+            en: 'style',
+        },
+        price: '1500', 
+        images: [sweatshirtOrange, sweatshirtOrange, sweatshirtOrange],
+        sizes: ['s', 'm', 'l']
+    },
+    {   
+        id: 20,
+        title: {
+            ru: 'свитшот',
+            en: 'sweatshirt',
+        },
+        category: {
+            ru: 'свитшоты',
+            en: 'sweatshirts',
+        },
+        description: {
+            ru: 'описание свитшота',
+            en: 'sweatshirts description',
+        },
+        material: {
+            ru: 'материальный',
+            en: 'material',
+        },
+        style: {
+            ru: 'фасоновый',
+            en: 'style',
+        },
+        price: '1500', 
+        images: [sweatshirtViolet, sweatshirtViolet, sweatshirtViolet   ],
+        sizes: ['s', 'm', 'l']
+    },
+
+
+    /// PIN
+
+    {   
+        id: 21,
+        title: {
+            ru: 'значок',
+            en: 'pin',
+        },
+        category: {
+            ru: 'аксессуары',
+            en: 'accessories',
+        },
+        description: {
+            ru: 'значок описание',
+            en: 'pin description',
+        },
+        material: {
+            ru: 'материальный',
+            en: 'material',
+        },
+        style: {
+            ru: 'фасоновый',
+            en: 'style',
+        },
+        price: '1500', 
+        images: [pinWhite, pinWhite, pinWhite],
+        sizes: ['s', 'm', 'l']
+    },
 ];
 
 export const categories: ICategory[] = [
@@ -447,8 +620,8 @@ export const categories: ICategory[] = [
     {
         id: 5, 
         title: {
-            ru: 'толстовки',
-            en: 'sweatshots'
+            ru: 'свитшоты',
+            en: 'sweatshirts'
         },
     },
     {
