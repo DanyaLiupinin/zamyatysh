@@ -3,12 +3,11 @@ import { useSelector } from "react-redux";
 import { NoLoggedNotification, SuccessOrder } from '@components';
 import { useActionCreators, itemsActions } from '@store';
 import { TLanguage } from '@types';
-
 import content from '@locale/Basket.json';
+import { getFinalPrice } from "@handlers";
 
 import { BasketList } from './BasketList';
 import { BasketInteraction } from './BasketInteraction';
-import { getFinalPrice } from "@handlers";
 
 import './MainBasketSection.scss';
 

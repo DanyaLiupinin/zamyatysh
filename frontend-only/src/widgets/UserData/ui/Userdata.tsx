@@ -1,11 +1,17 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Logout, UserForm } from "@features";
 import { AccountButton } from "@components";
+import content from '@locale/Userdata.json';
+import { TLanguage } from "@types";
+
+import { selectLocale } from "../model/selectors";
 import "./Userdata.scss";
 
 export const Userdata = ({ data, changeDataHandler }: any) => {
 
     const [isEditData, setEditData] = useState(false);
+    const locale: TLanguage = useSelector(selectLocale);
 
     const onUpdateData = () => {
         localStorage.setItem('userData', JSON.stringify(data));
@@ -24,14 +30,14 @@ export const Userdata = ({ data, changeDataHandler }: any) => {
                         onClick={() => setEditData(true)}
                         isDisabled={isEditData ? true : false}
                     >
-                        Edit
+                        {content.edit[locale]}
                     </AccountButton>
                     <AccountButton
                         type='submit'
                         isDisabled={isEditData ? false : true}
                         onClick={onUpdateData}
                     >
-                        Save
+                        {content.save[locale]}
                     </AccountButton>
                 </div>
                 <Logout />

@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { BasketNotification, BasketNotificationContainer, VisibleItems } from '@features';
 import { TLanguage, IItem } from '@types';
+import content from '@locale/ItemInformation.json';
+
 import useVisibleItems from '../lib/useVisibleItems'; 
 import { selectLocale } from '../model/selectors';
-import content from '@locale/ItemInformation.json';
 import './ShopList.scss';
 
 export const ShopList: React.FC = () => {
