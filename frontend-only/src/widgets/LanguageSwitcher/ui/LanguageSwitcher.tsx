@@ -1,9 +1,7 @@
 import { Language } from "@features";
 import { languages } from "@constants";
 
-interface LanguageSwitcherProps {
-    className?: String,
-}
+import { LanguageSwitcherProps } from "../model/types";
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({className = ''}) => {
     return (
