@@ -1,12 +1,9 @@
 import './DesktopMenu.scss';
 import { useSelector } from 'react-redux';
-import { TLanguage, ICategory } from '@types';
-import { selectActiveFilters, selectLanguage } from '../../../../model/selectors';
+import { TLanguage } from '@types';
 
-type DesktopMenuProps = {
-    categories: ICategory[],
-    onClickFilter: (category: string) => void,
-}
+import { selectActiveFilters, selectLanguage } from '../../../../model/selectors';
+import { DesktopMenuProps } from '../../../../model/types/types';
 
 export const DesktopMenu: React.FC<DesktopMenuProps> = ({ categories, onClickFilter }) => {
     const activeCategoryFilter = useSelector(selectActiveFilters);
