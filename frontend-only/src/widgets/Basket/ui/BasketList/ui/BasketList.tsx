@@ -1,14 +1,16 @@
 import { useSelector } from "react-redux";
 import { BasketItem } from "@features";
 import basketImage from "@images/basket-image.svg";
+
+import {selectBasketItems} from '../../../model/selectors/selectors';
 import './BasketList.scss';
 
 export const BasketList = ({deleteItemHandler}: any) => {
-    const basketShort = useSelector((state: any) => state.items.basketItemsShort);
+    const basketShort = useSelector(selectBasketItems);
     return (
         <div className='basketList'>
             {
-                basketShort?.length > 0 &&
+                basketShort && basketShort?.length > 0 &&
                 basketShort.map((item: any, index: number) => {
                     return (
                         <BasketItem

@@ -5,13 +5,9 @@ import { itemsActions, useActionCreators } from "@store";
 
 import { MakeOrder } from "../../MakeOrder";
 import { BasketNote } from "../../BasketNote";
+import { BasketInteractionProps } from '../../../model/types/types';
+import { selectBasketItems, selectLoggedIn } from '../../../model/selectors/selectors';
 import './BasketInteraction.scss';
-
-type BasketInteractionProps = {
-    finalPrice: number,
-    noLoggedInNotification: any,
-    isSuccessOrder: any
-}
 
 export const BasketInteraction: FC<BasketInteractionProps> = ({
     finalPrice,
@@ -20,8 +16,8 @@ export const BasketInteraction: FC<BasketInteractionProps> = ({
 }) => {
 
     const { setBasket } = useActionCreators(itemsActions);
-    const basketShort = useSelector((state: any) => state.items.basketItemsShort);
-    const loggedIn = useSelector((state: any) => state.user.loggedIn);
+    const basketShort = useSelector(selectBasketItems);
+    const loggedIn = useSelector(selectLoggedIn);
 
     const makeOrderHandler = () => {
         if (!loggedIn) {

@@ -1,14 +1,15 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { TLanguage } from "@types";
-
 import content from '@locale/Basket.json';
+
 import './BasketNote.scss';
+import { selectLanguage, selectLoggedIn } from "../../../model/selectors/selectors";
 
 export const BasketNote = () => {
 
-    const loggedIn = useSelector((state: any) => state.user.loggedIn);
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const loggedIn = useSelector(selectLoggedIn);
+    const locale: TLanguage = useSelector(selectLanguage);
 
     return (
         <div className='basketNote'>

@@ -1,18 +1,14 @@
 import { FC } from 'react';
 import { TLanguage } from '@types';
 import { useSelector } from 'react-redux';
-
 import content from '@locale/Basket.json';
 
+import {MakeOrderProps} from '../../../model/types/types';
+import {selectLanguage} from '../../../model/selectors/selectors';
 import './MakeOrder.scss';
 
-type MakeOrderProps = {
-    finalPrice: number;
-    makeOrderHandler: any
-}
-
 export const MakeOrder: FC<MakeOrderProps> = ({finalPrice, makeOrderHandler}) => {
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector(selectLanguage);
     return (
         <div className='makeOrder'>
             <p>{content.finalPrice[locale]} {finalPrice} {content.kwaks[locale]}</p>

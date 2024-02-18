@@ -5,7 +5,7 @@ export interface IItemsState {
     items: IItem[] | [] | null,
     activeCategoryFilter: string | null,
     locale: TLanguage,
-    basketItemsShort: IBasketShort | null
+    basketItemsShort: IBasketShort[] | [] | null
 }
 
 export interface IUsersState {
