@@ -4,11 +4,12 @@ import './Logout.scss';
 
 export const Logout: FC = () => {
 
-    const { setLoggedIn, setRedirectPath } = useActionCreators(usersActions);
+    const { setLoggedIn } = useActionCreators(usersActions);
 
     const onExit = (e: any) => {
         e.preventDefault();
-        setLoggedIn(false)
+        setLoggedIn(false);
+        localStorage.clear();
     };
 
     return (
