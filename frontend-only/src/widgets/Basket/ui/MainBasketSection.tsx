@@ -9,37 +9,28 @@ import { getFinalPrice } from "@handlers";
 import { BasketList } from './BasketList';
 import { BasketInteraction } from './BasketInteraction';
 
+import { selectBasketItems } from "features/BasketNotification/model/selectors";
+import { selectLanguage } from "widgets/Header/model/selectors";
 import './MainBasketSection.scss';
+import { completeOrderHandler, deleteItemHandler } from "../lib/handlers/handlers";
+import { useSetFinalPrice } from "../lib/hooks/useSetFinalPrice";
 
 export const MainBasketSection = () => {
 
-    const basketShort = useSelector((state: any) => state.items.basketItemsShort);
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const basketShort = useSelector(selectBasketItems);
+    const locale: TLanguage = useSelector(selectLanguage);
     const [finalPrice, setFinalPrice] = useState(0);
     const [noLoggedInNotification, setNoLoggedInNotification] = useState(false);
     const [isSuccessOrder, setSuccessOrder] = useState(false);
     const { setBasket } = useActionCreators(itemsActions);
 
-    const deleteItemHandler = (id: number) => {
-        const newArray = [...basketShort];
-        newArray.splice(id, 1);
-        setBasket(newArray);
-    };
-
-    const completeOrderHandler = () => {
-        setBasket([]);
-    };
-
     const onSkipNotification = () => {
         setNoLoggedInNotification(false);
         setSuccessOrder(true);
-        completeOrderHandler();
+        completeOrderHandler({ setBasket });
     };
 
-    useEffect(() => {
-        const price = getFinalPrice(basketShort);
-        setFinalPrice(price as number);
-    }, [basketShort]);
+    useSetFinalPrice({ basketShort, setFinalPrice })
 
     return (
         <>
@@ -67,7 +58,7 @@ export const MainBasketSection = () => {
                 basketShort && basketShort?.length > 0 &&
                 <div className='mainBasketSection'>
                     <BasketList
-                        deleteItemHandler={deleteItemHandler}
+                        deleteItemHandler={(id: any) => deleteItemHandler(id, basketShort, setBasket)}
                     />
                     <BasketInteraction
                         finalPrice={finalPrice}
