@@ -12,6 +12,7 @@ import { itemsActions, useActionCreators } from "@store";
 
 import { useGetActualItem, useGetBasketCounter } from "../lib/effects";
 import { selectBasketItems } from '../model/selectors';
+import { addItemHandler } from "../lib/handlers/handlers";
 import './Item.scss';
 
 export const Item = () => {
@@ -23,23 +24,7 @@ export const Item = () => {
     const basketItems = useSelector(selectBasketItems);
     const { setBasket } = useActionCreators(itemsActions);
     const param = useParams();
-
     const { item } = useGetActualItem();
-
-    const addItemHandler = () => {
-        const newItem = {
-            id: param.id,
-            size: chosenSize,
-            slug: item.slug,
-            price: item.price,
-        };
-
-        if (!basketItems) {
-            setBasket([newItem]);
-        } else {
-            setBasket([...basketItems, newItem]);
-        }
-    };
 
     // add basket counter to basket items
     useGetBasketCounter({ basketItems, item, setBasketItem, setBasketItemCount });
@@ -62,7 +47,9 @@ export const Item = () => {
                         chosenSize={chosenSize}
                         setChosenSize={setChosenSize}
                         item={item}
-                        addItemHandler={addItemHandler}
+                        addItemHandler={() => addItemHandler({
+                            param, chosenSize, item, setBasket, basketItems
+                        })}
                         isBasketItem={isBasketItem}
                         basketItemCount={basketItemCount}
                     />
