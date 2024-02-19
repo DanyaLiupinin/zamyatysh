@@ -7,16 +7,12 @@ import { TLanguage } from "@types";
 
 import { selectLocale } from "../model/selectors";
 import "./Userdata.scss";
+import { onUpdateData } from "../lib/handlers/handlers";
 
 export const Userdata = ({ data, changeDataHandler }: any) => {
 
     const [isEditData, setEditData] = useState(false);
     const locale: TLanguage = useSelector(selectLocale);
-
-    const onUpdateData = () => {
-        localStorage.setItem('userData', JSON.stringify(data));
-        setEditData(false);
-    };
 
     return (
         <>
@@ -35,7 +31,7 @@ export const Userdata = ({ data, changeDataHandler }: any) => {
                     <AccountButton
                         type='submit'
                         isDisabled={isEditData ? false : true}
-                        onClick={onUpdateData}
+                        onClick={() => onUpdateData({ data, setEditData })}
                     >
                         {content.save[locale]}
                     </AccountButton>

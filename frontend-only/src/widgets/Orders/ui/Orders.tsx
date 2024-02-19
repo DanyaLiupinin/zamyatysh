@@ -19,7 +19,7 @@ export const Orders = () => {
                     orders && orders?.length > 0 &&
                     orders.map((order: any) => {
                         return (
-                            <Order  
+                            <Order
                                 key={order.id}
                                 id={order.id}
                                 items={order.items}
