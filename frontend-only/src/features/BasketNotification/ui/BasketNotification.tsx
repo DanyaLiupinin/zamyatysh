@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectBasketItems } from "../model/selectors";
+import { selectBasketItems } from "../../ItemInformation/model/selectors";
 import image from "@images/basket-image.svg";
 import "./BasketNotification.scss";
 

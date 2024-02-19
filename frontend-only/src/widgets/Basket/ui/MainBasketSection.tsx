@@ -8,7 +8,7 @@ import content from '@locale/Basket.json';
 import { BasketList } from './BasketList';
 import { BasketInteraction } from './BasketInteraction';
 
-import { selectBasketItems } from "features/BasketNotification/model/selectors";
+import { selectBasketItems } from "features/ItemInformation/model/selectors";
 import { selectLanguage } from "widgets/Header/model/selectors";
 import './MainBasketSection.scss';
 import { completeOrderHandler, deleteItemHandler } from "../lib/handlers/handlers";
