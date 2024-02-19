@@ -3,10 +3,7 @@ import content from '@locale/WelcomPage.json';
 import './MainMenu.scss';
 import { useSelector } from "react-redux";
 import { TLanguage } from "@types";
-
-interface IMainMenuProps {
-    className?: String,
-}
+import { IMainMenuProps } from "../model/types/types";
 
 export const MainMenu: React.FC<IMainMenuProps> = ({className = ''}) => {
     const locale: TLanguage = useSelector((state: any) => state.items.locale);
