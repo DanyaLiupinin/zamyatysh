@@ -18,5 +18,9 @@
     "chooseSize": {
         "ru": "выберите размер, пожалуйста c:",
         "en": "choose size please c:"
+    },
+    "itemAdded": {
+        "ru": "вы уже добавили",
+        "en": "you've already added"
     }
 }

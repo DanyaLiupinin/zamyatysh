@@ -55,7 +55,7 @@ export const ItemMenu: FC<IItemMenuProps> = ({
             }
             {
                 isBasketItem &&
-                <ItemCaption>you've already added {basketItemCount} c:</ItemCaption>
+                <ItemCaption>{content.itemAdded[locale]} {basketItemCount} c:</ItemCaption>
             }
         </div>
     );

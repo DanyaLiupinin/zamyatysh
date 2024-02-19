@@ -10,9 +10,10 @@ import { BasketInteraction } from './BasketInteraction';
 
 import { selectBasketItems } from "../model/selectors/selectors";
 import { selectLanguage } from "widgets/Header/model/selectors";
-import './MainBasketSection.scss';
+
 import { completeOrderHandler, deleteItemHandler } from "../lib/handlers/handlers";
 import { useSetFinalPrice } from "../lib/hooks/useSetFinalPrice";
+import './MainBasketSection.scss';
 
 export const MainBasketSection = () => {
 
