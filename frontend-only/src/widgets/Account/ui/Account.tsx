@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Userdata, Orders } from "@widgets";
+import { IUserData } from "@types";
 
 import { useGetData } from '../lib/useGetData';
-import { IUserData } from "../model/types/types";
 import './Account.scss';
 
 export const Account = () => {
@@ -19,7 +19,7 @@ export const Account = () => {
         apartment: '    '
     });
 
-    const onChangeData = (fieldName: any, fieldValue: String) => {
+    const onChangeData = (fieldName: string, fieldValue: string) => {
         const updatedUserdata = {
             ...userData,
             [fieldName]: fieldValue

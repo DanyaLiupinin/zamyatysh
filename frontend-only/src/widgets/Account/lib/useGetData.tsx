@@ -1,6 +1,6 @@
+import { IUserData } from '@types';
 import { useEffect, Dispatch, SetStateAction } from 'react';
 
-import { IUserData } from '../model/types/types';
 
 export const useGetData = (setUserData: Dispatch<SetStateAction<IUserData>>) => {
     useEffect(() => {
