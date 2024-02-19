@@ -4,8 +4,10 @@ import basketImage from "@images/basket-image.svg";
 
 import {selectBasketItems} from '../../../model/selectors/selectors';
 import './BasketList.scss';
+import { FC } from "react";
+import { IBasketListProps } from "../model/types/types";
 
-export const BasketList = ({deleteItemHandler}: any) => {
+export const BasketList: FC<IBasketListProps> = ({deleteItemHandler}) => {
     const basketShort = useSelector(selectBasketItems);
     return (
         <div className='basketList'>

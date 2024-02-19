@@ -4,7 +4,6 @@ import { NoLoggedNotification, SuccessOrder } from '@components';
 import { useActionCreators, itemsActions } from '@store';
 import { TLanguage } from '@types';
 import content from '@locale/Basket.json';
-import { getFinalPrice } from "@handlers";
 
 import { BasketList } from './BasketList';
 import { BasketInteraction } from './BasketInteraction';
@@ -58,7 +57,7 @@ export const MainBasketSection = () => {
                 basketShort && basketShort?.length > 0 &&
                 <div className='mainBasketSection'>
                     <BasketList
-                        deleteItemHandler={(id: any) => deleteItemHandler(id, basketShort, setBasket)}
+                        deleteItemHandler={(id: number) => deleteItemHandler(id, basketShort, setBasket)}
                     />
                     <BasketInteraction
                         finalPrice={finalPrice}
