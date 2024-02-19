@@ -2,5 +2,13 @@
     "order": {
         "ru": "заказ",
         "en": "order"
+    },
+    "paid": {
+        "ru": "оплачено",
+        "en": "paid"
+    },
+    "total": {
+        "ru": "сумма",
+        "en": "total"
     }
 }
