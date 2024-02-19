@@ -4,8 +4,8 @@
         "en": "Basket"
     },
     "noItems": {
-        "ru": "фильтры",
-        "en": "There are no items in your cart yet :c"
+        "ru": "У вас в корзине нет товаров",
+        "en": "You don't have any items in your basket :c"
     },
     "size": {
         "ru": "Размер",

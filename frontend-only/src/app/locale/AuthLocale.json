@@ -42,5 +42,9 @@
     "registercaptionbutton": {
         "ru": "войти",
         "en": "sign in"
+    },
+    "confirmation": {
+        "ru": "Я подтверждаю, что я милая маленькая лягушка",
+        "en": "I confirm that i am cute little frog"
     }
 }

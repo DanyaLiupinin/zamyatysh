@@ -79,12 +79,12 @@ export const Login = () => {
                         error={error.password}
                     />
                 </div>
-                <AuthSubmit className='mt-10'>{content.loggincaptionbutton[locale]}</AuthSubmit>
+                <AuthSubmit className='mt-10'>{content.logginsubmit[locale]}</AuthSubmit>
                 <AuthCaption
                     className='mt-5'
                     text={content.loggincaption[locale]}
                     linkText={content.loggincaptionbutton[locale]}
                     link='/register' />
             </AuthForm>
-    )
-}
+    );
+};

@@ -1,18 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { NoLoggedNotification, SuccessOrder } from '@components';
 import { useActionCreators, itemsActions } from '@store';
 import { TLanguage } from '@types';
 import content from '@locale/Basket.json';
-
-import { BasketList } from './BasketList';
-import { BasketInteraction } from './BasketInteraction';
-
-import { selectBasketItems } from "../model/selectors/selectors";
 import { selectLanguage } from "widgets/Header/model/selectors";
 
+import { selectBasketItems } from "../model/selectors/selectors";
 import { completeOrderHandler, deleteItemHandler } from "../lib/handlers/handlers";
 import { useSetFinalPrice } from "../lib/hooks/useSetFinalPrice";
+
+import { BasketInteraction } from './BasketInteraction';
+import { BasketList } from './BasketList';
 import './MainBasketSection.scss';
 
 export const MainBasketSection = () => {
@@ -30,7 +29,7 @@ export const MainBasketSection = () => {
         completeOrderHandler({ setBasket });
     };
 
-    useSetFinalPrice({ basketShort, setFinalPrice })
+    useSetFinalPrice({ basketShort, setFinalPrice });
 
     return (
         <>

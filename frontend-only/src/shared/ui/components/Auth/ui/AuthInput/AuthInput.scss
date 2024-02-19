@@ -11,3 +11,9 @@
     font-size: 32px;
     padding-left: 15px;
 }
+
+@media (max-width: 700px) {
+    .authInput-container {
+        width: 100%;
+    }
+}

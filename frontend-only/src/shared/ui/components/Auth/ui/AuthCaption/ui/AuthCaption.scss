@@ -19,6 +19,11 @@
     }
 }
 
+.authCaption__link {
+    font-size: 30px !important;
+    text-decoration: underline !important;
+}
+
 @media (max-width: 1000px) {
     .authCaption {
         display: flex;

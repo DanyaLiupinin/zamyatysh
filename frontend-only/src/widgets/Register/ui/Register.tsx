@@ -1,11 +1,17 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { AuthForm, AuthInput, AuthSubmit, AuthCheckbox, AuthCaption } from "@components";
-import { useAuthFunctions } from "../lib/authFunctions";
 import { validateEmail } from "@handlers";
+import content from '@locale/AuthLocale.json';
+import { useSelector } from "react-redux";
+import { IRootState } from "@types";
+
+import { useAuthFunctions } from "../lib/authFunctions";
 
 export const Register = () => {
 
     const { handleSuccessfulSubmission, resetError } = useAuthFunctions();
+
+    const language = useSelector((state: IRootState) => state.items.locale);
 
     const [data, setData] = useState({
         email: '',
@@ -27,7 +33,7 @@ export const Register = () => {
         }
 
         if (data.password.length < 3) {
-            setError({ ...error, password: 'min password length is 3'});
+            setError({ ...error, password: 'min password length is 3' });
         } // ne srabativaet pochemu to
 
         if (emailError !== '') {
@@ -40,9 +46,9 @@ export const Register = () => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-    
+
         const isValid = validateForm();
-    
+
         if (isValid) {
             handleSuccessfulSubmission();
         }
@@ -55,9 +61,9 @@ export const Register = () => {
     useEffect(() => {
         resetError(setError);
     }, [data]);
-    
+
     return (
-        <AuthForm formTitle='Registration' handleSubmit={handleSubmit}>
+        <AuthForm formTitle={content.registertitle[language]} handleSubmit={handleSubmit}>
             <div className='ml-auto mr-auto w-full flex flex-col gap-5 items-center'>
                 <AuthInput
                     value={data.email}
@@ -65,7 +71,7 @@ export const Register = () => {
                     name='email'
                     minLength={3}
                     maxLength={50}
-                    placeholder={"email"}
+                    placeholder={content.email[language]}
                     error={error.email}
                 />
 
@@ -75,20 +81,20 @@ export const Register = () => {
                     name='password'
                     minLength={3}
                     maxLength={20}
-                    placeholder={"password"}
+                    placeholder={content.password[language]}
                     error={error.password}
                 />
             </div>
 
-            <AuthCheckbox onClick={() => setData({ ...data, checkbox: !data.checkbox })} checked={data.checkbox} error={error.checkbox} className='mt-6'>I confirm that i am cute little frog</AuthCheckbox>
+            <AuthCheckbox onClick={() => setData({ ...data, checkbox: !data.checkbox })} checked={data.checkbox} error={error.checkbox} className='mt-6'>{content.confirmation[language]}</AuthCheckbox>
 
-            <AuthSubmit className='mt-10'>Register</AuthSubmit>
+            <AuthSubmit className='mt-10'>{content.registersubmit[language]}</AuthSubmit>
 
             <AuthCaption
                 className='mt-5'
-                text='are you already registered?'
-                linkText='login'
+                text={content.registercaption[language]}
+                linkText={content.registercaptionbutton[language]}
                 link='/login' />
         </AuthForm>
-    )
-}
+    );
+};

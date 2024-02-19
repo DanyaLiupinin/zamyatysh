@@ -20,7 +20,7 @@ export const AuthCaption: FC<AuthCaptionProps> = ({
     return (
         <p className={`authCaption ${className}`}>
             {text}
-            <Link to={link}>{linkText}</Link>
+            <Link className={`authCaption__link`} to={link}>{linkText}</Link>
         </p>
-    )
-}
+    );
+};

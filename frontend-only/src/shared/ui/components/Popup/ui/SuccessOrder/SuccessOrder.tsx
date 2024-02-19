@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
-
+import krestik from '@images/krestik.png';
 import './SuccessOrder.scss';
 
-
-import krestik from '@images/krestik.png';
+import content from '@locale/Popups.json';
 import { useSelector } from 'react-redux';
+import { IRootState } from '@types';
 
 export const SuccessOrder = ({
     onClose
 }: any) => {
 
-    const loggedIn = useSelector((state: any) => state.user.loggedIn);
+    const language = useSelector((state: IRootState) => state.items.locale);
+    const loggedIn = useSelector((state: IRootState) => state.user.loggedIn);
 
     return (
         <div className='notification'>
@@ -22,20 +23,17 @@ export const SuccessOrder = ({
                 </button>
 
                 <p>
-                    Your order has been successfully completed
+                    {content.orderCompleted[language]}
                 </p>
-
                 {
                     loggedIn &&
                     <button className='toAccount'>
                         <Link to={'/account'}>
-                            To kwaccount
+                            {content.toAccount[language]}
                         </Link>
                     </button>
-
                 }
-
             </div>
         </div>
-    )
-}
+    );
+};

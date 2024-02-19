@@ -1,0 +1,22 @@
+{
+    "orderCompleted": {
+        "ru": "Ваш заказ успешно оформлен",
+        "en": "Your order has been successfully completed"
+    },
+    "toAccount": {
+        "ru": "В кваккаунт",
+        "en": "To kwaccount"
+    },
+    "registerPlease": {
+        "ru": "Если вы создадите аккаунт, вы сможете видеть все ваши заказы",
+        "en": "If you create an account, you will be able to see all your orders"
+    },
+    "skip": {
+        "ru": "Пропустить",
+        "en": "Skip"
+    },
+    "register": {
+        "ru": "Регистрация",
+        "en": "Register"
+    }
+}

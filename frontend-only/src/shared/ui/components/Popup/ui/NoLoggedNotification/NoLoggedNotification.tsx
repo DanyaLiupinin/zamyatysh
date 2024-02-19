@@ -1,30 +1,33 @@
 import './NoLoggedNotification.scss';
+import content from '@locale/Popups.json';
 import { Link } from 'react-router-dom';
 import krestik from '@images/krestik.png';
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
+import { IRootState } from '@types';
 
 export const NoLoggedNotification: FC<any> = ({
     onClose,
     onSkip
 }: any) => {
-
+    const language = useSelector((state: IRootState) => state.items.locale);
     return (
         <div className='notification'>
             <div className='notification__popup'>
 
-                    <button>
-                        <img onClick={onClose} className='notification__close-btn' src={krestik} alt='close' />
-                    </button>
+                <button>
+                    <img onClick={onClose} className='notification__close-btn' src={krestik} alt='close' />
+                </button>
 
                 <p>
-                    If you create an account, you can see your orders in personal account
+                    {content.registerPlease[language]}
                 </p>
                 <div className='notification__buttons'>
                     <button onClick={onSkip} >
-                        Skip</button>
+                        {content.skip[language]}</button>
                     <button>
                         <Link to='/register'>
-                            Register
+                            {content.register[language]}
                         </Link>
                     </button>
                 </div>

@@ -8,9 +8,16 @@
     gap: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .userdata__buttons {
         margin: 30px auto 0;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 900px) {
+    .userdata__buttons {
+        flex-direction: row;
     }
 }
 

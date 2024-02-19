@@ -1,1 +1,3 @@
-export const selectLanguage = (state: any) => state.item.locale;
+import { IRootState } from "@types";
+
+export const selectLanguage = (state: IRootState) => state.items.locale;
