@@ -2,5 +2,9 @@
     "orders": {
         "ru": "Мои заказы",
         "en": "My orders"
+    },
+    "empty": {
+        "ru": "У вас пока нет заказов",
+        "en": "You don't have any orders yet"
     }
 }

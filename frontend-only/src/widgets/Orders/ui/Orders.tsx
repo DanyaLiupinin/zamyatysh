@@ -28,6 +28,10 @@ export const Orders = () => {
                         );
                     })
                 }
+                {
+                    (!orders || orders?.length) <= 0 &&
+                    <div className='orders__empty'>{content.empty[locale]}</div>
+                }
             </div>
         </div>
     );
