@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { TLanguage } from "@types";
 import content from '@locale/Basket.json';
 
-import './BasketNote.scss';
 import { selectLanguage, selectLoggedIn } from "../../../model/selectors/selectors";
+import './BasketNote.scss';
 
 export const BasketNote = () => {
 
@@ -16,8 +16,7 @@ export const BasketNote = () => {
             {
                 loggedIn &&
                 <p className='basketNote__text'>
-                    bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                    bla bla bla bla bla bla bla bla bla
+                    {content.discount[locale]}
                 </p>
             }
             {

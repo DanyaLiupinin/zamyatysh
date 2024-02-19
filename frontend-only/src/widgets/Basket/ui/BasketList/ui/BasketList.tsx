@@ -6,6 +6,7 @@ import {selectBasketItems} from '../../../model/selectors/selectors';
 import './BasketList.scss';
 import { FC } from "react";
 import { IBasketListProps } from "../model/types/types";
+import { IBasketShort } from "@types";
 
 export const BasketList: FC<IBasketListProps> = ({deleteItemHandler}) => {
     const basketShort = useSelector(selectBasketItems);
@@ -13,7 +14,7 @@ export const BasketList: FC<IBasketListProps> = ({deleteItemHandler}) => {
         <div className='basketList'>
             {
                 basketShort && basketShort?.length > 0 &&
-                basketShort.map((item: any, index: number) => {
+                basketShort.map((item: IBasketShort, index: number) => {
                     return (
                         <BasketItem
                             id={index}

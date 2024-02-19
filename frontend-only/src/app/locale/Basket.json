@@ -42,5 +42,9 @@
     "buy": {
         "ru": "Купить",
         "en": "Buy"
+    },
+    "discount": {
+        "ru": "Скидка 50% всю неделю только для вас!!!",
+        "en": "Discount 50% all week only for you!!!!!!!!!!!"
     }
 }
