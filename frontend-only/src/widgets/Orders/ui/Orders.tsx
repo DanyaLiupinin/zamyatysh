@@ -3,11 +3,12 @@ import { TLanguage } from '@types';
 import { useSelector } from 'react-redux';
 import { useGetOrders } from 'shared/hooks';
 import content from '@locale/Orders.json';
+import { selectLanguage } from '../model/selectors';
 import './Orders.scss';
 
 export const Orders = () => {
 
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector(selectLanguage);
     const { orders } = useGetOrders();
 
     return (
