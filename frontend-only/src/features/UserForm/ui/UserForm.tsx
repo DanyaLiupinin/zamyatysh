@@ -3,19 +3,13 @@ import { TLanguage } from "@types";
 import { useSelector } from "react-redux";
 import avatar from "@images/logo.svg";
 import content from '@locale/UserForm.json';
-import './UserForm.scss';
 
-type UserFormType = {
-    data: any;
-    changeDataHandler: any;
-    children: ReactNode;
-    isEditData: boolean;
-}
+import './UserForm.scss';
+import { selectLanguage } from "../model/selectors/selectors";
+import { UserFormType } from "../model/types/types";
 
 export const UserForm: FC<UserFormType> = ({ data, changeDataHandler, children, isEditData }) => {
-
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
-
+    const locale: TLanguage = useSelector(selectLanguage);
     return (
         <form className='userForm'>
             <div className='userForm__avatar'>

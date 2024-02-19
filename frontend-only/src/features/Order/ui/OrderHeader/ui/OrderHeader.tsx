@@ -1,11 +1,7 @@
 import { FC } from "react";
 import dropdown from "@images/dropdown.svg";
 import './OrderHeader.scss';
-
-type OrderHeaderProps = {
-    id: number;
-    onClickOrder: any;
-}
+import { OrderHeaderProps } from "features/Order/model/types/types";
 
 export const OrderHeader: FC<OrderHeaderProps> = ({ id, onClickOrder }) => {
     return (

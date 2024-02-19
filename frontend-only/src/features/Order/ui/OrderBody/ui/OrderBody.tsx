@@ -1,11 +1,6 @@
-import { FC, ReactNode } from "react";
+import { FC } from "react";
+import { OrderBodyProps } from "features/Order/model/types/types";
 import './OrderBody.scss';
-
-type OrderBodyProps = {
-    children: ReactNode;
-    date: string;
-    price: any;
-}
 
 export const OrderBody: FC<OrderBodyProps> = ({date, price = 0, children}) => {
     return (

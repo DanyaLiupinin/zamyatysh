@@ -5,17 +5,7 @@ import { OrderItems } from "./OrderItems";
 import { OrderHeader } from "./OrderHeader";
 import { OrderBody } from "./OrderBody";
 
-interface IItemProps {
-    id: number,
-    size: string,
-    price: string
-}
-
-interface IOrderProps {
-    id: number,
-    items: IItemProps[],
-    date: string
-}
+import { IOrderProps } from "../model/types/types";
 
 export const Order: FC<IOrderProps> = ({ id, items, date }) => {
     const [isOrderOpened, setOrderOpened] = useState(false);

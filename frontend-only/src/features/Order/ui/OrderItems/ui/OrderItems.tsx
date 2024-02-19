@@ -1,19 +1,15 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
-import { items as itemsList } from "@constants";
 import { TLanguage } from "@types";
+import { items as itemsList } from "@constants";
+import { OrderItem } from "@components";
+import { OrderItemsProps } from "features/Order/model/types/types";
+
+import { selectLanguage } from '../../../model/selectors/selectors';
 import './OrderItems.scss';
 
-import { OrderItem } from "@components";
-
-type OrderItemsProps = {
-    items: any;
-}
-
 export const OrderItems: FC<OrderItemsProps> = ({ items }) => {
-
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
-
+    const locale: TLanguage = useSelector(selectLanguage);
     return (
         <div className='orderItems'>
             {items?.length > 0 && items.map((item: any, index: any) => {
