@@ -8,6 +8,7 @@ import { DesktopMenuProps } from '../../../../model/types/types';
 export const DesktopMenu: React.FC<DesktopMenuProps> = ({ categories, onClickFilter }) => {
     const activeCategoryFilter = useSelector(selectActiveFilters);
     const locale: TLanguage = useSelector(selectLanguage);
+
     return (
         <div className='desktopMenu'>
             {
@@ -16,7 +17,7 @@ export const DesktopMenu: React.FC<DesktopMenuProps> = ({ categories, onClickFil
                     return (
                         <button className={`
                         desktopMenu__button 
-                        ${activeCategoryFilter === category ? 'desktopMenu__button_active' : ''}`}
+                        ${activeCategoryFilter === category.title[locale] ? 'desktopMenu__button_active' : ''}`}
                             onClick={() => onClickFilter(category.title[locale])}
                             type='button' key={category.id}>
                             {`${category.title[locale]}`}

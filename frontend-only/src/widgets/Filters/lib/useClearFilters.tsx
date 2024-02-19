@@ -9,5 +9,5 @@ export const useClearFilters = (onClearFilter: () => void) => {
         if (location.pathname === '/shop') {
             onClearFilter();
         }
-    }, [location.pathname, onClearFilter]);
+    }, [location.pathname]);
 };

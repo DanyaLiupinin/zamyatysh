@@ -14,7 +14,6 @@ export const Filters: React.FC = () => {
 
     const activeCategoryFilter = useSelector(selectActiveFilters);
     const { onClickFilter, onClearFilter } = useFilterFunctions();
-
     useClearFilters(onClearFilter);
 
     return (

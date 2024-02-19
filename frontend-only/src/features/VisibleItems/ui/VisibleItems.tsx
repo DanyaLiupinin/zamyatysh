@@ -8,6 +8,7 @@ import { VisibleItemsProps } from "../model/types/types";
 
 export const VisibleItems: FC<VisibleItemsProps> = ({ visibleItems }) => {
     const locale: TLanguage = useSelector(selectLocale);
+    console.log(visibleItems)
     return (
         <>
             {

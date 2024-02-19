@@ -16,7 +16,7 @@ const useCategoryFilterEffect = (setVisibleItems: (items: any[] | []) => void) =
         } else {
             setVisibleItems(items);
         }
-    }, [activeCategoryFilter, locale]);
+    }, [activeCategoryFilter]);
 };
 
 export default useCategoryFilterEffect;
