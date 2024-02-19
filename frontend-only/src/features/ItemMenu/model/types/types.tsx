@@ -9,3 +9,15 @@ export type IItemMenuProps = {
     basketItemCount: number;
     className?: string;
 }
+
+export type ItemSizesProps = {
+    item: IItem,
+    onSizeClick: any,
+    chosenSize: string
+}
+
+export type AddItemProps = {
+    chosenSize: string,
+    onAddItem: any,
+    isCaptionActive: any
+}

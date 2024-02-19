@@ -2,20 +2,15 @@ import { FC } from "react";
 import frog from '@images/vkorzini.svg';
 import { useSelector } from "react-redux";
 import { TLanguage } from "@types";
-
 import content from '@locale/ItemMenu.json';
 
+import { AddItemProps } from '../../../model/types/types';
+import { selectLanguage } from '../../../model/selectors/selectors';
 import './AddItem.scss';
-
-type AddItemProps = {
-    chosenSize: string,
-    onAddItem: any,
-    isCaptionActive: any
-}
 
 export const AddItem: FC<AddItemProps> = ({ chosenSize, onAddItem, isCaptionActive }) => {
 
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector(selectLanguage);
 
     return (
         <div className='addItem'>

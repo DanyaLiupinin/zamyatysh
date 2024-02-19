@@ -1,16 +1,15 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { TLanguage, IItem } from '@types';
+import { TLanguage } from '@types';
 import { ItemCaption } from '@components';
-
 import content from '@locale/ItemMenu.json';
-
-import { ItemSizes } from './ItemSizes';
-import { AddItem } from './AddItem';
 
 import { IItemMenuProps } from '../model/types/types';
 import { selectLanguage } from '../model/selectors/selectors';
 import { onAddItem } from '../lib/handlers/handlers';
+
+import { AddItem } from './AddItem';
+import { ItemSizes } from './ItemSizes';
 import './ItemMenu.scss';
 
 export const ItemMenu: FC<IItemMenuProps> = ({
@@ -47,7 +46,7 @@ export const ItemMenu: FC<IItemMenuProps> = ({
             <p className='itemMenu__size-guide'>{content.howToSize[locale]}</p>
             <AddItem
                 chosenSize={chosenSize}
-                onAddItem={() => onAddItem({chosenSize, setCaptionActive, addItemHandler})}
+                onAddItem={() => onAddItem({ chosenSize, setCaptionActive, addItemHandler })}
                 isCaptionActive={isCaptionActive}
             />
             {isCaptionActive &&
