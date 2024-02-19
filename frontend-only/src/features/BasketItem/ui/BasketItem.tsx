@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import './BasketItem.scss';
@@ -7,33 +7,28 @@ import content from '@locale/Basket.json';
 
 import deleteImage from '@images/deleteicon.svg';
 import { items } from "@constants";
-
 import { IItem, TLanguage } from "@types";
+import { IBasketItemProps } from "../model/types/types";
+import { selectLanguage } from '../model/selectors/selectors';
+import { useSetActualItem } from "../lib/hooks/useSetActualItem";
 
-export const BasketItem = ({ 
-    shortItem, 
-    deleteItemHandler, 
-    id 
-}: { shortItem: any, deleteItemHandler: (id: number) => void, id: number }) => {
+export const BasketItem: FC<IBasketItemProps> = ({
+    shortItem,
+    deleteItemHandler,
+    id
+}) => {
 
     const [item, setItem] = useState<IItem | ''>('');
+    const locale: TLanguage = useSelector(selectLanguage);
 
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
-
-    useEffect(() => {
-        const actualItem = items.find(i => Number(i.id) === Number(shortItem.id));
-        if (actualItem)
-            setItem(actualItem);
-    }, []);
-
-    console.log(item)
+    useSetActualItem({shortItem, setItem});
 
     return (
         <>
             {
                 item &&
                 <div className='basketItem'>
-                    <button 
+                    <button
                         onClick={() => deleteItemHandler(id)} type="button" className='basketItem__delete-btn-container'>
                         <img className='basketItem__delete-btn' src={deleteImage} alt='delete item'>
                         </img>
