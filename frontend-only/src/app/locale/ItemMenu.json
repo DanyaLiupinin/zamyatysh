@@ -14,5 +14,9 @@
     "kwaks": {
         "ru": "кваков",
         "en": "kwaks"
+    },
+    "chooseSize": {
+        "ru": "выберите размер, пожалуйста c:",
+        "en": "choose size please c:"
     }
 }

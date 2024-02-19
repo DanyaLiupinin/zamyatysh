@@ -8,17 +8,10 @@ import content from '@locale/ItemMenu.json';
 import { ItemSizes } from './ItemSizes';
 import { AddItem } from './AddItem';
 
+import { IItemMenuProps } from '../model/types/types';
+import { selectLanguage } from '../model/selectors/selectors';
+import { onAddItem } from '../lib/handlers/handlers';
 import './ItemMenu.scss';
-
-type IItemMenuProps = {
-    item: IItem,
-    chosenSize: string,
-    setChosenSize: React.Dispatch<React.SetStateAction<string>>,
-    isBasketItem: boolean,
-    addItemHandler: () => void,
-    basketItemCount: number;
-    className?: string;
-}
 
 export const ItemMenu: FC<IItemMenuProps> = ({
     item,
@@ -31,7 +24,7 @@ export const ItemMenu: FC<IItemMenuProps> = ({
 }) => {
 
     const [isCaptionActive, setCaptionActive] = useState(false);
-    const locale: TLanguage = useSelector((state: any) => state.items.locale);
+    const locale: TLanguage = useSelector(selectLanguage);
 
     const onSizeClick = (size: string) => {
         if (chosenSize.includes(size)) {
@@ -39,14 +32,6 @@ export const ItemMenu: FC<IItemMenuProps> = ({
         } else {
             setChosenSize(size);
             setCaptionActive(false);
-        }
-    };
-
-    const onAddItem = () => {
-        if (chosenSize === '') {
-            setCaptionActive(true);
-        } else {
-            addItemHandler();
         }
     };
 
@@ -62,11 +47,11 @@ export const ItemMenu: FC<IItemMenuProps> = ({
             <p className='itemMenu__size-guide'>{content.howToSize[locale]}</p>
             <AddItem
                 chosenSize={chosenSize}
-                onAddItem={onAddItem}
+                onAddItem={() => onAddItem({chosenSize, setCaptionActive, addItemHandler})}
                 isCaptionActive={isCaptionActive}
             />
             {isCaptionActive &&
-                <ItemCaption>choose size please c:</ItemCaption>
+                <ItemCaption>{content.chooseSize[locale]}</ItemCaption>
             }
             {
                 isBasketItem &&
