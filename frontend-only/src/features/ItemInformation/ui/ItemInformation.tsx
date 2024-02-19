@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { TLanguage, IItem } from '@types';
-
+import { TLanguage } from '@types';
 import content from '@locale/ItemInformation.json';
-import './ItemInformation.scss';
+
 import { ItemInformationProps } from '../model/types/types';
 import { selectBasketItems } from '../model/selectors/selectors';
+import './ItemInformation.scss';
 
 export const ItemInformation: FC<ItemInformationProps> = ({ item, className }) => {
 

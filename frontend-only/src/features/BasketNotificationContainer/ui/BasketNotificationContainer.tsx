@@ -1,9 +1,7 @@
-import { ReactNode, FC } from "react";
-import './BasketNotificationContainer.scss';
+import { FC } from "react";
 
-type BasketNotificationContainerProps = {
-    children: ReactNode;
-}
+import { BasketNotificationContainerProps } from "../model/types/types";
+import './BasketNotificationContainer.scss';
 
 export const BasketNotificationContainer : FC<BasketNotificationContainerProps> = ({children}) => {
     return (
