@@ -41,15 +41,15 @@ export const items: IItem[] = [
         },
         description: {
             ru: 'Белая футболка "Замятыш" представляет собой идеальное сочетание свободы и небрежности в стиле лягушачий андер. Мягкий оверсайз фасон создает легкость и комфорт в каждом движении, придавая образу непринужденный шарм.',
-            en: 'default description',
+            en: 'The white Zama T-shirt is the perfect combination of freedom and carelessness in the style of a froggy under. The soft oversize style creates lightness and comfort in every movement, giving the image a relaxed charm.',
         },
         material: {
             ru: 'Хлопок 100%',
-            en: 'material',
+            en: 'Cotton 100%',
         },
         style: {
             ru: 'Легкий оверсайз',
-            en: 'style',
+            en: 'Easy oversize',
         },
         price: '1500',
         images: [tshirtWhite, tshirtWhite, tshirtWhite],
@@ -59,23 +59,23 @@ export const items: IItem[] = [
         id: 2,
         title: {
             ru: 'футболка замятыш синяя',
-            en: 'zamyatysh',
+            en: 'zama tshirt blue',
         },
         category: {
             ru: 'футболки',
             en: 'tshirts',
         },
         description: {
-            ru: 'футболка "Лягушачья синева" приносит в мир стиля свежий акцент, сочетая в себе уникальный фасон с привлекательным синим оттенком. Ее свободный оверсайз крой придаст вашему образу непринужденный стиль, а яркая синяя палитра добавит нотку освежающей элегантности.',
-            en: 'default description',
+            ru: 'Футболка "Лягушачья синева" приносит в мир стиля свежий акцент, сочетая в себе уникальный фасон с привлекательным синим оттенком. Ее свободный оверсайз крой придаст вашему образу непринужденный стиль, а яркая синяя палитра добавит нотку освежающей элегантности.',
+            en: 'Blue "Zama" T-shirt brings a fresh accent to the world of style, combining a unique style with an attractive blue shade. Her loose oversize cut will give your look a relaxed style, and the bright blue palette will add a touch of refreshing elegance.',
         },
         material: {
             ru: 'Хлопок 100%',
-            en: 'material',
+            en: 'Cotton 100%',
         },
         style: {
             ru: 'Легкий оверсайз',
-            en: 'style',
+            en: 'Easy oversize',
         },
         price: '1500',
         images: [tshirtBlue, tshirtBlue, tshirtBlue],
@@ -85,7 +85,7 @@ export const items: IItem[] = [
         id: 3,
         title: {
             ru: 'футболка замятыш оливковая',
-            en: 'zamyatysh',
+            en: 'zama tshirt olive',
         },
         category: {
             ru: 'футболки',
@@ -93,15 +93,15 @@ export const items: IItem[] = [
         },
         description: {
             ru: 'Футболка "Замятыш поедатель оливок" вносит ноту тепла и стиля в ваш гардероб, сочетая уникальный фасон с насыщенным оливковым оттенком. Ее свободный оверсайз крой создает образ, который сочетает в себе непринужденность и стиль, а глубокий оттенок оливки придает ему особую элегантность',
-            en: 'default description',
+            en: 'The T-shirt "Zama the olive eater" brings a note of warmth and style to your wardrobe, combining a unique style with a rich olive shade. Her loose oversize cut creates an image that combines ease and style, and the deep shade of olive gives it a special elegance',
         },
         material: {
             ru: 'Хлопок 100%',
-            en: 'material',
+            en: 'Cotton 100%',
         },
         style: {
             ru: 'Легкий оверсайз',
-            en: 'style',
+            en: 'Easy oversize',
         },
         price: '1500',
         images: [tshirtGreen, tshirtGreen, tshirtGreen],
@@ -111,7 +111,7 @@ export const items: IItem[] = [
         id: 4,
         title: {
             ru: 'футболка замятыш пурпурная',
-            en: 'zamyatysh',
+            en: 'zama tshirt purple',
         },
         category: {
             ru: 'футболки',
@@ -119,15 +119,15 @@ export const items: IItem[] = [
         },
         description: {
             ru: 'Футболка "Лягушачий пурпур" привносит в ваш стиль изысканный акцент, сочетая эксклюзивный фасон с глубоким пурпурным оттенком. Ее свободный оверсайз крой создает непринужденный и стильный образ, а насыщенный цвет пурпура придает ему роскошный и загадочный характер.',
-            en: 'default description',
+            en: 'Purple "Zama" T-shirt brings an exquisite accent to your style, combining an exclusive style with a deep purple shade. Her loose oversize cut creates a relaxed and stylish look, and the rich purple color gives it a luxurious and mysterious character.',
         },
         material: {
             ru: 'Хлопок 100%',
-            en: 'material',
+            en: 'Cotton 100%',
         },
         style: {
             ru: 'Легкий оверсайз',
-            en: 'style',
+            en: 'Easy oversize',
         },
         price: '1500',
         images: [tshirtViolet, tshirtViolet, tshirtViolet],
@@ -137,7 +137,7 @@ export const items: IItem[] = [
         id: 5,
         title: {
             ru: 'футболка замятыш зеленая',
-            en: 'zamyatysh',
+            en: 'zama tshirt green',
         },
         category: {
             ru: 'футболки',
@@ -145,15 +145,15 @@ export const items: IItem[] = [
         },
         description: {
             ru: 'Футболка "В траве сидел замятыш" приносит свежесть и живость в ваш гардероб, сочетая уникальный фасон с освежающим зеленым оттенком. Ее свободный оверсайз крой создает стильный образ, который объединяет непринужденность и модный акцент, а насыщенный цвет зелени придает ему динамичность.',
-            en: 'default description',
+            en: 'Green "Zama" T-shirt brings freshness and liveliness to your wardrobe, combining a unique style with a refreshing green shade. Her loose oversize cut creates a stylish look that combines ease and a fashionable accent, and the rich color of greenery gives it dynamism.',
         },
         material: {
             ru: 'Хлопок 100%',
-            en: 'material',
+            en: 'Cotton 100%',
         },
         style: {
             ru: 'Легкий оверсайз',
-            en: 'style',
+            en: 'Easy oversize',
         },
         price: '1500',
         images: [tshirtGreenFull, tshirtGreenFull, tshirtGreenFull],
@@ -163,7 +163,7 @@ export const items: IItem[] = [
         id: 6,
         title: {
             ru: 'футболка замятыш аквамарин',
-            en: 'zamyatysh',
+            en: 'zama tshirt aquamarine',
         },
         category: {
             ru: 'футболки',
@@ -171,15 +171,15 @@ export const items: IItem[] = [
         },
         description: {
             ru: 'Футболка "Аквамариновая Эссенция" приносит в ваш гардероб волны свежести и изысканности, сочетая стильный фасон с невероятным оттенком аквамарина. Ее свободный оверсайз крой создает непринужденный и модный образ, а уникальный цвет подчеркивает освежающую элегантность.',
-            en: 'default description',
+            en: 'Aquamarine "Zama" T-shirt brings waves of freshness and sophistication to your wardrobe, combining a stylish style with an incredible shade of aquamarine. Her loose oversize cut creates a relaxed and fashionable look, and the unique color emphasizes refreshing elegance.',
         },
         material: {
             ru: 'Хлопок 100%',
-            en: 'material',
+            en: 'Cotton 100%',
         },
         style: {
             ru: 'Легкий оверсайз',
-            en: 'style',
+            en: 'Easy oversize',
         },
         price: '1500',
         images: [tshirtAquamarin, tshirtAquamarin, tshirtAquamarin],
