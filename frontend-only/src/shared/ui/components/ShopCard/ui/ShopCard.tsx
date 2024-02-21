@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import defaultImage from '@images/tshirt.png';
+import content from '@locale/ShopCard.json';
 import "./ShopCard.scss";
+import { useSelector } from "react-redux";
+import { IRootState } from "@types";
 
 export const ShopCard = ({
     images,
@@ -13,7 +16,7 @@ export const ShopCard = ({
     title: string;
     id: number
 }) => {
-
+    const locale = useSelector((state: IRootState) => state.items.locale)
     return (
         <Link className='item-link' to={`${id}`}>
             <div className='item'>
@@ -26,7 +29,7 @@ export const ShopCard = ({
                 </div>
                 <div className='item__information'>
                     <h2 className='item__title'>{title}</h2>
-                    <p className='item__price'>{price}</p>
+                    <p className='item__price'>{price} {content.kwaks[locale]}</p>
                 </div>
             </div>
         </Link>

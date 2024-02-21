@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import image from "@images/basket-image.svg";
 
-import { selectBasketItems } from "../../ItemInformation/model/selectors/selectors";
+import { selectBasketItems } from "../model/selectors/selectors";
 import "./BasketNotification.scss";
 
 export const BasketNotification = () => {

@@ -42,7 +42,7 @@ export const BasketItem: FC<IBasketItemProps> = ({
                         {content.size[locale]}: <br /> {shortItem.size}
                     </p>
                     <p className='basketItem__price basketItem__info'>
-                        {content.price[locale]}: <br /> {item.price}
+                        {content.price[locale]}: <br /> {item.price} 
                     </p>
                 </div>
             }

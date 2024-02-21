@@ -1,6 +1,6 @@
 import './MainAnimation.scss';
 
-const animation = require('@images/main-animation.gif');
+const animation = require('@images/main-animation.GIF');
 
 export const MainAnimation: React.FC = () => {
     return (

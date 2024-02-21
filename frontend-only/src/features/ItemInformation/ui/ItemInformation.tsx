@@ -4,12 +4,12 @@ import { TLanguage } from '@types';
 import content from '@locale/ItemInformation.json';
 
 import { ItemInformationProps } from '../model/types/types';
-import { selectBasketItems } from '../model/selectors/selectors';
+import { selectLanguage } from '../model/selectors/selectors';
 import './ItemInformation.scss';
 
 export const ItemInformation: FC<ItemInformationProps> = ({ item, className }) => {
 
-    const locale: TLanguage = useSelector(selectBasketItems);
+    const locale: TLanguage = useSelector(selectLanguage);
 
     return (
         <div id='description' className={`itemCard__item-description ${className}`}>

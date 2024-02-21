@@ -1,1 +1,1 @@
-export const selectBasketItems = (state: any) => state.items.basketItemsShort;
+export const selectLanguage = (state: any) => state.items.locale;
