@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/zamyatysh/static/css/main.1e594243.css",
-    "main.js": "/zamyatysh/static/js/main.eed73352.js",
+    "main.css": "/zamyatysh/static/css/main.e050c33d.css",
+    "main.js": "/zamyatysh/static/js/main.e0e1c116.js",
     "static/media/main-animation.GIF": "/zamyatysh/static/media/main-animation.c5a04aa0c1d2654c7eb4.GIF",
-    "static/media/logo.svg": "/zamyatysh/static/media/logo.6c2ce06ef7fa3acba377b1b3eb9bb671.svg",
+    "static/media/logo.svg": "/zamyatysh/static/media/logo.a22882c75b4511bf539f02e90f479d07.svg",
     "static/media/basket-image.svg": "/zamyatysh/static/media/basket-image.8e1aaa4361f3757d20db91420c81d7c8.svg",
-    "static/media/vkorzini.svg": "/zamyatysh/static/media/vkorzini.e0ff3322eaa51a92051592445819aac9.svg",
+    "static/media/vkorzini.svg": "/zamyatysh/static/media/vkorzini.a23958d464cb636b33c4cfcd3f2ef508.svg",
     "static/media/aboutUs.png": "/zamyatysh/static/media/aboutUs.f9d1c0128a88f5b64516.png",
     "static/media/tshirt-aquamarin.png": "/zamyatysh/static/media/tshirt-aquamarin.772ec0eed8c48b7e1873.png",
     "static/media/tshirt-green-full.png": "/zamyatysh/static/media/tshirt-green-full.1bdd39c9382a5565f063.png",
@@ -33,17 +33,17 @@
     "static/media/Zamyatysh_ru-Regular.ttf": "/zamyatysh/static/media/Zamyatysh_ru-Regular.5d76746c80fa5b70257b.ttf",
     "static/media/Zamyatysh_eng-Regular.otf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.otf",
     "static/media/Zamyatysh_eng-Regular.ttf": "/zamyatysh/static/media/Zamyatysh_eng-Regular.014904eeafa62713ccbc.ttf",
-    "static/media/lapkaright.svg": "/zamyatysh/static/media/lapkaright.3838c5e51b3278e1d1b3d16c7a241e28.svg",
+    "static/media/lapkaright.svg": "/zamyatysh/static/media/lapkaright.f6ba27dcc1c435d3b1c67208d9714131.svg",
     "index.html": "/zamyatysh/index.html",
-    "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.11d0d0ea89eb85916bcfa793047fc575.svg",
-    "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.f9e1ddcdc2621c2b9849e82967c671c9.svg",
+    "static/media/lapkaleft.svg": "/zamyatysh/static/media/lapkaleft.870df8d3260de77023c313cad87c4584.svg",
+    "static/media/historyArray.svg": "/zamyatysh/static/media/historyArray.45feaf1e793f94507336048b7848f8d7.svg",
     "static/media/deleteicon.svg": "/zamyatysh/static/media/deleteicon.2001e956d267bc9b1a2349ee0a8ee521.svg",
     "static/media/dropdown.svg": "/zamyatysh/static/media/dropdown.c57e5c87b3f163e57ceb6c0ac4f9ce92.svg",
-    "main.1e594243.css.map": "/zamyatysh/static/css/main.1e594243.css.map",
-    "main.eed73352.js.map": "/zamyatysh/static/js/main.eed73352.js.map"
+    "main.e050c33d.css.map": "/zamyatysh/static/css/main.e050c33d.css.map",
+    "main.e0e1c116.js.map": "/zamyatysh/static/js/main.e0e1c116.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e594243.css",
-    "static/js/main.eed73352.js"
+    "static/css/main.e050c33d.css",
+    "static/js/main.e0e1c116.js"
   ]
 }
